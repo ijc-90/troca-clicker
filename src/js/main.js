@@ -4,8 +4,8 @@ var productionPerSecond = 0;
 var geometricScale = 1.2;
 
 var robots = [
-    {type: "first", baseCost: 50, quantity: 0, production: 1},
-    {type: "newsletters", baseCost: 500, quantity: 0, production: 10}
+    {type: "newsletters", baseCost: 10, quantity: 0, production: 1},
+    // {type: "asdf", baseCost: 500, quantity: 0, production: 10}
 ];
 
 var news = [
@@ -48,7 +48,7 @@ function buyRobot(type){
 window.setInterval(function(){
     recalculateProduction();
     sellPhones(productionPerSecond);
-    document.getElementById('production').innerHTML = productionPerSecond;
+    // document.getElementById('production').innerHTML = productionPerSecond;
 }, 1000);
 
 window.setInterval(function(){
@@ -64,3 +64,10 @@ function recalculateProduction(){
     });
     
 }
+
+$( document ).ready(function() {
+    $("#newsletters-clickeable").on("click",function(){
+    buyRobot("newsletters");
+});
+});
+
