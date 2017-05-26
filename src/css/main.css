@@ -11,6 +11,12 @@ body{
     box-sizing: border-box;
 }
 
+.clearfix:before,
+.clearfix:after {
+	 display: table;
+  content: " ";
+}
+
 //#ff8800 naranja troca
 //#f06f31  naranja oscuro
 
@@ -123,17 +129,53 @@ body{
 	font-family: 'Chewy', cursive;	
 }
 
-.click-upgrades-container{
+.click-upgrades-container, .click-robots-container{
 	width: 100%;
-	padding: 0 10px;
+	padding: 0 5px;
 	display: block;
+	text-align: left;
 }
 
 .click-upgrade{
 	width: 50px;
 	height: 50px;
-	display: block;
-	float: left;
+	display: inline-block;
 	background: #ff8800;
-	margin: 5px;
+	margin: 5px 2px;
+}
+.click-robot{
+	padding: 10px;
+	margin: 8px 0 8px 2px;
+	background: rgba(255,136,0, .5);
+}
+
+.click-robot-img{
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	vertical-align: middle;
+}
+.click-robot-text{
+	display: inline-block;
+	width: calc(100% - 130px);
+	vertical-align: middle;
+	padding-left: 10px;
+}
+
+.click-robot-name{
+	font-size: 16px;
+	font-family: 'Chewy', cursive;
+}
+.click-robot-value{
+	display: block;
+	font-size: 14px;
+	font-family: 'Chewy', cursive;
+}
+.click-robot-bought{
+	display: inline-block;
+	width: 60px;
+	vertical-align: middle;
+	text-align: right;
+	font-size: 40px;
+	font-family: 'Chewy', cursive;
 }
