@@ -110,7 +110,6 @@ font-family: 'Open Sans', sans-serif;
 
 /*DISPLAY*/
 .click-display{
-	border-right: 1px solid #ff8800;
 	background: #808184;
 	padding-top: 10px;
 }
@@ -146,6 +145,10 @@ font-family: 'Open Sans', sans-serif;
 }
 .click-phone{
 	padding: 20px;
+}
+.click-phone a:active{
+
+transform: scale(1.05);
 }
 
 .click-phone a{
@@ -353,5 +356,5 @@ padding-bottom: 70px;
 }
 
 .footer span{
-	color: #c;
+	color: #ff8800;
 }
