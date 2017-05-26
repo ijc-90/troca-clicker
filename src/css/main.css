@@ -54,6 +54,16 @@ font-family: 'Open Sans', sans-serif;
 	background: #ff8800;
 	vertical-align: middle;
 	padding: 5px 40px;
+	font-size: 18px;
+	font-family: 'Chewy', cursive;
+}
+
+.click-message-icon{
+	width: 46px;
+	height: 46px; 
+}
+.click-message-icon img{
+	margin-right: 10px; 
 }
 .click-message span{
 	vertical-align: middle;
@@ -61,7 +71,7 @@ font-family: 'Open Sans', sans-serif;
 }
 .click-sell, .click-buy{
  	text-align: center;
- 	width: 50%;
+ 	width: 100%;
 	display: block;
 	float: left;	
 	height:100%;
@@ -116,7 +126,21 @@ font-family: 'Open Sans', sans-serif;
 	text-align: right;
 	font-family: 'Chewy', cursive;	
 }
-
+.click-production{
+	width: 100%;
+	padding: 10px 25px 10px 10px;
+	color: #fff;
+	font-size: 22px;
+	display: block;
+	font-family: 'Chewy', cursive;	
+	vertical-align: middle;
+	font-size: 14px;
+}
+.click-production span{
+	font-size: 12px;
+	vertical-align: middle; 
+	margin-right: 10px;
+}
 .click-phone{
 	padding: 20px;
 }
@@ -153,12 +177,12 @@ font-family: 'Open Sans', sans-serif;
 	display: inline-block;
 	background: #ff8800;
 	margin: 5px 2px;
+	cursor: pointer;
 }
 .click-robot{
-	padding: 10px;
 	margin: 8px 0 8px 2px;
-	border: 1px solid #ff8800;
 	cursor: pointer;
+	background: #fff;
 }
 
 .click-robot-img{
@@ -166,10 +190,11 @@ font-family: 'Open Sans', sans-serif;
 	width: 60px;
 	height: 60px;
 	vertical-align: middle;
+	background: #607d8a;
 }
 .click-robot-text{
 	display: inline-block;
-	width: calc(100% - 130px);
+	width: calc(100% - 150px);
 	vertical-align: middle;
 	padding-left: 10px;
 	color: #ff8800;
@@ -186,10 +211,11 @@ font-family: 'Open Sans', sans-serif;
 }
 .click-robot-bought{
 	display: inline-block;
-	width: 60px;
+	width: 80px;
 	vertical-align: middle;
 	text-align: right;
 	font-size: 40px;
 	font-family: 'Chewy', cursive;
 	color: #ff8800;
+	padding-right: 10px;
 }
