@@ -5,11 +5,11 @@ var geometricScale = 1.2;
 
 var robots = [
     {type: "mit", baseCost: 100, quantity: 0, production: 1},
-    {type: "facu", baseCost: 1500, quantity: 0, production: 15},
-    {type: "locha", baseCost: 20000, quantity: 0, production: 200},
-    {type: "buga", baseCost: 150000, quantity: 0, production: 1500},
-    {type: "tati", baseCost: 250000, quantity: 0, production: 2500},
-    {type: "diaz", baseCost: 400000, quantity: 0, production: 4000},
+    {type: "facu", baseCost: 1500, quantity: 0, production: 12},
+    {type: "locha", baseCost: 20000, quantity: 0, production: 140},
+    {type: "buga", baseCost: 150000, quantity: 0, production: 900},
+    {type: "tati", baseCost: 250000, quantity: 0, production: 1250},
+    {type: "diaz", baseCost: 400000, quantity: 0, production: 1600},
 ];
 
 var upgrades = [
