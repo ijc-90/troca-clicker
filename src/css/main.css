@@ -1,7 +1,7 @@
 body{
 	margin:0;
 	padding: 0;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Chewy', cursive;
 	background: #404040;
 }
 html, body{
@@ -50,24 +50,30 @@ font-family: 'Open Sans', sans-serif;
 	color: #fff;
 	text-align: center;
 	height: 80px;
-	display: table;
+	display: inline-block;
 	background: #ff8800;
 	vertical-align: middle;
-	padding: 5px 40px;
+	padding: 15px 40px;
 	font-size: 18px;
 	font-family: 'Chewy', cursive;
+}
+.click-message-news{
+	max-width: calc(100% - 130px);
 }
 
 .click-message-icon{
 	width: 46px;
 	height: 46px; 
+	margin-right: 10px;
 }
-.click-message-icon img{
-	margin-right: 10px; 
+
+.click-message-icon.right{
+		margin-right: 0px;
+		margin-left: 10px;
 }
 .click-message span{
 	vertical-align: middle;
-	display: table-cell;
+	display: inline-block;
 }
 .click-sell, .click-buy{
  	text-align: center;
@@ -87,7 +93,7 @@ font-family: 'Open Sans', sans-serif;
 	padding: 15px;
 	color: #ffffff;
 	text-transform: uppercase;
-	font-size: 35px;
+	font-size: 45px;
 	border-bottom: 1px solid #ff8800;
 	font-family: 'Chewy', cursive;
 }
@@ -110,10 +116,8 @@ font-family: 'Open Sans', sans-serif;
 	width: 100%;
 	padding: 10px 10px 10px 25px;
 	color: #fff;
-	font-size: 22px;
-	text-align: left;
-	vertical-align: middle;
-	font-family: 'Chewy', cursive;	white-space: nowrap;
+	font-size: 32px;
+
 }
 .click-stock span{
 	vertical-align: middle;	
@@ -122,22 +126,19 @@ font-family: 'Open Sans', sans-serif;
 	width: 100%;
 	padding: 10px 25px 10px 10px;
 	color: #fff;
-	font-size: 22px;
-	text-align: right;
-	font-family: 'Chewy', cursive;	
+	font-size: 32px;
+
 }
 .click-production{
 	width: 100%;
 	padding: 10px 25px 10px 10px;
 	color: #fff;
-	font-size: 22px;
 	display: block;
-	font-family: 'Chewy', cursive;	
 	vertical-align: middle;
-	font-size: 14px;
+	font-size: 22px;
 }
 .click-production span{
-	font-size: 12px;
+	font-size: 18px;
 	vertical-align: middle; 
 	margin-right: 10px;
 }
@@ -157,8 +158,7 @@ font-family: 'Open Sans', sans-serif;
 .click-store-title{
 	display: block;
 	width: 100%;
-	font-size: 25px;
-	line-height: 25px;
+	font-size: 32px;
 	padding: 10px;
 	color: #fff;
 	font-family: 'Chewy', cursive;	
@@ -166,10 +166,13 @@ font-family: 'Open Sans', sans-serif;
 
 .click-upgrades-container, .click-robots-container{
 	width: 100%;
-	padding: 0 5px;
+	padding: 0 25px;
 	display: block;
 	text-align: left;
 }
+ .click-robots-container{
+ 	margin-bottom: 80px;
+ }
 
 .click-upgrade{
 	width: 50px;
@@ -182,7 +185,12 @@ font-family: 'Open Sans', sans-serif;
 .click-robot{
 	margin: 8px 0 8px 2px;
 	cursor: pointer;
-	background: #fff;
+	background: rgba(255,255,255, .9);
+	position: relative;
+}
+
+.click-robot:hover .click-robot-tooltip{
+	display: block;
 }
 
 .click-robot-img{
@@ -219,3 +227,60 @@ font-family: 'Open Sans', sans-serif;
 	color: #ff8800;
 	padding-right: 10px;
 }
+
+.click-robot-tooltip{
+	position: absolute;
+	display: none;
+	z-index: 3;
+	background: #385f74;
+	min-height: 120px;
+	padding:10px;
+	width: 70%;
+	left: -71%;
+	top: -100%;
+}
+.click-robot-tooltip:before{
+	content: '';
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 7.5px 0 7.5px 10px;
+	border-color: transparent transparent transparent #385f74;
+	position: absolute;
+	top: calc(45% - 7px);
+	right: -10px;
+}
+.click-robot-tooltip-img{
+	display: inline-block;
+	width: 120px;
+	margin-right: 10px;
+}
+.click-robot-tooltip-text{
+	display: inline-block;
+	width: calc(100% - 140px);
+	color: #fff;
+	font-size: 18px;
+	vertical-align: top;
+}
+.click-robot-tooltip-title, .click-robot-tooltip-value, .click-robot-tooltip-description, .click-robot-tooltip-info{
+	display: block;
+	vertical-align: top;
+}
+
+.click-robot-tooltip-title{
+	font-size: 22px;
+}
+
+.click-robot-tooltip-value{
+	font-size: 20px;
+
+}
+.click-robot-tooltip-description{
+	font-size: 14px;
+		margin-bottom: 20px;
+}
+.click-robot-tooltip-info{
+	font-size: 16px;
+
+}
+
