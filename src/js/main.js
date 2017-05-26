@@ -14,11 +14,11 @@ var robots = [
 
 var upgrades = [
     {type: "mit", multiplier: 5, cost: 1250, costMultiplier: 10},
-    {type: "facu", multiplier: 10, cost: 37500, costMultiplier: 10},
-    {type: "locha", multiplier: 15, cost: 750000, costMultiplier: 10},
-    {type: "buga", multiplier: 20, cost: 7500000, costMultiplier: 10},
-    {type: "tati", multiplier: 25, cost: 15625000, costMultiplier: 10},
-    {type: "diaz", multiplier: 30, cost: 30000000, costMultiplier: 10},
+    {type: "facu", multiplier: 10, cost: 37500, costMultiplier: 20},
+    {type: "locha", multiplier: 15, cost: 750000, costMultiplier: 30},
+    {type: "buga", multiplier: 20, cost: 7500000, costMultiplier: 40},
+    {type: "tati", multiplier: 25, cost: 15625000, costMultiplier: 50},
+    {type: "diaz", multiplier: 30, cost: 30000000, costMultiplier: 60},
 ]; 
 
 var news = [
@@ -49,7 +49,14 @@ function buyRobot(type){
     if(money >= cost){
         robot.quantity += 1;
         money = money - cost;
-        document.getElementById(robot.type.concat("-quantity")).innerHTML = robot.quantity;
+        var quantityClass = ".";
+        quantityClass = quantityClass.concat(robot.type).concat("-quantity");
+        $(quantityClass).html(robot.quantity);
+
+        var totalProductionClass = ".";
+        totalProductionClass = totalProductionClass.concat(robot.type).concat("-total-production");
+        $(totalProductionClass).html(robot.quantity * robot.production * cellphoneSellPrice);
+
         document.getElementById('money').innerHTML = money;
     }
     var nextCost = Math.floor(robot.baseCost * Math.pow(geometricScale,robot.quantity));
@@ -92,6 +99,10 @@ function upgradeRobot(type){
         upgrade.cost *= upgrade.costMultiplier;
     }
     recalculateProduction();
+
+    var totalProductionClass = ".";
+    totalProductionClass = totalProductionClass.concat(robot.type).concat("-total-production");
+    $(totalProductionClass).html(robot.quantity * robot.production * cellphoneSellPrice);
 
     document.getElementById("money").innerHTML = money;
 }
