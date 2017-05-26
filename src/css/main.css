@@ -43,7 +43,8 @@ font-family: 'Open Sans', sans-serif;
 	width: 100%;
 	background: #404040;
 	display: block;
-	height:100%;
+
+	text-align: center;
 }
 .click-message{
 	width: 100%;
@@ -78,9 +79,10 @@ font-family: 'Open Sans', sans-serif;
 .click-sell, .click-buy{
  	text-align: center;
  	width: 100%;
-	display: block;
-	float: left;	
-	height:100%;
+
+	display: -ms-flex;
+	display: -webkit-flex;
+	display: flex;
 }
 
 .click-buy{
@@ -101,7 +103,7 @@ font-family: 'Open Sans', sans-serif;
 .click-display, .click-store{
 	width: calc(50% - 4px);
 	display: inline-block;
-	height:100%;
+
 	vertical-align: top;
 	
 }
@@ -152,7 +154,7 @@ font-family: 'Open Sans', sans-serif;
 }
 /*STORE*/
 .click-store{
-
+padding-bottom: 70px;
 }
 
 .click-store-title{
@@ -170,17 +172,20 @@ font-family: 'Open Sans', sans-serif;
 	display: block;
 	text-align: left;
 }
- .click-robots-container{
- 	margin-bottom: 80px;
- }
 
 .click-upgrade{
-	width: 50px;
-	height: 50px;
+	padding: 10px;
+	background: #fff;
+	width: 66px;
+	height:66px;
 	display: inline-block;
-	background: #ff8800;
 	margin: 5px 2px;
 	cursor: pointer;
+}
+
+.click-upgrade img{
+	width: 46px;
+	height: 46px;
 }
 .click-robot{
 	margin: 8px 0 8px 2px;
@@ -235,9 +240,10 @@ font-family: 'Open Sans', sans-serif;
 	background: #385f74;
 	min-height: 120px;
 	padding:10px;
-	width: 70%;
-	left: -71%;
+	width: 500px;
+	left: -505px;
 	top: -100%;
+
 }
 .click-robot-tooltip:before{
 	content: '';
@@ -284,3 +290,19 @@ font-family: 'Open Sans', sans-serif;
 
 }
 
+.footer{
+	padding:10px;
+	background: #fff;
+	font-size: 16px;
+	width: 100%;
+	text-align: center;
+	color: #607d8a;
+	max-width: 1400px;
+	margin:0 auto;
+	width: 100%;
+	display: block;
+}
+
+.footer span{
+	color: #ff8800;
+}
