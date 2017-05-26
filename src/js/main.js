@@ -4,8 +4,12 @@ var productionPerSecond = 0;
 var geometricScale = 1.2;
 
 var robots = [
-    {type: "newsletters", baseCost: 10, quantity: 0, production: 1},
-    // {type: "asdf", baseCost: 500, quantity: 0, production: 10}
+    {type: "mit", baseCost: 100, quantity: 0, production: 1},
+    {type: "facu", baseCost: 1500, quantity: 0, production: 15},
+    {type: "locha", baseCost: 20000, quantity: 0, production: 200},
+    {type: "buga", baseCost: 150000, quantity: 0, production: 1500},
+    {type: "tati", baseCost: 250000, quantity: 0, production: 2500},
+    {type: "diaz", baseCost: 400000, quantity: 0, production: 4000},
 ];
 
 var news = [
@@ -18,7 +22,7 @@ var news = [
     "Cookie Clicker demanda a Troca Clicker por plagio. Altos giles",
     "Siempre que juego al Troca Clicker ligo el ancho de espadas - Gonzalo Higuaín",
     "Oferta millonaria de Facebook para comprar Troca Clicker. Trocafone dice que no y le descuentan 20 puntos a Nueva Chicago",
-    "Troca Clicker eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee - Diego A. Maradona",
+    "Troca Clickeeeeeeeeer eeeeeeeeeeeeeeeeeeeeeeeeee - Diego A. Maradona",
     "Gracias a Trocafone me compré un Galaxy Pocket Neo a dos mangos - Donald Trump en su discurso de asunción",
     "Yo no manejo el rating, yo manejo un Rolls-Royce y juego al Troca Clicker - Ricardo Fort",
 ];
@@ -65,9 +69,30 @@ function recalculateProduction(){
     
 }
 
+
 $( document ).ready(function() {
-    $("#newsletters-clickeable").on("click",function(){
-    buyRobot("newsletters");
-});
+    $("#mit-clickeable").on("click",function(){
+    buyRobot("mit");
+    });
+
+    $("#facu-clickeable").on("click",function(){
+    buyRobot("facu");
+    });
+
+    $("#locha-clickeable").on("click",function(){
+    buyRobot("locha");
+    });
+
+    $("#buga-clickeable").on("click",function(){
+    buyRobot("buga");
+    });
+
+    $("#tati-clickeable").on("click",function(){
+    buyRobot("tati");
+    });
+
+    $("#diaz-clickeable").on("click",function(){
+    buyRobot("diaz");
+    });
 });
 
