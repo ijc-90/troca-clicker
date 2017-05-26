@@ -26,5 +26,10 @@ function buySellRobot(){
         document.getElementById('money').innerHTML = money;
     };
     var nextCost = Math.floor(10 * Math.pow(1.1,sellRobotQuantity));
-    document.getElementById('cursorCost').innerHTML = nextCost;
+    document.getElementById('robotCost').innerHTML = nextCost;
 };
+
+
+window.setInterval(function(){
+    sellClick(sellRobotQuantity);
+}, 1000);
