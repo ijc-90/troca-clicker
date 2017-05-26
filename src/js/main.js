@@ -60,7 +60,12 @@ function buyRobot(type){
         document.getElementById('money').innerHTML = money;
     }
     var nextCost = Math.floor(robot.baseCost * Math.pow(geometricScale,robot.quantity));
-    document.getElementById(robot.type.concat("-cost")).innerHTML = nextCost;
+    // document.getElementById(robot.type.concat("-cost")).innerHTML = nextCost;
+
+    var costClass = ".";
+    costClass = costClass.concat(robot.type).concat("-cost");
+    $(costClass).html(nextCost);
+
 }
 
 
