@@ -146,7 +146,7 @@ body{
 .click-robot{
 	padding: 10px;
 	margin: 8px 0 8px 2px;
-	background: rgba(255,136,0, .5);
+	border: 1px solid #ff8800;
 }
 
 .click-robot-img{
@@ -160,6 +160,7 @@ body{
 	width: calc(100% - 130px);
 	vertical-align: middle;
 	padding-left: 10px;
+	color: #ff8800;
 }
 
 .click-robot-name{
@@ -178,4 +179,5 @@ body{
 	text-align: right;
 	font-size: 40px;
 	font-family: 'Chewy', cursive;
+	color: #ff8800;
 }
