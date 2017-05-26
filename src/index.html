@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>Troca Clicker</title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+
 </head>
 <body>
 	<div class="click-container">
 
 		<div class="click-message">
-			
 			<span>
 				<span class="click-message-icon"><img src="images/quote-circular-button.png"></span>
-				<span>Se redujo tus ventas en un 30% por diez minutos, un desarrollador no identificado introdujo un bug crítico en el sistema y se tomó el palo a ‘elementum’</span>
+				<span id="news">Empleado de Trocafone ingresa a libro Guinness luego de ingerir una cantidad inhumana de empanadas</span>
 			</span>		
 		</div>
 
@@ -23,10 +25,10 @@
 			<div class="click-title">Ventas</div>
 			<div class="click-display">
 				<span class="click-stock">Stock: <span>&infin;</span></span>
-				<span class="click-money" id="money"><span>$4543534535</span></span>
+				<span class="click-money" id="money"><span>$0</span></span>
 				<span class="click-production"><span>Ventas por segundo:</span>34567890</span>
 				<div class="click-phone">
-					<a href=""><img src="images/phone.png"></a>
+					<a onClick="sellPhones(1)"><img src="images/phone.png"></a>
 				</div>
 			</div>
 			<div class="click-store">
@@ -54,45 +56,84 @@
 				</div>
 
 
-
 				<div class="click-robots-container clearfix">
-					<div class="click-robot">
+					<div class="click-robot" id ="mit-clickeable" >
 						<div class="click-robot-img">
 							<img src="images/robot-newsletter.png">
 						</div>
 						<div class="click-robot-text">
-							<span class="click-robot-name">Envio de Newsletter</span>
-							<span class="click-robot-value">10</span>
+							<span class="click-robot-name">Comprar un Nico MIT</span>
+							<span class="click-robot-value" id = "mit-cost">100</span>
 						</div>
 						<div class="click-robot-bought">
-							<span>2</span>
+							<span id = "mit-quantity">0</span>
 						</div>
 					</div>
 
-					<div class="click-robot">
+					<div class="click-robot" id ="facu-clickeable">
 						<div class="click-robot-img">
 							<img src="images/robot-newsletter.png">
 						</div>
 						<div class="click-robot-text">
-							<span class="click-robot-name">Envio de Newsletter</span>
-							<span class="click-robot-value">10</span>
+							<span class="click-robot-name">Comprar un Facu</span>
+							<span class="click-robot-value" id = "facu-cost">1500</span>
 						</div>
 						<div class="click-robot-bought">
-							<span>2</span>
+							<span id = "facu-quantity">0</span>
 						</div>
 					</div>
 
 
-					<div class="click-robot">
+					<div class="click-robot" id ="locha-clickeable">
 						<div class="click-robot-img">
 							<img src="images/robot-newsletter.png">
 						</div>
 						<div class="click-robot-text">
-							<span class="click-robot-name">Envio de Newsletter</span>
-							<span class="click-robot-value">10</span>
+							<span class="click-robot-name">Comprar un Locha</span>
+							<span class="click-robot-value" id = "locha-cost">20000</span>
 						</div>
 						<div class="click-robot-bought">
-							<span>2</span>
+							<span id = "locha-quantity">0</span>
+						</div>
+					</div>
+
+
+					<div class="click-robot" id ="buga-clickeable">
+						<div class="click-robot-img">
+							<img src="images/robot-newsletter.png">
+						</div>
+						<div class="click-robot-text">
+							<span class="click-robot-name">Comprar un Buga</span>
+							<span class="click-robot-value" id = "buga-cost">150000</span>
+						</div>
+						<div class="click-robot-bought">
+							<span id = "buga-quantity">0</span>
+						</div>
+					</div>
+
+					<div class="click-robot" id ="tati-clickeable">
+						<div class="click-robot-img">
+							<img src="images/robot-newsletter.png">
+						</div>
+						<div class="click-robot-text">
+							<span class="click-robot-name">Comprar un Tati</span>
+							<span class="click-robot-value" id = "tati-cost">250000</span>
+						</div>
+						<div class="click-robot-bought">
+							<span id = "tati-quantity">0</span>
+						</div>
+					</div>
+
+					<div class="click-robot" id ="diaz-clickeable">
+						<div class="click-robot-img">
+							<img src="images/robot-newsletter.png">
+						</div>
+						<div class="click-robot-text">
+							<span class="click-robot-name">Comprar un Nico Díaz</span>
+							<span class="click-robot-value" id = "diaz-cost">400000</span>
+						</div>
+						<div class="click-robot-bought">
+							<span id = "diaz-quantity">0</span>
 						</div>
 					</div>
 
