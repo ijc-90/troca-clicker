@@ -12,6 +12,15 @@ var robots = [
     {type: "diaz", baseCost: 400000, quantity: 0, production: 4000},
 ];
 
+var upgrades = [
+    {type: "mit", multiplier: 5, cost: 1250, costMultiplier: 10},
+    {type: "facu", multiplier: 10, cost: 37500, costMultiplier: 10},
+    {type: "locha", multiplier: 15, cost: 750000, costMultiplier: 10},
+    {type: "buga", multiplier: 20, cost: 7500000, costMultiplier: 10},
+    {type: "tati", multiplier: 25, cost: 15625000, costMultiplier: 10},
+    {type: "diaz", multiplier: 30, cost: 30000000, costMultiplier: 10},
+]; 
+
 var news = [
     "Sufren las ventas en trocafone, un desarrollador no identificado introdujo un bug crítico en el sistema y se tomó el palo a ‘elementum’",
     "Fuentes no confirmadas anuncian al ‘Cookie Clickers’ como fuente de inspiración de otros juegos del género",
@@ -51,7 +60,6 @@ function buyRobot(type){
 window.setInterval(function(){
     recalculateProduction();
     sellPhones(productionPerSecond);
-    // document.getElementById('production').innerHTML = productionPerSecond;
 }, 1000);
 
 window.setInterval(function(){
@@ -65,8 +73,31 @@ function recalculateProduction(){
     robots.forEach(function(robot){
         productionPerSecond += robot.production*robot.quantity;
     });
+    document.getElementById('production').innerHTML = productionPerSecond * cellphoneSellPrice;
     
 }
+
+
+function upgradeRobot(type){
+    var robot = robots.find(function(robot){
+        return robot.type == type;
+    });
+    var upgrade = upgrades.find(function(robot){
+        return robot.type == type;
+    });
+
+    if (money >= upgrade.cost){
+        robot.production *= upgrade.multiplier;
+        money -= upgrade.cost;
+        upgrade.cost *= upgrade.costMultiplier;
+    }
+    recalculateProduction();
+
+    document.getElementById("money").innerHTML = money;
+}
+
+
+
 
 
 $( document ).ready(function() {
@@ -93,5 +124,31 @@ $( document ).ready(function() {
     $("#diaz-clickeable").on("click",function(){
     buyRobot("diaz");
     });
+
+    $("#mit-upgrade").on("click",function(){
+    upgradeRobot("mit");
+    });
+
+    $("#facu-upgrade").on("click",function(){
+    upgradeRobot("facu");
+    });
+
+    $("#locha-upgrade").on("click",function(){
+    upgradeRobot("locha");
+    });
+
+    $("#buga-upgrade").on("click",function(){
+    upgradeRobot("buga");
+    });
+
+    $("#tati-upgrade").on("click",function(){
+    upgradeRobot("tati");
+    });
+
+    $("#diaz-upgrade").on("click",function(){
+    upgradeRobot("diaz");
+    });
+
+
 });
 
