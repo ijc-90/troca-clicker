@@ -181,11 +181,57 @@ padding-bottom: 70px;
 	display: inline-block;
 	margin: 5px 2px;
 	cursor: pointer;
+	position: relative;
 }
 
 .click-upgrade img{
 	width: 46px;
 	height: 46px;
+}
+.click-upgrade:hover .click-upgrade-tooltip{
+	display: block;
+}
+.click-upgrade-tooltip{
+	position: absolute;
+	display: none;
+	z-index: 3;
+	background: #385f74;
+	min-height: 100px;
+	padding:10px;
+	width: 300px;
+	left: -305px;
+	top: -50%;
+}
+.click-upgrade-tooltip:before{
+	content: '';
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 7.5px 0 7.5px 10px;
+	border-color: transparent transparent transparent #385f74;
+	position: absolute;
+	top: calc(45% - 7px);
+	right: -10px;
+}
+.click-upgrade-tooltip-title{
+	display: block;
+	font-size: 18px;
+	color: #fff;
+}
+
+.click-upgrade-tooltip-value{
+	color: #ff8800;
+	display: block;
+	font-size: 18px;
+
+}
+.click-upgrade-tooltip-funtion span{
+	color: #ff8800;
+}
+.click-upgrade-tooltip-funtion{
+		display: block;
+	font-size: 18px;
+	color: #fff;
 }
 .click-robot{
 	margin: 8px 0 8px 2px;
@@ -279,6 +325,7 @@ padding-bottom: 70px;
 
 .click-robot-tooltip-value{
 	font-size: 20px;
+	color: #ff8800;
 
 }
 .click-robot-tooltip-description{
@@ -289,7 +336,9 @@ padding-bottom: 70px;
 	font-size: 16px;
 
 }
-
+.click-robot-tooltip-info span{
+	color: #ff8800;
+}
 .footer{
 	padding:10px;
 	background: #fff;
@@ -304,5 +353,5 @@ padding-bottom: 70px;
 }
 
 .footer span{
-	color: #ff8800;
+	color: #c;
 }
