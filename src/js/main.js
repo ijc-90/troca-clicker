@@ -38,6 +38,12 @@ var news = [
     "Troca Clickeeeeeeeeer eeeeeeeeeeeeeeeeeeeeeeeeee - Diego A. Maradona",
     "Gracias a Trocafone me compré un Galaxy Pocket Neo a dos mangos - Donald Trump en su discurso de asunción",
     "Yo no manejo el rating, yo manejo un Rolls-Royce y juego al Troca Clicker - Ricardo Fort",
+    "Zelucash intima a Trocafone por malentendido en búsquedas de Google. No paran de humillarse, qué pichonazos",
+    "Basta chicos - Ricky Fort, filósofo contemporáneo",
+    "Mamá cortaste toda la LOOZ, estaba jugando al troca clickers",
+    "Nos hacemos P#¢A, IM@¢#@¢L - El fresco",
+    "Declará tu independencia y tirate un par de clicks - Locha",
+    "Juego al trocaclickers las 24 horas del día, y de la noche también - Herminio Iglesias",
 ];
 
 function sellPhones(number){
