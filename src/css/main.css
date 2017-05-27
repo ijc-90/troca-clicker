@@ -355,6 +355,50 @@ padding-bottom: 70px;
 	display: block;
 }
 
+.click-popup{
+	position: absolute;
+	width: 300px;
+	min-height: 200px;
+	text-align: center;
+	padding:18px 15px 35px 15px;
+	background: #f23b3b;
+	top: 50%;
+	left: 37%;
+	color: #fff;
+	font-size: 20px;
+	cursor: pointer;
+	z-index: 444;
+	animation: biting .3s ease-in-out infinite alternate;
+    -webkit-animation: biting .3s ease-in-out infinite alternate;
+    vertical-align: middle;
+    display: table;
+}
+
+
+@keyframes biting {
+     0% {
+        transform: scale(1.0);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+.click-popup > span{
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+}
+.click-popup > span.click-succes, .click-popup > span.click-error{
+	display: none ;
+}
+.click-segundos{
+	display: table-cell;
+	width: 100%;
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+}
 .footer span{
 	color: #ff8800;
 }
