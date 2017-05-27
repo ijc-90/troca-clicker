@@ -60,7 +60,6 @@ function buyRobot(type){
         document.getElementById('money').innerHTML = money;
     }
     var nextCost = Math.floor(robot.baseCost * Math.pow(geometricScale,robot.quantity));
-    // document.getElementById(robot.type.concat("-cost")).innerHTML = nextCost;
 
     var costClass = ".";
     costClass = costClass.concat(robot.type).concat("-cost");
@@ -108,6 +107,8 @@ function upgradeRobot(type){
     var totalProductionClass = ".";
     totalProductionClass = totalProductionClass.concat(robot.type).concat("-total-production");
     $(totalProductionClass).html(robot.quantity * robot.production * cellphoneSellPrice);
+
+    document.getElementById(upgrade.type.concat("-upgrade-cost")).innerHTML = upgrade.cost;    
 
     document.getElementById("money").innerHTML = money;
 }
