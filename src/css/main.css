@@ -371,7 +371,6 @@ padding-bottom: 70px;
 	animation: biting .3s ease-in-out infinite alternate;
     -webkit-animation: biting .3s ease-in-out infinite alternate;
     vertical-align: middle;
-    display: table;
 }
 
 
@@ -385,12 +384,24 @@ padding-bottom: 70px;
 }
 
 .click-popup > span{
-	display: table-cell;
+	display: block;
 	vertical-align: middle;
 	width: 100%;
 }
-.click-popup > span.click-succes, .click-popup > span.click-error{
+.click-popup .click-info > span.click-succes, .click-popup .click-info > span.click-error{
 	display: none ;
+}
+
+.click-img{
+	width: 120px;
+	display: inline-block;
+	margin-right: 10px;
+	vertical-align: top;
+}
+.click-info{
+	display: inline-block;
+	width: calc(100% - 140px);
+	vertical-align: top;
 }
 .click-segundos{
 	display: table-cell;
