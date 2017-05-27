@@ -3,6 +3,7 @@ body{
 	padding: 0;
 	font-family: 'Chewy', cursive;
 	background: #404040;
+	background: url('../images/footer_lodyas.png');
 }
 html, body{
   height:100%;
@@ -41,9 +42,10 @@ font-family: 'Open Sans', sans-serif;
 	max-width: 1400px;
 	margin:0 auto;
 	width: 100%;
-	background: #404040;
+
+	background-repeat: repeat;
 	display: block;
-min-height: calc(100vh -40px);
+	min-height: calc(100vh -40px);
 	text-align: center;
 }
 .click-message{
@@ -111,6 +113,8 @@ min-height: calc(100vh - 200px);
 /*DISPLAY*/
 .click-display{
 	background: #808184;
+	background: url('../images/white_carbonfiber.png');
+}
 	padding-top: 10px;
 }
 .click-stock{
