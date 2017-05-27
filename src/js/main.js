@@ -212,8 +212,6 @@ function setOpacityForBuyables(){
     }
 
 
-
-
 $( document ).ready(function() {
     $("#mit-clickeable").on("click",function(){
     buyRobot("mit");
