@@ -1,15 +1,15 @@
 var money = 0;
-var cellphoneSellPrice = 10;
+var cellphoneSellPrice = 5;
 var productionPerSecond = 0;
-var geometricScale = 1.2;
+var geometricScale = 1.3;
 
 var robots = [
     {type: "mit", baseCost: 100, quantity: 0, production: 1},
-    {type: "facu", baseCost: 1500, quantity: 0, production: 12},
-    {type: "locha", baseCost: 20000, quantity: 0, production: 140},
-    {type: "buga", baseCost: 150000, quantity: 0, production: 900},
-    {type: "tati", baseCost: 250000, quantity: 0, production: 1250},
-    {type: "diaz", baseCost: 400000, quantity: 0, production: 1600},
+    {type: "facu", baseCost: 1500, quantity: 0, production: 6},
+    {type: "locha", baseCost: 20000, quantity: 0, production: 70},
+    {type: "buga", baseCost: 150000, quantity: 0, production: 450},
+    {type: "tati", baseCost: 250000, quantity: 0, production: 625},
+    {type: "diaz", baseCost: 400000, quantity: 0, production: 800},
 ];
 
 var upgrades = [
@@ -60,14 +60,21 @@ function buyRobot(type){
         document.getElementById('money').innerHTML = money;
     }
     var nextCost = Math.floor(robot.baseCost * Math.pow(geometricScale,robot.quantity));
-    document.getElementById(robot.type.concat("-cost")).innerHTML = nextCost;
+
+    var costClass = ".";
+    costClass = costClass.concat(robot.type).concat("-cost");
+    $(costClass).html(nextCost);
+
 }
 
 
 window.setInterval(function(){
     recalculateProduction();
     sellPhones(productionPerSecond);
+    setOpacityForBuyables();
 }, 1000);
+
+
 
 window.setInterval(function(){
     var item = news[Math.floor(Math.random()*news.length)];
@@ -104,10 +111,32 @@ function upgradeRobot(type){
     totalProductionClass = totalProductionClass.concat(robot.type).concat("-total-production");
     $(totalProductionClass).html(robot.quantity * robot.production * cellphoneSellPrice);
 
+    document.getElementById(upgrade.type.concat("-upgrade-cost")).innerHTML = upgrade.cost;    
+
     document.getElementById("money").innerHTML = money;
 }
 
 
+
+function setOpacityForBuyables(){
+    robots.forEach(function(robot){
+        var htmlID = robot.type.concat("-clickeable");
+        if (money >= robot.baseCost * Math.pow(geometricScale,robot.quantity)){
+            document.getElementById(htmlID).style.opacity = 1;    
+        }else{
+            document.getElementById(htmlID).style.opacity = 0.5;
+        }
+    });
+
+    upgrades.forEach(function(upgrade){
+        var htmlID = upgrade.type.concat("-upgrade");
+        if (money >= upgrade.cost){
+            document.getElementById(htmlID).style.opacity = 1;    
+        }else{
+            document.getElementById(htmlID).style.opacity = 0.5;
+        }
+    });
+}
 
 
 
