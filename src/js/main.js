@@ -2,6 +2,11 @@ var money = 0;
 var cellphoneSellPrice = 5;
 var productionPerSecond = 0;
 var geometricScale = 1.3;
+var canPopUp = false;
+var poppingUp = false;
+var popUpTotalTime = 5;
+var costoSueldos = 1000;
+var popUpTime;
 
 var robots = [
     {type: "mit", baseCost: 100, quantity: 0, production: 1},
@@ -49,29 +54,58 @@ function buyRobot(type){
     if(money >= cost){
         robot.quantity += 1;
         money = money - cost;
-        var quantityClass = ".";
-        quantityClass = quantityClass.concat(robot.type).concat("-quantity");
-        $(quantityClass).html(robot.quantity);
+        updateRobotQuantity(robot);
 
         var totalProductionClass = ".";
         totalProductionClass = totalProductionClass.concat(robot.type).concat("-total-production");
         $(totalProductionClass).html(robot.quantity * robot.production * cellphoneSellPrice);
 
+        canPopUp = true;
+
         document.getElementById('money').innerHTML = money;
     }
-    var nextCost = Math.floor(robot.baseCost * Math.pow(geometricScale,robot.quantity));
-
-    var costClass = ".";
-    costClass = costClass.concat(robot.type).concat("-cost");
-    $(costClass).html(nextCost);
+    updateRobotPrice(robot);
 
 }
 
 
 window.setInterval(function(){
+    //game loop
     recalculateProduction();
     sellPhones(productionPerSecond);
     setOpacityForBuyables();
+    
+    if(poppingUp){
+        popUpTime--;
+        document.getElementById('remainging-time').innerHTML = popUpTime;
+        if(popUpTime <= 0){
+            poppingUp = false;
+            $(".click-challenge").css("display","none");
+            $(".click-error").css("display","table-cell");
+            $(".click-succes").css("display","none");
+            looseOneRobot();
+            $(".click-error").on("click",function(){
+                $(".click-popup").css("display","none");
+            });
+
+        }
+        $(".click-popup").on("click",function(){
+                $(".click-challenge").css("display","none");
+                $(".click-succes").css("display","table-cell");
+                $(".click-error").css("display","none");
+                $(".click-popup").on("click",function(){
+                    $(".click-popup").css("display","none");
+                });
+                if(poppingUp){
+                    money -= Math.min(money, costoSueldos);
+                    poppingUp = false;
+                }
+                canPopUp = false;
+        });
+        $(".click-popup").css("display","table");
+    }else{
+        popUpTime = popUpTotalTime +1;
+    }
 }, 1000);
 
 
@@ -80,6 +114,19 @@ window.setInterval(function(){
     var item = news[Math.floor(Math.random()*news.length)];
     document.getElementById('news').innerHTML = item;
 }, 15000);
+
+
+window.setInterval(function(){
+    if(canPopUp && poppingUp == false){
+        $(".click-challenge").css("display","block");
+        $(".click-succes").css("display","none");
+        $(".click-error").css("display","none");
+        poppingUp = true;
+        canPopUp = false;
+
+    }
+    
+}, 40000);
 
 
 function recalculateProduction(){
@@ -137,6 +184,33 @@ function setOpacityForBuyables(){
         }
     });
 }
+
+    function looseOneRobot(){
+         var robot = robots.find(function(robot){
+            return robot.quantity > 0;
+        });
+
+        robot.quantity -= 1;
+
+        updateRobotPrice(robot);
+        updateRobotQuantity(robot);
+
+    }
+
+    function updateRobotPrice(robot){
+        var cost = Math.floor(robot.baseCost * Math.pow(geometricScale,robot.quantity));
+
+        var costClass = ".";
+        costClass = costClass.concat(robot.type).concat("-cost");
+        $(costClass).html(cost);
+    }
+
+    function updateRobotQuantity(robot){
+        var quantityClass = ".";
+        quantityClass = quantityClass.concat(robot.type).concat("-quantity");
+        $(quantityClass).html(robot.quantity);
+    }
+
 
 
 
