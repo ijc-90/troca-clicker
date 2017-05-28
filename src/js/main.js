@@ -132,7 +132,7 @@ window.setInterval(function(){
 
     }
     
-}, 40000);
+}, 60000);
 
 
 function recalculateProduction(){
