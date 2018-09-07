@@ -119,17 +119,11 @@
             </div>
 
         </div>
-        <div class="col-sm-8 col-xs-12">
-            <div class="click-store col-sm-4 col-xs-12" style="width: 33%;">
+        <div class="col-sm-8 col-xs-12 no-padding">
+            <div class="click-store col-sm-4 col-xs-12">
 
 					<span class="click-store-title">Comprar</span>
 					<div class="col-sm-12 col-xs-12">
-						<!--span class="click-stock">Stock: <span>&infin;</span></span-->
-						<!--span class="click-money">$<span id="money">0</span></span-->
-						<!--span class="click-production"><span>Ventas por segundo:</span>$<span id="production">0</span></span-->
-						<!--div class="click-phone">
-							<a onClick="sellPhones(1)"><img src="images/phone-black.png"></a>
-						</div-->
 					</div>
 
 					<div class="click-upgrades-container clearfix">
@@ -165,34 +159,18 @@
 								<span class="click-upgrade-tooltip-funtion">Mejora <span>20</span> veces la productividad de todos tus Bugas</span>							
 							</div>
 						</a>
-						<!--a class="click-upgrade" id="tati-upgrade">
-							<img src="images/tati-icon.jpg">
-							<div class="click-upgrade-tooltip">
-								<span class="click-upgrade-tooltip-title">Altos banners de Tati</span>
-								<span class="click-upgrade-tooltip-value">$<span id="tati-upgrade-cost">15,625,000</span></span>
-								<span class="click-upgrade-tooltip-funtion">Mejora <span>25</span> veces la productividad de todos tus Tatis</span>
-							</div>
-						</a>
-						<a class="click-upgrade" id="diaz-upgrade">
-							<img src="images/nico-icon.jpg">
-							<div class="click-upgrade-tooltip">
-								<span class="click-upgrade-tooltip-title">Nesquick con morcilla para Nico Díaz</span>
-								<span class="click-upgrade-tooltip-value">$<span id="diaz-upgrade-cost">30,000,000</span></span>
-								<span class="click-upgrade-tooltip-funtion">Mejora <span>30</span> veces la productividad de todos tus Lobos</span>
-							</div>
-						</a-->
 					</div>
 
 
 					<div class="click-robots-container clearfix">
 						<div class="row-robot">
 							<div class="click-robot-container col-sm-9 no-padding inline-block">
-								<div class="click-robot" id="mit-clickeable" >
+								<div class="click-robot" id="buyer_one" >
 									<div class="click-robot-img">
 										<img src="images/mit.jpg">
 									</div>
 									<div class="click-robot-text">
-										<span class="click-robot-name">Comprador</span>
+										<span class="click-robot-name">Comprador 1</span>
 										<span class="click-robot-value">$<span class = "mit-cost">100</span></span>
 									</div>
 									<div class="click-robot-bought">
@@ -224,14 +202,53 @@
 							</div>
 
 						</div>
-						<!--div>
+						<div class="row-robot">
 							<div class="click-robot-container col-sm-9 no-padding inline-block">
-								<div class="click-robot" id="mit-clickeable" >
+								<div class="click-robot" id="buyer_two" >
 									<div class="click-robot-img">
 										<img src="images/mit.jpg">
 									</div>
 									<div class="click-robot-text">
-										<span class="click-robot-name">Comprador</span>
+										<span class="click-robot-name">Comprador 2</span>
+										<span class="click-robot-value">$<span class = "mit-cost">100</span></span>
+									</div>
+									<div class="click-robot-bought">
+										<span class= "mit-quantity">0</span>
+									</div>
+
+									<div class="click-robot-tooltip">
+										<div class="click-robot-tooltip-img">
+											<img src="images/mit120.jpg">
+										</div>
+										<div class="click-robot-tooltip-text">
+											<span class="click-robot-tooltip-title">Comprar un Nico MIT</span>
+											<span class="click-robot-tooltip-value">$<span class = "mit-cost" >100</span></span>
+											<span class="click-robot-tooltip-description">Se puteará con emblue de vez en cuando pero los mails van a salir en tiempo y forma. Casi siempre. CASI siempre.									</span>
+											<span class="click-robot-tooltip-info">Tenes <span class="mit-quantity">0</span> MITs vendiendo <span>$</span><span class="mit-total-production">0</span> en telefonos por segundo</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="upgrade-robot-container no-padding inline-block">
+								<a class="click-upgrade" id="locha-upgrade">
+									<img src="images/locha-icon.jpg">
+									<div class="click-upgrade-tooltip">
+										<span class="click-upgrade-tooltip-title">Birrita de Locha en lo de Zuckerberg</span>
+										<span class="click-upgrade-tooltip-value">$<span id="locha-upgrade-cost">750,000</span></span>
+										<span class="click-upgrade-tooltip-funtion">Mejora <span>15</span> veces la productividad de todos tus Lochas</span>
+									</div>
+								</a>
+							</div>
+
+						</div>
+						<div class="row-robot">
+							<div class="click-robot-container col-sm-9 no-padding inline-block">
+								<div class="click-robot" id="buyer_three" >
+									<div class="click-robot-img">
+										<img src="images/mit.jpg">
+									</div>
+									<div class="click-robot-text">
+										<span class="click-robot-name">Comprador 3</span>
 										<span class="click-robot-value">$<span class = "mit-cost">100</span></span>
 									</div>
 									<div class="click-robot-bought">
@@ -264,148 +281,353 @@
 
 						</div>
 
-                    <div class="click-robot" id="facu-clickeable">
-                        <div class="click-robot-img">
-                            <img src="images/facu.jpg">
-                        </div>
-                        <div class="click-robot-text">
-                            <span class="click-robot-name">Comprar un Facu</span>
-                            <span class="click-robot-value">$<span class="facu-cost">1500</span></span>
-                        </div>
-                        <div class="click-robot-bought">
-                            <span class="facu-quantity">0</span>
-                        </div>
-
-                        <div class="click-robot-tooltip">
-                            <div class="click-robot-tooltip-img">
-                                <img src="images/facu120.jpg">
-                            </div>
-                            <div class="click-robot-tooltip-text">
-                                <span class="click-robot-tooltip-title">Comprar un Facu</span>
-                                <span class="click-robot-tooltip-value">$<span class="facu-cost">1,500</span></span>
-                                <span class="click-robot-tooltip-description">Dejó una quinta llena de amigos y alcohol para asistir a esta Hackaton. Un laburante comprometido, infaltable en tu staff.									</span>
-                                <span class="click-robot-tooltip-info">Tenes <span class="facu-quantity">0</span> facus vendiendo <span>$</span><span
-                                        class="facu-total-production">0</span> en telefonos por segundo</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <div class="click-robot" id="locha-clickeable">
-                        <div class="click-robot-img">
-                            <img src="images/locha.jpg">
-                        </div>
-                        <div class="click-robot-text">
-                            <span class="click-robot-name">Comprar un Locha</span>
-                            <span class="click-robot-value">$<span class="locha-cost">20000</span></span>
-                        </div>
-                        <div class="click-robot-bought">
-                            <span class="locha-quantity">0</span>
-                        </div>
-                        <div class="click-robot-tooltip">
-                            <div class="click-robot-tooltip-img">
-                                <img src="images/locha120.jpg">
-                            </div>
-                            <div class="click-robot-tooltip-text">
-                                <span class="click-robot-tooltip-title">Comprar un Locha</span>
-                                <span class="click-robot-tooltip-value">$<span class="locha-cost">20,000</span></span>
-                                <span class="click-robot-tooltip-description">Humo x 1000. Equivale a 14 Carusos Lombardis, pero de la mano de Trello te explota la productividad.									</span>
-                                <span class="click-robot-tooltip-info">Tenes <span class="locha-quantity">0</span> lochas vendiendo <span>$</span><span
-                                        class="locha-total-production">0</span> en telefonos por segundo</span>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="click-robot" id="buga-clickeable">
-                        <div class="click-robot-img">
-                            <img src="images/buga.jpg">
-                        </div>
-                        <div class="click-robot-text">
-                            <span class="click-robot-name">Comprar un Buga</span>
-                            <span class="click-robot-value">$<span class="buga-cost">150000</span></span>
-                        </div>
-                        <div class="click-robot-bought">
-                            <span class="buga-quantity">0</span>
-                        </div>
-                        <div class="click-robot-tooltip">
-                            <div class="click-robot-tooltip-img">
-                                <img src="images/buga120.jpg">
-                            </div>
-                            <div class="click-robot-tooltip-text">
-                                <span class="click-robot-tooltip-title">Comprar un Buga</span>
-                                <span class="click-robot-tooltip-value">$<span class="buga-cost">150,000</span></span>
-                                <span class="click-robot-tooltip-description">Wikipedia en carne y hueso. Compralo, carajo.									</span>
-                                <span class="click-robot-tooltip-info">Tenes <span class="buga-quantity">0</span> buGatos vendiendo <span>$</span><span
-                                        class="buga-total-production">0</span> en telefonos por segundo</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="click-robot" id="tati-clickeable">
-                        <div class="click-robot-img">
-                            <img src="images/tati.jpg">
-                        </div>
-                        <div class="click-robot-text">
-                            <span class="click-robot-name">Comprar un Tati</span>
-                            <span class="click-robot-value">$<span class="tati-cost">250000</span></span>
-                        </div>
-                        <div class="click-robot-bought">
-                            <span class="tati-quantity">0</span>
-                        </div>
-                        <div class="click-robot-tooltip">
-                            <div class="click-robot-tooltip-img">
-                                <img src="images/tati120.jpg">
-                            </div>
-                            <div class="click-robot-tooltip-text">
-                                <span class="click-robot-tooltip-title">Comprar un Tati</span>
-                                <span class="click-robot-tooltip-value">$<span class="tati-cost">250,000</span></span>
-                                <span class="click-robot-tooltip-description">Es de Hur@c4n pero te diseña los mejores banners del condado.									</span>
-                                <span class="click-robot-tooltip-info">Tenes <span class="tati-quantity">0</span> Tatianezcas vendiendo <span>$</span><span
-                                        class="tati-total-production">0</span> en telefonos por segundo</span>
-                            </div>
-                        </div>
-                    </div>
-
-						<div class="click-robot" id ="diaz-clickeable">
-							<div class="click-robot-img">
-								<img src="images/nicod.jpg">
-							</div>
-							<div class="click-robot-text">
-								<span class="click-robot-name">Comprar un Lobo Díaz</span>
-								<span class="click-robot-value">$<span class = "diaz-cost">400000</span></span>
-							</div>
-							<div class="click-robot-bought">
-								<span class = "diaz-quantity">0</span>
-							</div>
-							<div class="click-robot-tooltip">
-								<div class="click-robot-tooltip-img">
-									<img src="images/nico120.jpg">
-								</div>
-								<div class="click-robot-tooltip-text">
-									<span class="click-robot-tooltip-title">Comprar un Lobo Díaz</span>
-									<span class="click-robot-tooltip-value">$<span class = "diaz-cost" >400000</span></span>
-									<span class="click-robot-tooltip-description">Se comió 14 empanadas, ¡¿Cómo no lo vas a comprar?!									</span>
-									<span class="click-robot-tooltip-info">Tenes <span class="diaz-quantity">0</span> Lobos vendiendo <span>$</span><span class="diaz-total-production">0</span> en telefonos por segundo</span>
-								</div>
-							</div>
-						</div-->
-
 					</div>
 
-					<!--span class="click-store-title">Comprar!</span-->
 					<div class="click-phone">
-						<a onClick="sellPhones(1)"><img src="images/flow-images-01.png"></a>
+						<a onClick="buyPhones(1)"><img src="images/flow-images-01.png"></a>
 					</div>
 
 				</div>
-				<div class="click-store col-sm-4 col-xs-12" style="color: white; display: inline-block; width: 33%;">
+
+            <div class="click-store col-sm-4 col-xs-12">
+
 					<span class="click-store-title">Reparar</span>
+					<div class="col-sm-12 col-xs-12">
+					</div>
+
+					<div class="click-upgrades-container clearfix">
+						<a class="click-upgrade" id="mit-upgrade">
+							<img src="images/mit-icon.jpg">
+							<div class="click-upgrade-tooltip">
+								<span class="click-upgrade-tooltip-title">Pizza de Güerrín para generar mejores newsletters</span>
+								<span class="click-upgrade-tooltip-value">$<span id="mit-upgrade-cost">1,250</span></span>
+								<span class="click-upgrade-tooltip-funtion">Mejora <span>5</span> veces la productividad de todos tus Nico Mits</span>							
+							</div>
+						</a>
+						<a class="click-upgrade" id="facu-upgrade">
+							<img src="images/facu-icon.jpg">
+							<div class="click-upgrade-tooltip">
+								<span class="click-upgrade-tooltip-title">Facu no va a la UMF y se pone a crear ads</span>
+								<span class="click-upgrade-tooltip-value">$<span id="facu-upgrade-cost">37,500</span></span>
+								<span class="click-upgrade-tooltip-funtion">Mejora <span>10</span> veces la productividad de todos tus Facus</span>							
+							</div>
+						</a>
+						<a class="click-upgrade" id="locha-upgrade">
+							<img src="images/locha-icon.jpg">
+							<div class="click-upgrade-tooltip">
+								<span class="click-upgrade-tooltip-title">Birrita de Locha en lo de Zuckerberg</span>
+								<span class="click-upgrade-tooltip-value">$<span id="locha-upgrade-cost">750,000</span></span>
+								<span class="click-upgrade-tooltip-funtion">Mejora <span>15</span> veces la productividad de todos tus Lochas</span>							
+							</div>
+						</a>
+						<a class="click-upgrade" id="buga-upgrade">
+							<img src="images/buga-icon.jpg">
+							<div class="click-upgrade-tooltip">
+								<span class="click-upgrade-tooltip-title">Buga negocia tremendas comisiones</span>
+								<span class="click-upgrade-tooltip-value">$<span id="buga-upgrade-cost">7,500,000</span></span>
+								<span class="click-upgrade-tooltip-funtion">Mejora <span>20</span> veces la productividad de todos tus Bugas</span>							
+							</div>
+						</a>
+					</div>
+
+
+					<div class="click-robots-container clearfix">
+						<div class="row-robot">
+							<div class="click-robot-container col-sm-9 no-padding inline-block">
+								<div class="click-robot" id="repairer_one" >
+									<div class="click-robot-img">
+										<img src="images/mit.jpg">
+									</div>
+									<div class="click-robot-text">
+										<span class="click-robot-name">Reparador 1</span>
+										<span class="click-robot-value">$<span class = "mit-cost">100</span></span>
+									</div>
+									<div class="click-robot-bought">
+										<span class= "mit-quantity">0</span>
+									</div>
+
+									<div class="click-robot-tooltip">
+										<div class="click-robot-tooltip-img">
+											<img src="images/mit120.jpg">
+										</div>
+										<div class="click-robot-tooltip-text">
+											<span class="click-robot-tooltip-title">Comprar un Nico MIT</span>
+											<span class="click-robot-tooltip-value">$<span class = "mit-cost" >100</span></span>
+											<span class="click-robot-tooltip-description">Se puteará con emblue de vez en cuando pero los mails van a salir en tiempo y forma. Casi siempre. CASI siempre.									</span>
+											<span class="click-robot-tooltip-info">Tenes <span class="mit-quantity">0</span> MITs vendiendo <span>$</span><span class="mit-total-production">0</span> en telefonos por segundo</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="upgrade-robot-container no-padding inline-block">
+								<a class="click-upgrade" id="locha-upgrade">
+									<img src="images/locha-icon.jpg">
+									<div class="click-upgrade-tooltip">
+										<span class="click-upgrade-tooltip-title">Birrita de Locha en lo de Zuckerberg</span>
+										<span class="click-upgrade-tooltip-value">$<span id="locha-upgrade-cost">750,000</span></span>
+										<span class="click-upgrade-tooltip-funtion">Mejora <span>15</span> veces la productividad de todos tus Lochas</span>
+									</div>
+								</a>
+							</div>
+
+						</div>
+						<div class="row-robot">
+							<div class="click-robot-container col-sm-9 no-padding inline-block">
+								<div class="click-robot" id="repairer_two" >
+									<div class="click-robot-img">
+										<img src="images/mit.jpg">
+									</div>
+									<div class="click-robot-text">
+										<span class="click-robot-name">Reparador 2</span>
+										<span class="click-robot-value">$<span class = "mit-cost">100</span></span>
+									</div>
+									<div class="click-robot-bought">
+										<span class= "mit-quantity">0</span>
+									</div>
+
+									<div class="click-robot-tooltip">
+										<div class="click-robot-tooltip-img">
+											<img src="images/mit120.jpg">
+										</div>
+										<div class="click-robot-tooltip-text">
+											<span class="click-robot-tooltip-title">Comprar un Nico MIT</span>
+											<span class="click-robot-tooltip-value">$<span class = "mit-cost" >100</span></span>
+											<span class="click-robot-tooltip-description">Se puteará con emblue de vez en cuando pero los mails van a salir en tiempo y forma. Casi siempre. CASI siempre.									</span>
+											<span class="click-robot-tooltip-info">Tenes <span class="mit-quantity">0</span> MITs vendiendo <span>$</span><span class="mit-total-production">0</span> en telefonos por segundo</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="upgrade-robot-container no-padding inline-block">
+								<a class="click-upgrade" id="locha-upgrade">
+									<img src="images/locha-icon.jpg">
+									<div class="click-upgrade-tooltip">
+										<span class="click-upgrade-tooltip-title">Birrita de Locha en lo de Zuckerberg</span>
+										<span class="click-upgrade-tooltip-value">$<span id="locha-upgrade-cost">750,000</span></span>
+										<span class="click-upgrade-tooltip-funtion">Mejora <span>15</span> veces la productividad de todos tus Lochas</span>
+									</div>
+								</a>
+							</div>
+
+						</div>
+						<div class="row-robot">
+							<div class="click-robot-container col-sm-9 no-padding inline-block">
+								<div class="click-robot" id="repairer_three" >
+									<div class="click-robot-img">
+										<img src="images/mit.jpg">
+									</div>
+									<div class="click-robot-text">
+										<span class="click-robot-name">Reparador 3</span>
+										<span class="click-robot-value">$<span class = "mit-cost">100</span></span>
+									</div>
+									<div class="click-robot-bought">
+										<span class= "mit-quantity">0</span>
+									</div>
+
+									<div class="click-robot-tooltip">
+										<div class="click-robot-tooltip-img">
+											<img src="images/mit120.jpg">
+										</div>
+										<div class="click-robot-tooltip-text">
+											<span class="click-robot-tooltip-title">Comprar un Nico MIT</span>
+											<span class="click-robot-tooltip-value">$<span class = "mit-cost" >100</span></span>
+											<span class="click-robot-tooltip-description">Se puteará con emblue de vez en cuando pero los mails van a salir en tiempo y forma. Casi siempre. CASI siempre.									</span>
+											<span class="click-robot-tooltip-info">Tenes <span class="mit-quantity">0</span> MITs vendiendo <span>$</span><span class="mit-total-production">0</span> en telefonos por segundo</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="upgrade-robot-container no-padding inline-block">
+								<a class="click-upgrade" id="locha-upgrade">
+									<img src="images/locha-icon.jpg">
+									<div class="click-upgrade-tooltip">
+										<span class="click-upgrade-tooltip-title">Birrita de Locha en lo de Zuckerberg</span>
+										<span class="click-upgrade-tooltip-value">$<span id="locha-upgrade-cost">750,000</span></span>
+										<span class="click-upgrade-tooltip-funtion">Mejora <span>15</span> veces la productividad de todos tus Lochas</span>
+									</div>
+								</a>
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="click-phone">
+						<a onClick="fixPhones(1)"><img src="images/flow-images-02.png"></a>
+					</div>
+
 				</div>
-				<div class="click-store col-sm-4 col-xs-12" style="color: white; display: inline-block; width: 33%;">
+				
+
+            <div class="click-store col-sm-4 col-xs-12">
+
 					<span class="click-store-title">Vender</span>
+					<div class="col-sm-12 col-xs-12">
+					</div>
+
+					<div class="click-upgrades-container clearfix">
+						<a class="click-upgrade" id="mit-upgrade">
+							<img src="images/mit-icon.jpg">
+							<div class="click-upgrade-tooltip">
+								<span class="click-upgrade-tooltip-title">Pizza de Güerrín para generar mejores newsletters</span>
+								<span class="click-upgrade-tooltip-value">$<span id="mit-upgrade-cost">1,250</span></span>
+								<span class="click-upgrade-tooltip-funtion">Mejora <span>5</span> veces la productividad de todos tus Nico Mits</span>							
+							</div>
+						</a>
+						<a class="click-upgrade" id="facu-upgrade">
+							<img src="images/facu-icon.jpg">
+							<div class="click-upgrade-tooltip">
+								<span class="click-upgrade-tooltip-title">Facu no va a la UMF y se pone a crear ads</span>
+								<span class="click-upgrade-tooltip-value">$<span id="facu-upgrade-cost">37,500</span></span>
+								<span class="click-upgrade-tooltip-funtion">Mejora <span>10</span> veces la productividad de todos tus Facus</span>							
+							</div>
+						</a>
+						<a class="click-upgrade" id="locha-upgrade">
+							<img src="images/locha-icon.jpg">
+							<div class="click-upgrade-tooltip">
+								<span class="click-upgrade-tooltip-title">Birrita de Locha en lo de Zuckerberg</span>
+								<span class="click-upgrade-tooltip-value">$<span id="locha-upgrade-cost">750,000</span></span>
+								<span class="click-upgrade-tooltip-funtion">Mejora <span>15</span> veces la productividad de todos tus Lochas</span>							
+							</div>
+						</a>
+						<a class="click-upgrade" id="buga-upgrade">
+							<img src="images/buga-icon.jpg">
+							<div class="click-upgrade-tooltip">
+								<span class="click-upgrade-tooltip-title">Buga negocia tremendas comisiones</span>
+								<span class="click-upgrade-tooltip-value">$<span id="buga-upgrade-cost">7,500,000</span></span>
+								<span class="click-upgrade-tooltip-funtion">Mejora <span>20</span> veces la productividad de todos tus Bugas</span>							
+							</div>
+						</a>
+					</div>
+
+
+					<div class="click-robots-container clearfix">
+						<div class="row-robot">
+							<div class="click-robot-container col-sm-9 no-padding inline-block">
+								<div class="click-robot" id="seller_one" >
+									<div class="click-robot-img">
+										<img src="images/mit.jpg">
+									</div>
+									<div class="click-robot-text">
+										<span class="click-robot-name">Vendedor 1</span>
+										<span class="click-robot-value">$<span class = "mit-cost">100</span></span>
+									</div>
+									<div class="click-robot-bought">
+										<span class= "mit-quantity">0</span>
+									</div>
+
+									<div class="click-robot-tooltip">
+										<div class="click-robot-tooltip-img">
+											<img src="images/mit120.jpg">
+										</div>
+										<div class="click-robot-tooltip-text">
+											<span class="click-robot-tooltip-title">Comprar un Nico MIT</span>
+											<span class="click-robot-tooltip-value">$<span class = "mit-cost" >100</span></span>
+											<span class="click-robot-tooltip-description">Se puteará con emblue de vez en cuando pero los mails van a salir en tiempo y forma. Casi siempre. CASI siempre.									</span>
+											<span class="click-robot-tooltip-info">Tenes <span class="mit-quantity">0</span> MITs vendiendo <span>$</span><span class="mit-total-production">0</span> en telefonos por segundo</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="upgrade-robot-container no-padding inline-block">
+								<a class="click-upgrade" id="locha-upgrade">
+									<img src="images/locha-icon.jpg">
+									<div class="click-upgrade-tooltip">
+										<span class="click-upgrade-tooltip-title">Birrita de Locha en lo de Zuckerberg</span>
+										<span class="click-upgrade-tooltip-value">$<span id="locha-upgrade-cost">750,000</span></span>
+										<span class="click-upgrade-tooltip-funtion">Mejora <span>15</span> veces la productividad de todos tus Lochas</span>
+									</div>
+								</a>
+							</div>
+
+						</div>
+						<div class="row-robot">
+							<div class="click-robot-container col-sm-9 no-padding inline-block">
+								<div class="click-robot" id="seller_two" >
+									<div class="click-robot-img">
+										<img src="images/mit.jpg">
+									</div>
+									<div class="click-robot-text">
+										<span class="click-robot-name">Vendedor 2</span>
+										<span class="click-robot-value">$<span class = "mit-cost">100</span></span>
+									</div>
+									<div class="click-robot-bought">
+										<span class= "mit-quantity">0</span>
+									</div>
+
+									<div class="click-robot-tooltip">
+										<div class="click-robot-tooltip-img">
+											<img src="images/mit120.jpg">
+										</div>
+										<div class="click-robot-tooltip-text">
+											<span class="click-robot-tooltip-title">Comprar un Nico MIT</span>
+											<span class="click-robot-tooltip-value">$<span class = "mit-cost" >100</span></span>
+											<span class="click-robot-tooltip-description">Se puteará con emblue de vez en cuando pero los mails van a salir en tiempo y forma. Casi siempre. CASI siempre.									</span>
+											<span class="click-robot-tooltip-info">Tenes <span class="mit-quantity">0</span> MITs vendiendo <span>$</span><span class="mit-total-production">0</span> en telefonos por segundo</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="upgrade-robot-container no-padding inline-block">
+								<a class="click-upgrade" id="locha-upgrade">
+									<img src="images/locha-icon.jpg">
+									<div class="click-upgrade-tooltip">
+										<span class="click-upgrade-tooltip-title">Birrita de Locha en lo de Zuckerberg</span>
+										<span class="click-upgrade-tooltip-value">$<span id="locha-upgrade-cost">750,000</span></span>
+										<span class="click-upgrade-tooltip-funtion">Mejora <span>15</span> veces la productividad de todos tus Lochas</span>
+									</div>
+								</a>
+							</div>
+
+						</div>
+						<div class="row-robot">
+							<div class="click-robot-container col-sm-9 no-padding inline-block">
+								<div class="click-robot" id="seller_three" >
+									<div class="click-robot-img">
+										<img src="images/mit.jpg">
+									</div>
+									<div class="click-robot-text">
+										<span class="click-robot-name">Vendedor 3</span>
+										<span class="click-robot-value">$<span class = "mit-cost">100</span></span>
+									</div>
+									<div class="click-robot-bought">
+										<span class= "mit-quantity">0</span>
+									</div>
+
+									<div class="click-robot-tooltip">
+										<div class="click-robot-tooltip-img">
+											<img src="images/mit120.jpg">
+										</div>
+										<div class="click-robot-tooltip-text">
+											<span class="click-robot-tooltip-title">Comprar un Nico MIT</span>
+											<span class="click-robot-tooltip-value">$<span class = "mit-cost" >100</span></span>
+											<span class="click-robot-tooltip-description">Se puteará con emblue de vez en cuando pero los mails van a salir en tiempo y forma. Casi siempre. CASI siempre.									</span>
+											<span class="click-robot-tooltip-info">Tenes <span class="mit-quantity">0</span> MITs vendiendo <span>$</span><span class="mit-total-production">0</span> en telefonos por segundo</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="upgrade-robot-container no-padding inline-block">
+								<a class="click-upgrade" id="locha-upgrade">
+									<img src="images/locha-icon.jpg">
+									<div class="click-upgrade-tooltip">
+										<span class="click-upgrade-tooltip-title">Birrita de Locha en lo de Zuckerberg</span>
+										<span class="click-upgrade-tooltip-value">$<span id="locha-upgrade-cost">750,000</span></span>
+										<span class="click-upgrade-tooltip-funtion">Mejora <span>15</span> veces la productividad de todos tus Lochas</span>
+									</div>
+								</a>
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="click-phone">
+						<a onClick="sellPhones(1)"><img src="images/flow-images-03.png"></a>
+					</div>
+
 				</div>
+				
 			</div>
 		</div>
 		<!--//SELL-->

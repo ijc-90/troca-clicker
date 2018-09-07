@@ -103,7 +103,7 @@ min-height: calc(100vh - 200px);
 }
 
 .click-display, .click-store{
-	width: calc(50% - 4px);
+	width: 33%;
 	display: inline-block;
 
 	vertical-align: top;
@@ -158,13 +158,16 @@ transform: scale(1.05);
 .click-phone a{
 	cursor: pointer;
     display: block;
-    border: 1px solid gray;
-    border-radius: 35px;
+    border-radius: 30px;
     padding: 20px;
-    width: 200px;
+    width: 120px;
     margin: auto;
+    margin-top: 20px;
     background-image: linear-gradient(to bottom right,orange,#ffcd70);
-    box-shadow: grey 1px 1px;
+    box-shadow: grey 2px 1px;
+}
+.click-phone a img{
+	width: 75px;
 }
 /*STORE*/
 .click-store{
@@ -182,7 +185,7 @@ padding-bottom: 70px;
 
 .click-upgrades-container, .click-robots-container{
 	width: 100%;
-	display: block;
+	display: inline;
 	text-align: left;
 	margin-bottom: 5px;
 }
@@ -190,8 +193,8 @@ padding-bottom: 70px;
 .click-upgrade{
 	padding: 12px;
 	background: #fff;
-	width: 64px;
-	height: 64px;
+	width: 59px;
+	height: 59px;
 	display: inline-block;
 	cursor: pointer;
 	position: relative;
@@ -199,8 +202,8 @@ padding-bottom: 70px;
 }
 
 .click-upgrade img{
-	width: 40px;
-	height: 40px;
+	width: 35px;
+	height: 35px;
 }
 .click-upgrade:hover .click-upgrade-tooltip{
 	display: block;
@@ -278,8 +281,8 @@ padding-bottom: 70px;
 	padding: 0;
 }
 .click-robot-img img{
-	width: 64px;
-	height: 64px;
+    width: 56px;
+    height: 59px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
@@ -288,24 +291,25 @@ padding-bottom: 70px;
 	display: inline-block;
 	vertical-align: middle;
 	padding: 0;
+    padding-left: 5px;
 	width: 80px;
 	color: #ff8800;
 }
 
 .click-robot-name{
-	font-size: 16px;
+	font-size: 14px;
 	font-family: 'Chewy', cursive;
 }
 .click-robot-value{
 	display: block;
-	font-size: 14px;
+	font-size: 12px;
 	font-family: 'Chewy', cursive;
 }
 .click-robot-bought{
 	display: inline-block;
 	vertical-align: middle;
-	text-align: right;
-	font-size: 24px;
+	text-align: center;
+	font-size: 22px;
 	width: 40px;
     border-left: 1px solid lightgray;
 	font-family: 'Chewy', cursive;
