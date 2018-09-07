@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Troca Clicker</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/events.js"></script>
+	<script type="text/javascript" src="js/view_integrator.js"></script>
+	<script type="text/javascript" src="js/flow.js"></script>
+	<script type="text/javascript" src="js/hiring_flow.js"></script>
+	<script type="text/javascript" src="js/event.js"></script>
+	<script type="text/javascript" src="js/buy_flow.js"></script>
+	<script type="text/javascript" src="js/repair_flow.js"></script>
+	<script type="text/javascript" src="js/sale_flow.js"></script>
+	<script type="text/javascript" src="js/salary_flow.js"></script>
+	<script type="text/javascript" src="js/upgrade_flow.js"></script>
+	<script type="text/javascript" src="js/game_loop.js"></script>
+
+	<script type="text/javascript">
+		var gameLoop = new GameLoop();
+
+		window.setInterval(function(){
+		   gameLoop.run(); 
+		}, 1000);
+
+		$(document).ready(function(){
+			$("#buy_clicker").click(function(e){
+				e.preventDefault();
+				gameLoop.buyClick();
+			});
+
+			$("#repair_clicker").click(function(e){
+				e.preventDefault();
+				gameLoop.repairClick();
+			});
+
+			$("#sale_clicker").click(function(e){
+				e.preventDefault();
+				gameLoop.saleClick();
+
+			});
+
+			$("#hire_clicker_buyer_1").click(function(e){
+				e.preventDefault();
+				gameLoop.hiringClick('buyer_one');
+			});
+
+			$("#upgrade_clicker_buyer_1").click(function(e){
+				e.preventDefault();
+				gameLoop.upgradeClick('upgrade_buyer_one');
+			});
+
+			$("#hire_clicker_repair_1").click(function(e){
+				e.preventDefault();
+				gameLoop.hiringClick('repairer_one');
+			});
+
+			$("#upgrade_clicker_repair_1").click(function(e){
+				e.preventDefault();
+				gameLoop.upgradeClick('upgrade_repairer_one');
+			});
+
+			$("#hire_clicker_seller_1").click(function(e){
+				e.preventDefault();
+				gameLoop.hiringClick('seller_one');
+			});
+
+			$("#upgrade_clicker_seller_1").click(function(e){
+				e.preventDefault();
+				gameLoop.upgradeClick('upgrade_seller_one');
+			});
+		});
+	</script>
+
+</head>
+<body>
+	<a href="#" id="buy_clicker" style="display: inline-block; width: 200px; height: 50px; background: white; margin: 50px 100px;">COMPRAR</a>
+
+	<a href="#" id="repair_clicker" style="display: inline-block; width: 200px; height: 50px; background: white; margin: 50px 100px;">REPARAR</a>
+
+	<a href="#" id="sale_clicker" style="display: inline-block; width: 200px; height: 50px; background: white; margin: 50px 100px;">VENDER</a>
+
+	<a href="#" id="hire_clicker_buyer_1" style="display: inline-block; width: 200px; height: 50px; background: white; margin: 50px 100px;">HIRE BUYER 1</a>
+
+	<a href="#" id="upgrade_clicker_buyer_1" style="display: inline-block; width: 200px; height: 50px; background: white; margin: 50px 100px;">UPGRADE BUYER 1</a>
+
+	<a href="#" id="hire_clicker_repair_1" style="display: inline-block; width: 200px; height: 50px; background: white; margin: 50px 100px;">HIRE REPAIR 1</a>
+
+	<a href="#" id="upgrade_clicker_repair_1" style="display: inline-block; width: 200px; height: 50px; background: white; margin: 50px 100px;">UPGRADE REPAIR 1</a>
+	
+	<a href="#" id="hire_clicker_seller_1" style="display: inline-block; width: 200px; height: 50px; background: white; margin: 50px 100px;">HIRE SELLER 1</a>
+
+	<a href="#" id="upgrade_clicker_seller_1" style="display: inline-block; width: 200px; height: 50px; background: white; margin: 50px 100px;">UPGRADE SELLER 1</a>
+</body>
+</html>
