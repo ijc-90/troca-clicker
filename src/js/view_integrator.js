@@ -21,10 +21,10 @@ class ViewIntegrator {
         var saleRobots = robots.filter(function(robot){
             return robot.type == "sale";
         });
+        
         var saleRobotsProductivity = saleRobots.reduce(function(carry, robot){
             return (robot.production * robot.quantity) + carry;
         }, 0);
-
 
         var totalSalaries = robots.reduce(function(carry, robot) {
             var totalForRobotKind = robot.quantity * robot.salary;
@@ -48,6 +48,7 @@ class ViewIntegrator {
           "js-amount-phones-sold": newContext.amountOfPhonesSoldThisCicle, // cantidad de vendidos
           "js-amount-phones-awaiting-sale": newContext.stockToSale, //stock de venta
           "js-amount-sell-price": newContext.cellphoneSalePrice,
+          "js-phone-sale-capability": saleRobotsProductivity,
           
           "js-buyer-one-price": newContext.robots["buyer_one"].baseCost, //precio de contrataor robot
           "js-buyer-one-bought": newContext.robots["buyer_one"].quantity, // cuantos robots tengo
