@@ -84,7 +84,6 @@ var contentInfo = [
     },
 ];
 
-
 function updateContentInfo () {    
     contentInfo.forEach(function(info){
         $('#' + info.type + ' .click-robot-name').text(info.name);
@@ -94,67 +93,44 @@ function updateContentInfo () {
         $('#' + info.type + ' .click-robot-tooltip-description').text(info.descToolTip);
         $('#' + info.type + ' .click-robot-tooltip-title').text("Contratar un " + info.name);
         $('#' + info.type + ' .click-robot-tooltip-plural').text(info.pluralName);
-        $('#' + info.type + '_upgrade .click-upgrade-tooltip-title').text(info.upgTitle);  
-
+        $('#' + info.type + '_upgrade .click-upgrade-tooltip-title').text(info.upgTitle);
+        $('#' + info.type).on("click",function(){
+            hireClick(info.type);
+        });
+        $('#' + info.type + '_upgrade').on("click",function(){
+            upgradeClick(info.type);
+        });
     });
 }
-
 
 var gameLoop = new GameLoop();
 
 window.setInterval(function(){
    updateFrontend(gameLoop.tick());
-
 }, 1000);
+
+function sellClickerClick(){
+    gameLoop.saleClick();
+}
+
+function buyClickerClick(){
+    gameLoop.buyClick();
+}
+
+function repairClickerClick(){
+    gameLoop.repairClick();
+}
+
+function hireClick(name){
+    gameLoop.hiringClick(name);
+}
+
+function upgradeClick(name){
+    gameLoop.upgradeClick("upgrade_" + name);
+}
 
 $(document).ready(function(){
     updateContentInfo();
-
-    // $("#buy_clicker").click(function(e){
-    //     e.preventDefault();
-    //     gameLoop.buyClick();
-    // });
-
-    // $("#repair_clicker").click(function(e){
-    //     e.preventDefault();
-    //     gameLoop.repairClick();
-    // });
-
-    // $("#sale_clicker").click(function(e){
-    //     e.preventDefault();
-    //     gameLoop.saleClick();
-
-    // });
-
-    // $("#hire_clicker_buyer_1").click(function(e){
-    //     e.preventDefault();
-    //     gameLoop.hiringClick('buyer_one');
-    // });
-
-    // $("#upgrade_clicker_buyer_1").click(function(e){
-    //     e.preventDefault();
-    //     gameLoop.upgradeClick('upgrade_buyer_one');
-    // });
-
-    // $("#hire_clicker_repair_1").click(function(e){
-    //     e.preventDefault();
-    //     gameLoop.hiringClick('repairer_one');
-    // });
-
-    // $("#upgrade_clicker_repair_1").click(function(e){
-    //     e.preventDefault();
-    //     gameLoop.upgradeClick('upgrade_repairer_one');
-    // });
-
-    // $("#hire_clicker_seller_1").click(function(e){
-    //     e.preventDefault();
-    //     gameLoop.hiringClick('seller_one');
-    // });
-
-    // $("#upgrade_clicker_seller_1").click(function(e){
-    //     e.preventDefault();
-    //     gameLoop.upgradeClick('upgrade_seller_one');
-    // });
 });
 
 // var news = [
