@@ -6,7 +6,6 @@ var contentInfo = [
         name: "Caniggia", 
         imgPath: "images/caniggia.jpeg",
         upgImgPath: "images/caniggia.jpeg",
-        descToolTip: "Descripcion tooltip",
         pluralName: "Caniggias",
         upgTitle: "Caniggia"
     },
@@ -15,7 +14,6 @@ var contentInfo = [
         name: "Fort", 
         imgPath: "images/fort.jpg",
         upgImgPath: "images/fort.jpg",
-        descToolTip: "Descripcion tooltip 2",
         pluralName: "Forts",
         upgTitle: "Fort"
     },
@@ -24,7 +22,6 @@ var contentInfo = [
         name: "Mayweather", 
         imgPath: "images/mayweather.jpeg",
         upgImgPath: "images/mayweather.jpeg",
-        descToolTip: "Descripcion tooltip 3",
         pluralName: "Mayweathers",
         upgTitle: "Mayweather"
     },
@@ -33,7 +30,6 @@ var contentInfo = [
         name: "Pastor", 
         imgPath: "images/pastor.jpg",
         upgImgPath: "images/pastor.jpg",
-        descToolTip: "Descripcion tooltip",
         pluralName: "Pastores",
         upgTitle: "Pastor"
     },
@@ -42,7 +38,6 @@ var contentInfo = [
         name: "Favaloro", 
         imgPath: "images/favaloro.jpg",
         upgImgPath: "images/favaloro.jpg",
-        descToolTip: "Descripcion tooltip 2",
         pluralName: "Favaloros",
         upgTitle: "Favaloro"
     },
@@ -51,7 +46,6 @@ var contentInfo = [
         name: "Dr House", 
         imgPath: "images/house.jpg",
         upgImgPath: "images/house.jpg",
-        descToolTip: "Descripcion tooltip 3",
         pluralName: "Dr Houses",
         upgTitle: "Dr House"
     },
@@ -60,7 +54,6 @@ var contentInfo = [
         name: "Fantino", 
         imgPath: "images/fantino.jpg",
         upgImgPath: "images/fantino.jpg",
-        descToolTip: "Descripcion tooltip",
         pluralName: "Fantinos",
         upgTitle: "Fantino"
     },
@@ -69,7 +62,6 @@ var contentInfo = [
         name: "Fowler", 
         imgPath: "images/fowler.jpeg",
         upgImgPath: "images/fowler.jpeg",
-        descToolTip: "Descripcion tooltip 2",
         pluralName: "Fowlers",
         upgTitle: "Fowler"
     },
@@ -78,7 +70,6 @@ var contentInfo = [
         name: "Caruso", 
         imgPath: "images/caruso.jpeg",
         upgImgPath: "images/caruso.jpeg",
-        descToolTip: "Descripcion tooltip 3",
         pluralName: "Carusos",
         upgTitle: "Smoke Power"
     },
@@ -90,7 +81,7 @@ function updateContentInfo () {
         $('#' + info.type + ' .click-robot-img img').attr("src", info.imgPath);
         $('#' + info.type + ' .click-robot-tooltip-img img').attr("src", info.imgPath);
         $('#' + info.type + '_upgrade img').attr("src", info.upgImgPath);
-        $('#' + info.type + ' .click-robot-tooltip-description').text(info.descToolTip);
+        $('#' + info.type + ' .click-robot-tooltip-description').text("Añade un " + info.name + " a tu nómina de empleados!");
         $('#' + info.type + ' .click-robot-tooltip-title').text("Contratar un " + info.name);
         $('#' + info.type + ' .click-robot-tooltip-plural').text(info.pluralName);
         $('#' + info.type + '_upgrade .click-upgrade-tooltip-title').text(info.upgTitle);
@@ -104,6 +95,12 @@ function updateContentInfo () {
 }
 
 var gameLoop = new GameLoop();
+window.gameContext = gameLoop.context;
+
+console.log("Bienvenido al modo Hacker. Un gran poder conlleva una gran responsabilidad");
+console.log("Para modificar el juego tenés que hacer un trabajo de ingeniería inversa (o mirar la variable window.gameContext, que tiene todos los parámetros del juego ");
+console.log("Sugerencias, issues y PRs a https://github.com/ijc-90/troca-clicker");
+
 
 window.setInterval(function(){
    updateFrontend(gameLoop.tick());
