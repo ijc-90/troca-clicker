@@ -2,7 +2,6 @@ class HiringFlow extends Flow {
 
     constructor() {
         super();
-        console.log("Hiring Constructed");
     }
 
     work(context) {
