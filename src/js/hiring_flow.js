@@ -7,13 +7,6 @@ class HiringFlow extends Flow {
 
     work(context) {
         var self = this;
-        // this.robots = context.robots.buy.concat(context.robots.sale).concat(context.robots.repair)
-
-
-        // var hiringClicks = this.getQuantityOfEventsOfType(context.events, EVENTS.HIRING_CLICK);
-        // console.log("hiring, ",hiringClicks);
-        console.log(context);
-
         var hiringEvents = this.getHiringEvents(context.events);
         hiringEvents.forEach(function(event){
             self.hireRobot(event, context);    

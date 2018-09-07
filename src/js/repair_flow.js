@@ -17,13 +17,6 @@ class RepairFlow extends Flow {
 
 		context = this.repair(context, quantityToRepair);
 
-		console.log("############# Repair START ############# ");
-        console.log("money:",context.money);
-        console.log("quantityToRepair:",quantityToRepair);
-		console.log("stockToRepair:",context.stockToRepair);
-		console.log("stockToSale:",context.stockToSale);
-        console.log("############# Repair END ############# ");
-
 		return context;
 	};
 

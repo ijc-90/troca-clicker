@@ -15,12 +15,6 @@ class SaleFlow extends Flow {
         var quantityToSell = Math.min(stockToSale, saleCapacity);
 
         context = this.sell(context, quantityToSell);
-
-        console.log("############# SaleFlow START ############# ");
-        console.log("money:",context.money);
-        console.log("stockToSale:",context.stockToSale);
-        console.log("############# SaleFlow END ############# ");
-
         return context;
     };
 
