@@ -40,42 +40,42 @@ class ViewIntegrator {
           "js-amount-phones-sold": newContext.amountOfPhonesSoldThisCicle, // cantidad de vendidos
           "js-amount-phones-awaiting-sale": newContext.stockToSale, //stock de venta
           "js-amount-sell-price": newContext.cellphoneSalePrice,
-          "js-buyer-one-price": null, //precio de contrataor robot
-          "js-buyer-one-bought": null, // cuantos robots tengo
-          "js-buyer-one-upg-price": null, //precio de upgrade
-          "js-buyer-one-total-capacity": null, //productividad del robot * cantidad de robots
-          "js-buyer-two-price": null, //idem de acá para abajo
-          "js-buyer-two-bought": null,
-          "js-buyer-two-upg-price": null,
-          "js-buyer-two-total-capacity": null,
-          "js-buyer-three-price": null,
-          "js-buyer-three-bought": null,
-          "js-buyer-three-upg-price": null,
-          "js-buyer-three-total-capacity": null,
-          "js-repairer-one-price": null,
-          "js-repairer-one-bought": null,
-          "js-repairer-one-upg-price": null,
-          "js-repairer-one-total-capacity": null,
-          "js-repairer-two-price": null,
-          "js-repairer-two-bought": null,
-          "js-repairer-two-upg-price": null,
-          "js-repairer-two-total-capacity": null,
-          "js-repairer-three-price": null,
-          "js-repairer-three-bought": null,
-          "js-repairer-three-upg-price": null,
-          "js-repairer-three-total-capacity": null,
-          "js-seller-one-price": null,
-          "js-seller-one-bought": null,
-          "js-seller-one-upg-price": null,
-          "js-seller-one-total-capacity": null,
-          "js-seller-two-price": null,
-          "js-seller-two-bought": null,
-          "js-seller-two-upg-price": null,
-          "js-seller-two-total-capacity": null,
-          "js-seller-three-price": null,
-          "js-seller-three-bought": null,
-          "js-seller-three-upg-price": null,
-          "js-seller-three-total-capacity": null
+          "js-buyer-one-price": 77777777, //precio de contrataor robot
+          "js-buyer-one-bought": 77777777, // cuantos robots tengo
+          "js-buyer-one-upg-price": 77777777, //precio de upgrade
+          "js-buyer-one-total-capacity": 77777777, //productividad del robot * cantidad de robots
+          "js-buyer-two-price": 77777777, //idem de acá para abajo
+          "js-buyer-two-bought": 77777777,
+          "js-buyer-two-upg-price": 77777777,
+          "js-buyer-two-total-capacity": 77777777,
+          "js-buyer-three-price": 77777777,
+          "js-buyer-three-bought": 77777777,
+          "js-buyer-three-upg-price": 77777777,
+          "js-buyer-three-total-capacity": 77777777,
+          "js-repairer-one-price": 77777777,
+          "js-repairer-one-bought": 77777777,
+          "js-repairer-one-upg-price": 77777777,
+          "js-repairer-one-total-capacity": 77777777,
+          "js-repairer-two-price": 77777777,
+          "js-repairer-two-bought": 77777777,
+          "js-repairer-two-upg-price": 77777777,
+          "js-repairer-two-total-capacity": 77777777,
+          "js-repairer-three-price": 77777777,
+          "js-repairer-three-bought": 77777777,
+          "js-repairer-three-upg-price": 77777777,
+          "js-repairer-three-total-capacity": 77777777,
+          "js-seller-one-price": 77777777,
+          "js-seller-one-bought": 77777777,
+          "js-seller-one-upg-price": 77777777,
+          "js-seller-one-total-capacity": 77777777,
+          "js-seller-two-price": 77777777,
+          "js-seller-two-bought": 77777777,
+          "js-seller-two-upg-price": 77777777,
+          "js-seller-two-total-capacity": 77777777,
+          "js-seller-three-price": 77777777,
+          "js-seller-three-bought": 77777777,
+          "js-seller-three-upg-price": 77777777,
+          "js-seller-three-total-capacity": 77777777
         };
     }
 }
