@@ -2,12 +2,13 @@ class GameLoop {
 
 	constructor(){
 		this.context = {
-			money : 1000,
+			money : 10000,
 			cellphoneBuyPrice : 10,
 			cellphoneRepairPrice : 5,
 			cellphoneSalePrice : 100,
 			geometricCostScale : 1.3,
 			robots : {
+
 				"buyer_one": {type: "buy", baseCost: 100, quantity: 0, production: 1},
 				"buyer_two": {type: "buy", baseCost: 100, quantity: 0, production: 5},
 
@@ -18,13 +19,14 @@ class GameLoop {
 				"seller_two" : {type: "sale", baseCost: 100, quantity: 2, production: 5},
 			},
 			upgrades: [],
-			stockToRepair: 0,
+			stockToRepair: 310,
 			stockToSale: 0,
 			events: [],
 		};
 		
 		this.pipeline = [
 			new BuyFlow(),
+			new RepairFlow(),
 			new SaleFlow(),
 			new HiringFlow(),
 		];
@@ -43,6 +45,10 @@ class GameLoop {
 
 	buyClick() {
 		this.events.push(new Event(EVENTS.BUY_CLICK));
+	}
+
+	repairClick() {
+		this.events.push(EVENTS.REPAIR_CLICK);
 	}
 
 	saleClick() {
