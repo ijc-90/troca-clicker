@@ -11,5 +11,14 @@ class Flow {
 
     getMoneyCapacity(money, operationPrice) {
 		return Math.floor(money / operationPrice);	
-	}
+	};
+
+    getQuantityOfEventsOfType(events, type) {
+        return events.reduce(function(carry, event) {
+            if (event == type){
+                carry++;
+            }
+            return carry;
+        }, 0);
+    };
 }

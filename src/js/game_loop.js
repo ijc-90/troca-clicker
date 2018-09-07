@@ -27,9 +27,9 @@ class GameLoop {
 		};
 		
 		this.pipeline = [
-			// new BuyFlow(),
+			new BuyFlow(),
 			new RepairFlow(),
-			// new SaleFlow(),
+			new SaleFlow(),
 		];
 
 		this.events = [];
@@ -50,6 +50,10 @@ class GameLoop {
 
 	repairClick() {
 		this.events.push(EVENTS.REPAIR_CLICK);
+	}
+
+	saleClick() {
+		this.events.push(EVENTS.SALE_CLICK);
 	}
 
 }
