@@ -6,7 +6,7 @@ class RepairFlow extends Flow {
 	}
 
 	work(context) {
-		var repairRobots = context.robots.repair;		
+		var repairRobots = this.getRobotsByType(Object.values(context.robots), "repair");
 		var robotRepairCapacity = this.getRobotCapacity(repairRobots);
 		var clickRepairCapacity = this.getClickRepairCapacity(context.events);
 		var repairCapacity = robotRepairCapacity + clickRepairCapacity;
