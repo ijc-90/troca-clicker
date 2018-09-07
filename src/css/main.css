@@ -157,7 +157,14 @@ transform: scale(1.05);
 
 .click-phone a{
 	cursor: pointer;
-	display: block;
+    display: block;
+    border: 1px solid gray;
+    border-radius: 35px;
+    padding: 20px;
+    width: 200px;
+    margin: auto;
+    background-image: linear-gradient(to bottom right,orange,#ffcd70);
+    box-shadow: grey 1px 1px;
 }
 /*STORE*/
 .click-store{
@@ -175,25 +182,25 @@ padding-bottom: 70px;
 
 .click-upgrades-container, .click-robots-container{
 	width: 100%;
-	padding: 0 25px;
 	display: block;
 	text-align: left;
+	margin-bottom: 5px;
 }
 
 .click-upgrade{
-	padding: 10px;
+	padding: 12px;
 	background: #fff;
-	width: 66px;
-	height:66px;
+	width: 64px;
+	height: 64px;
 	display: inline-block;
-	margin: 5px 2px;
 	cursor: pointer;
 	position: relative;
+    border-radius: 5px;
 }
 
 .click-upgrade img{
-	width: 46px;
-	height: 46px;
+	width: 40px;
+	height: 40px;
 }
 .click-upgrade:hover .click-upgrade-tooltip{
 	display: block;
@@ -236,15 +243,29 @@ padding-bottom: 70px;
 	color: #ff8800;
 }
 .click-upgrade-tooltip-funtion{
-		display: block;
+	display: block;
 	font-size: 18px;
 	color: #fff;
 }
+.upgrade-robot-container{
+	display: inline-block;
+	padding: 0;
+	width: 24%;
+	vertical-align: top;
+}
+.click-robot-container{
+	background: white;
+	width: 74%;
+    border-radius: 5px;
+}
 .click-robot{
-	margin: 8px 0 8px 2px;
 	cursor: pointer;
-	background: rgba(255,255,255, .9);
 	position: relative;
+	padding: 0;
+	display: inline-block;
+}
+.row-robot{
+	margin-top: 5px;
 }
 
 .click-robot:hover .click-robot-tooltip{
@@ -253,16 +274,21 @@ padding-bottom: 70px;
 
 .click-robot-img{
 	display: inline-block;
-	width: 60px;
-	height: 60px;
 	vertical-align: middle;
-	background: #607d8a;
+	padding: 0;
 }
+.click-robot-img img{
+	width: 64px;
+	height: 64px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
 .click-robot-text{
 	display: inline-block;
-	width: calc(100% - 150px);
 	vertical-align: middle;
-	padding-left: 10px;
+	padding: 0;
+	width: 80px;
 	color: #ff8800;
 }
 
@@ -277,13 +303,13 @@ padding-bottom: 70px;
 }
 .click-robot-bought{
 	display: inline-block;
-	width: 80px;
 	vertical-align: middle;
 	text-align: right;
-	font-size: 40px;
+	font-size: 24px;
+	width: 40px;
+    border-left: 1px solid lightgray;
 	font-family: 'Chewy', cursive;
 	color: #ff8800;
-	padding-right: 10px;
 }
 
 .click-robot-tooltip{
@@ -416,4 +442,10 @@ padding-bottom: 70px;
 }
 .footer span{
 	color: #ff8800;
+}
+.inline-block {
+	display: inline-block;
+}
+.no-padding{
+	padding: 0;
 }
