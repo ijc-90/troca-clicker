@@ -14,14 +14,14 @@ class ViewIntegrator {
         var repairRobots = robots.filter(function(robot){
             return robot.type == "repair";
         });
-        var repairRobotsProductivity = buyRobots.reduce(function(carry, robot){
+        var repairRobotsProductivity = repairRobots.reduce(function(carry, robot){
             return (robot.production * robot.quantity) + carry;
         }, 0);
 
         var saleRobots = robots.filter(function(robot){
             return robot.type == "sale";
         });
-        var saleRobotsProductivity = buyRobots.reduce(function(carry, robot){
+        var saleRobotsProductivity = saleRobots.reduce(function(carry, robot){
             return (robot.production * robot.quantity) + carry;
         }, 0);
 
