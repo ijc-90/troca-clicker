@@ -91,12 +91,18 @@ class GameLoop {
 	}
 
 	hiringClick(robotName){
+	    if ($("#".robotName).hasClass("disabled")) {
+	        return;
+        }
 		var event = new Event(EVENTS.HIRING_CLICK);
 		event.robotName = robotName;
 		this.events.push(event);
 	}
 
 	upgradeClick(upgradeName){
+        if ($("#".robotName).hasClass("disabled")) {
+            return;
+        }
 		var event = new Event(EVENTS.UPGRADE_CLICK);
 		event.upgradeName = upgradeName;
 		this.events.push(event);

@@ -66,18 +66,13 @@ function kFormatter(num) {
     return num > 999 ? (num/1000).toFixed(1) + 'k' : num
 }
 
-function updateFrontend(json) {
+function updateNumbers(json) {
     Object.keys(json).forEach(function (keyName) {
         var value = json[keyName];
         var elements = $("."+keyName);
         if (!isNaN(value) && elements.length !== 0) {
-            console.log("Changing element", {
-                keyName: keyName,
-                valueInJson: value,
-                element: elements,
-            });
             elements.text(kFormatter(value));
-        } else if (typeof(value) != "boolean") {
+        } else if (typeof(value) !== "boolean" && keyName !== "js-salaries-amount") {
             console.error("ERROR, value not found.", {
                 keyName: keyName,
                 valueInJson: value,
@@ -86,3 +81,69 @@ function updateFrontend(json) {
         }
     });
 }
+
+var robots = ['buyer-one', 'buyer-two', 'buyer-three',
+    "repairer-one", 'repairer-two', 'repairer-three',
+    'seller-one', 'seller-two', 'seller-three',
+];
+
+function updateVisibilityOfUpgrades(json) {
+    robots.forEach((robotName) => {
+        var propertyName = 'js-'+robotName+'-upg-bought';
+        var upgradeElementId = "#" + robotName.replace('-',"_") + "_upgrade";
+        if (!json[propertyName] && json["js-money"] >= json["js-"+ robotName +"-upg-price"]) {
+            $(upgradeElementId)[0].style.opacity = 1;
+            $(upgradeElementId).addClass("enabled");
+            $(upgradeElementId).removeClass("disabled");
+        } else {
+            $(upgradeElementId)[0].style.opacity = 0.5;
+            $(upgradeElementId).addClass("disabled");
+            $(upgradeElementId).removeClass("enabled");
+        }
+    })
+}
+
+function updateVisibilityOfRobots(json) {
+    robots.forEach((robotName) => {
+        var upgradeElementId = "#" + robotName.replace('-',"_");
+        if (json["js-money"] >= json["js-"+ robotName +"-price"]) {
+            $(upgradeElementId)[0].style.opacity = 1;
+            $(upgradeElementId).addClass("enabled");
+            $(upgradeElementId).removeClass("disabled");
+        } else {
+            $(upgradeElementId)[0].style.opacity = 0.5;
+            $(upgradeElementId).addClass("disabled");
+            $(upgradeElementId).removeClass("enabled");
+        }
+    })
+}
+
+function notifyIfLost(json) {
+    if (json["js-you-lose"]) {
+        alert("PERDISTE!")
+    }
+}
+
+function notifyPaidSalaries(json) {
+    if (json["js-this-loop-must-pay-salaries"])
+    $.notify({
+        // options
+        message: 'Llegó fin de mes! Pagarás ' + json["js-salaries-amount"] + ' de sueldos.'
+    },{
+        // settings
+        type: 'success'
+    });
+}
+
+function updateFrontend(json) {
+    updateNumbers(json);
+    updateVisibilityOfUpgrades(json);
+    notifyIfLost(json);
+    notifyPaidSalaries(json);
+    updateVisibilityOfRobots(json);
+}
+
+
+setTimeout(function () {
+    updateFrontend(sampleJson);
+}, 1000);
