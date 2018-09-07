@@ -453,3 +453,42 @@ padding-bottom: 70px;
 .no-padding{
 	padding: 0;
 }
+
+.stats-display .flow-number  {
+	font-size: 26px;
+	color: #ff8800;
+}
+
+.stats-display .small-notice  {
+	 font-size: 14px;
+	 margin-top: 10px;
+ }
+
+.stats-display .flow-image-container img  {
+	height: 100px;
+}
+
+.stats-display .inline-dinamic-number {
+	color: #ff8800;
+}
+
+.stats-display .stats-section {
+	margin-top: 15px;
+}
+
+.stats-display .balance-number {
+	font-size: 18px;
+}
+
+.stats-display .big-number {
+	font-size: 25px;
+	color: #ff8800;
+}
+
+.stats-display .negative-number {
+	color: #d04242;
+}
+
+.stats-display .positive-number {
+	color: #29743d;
+}
