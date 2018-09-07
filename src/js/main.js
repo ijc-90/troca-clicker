@@ -107,14 +107,25 @@ window.setInterval(function(){
 }, 1000);
 
 function sellClickerClick(){
+    if ($(this).hasClass("disabled")) {
+        return;
+    }
     gameLoop.saleClick();
 }
 
 function buyClickerClick(){
+    if ($(this).hasClass("disabled")) {
+        return;
+    }
+
     gameLoop.buyClick();
 }
 
 function repairClickerClick(){
+    if ($(this).hasClass("disabled")) {
+        return;
+    }
+
     gameLoop.repairClick();
 }
 
