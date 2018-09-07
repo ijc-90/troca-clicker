@@ -44,6 +44,7 @@ class ViewIntegrator {
           "js-buyer-one-price": 77777777, //precio de contrataor robot
           "js-buyer-one-bought": 77777777, // cuantos robots tengo
           "js-buyer-one-upg-price": 77777777, //precio de upgrade
+          "js-buyer-one-upg-multiplier": 1200,
           "js-buyer-one-total-capacity": 77777777, //productividad del robot * cantidad de robots
           "js-buyer-two-price": 77777777, //idem de acá para abajo
           "js-buyer-two-bought": 77777777,
@@ -53,6 +54,7 @@ class ViewIntegrator {
           "js-buyer-three-price": 77777777,
           "js-buyer-three-bought": 77777777,
           "js-buyer-three-upg-price": 77777777,
+          "js-buyer-three-upg-multiplier": 1200,
           "js-buyer-three-total-capacity": 77777777,
           "js-repairer-one-price": 77777777,
           "js-repairer-one-bought": 77777777,
