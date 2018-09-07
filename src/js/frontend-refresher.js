@@ -77,7 +77,7 @@ function updateFrontend(json) {
                 element: elements,
             });
             elements.text(kFormatter(value));
-        } else {
+        } else if (typeof(value) != "boolean") {
             console.error("ERROR, value not found.", {
                 keyName: keyName,
                 valueInJson: value,
