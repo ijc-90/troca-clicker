@@ -44,7 +44,6 @@ class ViewIntegrator {
           "js-amount-phones-awaiting-repair": newContext.stockToRepair, //stock de "en reparo"
           "js-phone-repair-capability": repairRobotsProductivity, //Capacidad de todos los robots de reparo (cantidad * productividad)
           "js-phone-repair-price": newContext.cellphoneRepairPrice,
-          "js-buyer-one-upg-multiplier": 1200,
           "js-sale-balance": newContext.moneyEarnedSellingThisCicle, // cantidad de celulares vendidos * precio de venta
           "js-amount-phones-sold": newContext.amountOfPhonesSoldThisCicle, // cantidad de vendidos
           "js-amount-phones-awaiting-sale": newContext.stockToSale, //stock de venta
@@ -103,15 +102,15 @@ class ViewIntegrator {
           "js-seller-two-bought": newContext.robots["seller_two"].quantity,
           "js-seller-two-upg-price": newContext.upgrades["upgrade_seller_two"].price,
           "js-seller-two-upg-bought": newContext.upgrades["upgrade_seller_two"].isActive,
-          "js-seller-two-upg-multiplier": newContext.upgrades["upgrade_seller_one"].productionMultiplier,
+          "js-seller-two-upg-multiplier": newContext.upgrades["upgrade_seller_two"].productionMultiplier,
           "js-seller-two-total-capacity": newContext.robots["seller_two"].baseCost * newContext.robots["seller_two"].quantity,
           
           "js-seller-three-price": newContext.robots["seller_three"].baseCost,
           "js-seller-three-bought": newContext.robots["seller_three"].quantity,
           "js-seller-three-upg-price": newContext.upgrades["upgrade_seller_three"].price,
           "js-seller-three-upg-bought": newContext.upgrades["upgrade_seller_three"].isActive,
-          "js-seller-three-upg-multiplier": newContext.upgrades["upgrade_buyer_three"].productionMultiplier,
-          "js-seller-three-total-capacity": newContext.robots["seller_three"].baseCost * newContext.robots["seller_three"].quantity
+          "js-seller-three-upg-multiplier": newContext.upgrades["upgrade_seller_three"].productionMultiplier,
+          "js-seller-three-total-capacity": newContext.robots["seller_three"].baseCost * newContext.robots["seller_three"].quantity,
           
           "js-this-loop-must-pay-salaries": newContext.salariesPaidThisTick,
           "js-salaries-amount": totalSalaries,
