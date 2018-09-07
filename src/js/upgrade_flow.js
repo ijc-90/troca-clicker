@@ -33,6 +33,16 @@ class UpgradeFlow extends Flow {
 
         context.money -= upgradeToBuy.price;
         upgradeToBuy.isActive = true; //updates reference that is used by context
+        this.updateProductivyForRobots(upgradeToBuy, context.robots);
+    }
+
+    updateProductivyForRobots(upgrade, robots){
+        for (var robotName in robots){
+            if (upgrade.robot == robotName) {
+                var robot = robots[robotName];
+                robot.production = robot.production * upgrade.productionMultiplier;
+            }
+        }
     }
 
 

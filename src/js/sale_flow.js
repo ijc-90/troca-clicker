@@ -7,8 +7,7 @@ class SaleFlow extends Flow {
 
     work(context) {
         var saleRobots = this.getRobotsByType(Object.values(context.robots), "sale"); 
-        var upgradesByRobot = this.getActiveUpgradesByRobot(context.upgrades);    
-        var robotSaleCapacity = this.getRobotCapacity(saleRobots, upgradesByRobot);
+        var robotSaleCapacity = this.getRobotCapacity(saleRobots);
         var clickBuyCapacity = this.getQuantityOfEventsOfType(context.events, EVENTS.SALE_CLICK);
         var stockToSale = context.stockToSale;
         var saleCapacity = robotSaleCapacity + clickBuyCapacity;
@@ -17,11 +16,11 @@ class SaleFlow extends Flow {
 
         context = this.sell(context, quantityToSell);
 
-        console.log("############# SaleFlow START ############# ");
-        console.log("money:",context.money);
-        console.log("stockToSale:",context.stockToSale);
-        console.log("vendi: ",quantityToSell);
-        console.log("############# SaleFlow END ############# ");
+        // console.log("############# SaleFlow START ############# ");
+        // console.log("money:",context.money);
+        // console.log("stockToSale:",context.stockToSale);
+        // console.log("vendi: ",quantityToSell);
+        // console.log("############# SaleFlow END ############# ");
 
         return context;
     };

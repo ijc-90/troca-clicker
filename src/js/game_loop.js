@@ -26,7 +26,7 @@ class GameLoop {
 				"upgrade_seller_two": { price: 100, productionMultiplier: 2, robot: "seller_two", isActive: false },
 			},
 			stockToRepair: 310,
-			stockToSale: 0,
+			stockToSale: 1000,
 			events: [],
 			iterationsToPaySalary: 3,
 			gameOver: false,
