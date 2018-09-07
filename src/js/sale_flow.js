@@ -30,6 +30,9 @@ class SaleFlow extends Flow {
     sell(context, quantityToSell){
         context.money += quantityToSell * context.cellphoneSalePrice;
         context.stockToSale -= quantityToSell;
+
+        context.moneyEarnedSellingThisCicle = quantityToSell * context.cellphoneSalePrice;
+        context.amountOfPhonesSoldThisCicle = quantityToSell;
         return context;
     }
 }
