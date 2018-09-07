@@ -73,18 +73,10 @@ function updateNumbers(json) {
         if (!isNaN(value) && elements.length !== 0) {
             elements.text(kFormatter(value));
         } else if (typeof(value) !== "boolean" && keyName !== "js-salaries-amount") {
-            // console.log("Changing element", {
-            //     keyName: keyName,
-            //     valueInJson: value,
-            //     element: elements,
-            // });
+        
             elements.text(kFormatter(value));
         } else if (typeof(value) != "boolean") {
-            // console.error("ERROR, value not found.", {
-            //     keyName: keyName,
-            //     valueInJson: value,
-            //     element: elements,
-            // });
+            
         }
     });
 }

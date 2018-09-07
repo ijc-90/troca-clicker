@@ -2,7 +2,6 @@ class BuyFlow extends Flow {
 
 	constructor() {
 		super();
-		console.log("BuyFlowConstructed");
 	}
 
 	work(context) {
@@ -19,12 +18,6 @@ class BuyFlow extends Flow {
 
 		context = this.buy(context, quantityToBuy);
 
-		// console.log("############# Buy START ############# ");
-		// console.log("quantityToBuy:",quantityToBuy);
-		// console.log("money:",context.money);
-		// console.log("stockToRepair:",context.stockToRepair);
-		// console.log("stockToSale:",context.stockToSale);
-		// console.log("############# BUY END ############# ");
 
 		return context;
 	};

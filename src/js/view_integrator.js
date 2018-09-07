@@ -87,7 +87,7 @@ class ViewIntegrator {
           
           "js-repairer-three-price": newContext.robots["repairer_three"].baseCost,
           "js-repairer-three-bought": newContext.robots["repairer_three"].quantity,
-          "js-repairer-three-upg-price": newContext.upgrades["upgrade_buyer_one"].price,
+          "js-repairer-three-upg-price": newContext.upgrades["upgrade_buyer_three"].price,
           "js-repairer-three-upg-bought": newContext.upgrades["upgrade_buyer_three"].isActive,
           "js-repairer-three-upg-multiplier": newContext.upgrades["upgrade_repairer_three"].productionMultiplier,
           "js-repairer-three-total-capacity": newContext.robots["repairer_three"].production * newContext.robots["repairer_three"].quantity,
