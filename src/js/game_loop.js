@@ -66,7 +66,7 @@ class GameLoop {
 		if (this.context.gameOver){
 			return;
 		}
-		var oldContext = JSON.stringify(this.context);
+		var oldContext = JSON.parse(JSON.stringify(this.context));
 
 		this.context.events = this.events;
 		this.events = [];
