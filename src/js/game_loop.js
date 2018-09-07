@@ -3,8 +3,8 @@ class GameLoop {
 	constructor(){
 		this.context = {
 			money : 10000,
-			cellphoneBuyPrice : 0,
-			cellphoneRepairPrice : 0,
+			cellphoneBuyPrice : 50,
+			cellphoneRepairPrice : 40,
 			cellphoneSalePrice : 100,
 			geometricCostScale : 1.3,
 			robots : {
@@ -28,6 +28,13 @@ class GameLoop {
 			events: [],
 			iterationsToPaySalary: 3,
 			gameOver: false,
+			probabilityOfDefectiveBuy : 0.7,
+
+			moneySpentOnBuyingPhonesThisCicle: 0,
+			amountOfPhonesBoughtThisCicle: 0,
+			moneySpentRepairingThisCicle: 0,
+			amountOfPhonesRepairedThisCicle: 0,
+
 		};
 		
 		this.pipeline = [

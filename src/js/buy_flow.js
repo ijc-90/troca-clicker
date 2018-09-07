@@ -32,11 +32,16 @@ class BuyFlow extends Flow {
 
 	buy(context, quantityToBuy){
 		context.money -= quantityToBuy * context.cellphoneBuyPrice;
-		var incommingStockToRepair = Math.round(quantityToBuy * 0.7);
+
+		var incommingStockToRepair = Math.round(quantityToBuy * context.probabilityOfDefectiveBuy);
 		var incommingStockToSale = quantityToBuy - incommingStockToRepair;
+
 
 		context.stockToRepair += incommingStockToRepair;
 		context.stockToSale += incommingStockToSale;
+
+		context.moneySpentOnBuyingPhonesThisCicle = quantityToBuy * context.cellphoneBuyPrice;
+		context.amountOfPhonesBoughtThisCicle = quantityToBuy;
 		return context;
 	}
 }

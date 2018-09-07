@@ -27,6 +27,9 @@ class Flow {
     }
 
     getMoneyCapacity(money, operationPrice) {
+        if (operationPrice <= 0 ){
+            return Number.MAX_SAFE_INTEGER;
+        }
 		return Math.floor(money / operationPrice);	
 	}
 
