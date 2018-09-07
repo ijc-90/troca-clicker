@@ -45,6 +45,7 @@ class GameLoop {
 		}, this.context);
 	}
 
+	buyClick() {
 		this.events.push(new Event(EVENTS.BUY_CLICK));
 	}
 
