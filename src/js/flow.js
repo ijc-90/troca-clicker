@@ -11,7 +11,7 @@ class Flow {
 
     getQuantityOfEventsOfType(events, type) {
         return events.reduce(function(carry, event) {
-            if (event == type){
+            if (event.type == type){
                 carry++;
             }
             return carry;

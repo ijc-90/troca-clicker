@@ -9,12 +9,16 @@ class GameLoop {
 			geometricCostScale : 1.3,
 			robots : {
 				buy: [
-					{type: "buy_rep", baseCost: 100, quantity: 6, production: 1},
-					{type: "supervisor", baseCost: 100, quantity: 2, production: 5},
+					{type: "buyer_one", baseCost: 100, quantity: 6, production: 1},
+					{type: "buyer_two", baseCost: 100, quantity: 2, production: 5},
 				],
-				repair: [],
+				repair: [
+					{type: "repairer_one", baseCost: 100, quantity: 6, production: 1},
+					{type: "repairer_two", baseCost: 100, quantity: 2, production: 5},
+				],
 				sale: [
-					{type: "seller Jr", baseCost: 100, quantity: 6, production: 1},
+					{type: "seller_one", baseCost: 100, quantity: 6, production: 1},
+					{type: "seller_two", baseCost: 100, quantity: 6, production: 5},
 				]
 			},
 			upgrades: [],
@@ -24,8 +28,9 @@ class GameLoop {
 		};
 		
 		this.pipeline = [
-			new BuyFlow(),
-			new SaleFlow(),
+			// new BuyFlow(),
+			// new SaleFlow(),
+			new HiringFlow(),
 		];
 
 		this.events = [];
@@ -40,12 +45,15 @@ class GameLoop {
 		}, this.context);
 	}
 
-	buyClick() {
-		this.events.push(EVENTS.BUY_CLICK);
+		this.events.push(new Event(EVENTS.BUY_CLICK));
 	}
 
 	saleClick() {
-		this.events.push(EVENTS.SALE_CLICK);
+		this.events.push(new Event(EVENTS.SALE_CLICK));
+	}
+
+	hiringClick(){
+		this.events.push(new Event(EVENTS.HIRING_CLICK));
 	}
 
 }
