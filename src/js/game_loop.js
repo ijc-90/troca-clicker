@@ -9,8 +9,8 @@ class GameLoop {
 			geometricCostScale : 1.3,
 			robots : {
 				buy: [
-					{type: "buy_rep", baseCost: 100, quantity: 0, production: 1},
-					{type: "supervisor", baseCost: 100, quantity: 0, production: 5},
+					{type: "buy_rep", baseCost: 100, quantity: 2, production: 1},
+					{type: "supervisor", baseCost: 100, quantity: 1, production: 5},
 				],
 				repair: [
 					{type: "technician-jr", baseCost: 100, quantity: 2, production: 1},
