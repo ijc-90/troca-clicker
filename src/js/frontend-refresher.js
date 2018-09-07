@@ -18,38 +18,47 @@ var sampleJson = {
     "js-buyer-one-price": 1200,
     "js-buyer-one-bought": 1200,
     "js-buyer-one-upg-price": 1200,
+    "js-buyer-one-upg-multiplier": 1200,
     "js-buyer-one-total-capacity": 1200,
     "js-buyer-two-price": 1200,
     "js-buyer-two-bought": 1200,
     "js-buyer-two-upg-price": 1200,
+    "js-buyer-two-upg-multiplier": 1200,
     "js-buyer-two-total-capacity": 1200,
     "js-buyer-three-price": 1200,
     "js-buyer-three-bought": 1200,
     "js-buyer-three-upg-price": 1200,
+    "js-buyer-three-upg-multiplier": 1200,
     "js-buyer-three-total-capacity": 1200,
     "js-repairer-one-price": 1200,
     "js-repairer-one-bought": 1200,
     "js-repairer-one-upg-price": 1200,
+    "js-repairer-one-upg-multiplier": 1200,
     "js-repairer-one-total-capacity": 1200,
     "js-repairer-two-price": 1200,
     "js-repairer-two-bought": 1200,
     "js-repairer-two-upg-price": 1200,
+    "js-repairer-two-upg-multiplier": 1200,
     "js-repairer-two-total-capacity": 1200,
     "js-repairer-three-price": 1200,
     "js-repairer-three-bought": 1200,
     "js-repairer-three-upg-price": 1200,
+    "js-repairer-three-upg-multiplier": 1200,
     "js-repairer-three-total-capacity": 1200,
     "js-seller-one-price": 1200,
     "js-seller-one-bought": 1200,
     "js-seller-one-upg-price": 1200,
+    "js-seller-one-upg-multiplier": 1200,
     "js-seller-one-total-capacity": 1200,
     "js-seller-two-price": 1200,
     "js-seller-two-bought": 1200,
     "js-seller-two-upg-price": 1200,
+    "js-seller-two-upg-multiplier": 1200,
     "js-seller-two-total-capacity": 1200,
     "js-seller-three-price": 1200,
     "js-seller-three-bought": 1200,
     "js-seller-three-upg-price": 1200,
+    "js-seller-three-upg-multiplier": 1200,
     "js-seller-three-total-capacity": 1200
 };
 
@@ -73,8 +82,3 @@ function updateFrontend(json) {
         }
     });
 }
-
-setTimeout(function () {
-    console.log("UPDATING! :)");
-    updateFrontend(sampleJson);
-}, 2000);
