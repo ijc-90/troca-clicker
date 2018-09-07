@@ -40,42 +40,42 @@ class ViewIntegrator {
           "js-amount-phones-sold": newContext.amountOfPhonesSoldThisCicle, // cantidad de vendidos
           "js-amount-phones-awaiting-sale": newContext.stockToSale, //stock de venta
           "js-amount-sell-price": newContext.cellphoneSalePrice,
-          "js-buyer-one-price": 77777777, //precio de contrataor robot
-          "js-buyer-one-bought": 77777777, // cuantos robots tengo
-          "js-buyer-one-upg-price": 77777777, //precio de upgrade
-          "js-buyer-one-total-capacity": 77777777, //productividad del robot * cantidad de robots
-          "js-buyer-two-price": 77777777, //idem de acá para abajo
-          "js-buyer-two-bought": 77777777,
+          "js-buyer-one-price": newContext.robots["buyer_one"].baseCost, //precio de contrataor robot
+          "js-buyer-one-bought": newContext.robots["buyer_one"].quantity, // cuantos robots tengo
+          "js-buyer-one-upg-price": newContext.upgrades["upgrade_buyer_one"].price, //precio de upgrade
+          "js-buyer-one-total-capacity": newContext.robots["buyer_one"].baseCost * newContext.robots["buyer_one"].quantity, //productividad del robot * cantidad de robots
+          "js-buyer-two-price": newContext.robots["buyer_two"].baseCost, //idem de acá para abajo
+          "js-buyer-two-bought": newContext.robots["buyer_two"].quantity,
           "js-buyer-two-upg-price": 77777777,
-          "js-buyer-two-total-capacity": 77777777,
-          "js-buyer-three-price": 77777777,
-          "js-buyer-three-bought": 77777777,
+          "js-buyer-two-total-capacity": newContext.robots["buyer_two"].baseCost * newContext.robots["buyer_two"].quantity,
+          "js-buyer-three-price": newContext.robots["buyer_three"].baseCost,
+          "js-buyer-three-bought": newContext.robots["buyer_three"].quantity,
           "js-buyer-three-upg-price": 77777777,
-          "js-buyer-three-total-capacity": 77777777,
-          "js-repairer-one-price": 77777777,
-          "js-repairer-one-bought": 77777777,
+          "js-buyer-three-total-capacity": newContext.robots["buyer_three"].baseCost * newContext.robots["buyer_three"].quantity,
+          "js-repairer-one-price": newContext.robots["repairer_one"].baseCost,
+          "js-repairer-one-bought": newContext.robots["repairer_one"].quantity,
           "js-repairer-one-upg-price": 77777777,
-          "js-repairer-one-total-capacity": 77777777,
-          "js-repairer-two-price": 77777777,
-          "js-repairer-two-bought": 77777777,
+          "js-repairer-one-total-capacity": newContext.robots["repairer_one"].baseCost * newContext.robots["repairer_one"].quantity,
+          "js-repairer-two-price": newContext.robots["repairer_two"].baseCost,
+          "js-repairer-two-bought": newContext.robots["repairer_two"].quantity,
           "js-repairer-two-upg-price": 77777777,
-          "js-repairer-two-total-capacity": 77777777,
-          "js-repairer-three-price": 77777777,
-          "js-repairer-three-bought": 77777777,
+          "js-repairer-two-total-capacity": newContext.robots["repairer_two"].baseCost * newContext.robots["repairer_two"].quantity,
+          "js-repairer-three-price": newContext.robots["repairer_three"].baseCost,
+          "js-repairer-three-bought": newContext.robots["repairer_three"].quantity,
           "js-repairer-three-upg-price": 77777777,
-          "js-repairer-three-total-capacity": 77777777,
-          "js-seller-one-price": 77777777,
-          "js-seller-one-bought": 77777777,
+          "js-repairer-three-total-capacity": newContext.robots["repairer_three"].baseCost * newContext.robots["repairer_three"].quantity,
+          "js-seller-one-price": newContext.robots["seller_one"].baseCost,
+          "js-seller-one-bought": newContext.robots["seller_one"].quantity,
           "js-seller-one-upg-price": 77777777,
-          "js-seller-one-total-capacity": 77777777,
-          "js-seller-two-price": 77777777,
-          "js-seller-two-bought": 77777777,
+          "js-seller-one-total-capacity": newContext.robots["seller_one"].baseCost * newContext.robots["seller_one"].quantity,
+          "js-seller-two-price": newContext.robots["seller_two"].baseCost,
+          "js-seller-two-bought": newContext.robots["seller_two"].quantity,
           "js-seller-two-upg-price": 77777777,
-          "js-seller-two-total-capacity": 77777777,
-          "js-seller-three-price": 77777777,
-          "js-seller-three-bought": 77777777,
+          "js-seller-two-total-capacity": newContext.robots["seller_two"].baseCost * newContext.robots["seller_two"].quantity,
+          "js-seller-three-price": newContext.robots["seller_three"].baseCost,
+          "js-seller-three-bought": newContext.robots["seller_three"].quantity,
           "js-seller-three-upg-price": 77777777,
-          "js-seller-three-total-capacity": 77777777
+          "js-seller-three-total-capacity": newContext.robots["seller_three"].baseCost * newContext.robots["seller_three"].quantity
         };
     }
 }
