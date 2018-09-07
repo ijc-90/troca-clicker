@@ -3,84 +3,84 @@
 var contentInfo = [
     {
         type: "buyer_one", 
-        name: "Comprador 1", 
-        imgPath: "images/mit120.jpg",
-        upgImgPath: "images/buyer_one_upg.jpg",
+        name: "Caniggia", 
+        imgPath: "images/caniggia.jpeg",
+        upgImgPath: "images/caniggia.jpeg",
         descToolTip: "Descripcion tooltip",
-        pluralName: "Compradores 1",
-        upgTitle: "Birra"
+        pluralName: "Caniggias",
+        upgTitle: "Caniggia"
     },
     {
         type: "buyer_two", 
-        name: "Comprador 2", 
-        imgPath: "images/mit120.jpg",
-        upgImgPath: "images/buyer_two_upg.png",
+        name: "Fort", 
+        imgPath: "images/fort.jpg",
+        upgImgPath: "images/fort.jpg",
         descToolTip: "Descripcion tooltip 2",
-        pluralName: "Compradores 1",
-        upgTitle: "Birra"
+        pluralName: "Forts",
+        upgTitle: "Fort"
     },
     {
         type: "buyer_three", 
-        name: "Comprador 3", 
-        imgPath: "images/mit120.jpg",
-        upgImgPath: "images/buyer_three_upg.jpg",
+        name: "Mayweather", 
+        imgPath: "images/mayweather.jpeg",
+        upgImgPath: "images/mayweather.jpeg",
         descToolTip: "Descripcion tooltip 3",
-        pluralName: "Compradores 1",
-        upgTitle: "Birra"
+        pluralName: "Mayweathers",
+        upgTitle: "Mayweather"
     },
     {
         type: "repairer_one", 
-        name: "Reparador 1", 
-        imgPath: "images/mit120.jpg",
-        upgImgPath: "images/buyer_one_upg.jpg",
+        name: "Pastor", 
+        imgPath: "images/pastor.jpg",
+        upgImgPath: "images/pastor.jpg",
         descToolTip: "Descripcion tooltip",
-        pluralName: "Compradores 1",
-        upgTitle: "Birra"
+        pluralName: "Pastores",
+        upgTitle: "Pastor"
     },
     {
         type: "repairer_two", 
-        name: "Reparador 2", 
-        imgPath: "images/mit120.jpg",
-        upgImgPath: "images/buyer_two_upg.png",
+        name: "Favaloro", 
+        imgPath: "images/favaloro.jpg",
+        upgImgPath: "images/favaloro.jpg",
         descToolTip: "Descripcion tooltip 2",
-        pluralName: "Compradores 1",
-        upgTitle: "Birra"
+        pluralName: "Favaloros",
+        upgTitle: "Favaloro"
     },
     {
         type: "repairer_three", 
-        name: "Reparador 3", 
-        imgPath: "images/mit120.jpg",
-        upgImgPath: "images/buyer_three_upg.jpg",
+        name: "Dr House", 
+        imgPath: "images/house.jpg",
+        upgImgPath: "images/house.jpg",
         descToolTip: "Descripcion tooltip 3",
-        pluralName: "Compradores 1",
-        upgTitle: "Birra"
+        pluralName: "Dr Houses",
+        upgTitle: "Dr House"
     },
     {
         type: "seller_one", 
-        name: "Vendedor 1", 
-        imgPath: "images/mit120.jpg",
-        upgImgPath: "images/buyer_one_upg.jpg",
+        name: "Fantino", 
+        imgPath: "images/fantino.jpg",
+        upgImgPath: "images/fantino.jpg",
         descToolTip: "Descripcion tooltip",
-        pluralName: "Compradores 1",
-        upgTitle: "Birra"
+        pluralName: "Fantinos",
+        upgTitle: "Fantino"
     },
     {
         type: "seller_two", 
-        name: "Vendedor 2", 
-        imgPath: "images/mit120.jpg",
-        upgImgPath: "images/buyer_two_upg.png",
+        name: "Fowler", 
+        imgPath: "images/fowler.jpeg",
+        upgImgPath: "images/fowler.jpeg",
         descToolTip: "Descripcion tooltip 2",
-        pluralName: "Compradores 1",
-        upgTitle: "Birra"
+        pluralName: "Fowlers",
+        upgTitle: "Fowler"
     },
     {
         type: "seller_three", 
-        name: "Vendedor 3", 
-        imgPath: "images/mit120.jpg",
-        upgImgPath: "images/buyer_three_upg.jpg",
+        name: "Caruso", 
+        imgPath: "images/caruso.jpeg",
+        upgImgPath: "images/caruso.jpeg",
         descToolTip: "Descripcion tooltip 3",
-        pluralName: "Compradores 1",
-        upgTitle: "Birra"
+        pluralName: "Carusos",
+        upgTitle: "Smoke Power"
     },
 ];
 
