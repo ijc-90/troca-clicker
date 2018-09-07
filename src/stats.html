@@ -7,6 +7,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/events.js"></script>
 	<script type="text/javascript" src="js/buy_flow.js"></script>
 	<script type="text/javascript" src="js/game_loop.js"></script>
 
@@ -16,10 +17,17 @@
 		window.setInterval(function(){
 		   gameLoop.run(); 
 		}, 1000);
+
+		$(document).ready(function(){
+			$("#buy_clicker").click(function(e){
+				e.preventDefault();
+				gameLoop.buyClick();
+			})
+		});
 	</script>
 
 </head>
 <body>
-	
+	<a href="#" id="buy_clicker" style="display: block; width: 200px; height: 50px; background: white; margin: 100px;">COMPRAR</a>
 </body>
 </html>

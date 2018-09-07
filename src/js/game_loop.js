@@ -17,7 +17,8 @@ class GameLoop {
 			},
 			upgrades: [],
 			stockToRepair: 0,
-			stockToSale: 0
+			stockToSale: 0,
+			events: [],
 		};
 
 		var buyFlow = new BuyFlow();
@@ -25,12 +26,21 @@ class GameLoop {
 		this.pipeline = [
 			buyFlow
 		];
+
+		this.events = [];
 	}
 
 	run() {
+		this.context.events = this.events;
+		this.events = [];
+
 		this.context = this.pipeline.reduce( function(context, flowStep){
 			return flowStep.work(context);
 		}, this.context);
+	}
+
+	buyClick() {
+		this.events.push(EVENTS.BUY_CLICK);
 	}
 
 }
