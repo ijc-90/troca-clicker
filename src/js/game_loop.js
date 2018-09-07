@@ -44,4 +44,8 @@ class GameLoop {
 		this.events.push(EVENTS.BUY_CLICK);
 	}
 
+	saleClick() {
+		this.events.push(EVENTS.SALE_CLICK);
+	}
+
 }
