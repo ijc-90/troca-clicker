@@ -26,7 +26,7 @@ class HiringFlow extends Flow {
         }
         context.money -= robotToHire.baseCost;
         robotToHire.quantity += 1; //updates reference that is used by context
-
+        robotToHire.baseCost = Math.floor(robotToHire.baseCost * context.geometricCostScale);
     }
 
 
