@@ -8,17 +8,15 @@ class GameLoop {
 			cellphoneSalePrice : 100,
 			geometricCostScale : 1.3,
 			robots : {
-				buy: [
-					{type: "buy_rep", baseCost: 100, quantity: 2, production: 1},
-					{type: "supervisor", baseCost: 100, quantity: 1, production: 5},
-				],
-				repair: [
-					{type: "technician-jr", baseCost: 100, quantity: 2, production: 1},
-					{type: "technician-sr", baseCost: 400, quantity: 1, production: 5},
-				],
-				sale: [
-					{type: "seller Jr", baseCost: 100, quantity: 6, production: 1},
-				]
+
+				"buyer_one": {type: "buy", baseCost: 100, quantity: 0, production: 1},
+				"buyer_two": {type: "buy", baseCost: 100, quantity: 0, production: 5},
+
+				"repairer_one" : {type: "repair", baseCost: 100, quantity: 0, production: 1},
+				"repairer_two" : {type: "repair", baseCost: 100, quantity: 0, production: 5},
+
+				"seller_one" : {type: "sale", baseCost: 100, quantity: 1, production: 5},
+				"seller_two" : {type: "sale", baseCost: 100, quantity: 2, production: 5},
 			},
 			upgrades: [],
 			stockToRepair: 310,
@@ -30,6 +28,7 @@ class GameLoop {
 			new BuyFlow(),
 			new RepairFlow(),
 			new SaleFlow(),
+			new HiringFlow(),
 		];
 
 		this.events = [];
@@ -45,7 +44,7 @@ class GameLoop {
 	}
 
 	buyClick() {
-		this.events.push(EVENTS.BUY_CLICK);
+		this.events.push(new Event(EVENTS.BUY_CLICK));
 	}
 
 	repairClick() {
@@ -53,7 +52,13 @@ class GameLoop {
 	}
 
 	saleClick() {
-		this.events.push(EVENTS.SALE_CLICK);
+		this.events.push(new Event(EVENTS.SALE_CLICK));
+	}
+
+	hiringClick(robotName){
+		var event = new Event(EVENTS.HIRING_CLICK);
+		event.robotName = robotName;
+		this.events.push(event);
 	}
 
 }

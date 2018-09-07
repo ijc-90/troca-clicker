@@ -9,6 +9,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/events.js"></script>
 	<script type="text/javascript" src="js/flow.js"></script>
+	<script type="text/javascript" src="js/hiring_flow.js"></script>
+	<script type="text/javascript" src="js/event.js"></script>
 	<script type="text/javascript" src="js/buy_flow.js"></script>
 	<script type="text/javascript" src="js/repair_flow.js"></script>
 	<script type="text/javascript" src="js/sale_flow.js"></script>
@@ -35,7 +37,16 @@
 			$("#sale_clicker").click(function(e){
 				e.preventDefault();
 				gameLoop.saleClick();
+
 			});
+
+			$("#hire_clicker").click(function(e){
+				e.preventDefault();
+				gameLoop.hiringClick('buyer_one');
+			});
+
+
+
 		});
 	</script>
 
@@ -47,5 +58,10 @@
 
 	<a href="#" id="sale_clicker" style="display: block; width: 200px; height: 50px; background: white; margin: 100px;">VENDER</a>
 
+<<<<<<< HEAD
+	<a href="#" id="hire_clicker" style="display: block; width: 200px; height: 50px; background: white; margin: 100px;">HIRE</a>
+
+=======
+>>>>>>> v2
 </body>
 </html>
