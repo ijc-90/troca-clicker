@@ -85,7 +85,12 @@ class ViewIntegrator {
           "js-seller-three-bought": 77777777,
           "js-seller-three-upg-price": 77777777,
           "js-seller-three-upg-multiplier": 77777777,
-          "js-seller-three-total-capacity": 77777777
+          "js-seller-three-total-capacity": 77777777,
+          "js-this-loop-must-pay-salaries": true,
+          "js-salaries-amount": 1,
+          "js-you-lose": false,
+          "js-you-win": false
+
         };
     }
 }
