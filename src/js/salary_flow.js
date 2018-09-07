@@ -8,6 +8,7 @@ class SalaryFlow extends Flow {
 
     work(context) {
         this.iterationIndex++;
+        context.salariesPaidThisTick = false;
         if (this.iterationIndex >= context.iterationsToPaySalary){
             context = this.tryToPaySalaries(context);
         }
@@ -24,6 +25,8 @@ class SalaryFlow extends Flow {
         }, 0);
 
         context.money -= totalSalaries;
+        context.moneyPaidInSalaries = totalSalaries;
+        context.salariesPaidThisTick = true;
         context.gameOver = (context.money < 0);
         return context;
     }

@@ -2,26 +2,34 @@ class ViewIntegrator {
     constructor(){}
 
     generateViewRawData(oldContext, newContext){
-        var buyRobots = Object.values(newContext.robots).filter(function(robot){
+        var robots = Object.values(context.robots);
+        
+        var buyRobots = robots.filter(function(robot){
             return robot.type == "buy";
         });
         var buyRobotsProductivity = buyRobots.reduce(function(carry, robot){
             return (robot.production * robot.quantity) + carry;
         });
 
-        var repairRobots = Object.values(newContext.robots).filter(function(robot){
+        var repairRobots = robots.filter(function(robot){
             return robot.type == "repair";
         });
         var repairRobotsProductivity = buyRobots.reduce(function(carry, robot){
             return (robot.production * robot.quantity) + carry;
         });
 
-        var saleRobots = Object.values(newContext.robots).filter(function(robot){
+        var saleRobots = robots.filter(function(robot){
             return robot.type == "sale";
         });
         var saleRobotsProductivity = buyRobots.reduce(function(carry, robot){
             return (robot.production * robot.quantity) + carry;
         });
+
+
+        var totalSalaries = robots.reduce(function(carry, robot) {
+            var totalForRobotKind = robot.quantity * robot.salary;
+            return carry + totalForRobotKind;
+        }, 0);
 
         return {
           "js-total-balance": newContext.money - oldContext.money,
@@ -86,10 +94,11 @@ class ViewIntegrator {
           "js-seller-three-upg-price": 77777777,
           "js-seller-three-upg-multiplier": 77777777,
           "js-seller-three-total-capacity": 77777777,
-          "js-this-loop-must-pay-salaries": true,
-          "js-salaries-amount": 1,
-          "js-you-lose": false,
-          "js-you-win": false
+          "js-this-loop-must-pay-salaries": newContext.salariesPaidThisTick,
+          "js-salaries-amount": totalSalaries,
+          "js-you-lose": newContext.gameOver,
+          "js-you-win": newContext.gameWon,
+
 
         };
     }

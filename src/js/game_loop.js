@@ -30,6 +30,7 @@ class GameLoop {
 			events: [],
 			iterationsToPaySalary: 3,
 			gameOver: false,
+			gameWon: false,
 			probabilityOfDefectiveBuy : 0.7,
 
 			moneySpentOnBuyingPhonesThisCicle: 0,
@@ -38,12 +39,14 @@ class GameLoop {
 			amountOfPhonesRepairedThisCicle: 0,
 			moneyEarnedSellingThisCicle: 0,
 			amountOfPhonesSoldThisCicle: 0,
+			moneyPaidInSalaries: 0,
+			salariesPaidThisTick: false,
 
 		};
 		
 		this.pipeline = [
-			new BuyFlow(),
 			new RepairFlow(),
+			new BuyFlow(),
 			new SaleFlow(),
 			new HiringFlow(),
 			new UpgradeFlow(),
