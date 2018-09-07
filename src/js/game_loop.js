@@ -4,14 +4,14 @@ class GameLoop {
 		this.viewIntegrator = new ViewIntegrator();
 
 		this.context = {
-			money : 10000,
+			money : 500,
 			cellphoneBuyPrice : 50,
 			cellphoneRepairPrice : 40,
 			cellphoneSalePrice : 100,
 			geometricCostScale : 1.3,
 			robots : {
 				"buyer_one": { name: "buyer_one", type: "buy", baseCost: 100, quantity: 0, production: 1, salary: 10 },
-				"buyer_two": { name: "buyer_two", type: "buy", baseCost: 100, quantity: 1, production: 5, salary: 20 },
+				"buyer_two": { name: "buyer_two", type: "buy", baseCost: 100, quantity: 0, production: 5, salary: 20 },
 				"repairer_one" : { name: "repairer_one", type: "repair", baseCost: 100, quantity: 0, production: 1, salary: 30 },
 				"repairer_two" : { name: "repairer_two", type: "repair", baseCost: 100, quantity: 0, production: 5, salary: 50 },
 				"seller_one" : { name: "seller_one", type: "sale", baseCost: 100, quantity: 0, production: 1, salary: 10 },
@@ -53,7 +53,7 @@ class GameLoop {
 		this.events = [];
 	}
 
-	run() {
+	tick() {
 		if (this.context.gameOver){
 			return;
 		}
@@ -66,7 +66,7 @@ class GameLoop {
 			return flowStep.work(context);
 		}, this.context);
 
-		this.viewIntegrator.generateViewRawData(oldContext, this.context);
+		return this.viewIntegrator.generateViewRawData(oldContext, this.context);
 	}
 
 	buyClick() {
