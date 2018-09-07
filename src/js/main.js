@@ -7,7 +7,7 @@ var contentInfo = [
         imgPath: "images/caniggia.jpeg",
         upgImgPath: "images/caniggia.jpeg",
         pluralName: "Caniggias",
-        upgTitle: "Caniggia"
+        upgTitle: "Siempre al TOP"
     },
     {
         type: "buyer_two", 
@@ -15,7 +15,7 @@ var contentInfo = [
         imgPath: "images/fort.jpg",
         upgImgPath: "images/fort.jpg",
         pluralName: "Forts",
-        upgTitle: "Fort"
+        upgTitle: "MAIAMEEE!"
     },
     {
         type: "buyer_three", 
@@ -23,15 +23,15 @@ var contentInfo = [
         imgPath: "images/mayweather.jpeg",
         upgImgPath: "images/mayweather.jpeg",
         pluralName: "Mayweathers",
-        upgTitle: "Mayweather"
+        upgTitle: "Justin Time"
     },
     {
         type: "repairer_one", 
-        name: "Pastor", 
+        name: "Fowler", 
         imgPath: "images/pastor.jpg",
         upgImgPath: "images/pastor.jpg",
-        pluralName: "Pastores",
-        upgTitle: "Pastor"
+        pluralName: "Fowlers",
+        upgTitle: "Microservice Architecture"
     },
     {
         type: "repairer_two", 
@@ -47,7 +47,7 @@ var contentInfo = [
         imgPath: "images/house.jpg",
         upgImgPath: "images/house.jpg",
         pluralName: "Dr Houses",
-        upgTitle: "Dr House"
+        upgTitle: "Vicodin!"
     },
     {
         type: "seller_one", 
@@ -55,23 +55,23 @@ var contentInfo = [
         imgPath: "images/fantino.jpg",
         upgImgPath: "images/fantino.jpg",
         pluralName: "Fantinos",
-        upgTitle: "Fantino"
+        upgTitle: "PARA, PARA, PARA..."
     },
     {
         type: "seller_two", 
-        name: "Fowler", 
-        imgPath: "images/fowler.jpeg",
-        upgImgPath: "images/fowler.jpeg",
-        pluralName: "Fowlers",
-        upgTitle: "Fowler"
-    },
-    {
-        type: "seller_three", 
         name: "Caruso", 
         imgPath: "images/caruso.jpeg",
         upgImgPath: "images/caruso.jpeg",
         pluralName: "Carusos",
         upgTitle: "Smoke Power"
+    },
+    {
+        type: "seller_three", 
+        name: "S. Jobs", 
+        imgPath: "images/jobs.jpg",
+        upgImgPath: "images/jobs.jpg",
+        pluralName: "Steves",
+        upgTitle: "Click to release a new iPhone"
     },
 ];
 
