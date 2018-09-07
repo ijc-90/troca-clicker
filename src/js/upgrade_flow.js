@@ -2,7 +2,6 @@ class UpgradeFlow extends Flow {
 
     constructor() {
         super();
-        console.log("Upgrade Constructed");
     }
 
     work(context) {
@@ -26,10 +25,6 @@ class UpgradeFlow extends Flow {
             return;
         }
 
-        console.log("############# UPGRADE START ############# ");
-        console.log("upgrade:",event.upgradeName);
-        console.log("money:",upgradeToBuy.price);
-        console.log("############# UPGRADE END ############# ");
 
         context.money -= upgradeToBuy.price;
         upgradeToBuy.isActive = true; //updates reference that is used by context

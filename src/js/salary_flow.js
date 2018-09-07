@@ -3,7 +3,6 @@ class SalaryFlow extends Flow {
     constructor() {
         super();
         this.iterationIndex = 0;
-        console.log("Salary Constructed");
     }
 
     work(context) {

@@ -2,7 +2,6 @@ class RepairFlow extends Flow {
 
 	constructor() {
 		super();
-		console.log("RepairFlowConstructed");
 	}
 
 	work(context) {
@@ -16,11 +15,6 @@ class RepairFlow extends Flow {
 		var quantityToRepair = Math.min(moneyRepairCapacity, repairCapacity, context.stockToRepair);
 
 		context = this.repair(context, quantityToRepair);
-
-		// console.log("############# Repair START ############# ");
-  //       console.log("money:",context.money);
-  //       console.log("quantityToRepair:",quantityToRepair);
-		// console.log("############# Repair END ############# ");
 
 		return context;
 	};

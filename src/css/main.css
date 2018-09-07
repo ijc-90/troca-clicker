@@ -59,6 +59,12 @@ font-family: 'Open Sans', sans-serif;
 	padding: 15px 40px;
 	font-size: 18px;
 	font-family: 'Chewy', cursive;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.store-container {
+	position: relative;
 }
 .click-message-news{
 	max-width: calc(100% - 130px);

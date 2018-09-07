@@ -2,7 +2,6 @@ class SaleFlow extends Flow {
 
     constructor() {
         super();
-        console.log("SaleFlow Constructed");
     }
 
     work(context) {
@@ -16,11 +15,6 @@ class SaleFlow extends Flow {
 
         context = this.sell(context, quantityToSell);
 
-        // console.log("############# SaleFlow START ############# ");
-        // console.log("money:",context.money);
-        // console.log("stockToSale:",context.stockToSale);
-        // console.log("vendi: ",quantityToSell);
-        // console.log("############# SaleFlow END ############# ");
 
         return context;
     };

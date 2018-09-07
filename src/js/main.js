@@ -28,8 +28,8 @@ var contentInfo = [
     {
         type: "repairer_one", 
         name: "Fowler", 
-        imgPath: "images/pastor.jpg",
-        upgImgPath: "images/pastor.jpg",
+        imgPath: "images/fowler.jpeg",
+        upgImgPath: "images/fowler.jpeg",
         pluralName: "Fowlers",
         upgTitle: "Microservice Architecture"
     },
