@@ -30,6 +30,8 @@ class RepairFlow extends Flow {
 		context.money -= quantityToRepair * context.cellphoneRepairPrice;
 		context.stockToRepair -= quantityToRepair;
 		context.stockToSale += quantityToRepair;
+		context.amountOfPhonesRepairedThisCicle = quantityToRepair;
+		context.moneySpentRepairingThisCicle = quantityToRepair * context.cellphoneRepairPrice;
 		return context;
 	}
 

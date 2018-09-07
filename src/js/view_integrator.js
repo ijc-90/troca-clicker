@@ -2,13 +2,26 @@ class ViewIntegrator {
     constructor(){}
 
     generateViewRawData(oldContext, newContext){
-        buyRobots = Object.values(context.robots).filter(function(robot){
+        var buyRobots = Object.values(newContext.robots).filter(function(robot){
             return robot.type == "buy";
         });
-        
-        buyRobotsProductivity = buyRobots.reduce(function(carry, robot){
+        var buyRobotsProductivity = buyRobots.reduce(function(carry, robot){
             return (robot.production * robot.quantity) + carry;
-        })
+        });
+
+        var repairRobots = Object.values(newContext.robots).filter(function(robot){
+            return robot.type == "repair";
+        });
+        var repairRobotsProductivity = buyRobots.reduce(function(carry, robot){
+            return (robot.production * robot.quantity) + carry;
+        });
+
+        var saleRobots = Object.values(newContext.robots).filter(function(robot){
+            return robot.type == "sale";
+        });
+        var saleRobotsProductivity = buyRobots.reduce(function(carry, robot){
+            return (robot.production * robot.quantity) + carry;
+        });
 
         return {
           "js-total-balance": newContext.money - oldContext.money,
@@ -19,13 +32,13 @@ class ViewIntegrator {
           "js-phone-buy-capability": buyRobotsProductivity, // capacidad de todos los robots de compra
           "js-phone-buy-price": newContext.cellphoneBuyPrice,
           "js-repair-balance": newContext.moneySpentRepairingThisCicle, //Cuanto gasté en reparar telefonos este ciclo (celulares reparados * precio de reparo)
-          "js-amount-phones-repaired": null, //cantidad de cells reparados
-          "js-amount-phones-awaiting-repair": null, //stock de "en reparo"
-          "js-phone-repair-capability": null, //Capacidad de todos los robots de reparo (cantidad * productividad)
+          "js-amount-phones-repaired": newContext.amountOfPhonesRepairedThisCicle, //cantidad de cells reparados
+          "js-amount-phones-awaiting-repair": newContext.stockToRepair, //stock de "en reparo"
+          "js-phone-repair-capability": repairRobotsProductivity, //Capacidad de todos los robots de reparo (cantidad * productividad)
           "js-phone-repair-price": newContext.cellphoneRepairPrice,
-          "js-sale-balance": null, // cantidad de celulares vendidos por precio de venta
-          "js-amount-phones-sold": null, // cantidad de vendidos
-          "js-amount-phones-awaiting-sale": null, //stock de venta
+          "js-sale-balance": newContext.moneyEarnedSellingThisCicle, // cantidad de celulares vendidos * precio de venta
+          "js-amount-phones-sold": newContext.amountOfPhonesSoldThisCicle, // cantidad de vendidos
+          "js-amount-phones-awaiting-sale": newContext.stockToSale, //stock de venta
           "js-amount-sell-price": newContext.cellphoneSalePrice,
           "js-buyer-one-price": null, //precio de contrataor robot
           "js-buyer-one-bought": null, // cuantos robots tengo

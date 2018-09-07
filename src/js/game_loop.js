@@ -1,6 +1,8 @@
 class GameLoop {
 
 	constructor(){
+		this.viewIntegrator = new ViewIntegrator();
+
 		this.context = {
 			money : 10000,
 			cellphoneBuyPrice : 50,
@@ -34,6 +36,8 @@ class GameLoop {
 			amountOfPhonesBoughtThisCicle: 0,
 			moneySpentRepairingThisCicle: 0,
 			amountOfPhonesRepairedThisCicle: 0,
+			moneyEarnedSellingThisCicle: 0,
+			amountOfPhonesSoldThisCicle: 0,
 
 		};
 		
@@ -53,12 +57,16 @@ class GameLoop {
 		if (this.context.gameOver){
 			return;
 		}
+		var oldContext = JSON.stringify(this.context);
+
 		this.context.events = this.events;
 		this.events = [];
 
 		this.context = this.pipeline.reduce( function(context, flowStep){
 			return flowStep.work(context);
 		}, this.context);
+
+		this.viewIntegrator.generateViewRawData(oldContext, this.context);
 	}
 
 	buyClick() {
