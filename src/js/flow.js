@@ -17,4 +17,10 @@ class Flow {
             return carry;
         }, 0);
     };
+
+    getRobotsByType(robots, type){
+        return robots.filter(function(robot){
+            return robot.type == type;
+        });
+    }
 }

@@ -6,7 +6,7 @@ class SaleFlow extends Flow {
     }
 
     work(context) {
-        var saleRobots = context.robots.sale;     
+        var saleRobots = this.getRobotsByType(Object.values(context.robots), "sale");     
         var robotSaleCapacity = this.getRobotCapacity(saleRobots);
         var clickBuyCapacity = this.getQuantityOfEventsOfType(context.events, EVENTS.SALE_CLICK);
         var stockToSale = context.stockToSale;
