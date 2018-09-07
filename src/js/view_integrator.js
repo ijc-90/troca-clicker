@@ -36,6 +36,7 @@ class ViewIntegrator {
           "js-amount-phones-awaiting-repair": newContext.stockToRepair, //stock de "en reparo"
           "js-phone-repair-capability": repairRobotsProductivity, //Capacidad de todos los robots de reparo (cantidad * productividad)
           "js-phone-repair-price": newContext.cellphoneRepairPrice,
+          "js-buyer-one-upg-multiplier": 1200,
           "js-sale-balance": newContext.moneyEarnedSellingThisCicle, // cantidad de celulares vendidos * precio de venta
           "js-amount-phones-sold": newContext.amountOfPhonesSoldThisCicle, // cantidad de vendidos
           "js-amount-phones-awaiting-sale": newContext.stockToSale, //stock de venta
@@ -47,6 +48,7 @@ class ViewIntegrator {
           "js-buyer-two-price": newContext.robots["buyer_two"].baseCost, //idem de acá para abajo
           "js-buyer-two-bought": newContext.robots["buyer_two"].quantity,
           "js-buyer-two-upg-price": 77777777,
+          "js-buyer-one-upg-multiplier": 1200,
           "js-buyer-two-total-capacity": newContext.robots["buyer_two"].baseCost * newContext.robots["buyer_two"].quantity,
           "js-buyer-three-price": newContext.robots["buyer_three"].baseCost,
           "js-buyer-three-bought": newContext.robots["buyer_three"].quantity,
@@ -76,6 +78,10 @@ class ViewIntegrator {
           "js-seller-three-bought": newContext.robots["seller_three"].quantity,
           "js-seller-three-upg-price": 77777777,
           "js-seller-three-total-capacity": newContext.robots["seller_three"].baseCost * newContext.robots["seller_three"].quantity
+          "js-this-loop-must-pay-salaries": true,
+          "js-salaries-amount": 1,
+          "js-you-lose": false,
+          "js-you-win": false
         };
     }
 }
