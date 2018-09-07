@@ -30,65 +30,83 @@ var contentInfo = [
     {
         type: "buyer_one", 
         name: "Comprador 1", 
-        imgPath: "images/buyer_one.jpg",
+        imgPath: "images/mit120.jpg",
         upgImgPath: "images/buyer_one_upg.jpg",
         descToolTip: "Descripcion tooltip",
+        pluralName: "Compradores 1",
+        upgTitle: "Birra"
     },
     {
         type: "buyer_two", 
         name: "Comprador 2", 
-        imgPath: "images/buyer_two.jpg",
+        imgPath: "images/mit120.jpg",
         upgImgPath: "images/buyer_two_upg.png",
         descToolTip: "Descripcion tooltip 2",
+        pluralName: "Compradores 1",
+        upgTitle: "Birra"
     },
     {
         type: "buyer_three", 
         name: "Comprador 3", 
-        imgPath: "images/buyer_three.jpg",
+        imgPath: "images/mit120.jpg",
         upgImgPath: "images/buyer_three_upg.jpg",
         descToolTip: "Descripcion tooltip 3",
+        pluralName: "Compradores 1",
+        upgTitle: "Birra"
     },
     {
         type: "repairer_one", 
         name: "Reparador 1", 
-        imgPath: "images/repairer_one.jpg",
+        imgPath: "images/mit120.jpg",
         upgImgPath: "images/buyer_one_upg.jpg",
         descToolTip: "Descripcion tooltip",
+        pluralName: "Compradores 1",
+        upgTitle: "Birra"
     },
     {
         type: "repairer_two", 
         name: "Reparador 2", 
-        imgPath: "images/repairer_two.jpg",
+        imgPath: "images/mit120.jpg",
         upgImgPath: "images/buyer_two_upg.png",
         descToolTip: "Descripcion tooltip 2",
+        pluralName: "Compradores 1",
+        upgTitle: "Birra"
     },
     {
         type: "repairer_three", 
         name: "Reparador 3", 
-        imgPath: "images/repairer_three.jpg",
+        imgPath: "images/mit120.jpg",
         upgImgPath: "images/buyer_three_upg.jpg",
         descToolTip: "Descripcion tooltip 3",
+        pluralName: "Compradores 1",
+        upgTitle: "Birra"
     },
     {
         type: "seller_one", 
         name: "Vendedor 1", 
-        imgPath: "images/seller_one.jpg",
+        imgPath: "images/mit120.jpg",
         upgImgPath: "images/buyer_one_upg.jpg",
         descToolTip: "Descripcion tooltip",
+        pluralName: "Compradores 1",
+        upgTitle: "Birra"
     },
     {
         type: "seller_two", 
         name: "Vendedor 2", 
-        imgPath: "images/seller_two.jpg",
+        imgPath: "images/mit120.jpg",
         upgImgPath: "images/buyer_two_upg.png",
         descToolTip: "Descripcion tooltip 2",
+        pluralName: "Compradores 1",
+        upgTitle: "Birra"
     },
     {
         type: "seller_three", 
         name: "Vendedor 3", 
-        imgPath: "images/seller_three.jpg",
+        imgPath: "images/mit120.jpg",
         upgImgPath: "images/buyer_three_upg.jpg",
         descToolTip: "Descripcion tooltip 3",
+        pluralName: "Compradores 1",
+        upgTitle: "Birra"
     },
 ];
 
@@ -97,9 +115,13 @@ function updateContentInfo () {
     contentInfo.forEach(function(info){
         $('#' + info.type + ' .click-robot-name').text(info.name);
         $('#' + info.type + ' .click-robot-img img').attr("src", info.imgPath);
+        $('#' + info.type + ' .click-robot-tooltip-img img').attr("src", info.imgPath);
         $('#' + info.type + '_upgrade img').attr("src", info.upgImgPath);
         $('#' + info.type + ' .click-robot-tooltip-description').text(info.descToolTip);
         $('#' + info.type + ' .click-robot-tooltip-title').text("Contratar un " + info.name);
+        $('#' + info.type + ' .click-robot-tooltip-plural').text(info.pluralName);
+        $('#' + info.type + '_upgrade .click-upgrade-tooltip-title').text(info.upgTitle);  
+
     });
 }
 
