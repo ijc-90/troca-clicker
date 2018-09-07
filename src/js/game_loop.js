@@ -12,24 +12,31 @@ class GameLoop {
 			robots : {
 				"buyer_one": { name: "buyer_one", type: "buy", baseCost: 100, quantity: 0, production: 1, salary: 10 },
 				"buyer_two": { name: "buyer_two", type: "buy", baseCost: 100, quantity: 0, production: 5, salary: 20 },
+				"buyer_three": { name: "buyer_three", type: "buy", baseCost: 100, quantity: 0, production: 5, salary: 20 },
 				"repairer_one" : { name: "repairer_one", type: "repair", baseCost: 100, quantity: 0, production: 1, salary: 30 },
 				"repairer_two" : { name: "repairer_two", type: "repair", baseCost: 100, quantity: 0, production: 5, salary: 50 },
+				"repairer_three" : { name: "repairer_three", type: "repair", baseCost: 100, quantity: 0, production: 5, salary: 50 },
 				"seller_one" : { name: "seller_one", type: "sale", baseCost: 100, quantity: 0, production: 1, salary: 10 },
 				"seller_two" : { name: "seller_two", type: "sale", baseCost: 100, quantity: 0, production: 5, salary: 70 },
+				"seller_three" : { name: "seller_three", type: "sale", baseCost: 100, quantity: 0, production: 5, salary: 70 },
 			},
 			upgrades: {
 				"upgrade_buyer_one": { price: 400, productionMultiplier: 3, robot: "buyer_one", isActive: false },
 				"upgrade_buyer_two": { price: 100, productionMultiplier: 2, robot: "buyer_two", isActive: false },
+				"upgrade_buyer_three": { price: 100, productionMultiplier: 2, robot: "buyer_three", isActive: false },
 				"upgrade_repairer_one": { price: 500, productionMultiplier: 10, robot: "repairer_one", isActive: false },
 				"upgrade_repairer_two": { price: 100, productionMultiplier: 2, robot: "repairer_two", isActive: false },
+				"upgrade_repairer_three": { price: 100, productionMultiplier: 2, robot: "repairer_three", isActive: false },
 				"upgrade_seller_one": { price: 100, productionMultiplier: 3, robot: "seller_one", isActive: false },
 				"upgrade_seller_two": { price: 100, productionMultiplier: 2, robot: "seller_two", isActive: false },
+				"upgrade_seller_three": { price: 100, productionMultiplier: 2, robot: "seller_three", isActive: false },
 			},
 			stockToRepair: 310,
 			stockToSale: 1000,
 			events: [],
 			iterationsToPaySalary: 3,
 			gameOver: false,
+			gameWon: false,
 			probabilityOfDefectiveBuy : 0.7,
 
 			moneySpentOnBuyingPhonesThisCicle: 0,
@@ -38,12 +45,14 @@ class GameLoop {
 			amountOfPhonesRepairedThisCicle: 0,
 			moneyEarnedSellingThisCicle: 0,
 			amountOfPhonesSoldThisCicle: 0,
+			moneyPaidInSalaries: 0,
+			salariesPaidThisTick: false,
 
 		};
 		
 		this.pipeline = [
-			new BuyFlow(),
 			new RepairFlow(),
+			new BuyFlow(),
 			new SaleFlow(),
 			new HiringFlow(),
 			new UpgradeFlow(),
