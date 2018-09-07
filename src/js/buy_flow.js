@@ -8,7 +8,7 @@ class BuyFlow extends Flow {
 	work(context) {
 		var buyRobots = context.robots.buy;		
 		var robotBuyCapacity = this.getRobotCapacity(buyRobots);
-		var clickBuyCapacity = this.getClickBuyCapacity(context.events);
+		var clickBuyCapacity = this.getQuantityOfEventsOfType(context.events, EVENTS.BUY_CLICK);
 		var buyCapacity = robotBuyCapacity + clickBuyCapacity;
 
 		var moneyBuyCapacity = this.getMoneyBuyCapacity(context.money, context.cellphoneBuyPrice);
@@ -37,14 +37,5 @@ class BuyFlow extends Flow {
 		context.stockToRepair += incommingStockToRepair;
 		context.stockToSale += incommingStockToSale;
 		return context;
-	}
-
-	getClickBuyCapacity(events) {
-		return events.reduce(function(carry, event) {
-			if (event == EVENTS.BUY_CLICK){
-				carry++;
-			}
-			return carry;
-		}, 0);
 	}
 }

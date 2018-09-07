@@ -25,11 +25,16 @@
 				e.preventDefault();
 				gameLoop.buyClick();
 			})
+			$("#sale_clicker").click(function(e){
+				e.preventDefault();
+				gameLoop.saleClick();
+			})
 		});
 	</script>
 
 </head>
 <body>
 	<a href="#" id="buy_clicker" style="display: block; width: 200px; height: 50px; background: white; margin: 100px;">COMPRAR</a>
+	<a href="#" id="sale_clicker" style="display: block; width: 200px; height: 50px; background: white; margin: 100px;">VENDER</a>
 </body>
 </html>

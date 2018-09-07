@@ -8,9 +8,11 @@ class SaleFlow extends Flow {
     work(context) {
         var saleRobots = context.robots.sale;     
         var robotSaleCapacity = this.getRobotCapacity(saleRobots);
+        var clickBuyCapacity = this.getQuantityOfEventsOfType(context.events, EVENTS.SALE_CLICK);
         var stockToSale = context.stockToSale;
+        var saleCapacity = robotSaleCapacity + clickBuyCapacity;
 
-        var quantityToSell = Math.min(stockToSale, robotSaleCapacity);
+        var quantityToSell = Math.min(stockToSale, saleCapacity);
 
         context = this.sell(context, quantityToSell);
 
