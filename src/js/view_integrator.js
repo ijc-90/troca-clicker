@@ -2,7 +2,7 @@ class ViewIntegrator {
     constructor(){}
 
     generateViewRawData(oldContext, newContext){
-        var robots = Object.values(context.robots);
+        var robots = Object.values(newContext.robots);
         
         var buyRobots = robots.filter(function(robot){
             return robot.type == "buy";
@@ -85,7 +85,7 @@ class ViewIntegrator {
           "js-seller-three-price": newContext.robots["seller_three"].baseCost,
           "js-seller-three-bought": newContext.robots["seller_three"].quantity,
           "js-seller-three-upg-price": 77777777,
-          "js-seller-three-total-capacity": newContext.robots["seller_three"].baseCost * newContext.robots["seller_three"].quantity
+          "js-seller-three-total-capacity": newContext.robots["seller_three"].baseCost * newContext.robots["seller_three"].quantity,
           "js-this-loop-must-pay-salaries": newContext.salariesPaidThisTick,
           "js-salaries-amount": totalSalaries,
           "js-you-lose": newContext.gameOver,
