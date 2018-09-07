@@ -10,13 +10,13 @@ class GameLoop {
 			cellphoneSalePrice : 100,
 			geometricCostScale : 1.3,
 			robots : {
-				"buyer_one": { name: "buyer_one", type: "buy", baseCost: 100, quantity: 0, production: 1, salary: 10 },
+				"buyer_one": { name: "buyer_one", type: "buy", baseCost: 100, quantity: 0, production: 1, salary: 20 },
 				"buyer_two": { name: "buyer_two", type: "buy", baseCost: 100, quantity: 0, production: 5, salary: 20 },
 				"buyer_three": { name: "buyer_three", type: "buy", baseCost: 100, quantity: 0, production: 5, salary: 20 },
-				"repairer_one" : { name: "repairer_one", type: "repair", baseCost: 100, quantity: 0, production: 1, salary: 30 },
+				"repairer_one" : { name: "repairer_one", type: "repair", baseCost: 100, quantity: 0, production: 1, salary: 60 },
 				"repairer_two" : { name: "repairer_two", type: "repair", baseCost: 100, quantity: 0, production: 5, salary: 50 },
 				"repairer_three" : { name: "repairer_three", type: "repair", baseCost: 100, quantity: 0, production: 5, salary: 50 },
-				"seller_one" : { name: "seller_one", type: "sale", baseCost: 100, quantity: 0, production: 1, salary: 10 },
+				"seller_one" : { name: "seller_one", type: "sale", baseCost: 100, quantity: 0, production: 1, salary: 20 },
 				"seller_two" : { name: "seller_two", type: "sale", baseCost: 100, quantity: 0, production: 5, salary: 70 },
 				"seller_three" : { name: "seller_three", type: "sale", baseCost: 100, quantity: 0, production: 5, salary: 70 },
 			},
@@ -31,10 +31,10 @@ class GameLoop {
 				"upgrade_seller_two": { price: 100, productionMultiplier: 2, robot: "seller_two", isActive: false },
 				"upgrade_seller_three": { price: 100, productionMultiplier: 2, robot: "seller_three", isActive: false },
 			},
-			stockToRepair: 310,
-			stockToSale: 1000,
+			stockToRepair: 0,
+			stockToSale: 0,
 			events: [],
-			iterationsToPaySalary: 3,
+			iterationsToPaySalary: 60,
 			gameOver: false,
 			gameWon: false,
 			probabilityOfDefectiveBuy : 0.7,
@@ -66,7 +66,7 @@ class GameLoop {
 		if (this.context.gameOver){
 			return;
 		}
-		var oldContext = JSON.stringify(this.context);
+		var oldContext = JSON.parse(JSON.stringify(this.context));
 
 		this.context.events = this.events;
 		this.events = [];
@@ -91,12 +91,18 @@ class GameLoop {
 	}
 
 	hiringClick(robotName){
+	    if ($("#".robotName).hasClass("disabled")) {
+	        return;
+        }
 		var event = new Event(EVENTS.HIRING_CLICK);
 		event.robotName = robotName;
 		this.events.push(event);
 	}
 
 	upgradeClick(upgradeName){
+        if ($("#".robotName).hasClass("disabled")) {
+            return;
+        }
 		var event = new Event(EVENTS.UPGRADE_CLICK);
 		event.upgradeName = upgradeName;
 		this.events.push(event);
