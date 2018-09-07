@@ -7,7 +7,8 @@ class RepairFlow extends Flow {
 
 	work(context) {
 		var repairRobots = this.getRobotsByType(Object.values(context.robots), "repair");
-		var robotRepairCapacity = this.getRobotCapacity(repairRobots);
+		var upgradesByRobot = this.getActiveUpgradesByRobot(context.upgrades);
+		var robotRepairCapacity = this.getRobotCapacity(repairRobots, upgradesByRobot);
 		var clickRepairCapacity = this.getClickRepairCapacity(context.events);
 		var repairCapacity = robotRepairCapacity + clickRepairCapacity;
 
@@ -16,6 +17,11 @@ class RepairFlow extends Flow {
 		var quantityToRepair = Math.min(moneyRepairCapacity, repairCapacity, context.stockToRepair);
 
 		context = this.repair(context, quantityToRepair);
+
+		console.log("############# Repair START ############# ");
+        console.log("money:",context.money);
+        console.log("quantityToRepair:",quantityToRepair);
+		console.log("############# Repair END ############# ");
 
 		return context;
 	};

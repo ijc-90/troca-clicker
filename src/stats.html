@@ -15,6 +15,7 @@
 	<script type="text/javascript" src="js/repair_flow.js"></script>
 	<script type="text/javascript" src="js/sale_flow.js"></script>
 	<script type="text/javascript" src="js/salary_flow.js"></script>
+	<script type="text/javascript" src="js/upgrade_flow.js"></script>
 	<script type="text/javascript" src="js/game_loop.js"></script>
 
 	<script type="text/javascript">
@@ -41,23 +42,56 @@
 
 			});
 
-			$("#hire_clicker").click(function(e){
+			$("#hire_clicker_buyer_1").click(function(e){
 				e.preventDefault();
 				gameLoop.hiringClick('buyer_one');
 			});
 
+			$("#upgrade_clicker_buyer_1").click(function(e){
+				e.preventDefault();
+				gameLoop.upgradeClick('upgrade_buyer_one');
+			});
 
+			$("#hire_clicker_repair_1").click(function(e){
+				e.preventDefault();
+				gameLoop.hiringClick('repairer_one');
+			});
 
+			$("#upgrade_clicker_repair_1").click(function(e){
+				e.preventDefault();
+				gameLoop.upgradeClick('upgrade_repairer_one');
+			});
+
+			$("#hire_clicker_seller_1").click(function(e){
+				e.preventDefault();
+				gameLoop.hiringClick('seller_one');
+			});
+
+			$("#upgrade_clicker_seller_1").click(function(e){
+				e.preventDefault();
+				gameLoop.upgradeClick('upgrade_seller_one');
+			});
 		});
 	</script>
 
 </head>
 <body>
-	<a href="#" id="buy_clicker" style="display: block; width: 200px; height: 50px; background: white; margin: 100px;">COMPRAR</a>
+	<a href="#" id="buy_clicker" style="display: inline-block; width: 200px; height: 50px; background: white; margin: 50px 100px;">COMPRAR</a>
 
-	<a href="#" id="repair_clicker" style="display: block; width: 200px; height: 50px; background: white; margin: 100px;">REPARAR</a>
+	<a href="#" id="repair_clicker" style="display: inline-block; width: 200px; height: 50px; background: white; margin: 50px 100px;">REPARAR</a>
 
-	<a href="#" id="sale_clicker" style="display: block; width: 200px; height: 50px; background: white; margin: 100px;">VENDER</a>
-	<a href="#" id="hire_clicker" style="display: block; width: 200px; height: 50px; background: white; margin: 100px;">HIRE</a>
+	<a href="#" id="sale_clicker" style="display: inline-block; width: 200px; height: 50px; background: white; margin: 50px 100px;">VENDER</a>
+
+	<a href="#" id="hire_clicker_buyer_1" style="display: inline-block; width: 200px; height: 50px; background: white; margin: 50px 100px;">HIRE BUYER 1</a>
+
+	<a href="#" id="upgrade_clicker_buyer_1" style="display: inline-block; width: 200px; height: 50px; background: white; margin: 50px 100px;">UPGRADE BUYER 1</a>
+
+	<a href="#" id="hire_clicker_repair_1" style="display: inline-block; width: 200px; height: 50px; background: white; margin: 50px 100px;">HIRE REPAIR 1</a>
+
+	<a href="#" id="upgrade_clicker_repair_1" style="display: inline-block; width: 200px; height: 50px; background: white; margin: 50px 100px;">UPGRADE REPAIR 1</a>
+	
+	<a href="#" id="hire_clicker_seller_1" style="display: inline-block; width: 200px; height: 50px; background: white; margin: 50px 100px;">HIRE SELLER 1</a>
+
+	<a href="#" id="upgrade_clicker_seller_1" style="display: inline-block; width: 200px; height: 50px; background: white; margin: 50px 100px;">UPGRADE SELLER 1</a>
 </body>
 </html>

@@ -7,7 +7,10 @@ class BuyFlow extends Flow {
 
 	work(context) {
 		var buyRobots = this.getRobotsByType(Object.values(context.robots), "buy");
-		var robotBuyCapacity = this.getRobotCapacity(buyRobots);
+		var upgradesByRobot = this.getActiveUpgradesByRobot(context.upgrades);
+
+		var robotBuyCapacity = this.getRobotCapacity(buyRobots, upgradesByRobot);
+
 		var clickBuyCapacity = this.getQuantityOfEventsOfType(context.events, EVENTS.BUY_CLICK);
 		var buyCapacity = robotBuyCapacity + clickBuyCapacity;
 
@@ -16,6 +19,13 @@ class BuyFlow extends Flow {
 		var quantityToBuy = Math.min(moneyBuyCapacity, buyCapacity);
 
 		context = this.buy(context, quantityToBuy);
+
+		console.log("############# Buy START ############# ");
+		console.log("quantityToBuy:",quantityToBuy);
+		console.log("money:",context.money);
+		console.log("stockToRepair:",context.stockToRepair);
+		console.log("stockToSale:",context.stockToSale);
+		console.log("############# BUY END ############# ");
 
 		return context;
 	};
