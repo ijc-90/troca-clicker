@@ -1,12 +1,13 @@
-class BuyFlow {
+class BuyFlow extends Flow {
 
 	constructor() {
-		console.log("soy el buy flow");
+		super();
+		console.log("BuyFlowConstructed");
 	}
 
 	work(context) {
 		var buyRobots = context.robots.buy;		
-		var robotBuyCapacity = this.getRobotBuyCapacity(buyRobots);
+		var robotBuyCapacity = this.getRobotCapacity(buyRobots);
 		var clickBuyCapacity = this.getClickBuyCapacity(context.events);
 		var buyCapacity = robotBuyCapacity + clickBuyCapacity;
 
@@ -23,13 +24,6 @@ class BuyFlow {
 
 		return context;
 	};
-
-	getRobotBuyCapacity(buyRobots) {
-		return buyRobots.reduce(function(carry, robot) {
-			var totalRobotCapacity = robot.quantity * robot.production;
-			return carry + totalRobotCapacity;
-		}, 0);
-	}
 
 	getMoneyBuyCapacity(money, cellphoneBuyPrice) {
 		return Math.floor(money / cellphoneBuyPrice);	

@@ -13,18 +13,19 @@ class GameLoop {
 					{type: "supervisor", baseCost: 100, quantity: 2, production: 5},
 				],
 				repair: [],
-				sale: []
+				sale: [
+					{type: "seller Jr", baseCost: 100, quantity: 6, production: 1},
+				]
 			},
 			upgrades: [],
 			stockToRepair: 0,
 			stockToSale: 0,
 			events: [],
 		};
-
-		var buyFlow = new BuyFlow();
 		
 		this.pipeline = [
-			buyFlow
+			new BuyFlow(),
+			new SaleFlow(),
 		];
 
 		this.events = [];
