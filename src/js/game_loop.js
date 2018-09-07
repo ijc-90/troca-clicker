@@ -10,17 +10,17 @@ class GameLoop {
 			cellphoneSalePrice : 100,
 			geometricCostScale : 1.3,
 			robots : {
-				"buyer_one": { name: "buyer_one", type: "buy", baseCost: 100, quantity: 0, production: 1, salary: 20 },
-				"buyer_two": { name: "buyer_two", type: "buy", baseCost: 1000, quantity: 0, production: 5, salary: 40 },
-				"buyer_three": { name: "buyer_three", type: "buy", baseCost: 10000, quantity: 0, production: 25, salary: 120 },
+				"buyer_one": { name: "buyer_one", type: "buy", baseCost: 120, quantity: 0, production: 1, salary: 20 },
+				"buyer_two": { name: "buyer_two", type: "buy", baseCost: 1200, quantity: 0, production: 5, salary: 40 },
+				"buyer_three": { name: "buyer_three", type: "buy", baseCost: 12000, quantity: 0, production: 25, salary: 120 },
 
-				"repairer_one" : { name: "repairer_one", type: "repair", baseCost: 100, quantity: 0, production: 1, salary: 60 },
-				"repairer_two" : { name: "repairer_two", type: "repair", baseCost: 1000, quantity: 0, production: 5, salary: 120 },
-				"repairer_three" : { name: "repairer_three", type: "repair", baseCost: 10000, quantity: 0, production: 25, salary: 360 },
+				"repairer_one" : { name: "repairer_one", type: "repair", baseCost: 120, quantity: 0, production: 1, salary: 60 },
+				"repairer_two" : { name: "repairer_two", type: "repair", baseCost: 1200, quantity: 0, production: 5, salary: 120 },
+				"repairer_three" : { name: "repairer_three", type: "repair", baseCost: 12000, quantity: 0, production: 25, salary: 360 },
 
-				"seller_one" : { name: "seller_one", type: "sale", baseCost: 100, quantity: 0, production: 1, salary: 20 },
-				"seller_two" : { name: "seller_two", type: "sale", baseCost: 1000, quantity: 0, production: 5, salary: 40 },
-				"seller_three" : { name: "seller_three", type: "sale", baseCost: 10000, quantity: 0, production: 25, salary: 120 },
+				"seller_one" : { name: "seller_one", type: "sale", baseCost: 120, quantity: 0, production: 1, salary: 20 },
+				"seller_two" : { name: "seller_two", type: "sale", baseCost: 1200, quantity: 0, production: 5, salary: 40 },
+				"seller_three" : { name: "seller_three", type: "sale", baseCost: 12000, quantity: 0, production: 25, salary: 120 },
 			},
 			upgrades: {
 				"upgrade_buyer_one": { price: 2000, productionMultiplier: 2, robot: "buyer_one", isActive: false },

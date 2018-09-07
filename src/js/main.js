@@ -28,8 +28,8 @@ var contentInfo = [
     {
         type: "repairer_one", 
         name: "Fowler", 
-        imgPath: "images/pastor.jpg",
-        upgImgPath: "images/pastor.jpg",
+        imgPath: "images/fowler.jpeg",
+        upgImgPath: "images/fowler.jpeg",
         pluralName: "Fowlers",
         upgTitle: "Microservice Architecture"
     },
@@ -107,14 +107,25 @@ window.setInterval(function(){
 }, 1000);
 
 function sellClickerClick(){
+    if ($(this).hasClass("disabled")) {
+        return;
+    }
     gameLoop.saleClick();
 }
 
 function buyClickerClick(){
+    if ($(this).hasClass("disabled")) {
+        return;
+    }
+
     gameLoop.buyClick();
 }
 
 function repairClickerClick(){
+    if ($(this).hasClass("disabled")) {
+        return;
+    }
+
     gameLoop.repairClick();
 }
 

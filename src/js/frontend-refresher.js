@@ -86,6 +86,8 @@ var robots = ['buyer-one', 'buyer-two', 'buyer-three',
     'seller-one', 'seller-two', 'seller-three',
 ];
 
+var actions = ["repair", "buy", "sell"];
+
 function updateVisibilityOfUpgrades(json) {
     robots.forEach((robotName) => {
         var propertyName = 'js-'+robotName+'-upg-bought';
@@ -117,6 +119,45 @@ function updateVisibilityOfRobots(json) {
     })
 }
 
+function updateAvailabilityOfSell(json) {
+        var upgradeElementId = "#js-sell-clicker";
+        if (json["js-amount-phones-awaiting-sale"] > 0) {
+            $(upgradeElementId)[0].style.opacity = 1;
+            $(upgradeElementId).addClass("enabled");
+            $(upgradeElementId).removeClass("disabled");
+        } else {
+            $(upgradeElementId)[0].style.opacity = 0.2;
+            $(upgradeElementId).addClass("disabled");
+            $(upgradeElementId).removeClass("enabled");
+        }
+}
+
+function updateAvailabilityOfRepair(json) {
+    var upgradeElementId = "#js-repair-clicker";
+    if (json["js-money"] >= json["js-phone-repair-price"] && json["js-amount-phones-awaiting-repair"] > 0) {
+        $(upgradeElementId)[0].style.opacity = 1;
+        $(upgradeElementId).addClass("enabled");
+        $(upgradeElementId).removeClass("disabled");
+    } else {
+        $(upgradeElementId)[0].style.opacity = 0.2;
+        $(upgradeElementId).addClass("disabled");
+        $(upgradeElementId).removeClass("enabled");
+    }
+}
+
+function updateAvailabilityOfBuy(json) {
+    var upgradeElementId = "#js-buy-clicker";
+    if (json["js-money"] >= json["js-phone-buy-price"]) {
+        $(upgradeElementId)[0].style.opacity = 1;
+        $(upgradeElementId).addClass("enabled");
+        $(upgradeElementId).removeClass("disabled");
+    } else {
+        $(upgradeElementId)[0].style.opacity = 0.2;
+        $(upgradeElementId).addClass("disabled");
+        $(upgradeElementId).removeClass("enabled");
+    }
+}
+
 function notifyIfLost(json) {
     if (json["js-you-lose"]) {
         alert("PERDISTE!")
@@ -124,14 +165,25 @@ function notifyIfLost(json) {
 }
 
 function notifyPaidSalaries(json) {
-    if (json["js-this-loop-must-pay-salaries"])
-    $.notify({
-        // options
-        message: 'Llegó fin de mes! Pagarás ' + json["js-salaries-amount"] + ' de sueldos.'
-    },{
-        // settings
-        type: 'success'
-    });
+    if (json["js-this-loop-must-pay-salaries"]) {
+        if(json["js-you-lose"]) {
+            $.notify({
+                // options
+                message: 'Llegó fin de mes! NO PUDISTE PAGAR LOS $' + json["js-salaries-amount"] + ' de sueldos.'
+            },{
+                // settings
+                type: 'danger'
+            });
+        } else {
+            $.notify({
+                // options
+                message: 'Llegó fin de mes! Pagarás $' + json["js-salaries-amount"] + ' de sueldos.'
+            },{
+                // settings
+                type: 'success'
+            });
+        }
+    }
 }
 
 function updateFrontend(json) {
@@ -140,6 +192,9 @@ function updateFrontend(json) {
     notifyIfLost(json);
     notifyPaidSalaries(json);
     updateVisibilityOfRobots(json);
+    updateAvailabilityOfBuy(json);
+    updateAvailabilityOfSell(json);
+    updateAvailabilityOfRepair(json);
 }
 
 
