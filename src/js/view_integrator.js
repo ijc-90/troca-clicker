@@ -2,7 +2,7 @@ class ViewIntegrator {
     constructor(){}
 
     generateViewRawData(oldContext, newContext){
-        var robots = Object.values(context.robots);
+        var robots = Object.values(newContext.robots);
         
         var buyRobots = robots.filter(function(robot){
             return robot.type == "buy";
