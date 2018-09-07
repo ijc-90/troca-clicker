@@ -9,12 +9,12 @@ class GameLoop {
 			geometricCostScale : 1.3,
 			robots : {
 				buy: [
-					{type: "buy_rep", baseCost: 100, quantity: 6, production: 1},
-					{type: "supervisor", baseCost: 100, quantity: 2, production: 5},
+					{type: "buy_rep", baseCost: 100, quantity: 0, production: 1},
+					{type: "supervisor", baseCost: 100, quantity: 0, production: 5},
 				],
 				repair: [
-					{type: "technician-jr", baseCost: 100, quantity: 10, production: 1},
-					{type: "technician-sr", baseCost: 400, quantity: 3, production: 5},
+					{type: "technician-jr", baseCost: 100, quantity: 2, production: 1},
+					{type: "technician-sr", baseCost: 400, quantity: 1, production: 5},
 				],
 				sale: [
 					{type: "seller Jr", baseCost: 100, quantity: 6, production: 1},
@@ -46,6 +46,10 @@ class GameLoop {
 
 	buyClick() {
 		this.events.push(EVENTS.BUY_CLICK);
+	}
+
+	repairClick() {
+		this.events.push(EVENTS.REPAIR_CLICK);
 	}
 
 }

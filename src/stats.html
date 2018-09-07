@@ -25,12 +25,19 @@
 			$("#buy_clicker").click(function(e){
 				e.preventDefault();
 				gameLoop.buyClick();
-			})
+			});
+
+			$("#repair_clicker").click(function(e){
+				e.preventDefault();
+				gameLoop.repairClick();
+			});
 		});
 	</script>
 
 </head>
 <body>
 	<a href="#" id="buy_clicker" style="display: block; width: 200px; height: 50px; background: white; margin: 100px;">COMPRAR</a>
+
+	<a href="#" id="repair_clicker" style="display: block; width: 200px; height: 50px; background: white; margin: 100px;">REPARAR</a>
 </body>
 </html>
