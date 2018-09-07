@@ -84,7 +84,6 @@ var contentInfo = [
     },
 ];
 
-
 function updateContentInfo () {    
     contentInfo.forEach(function(info){
         $('#' + info.type + ' .click-robot-name').text(info.name);
@@ -94,66 +93,44 @@ function updateContentInfo () {
         $('#' + info.type + ' .click-robot-tooltip-description').text(info.descToolTip);
         $('#' + info.type + ' .click-robot-tooltip-title').text("Contratar un " + info.name);
         $('#' + info.type + ' .click-robot-tooltip-plural').text(info.pluralName);
-        $('#' + info.type + '_upgrade .click-upgrade-tooltip-title').text(info.upgTitle);  
-
+        $('#' + info.type + '_upgrade .click-upgrade-tooltip-title').text(info.upgTitle);
+        $('#' + info.type).on("click",function(){
+            hireClick(info.type);
+        });
+        $('#' + info.type + '_upgrade').on("click",function(){
+            upgradeClick(info.type);
+        });
     });
 }
-
 
 var gameLoop = new GameLoop();
 
 window.setInterval(function(){
    updateFrontend(gameLoop.tick());
-
 }, 1000);
+
+function sellClickerClick(){
+    gameLoop.saleClick();
+}
+
+function buyClickerClick(){
+    gameLoop.buyClick();
+}
+
+function repairClickerClick(){
+    gameLoop.repairClick();
+}
+
+function hireClick(name){
+    gameLoop.hiringClick(name);
+}
+
+function upgradeClick(name){
+    gameLoop.upgradeClick("upgrade_" + name);
+}
 
 $(document).ready(function(){
     updateContentInfo();
-    // $("#buy_clicker").click(function(e){
-    //     e.preventDefault();
-    //     gameLoop.buyClick();
-    // });
-
-    // $("#repair_clicker").click(function(e){
-    //     e.preventDefault();
-    //     gameLoop.repairClick();
-    // });
-
-    // $("#sale_clicker").click(function(e){
-    //     e.preventDefault();
-    //     gameLoop.saleClick();
-
-    // });
-
-    // $("#hire_clicker_buyer_1").click(function(e){
-    //     e.preventDefault();
-    //     gameLoop.hiringClick('buyer_one');
-    // });
-
-    // $("#upgrade_clicker_buyer_1").click(function(e){
-    //     e.preventDefault();
-    //     gameLoop.upgradeClick('upgrade_buyer_one');
-    // });
-
-    // $("#hire_clicker_repair_1").click(function(e){
-    //     e.preventDefault();
-    //     gameLoop.hiringClick('repairer_one');
-    // });
-
-    // $("#upgrade_clicker_repair_1").click(function(e){
-    //     e.preventDefault();
-    //     gameLoop.upgradeClick('upgrade_repairer_one');
-    // });
-
-    // $("#hire_clicker_seller_1").click(function(e){
-    //     e.preventDefault();
-    //     gameLoop.hiringClick('seller_one');
-    // });
-
-    // $("#upgrade_clicker_seller_1").click(function(e){
-    //     e.preventDefault();
-    //     gameLoop.upgradeClick('upgrade_seller_one');
-    // });
 });
 
 // var news = [
@@ -176,128 +153,26 @@ $(document).ready(function(){
 //     "Juego al trocaclickers las 24 horas del día, y de la noche también - Herminio Iglesias",
 // ];
 
-// function sellPhones(number){
-//     money = money + (number*cellphoneSellPrice);
-//     document.getElementById("money").innerHTML = money;
-// }
-
-
-// function buyRobot(type){
-//     var robot = robots.find(function(robot){
-//         return robot.type == type;
-//     });
-//     var cost = Math.floor(robot.baseCost * Math.pow(geometricScale,robot.quantity));
-//     if(money >= cost){
-//         robot.quantity += 1;
-//         money = money - cost;
-//         updateRobotQuantity(robot);
-
-//         var totalProductionClass = ".";
-//         totalProductionClass = totalProductionClass.concat(robot.type).concat("-total-production");
-//         $(totalProductionClass).html(robot.quantity * robot.production * cellphoneSellPrice);
-
-//         canPopUp = true;
-
-//         document.getElementById('money').innerHTML = money;
-//     }
-//     updateRobotPrice(robot);
-
-// }
-
-
-// window.setInterval(function(){
-//     //game loop
-//     recalculateProduction();
-//     sellPhones(productionPerSecond);
-//     setOpacityForBuyables();
-    
-//     if(poppingUp){
-//         popUpTime--;
-//         document.getElementById('remainging-time').innerHTML = popUpTime;
-//         if(popUpTime <= 0){
-//             poppingUp = false;
-//             $(".click-challenge").css("display","none");
-//             $(".click-error").css("display","table-cell");
-//             $(".click-succes").css("display","none");
-//             looseOneRobot();
-//             $(".click-error").on("click",function(){
-//                 $(".click-popup").css("display","none");
-//             });
-
-//         }
-//         $(".click-popup").on("click",function(){
-//                 $(".click-challenge").css("display","none");
-//                 $(".click-succes").css("display","table-cell");
-//                 $(".click-error").css("display","none");
-//                 $(".click-popup").on("click",function(){
-//                     $(".click-popup").css("display","none");
-//                 });
-//                 if(poppingUp){
-//                     money -= Math.min(money, costoSueldos);
-//                     poppingUp = false;
-//                 }
-//                 canPopUp = false;
-//         });
-//         $(".click-popup").css("display","table");
-//     }else{
-//         popUpTime = popUpTotalTime +1;
-//     }
-// }, 1000);
+var news = [
+    "Fuentes no confirmadas anuncian al ‘Cookie Clickers’ como fuente de inspiración de otros juegos del género",
+    "Cookie Clicker demanda a Troca Clicker por plagio. Altos giles",
+    "Siempre que juego al Troca Clicker ligo el ancho de espadas - Gonzalo Higuaín",
+    "Oferta millonaria de Facebook para comprar Troca Clicker. Trocafone dice que no y le descuentan 20 puntos a Nueva Chicago",
+    "Troca Clickeeeeeeeeer eeeeeeeeeeeeeeeeeeeeeeeeee - Diego A. Maradona",
+    "Gracias a Trocafone me compré un Galaxy Pocket Neo a dos mangos - Donald Trump en su discurso de asunción",
+    "Yo no manejo el rating, yo manejo un Rolls-Royce y juego al Troca Clicker - Ricardo Fort",
+    "Zelucash intima a Trocafone por malentendido en búsquedas de Google. No paran de humillarse, qué pichonazos",
+    "Basta chicos - Ricky Fort, filósofo contemporáneo",
+    "Mamá cortaste toda la LOOZ, estaba jugando al troca clickers",
+    "Nos hacemos P#¢A, IM@¢#@¢L - El fresco"
+];
 
 
 
-// window.setInterval(function(){
-//     var item = news[Math.floor(Math.random()*news.length)];
-//     document.getElementById('news').innerHTML = item;
-// }, 15000);
-
-
-// window.setInterval(function(){
-//     if(canPopUp && poppingUp == false){
-//         $(".click-challenge").css("display","block");
-//         $(".click-succes").css("display","none");
-//         $(".click-error").css("display","none");
-//         poppingUp = true;
-//         canPopUp = false;
-
-//     }
-    
-// }, 60000);
-
-
-// function recalculateProduction(){
-//     productionPerSecond = 0;
-//     robots.forEach(function(robot){
-//         productionPerSecond += robot.production*robot.quantity;
-//     });
-//     document.getElementById('production').innerHTML = productionPerSecond * cellphoneSellPrice;
-    
-// }
-
-
-// function upgradeRobot(type){
-//     var robot = robots.find(function(robot){
-//         return robot.type == type;
-//     });
-//     var upgrade = upgrades.find(function(robot){
-//         return robot.type == type;
-//     });
-
-//     if (money >= upgrade.cost){
-//         robot.production *= upgrade.multiplier;
-//         money -= upgrade.cost;
-//         upgrade.cost *= upgrade.costMultiplier;
-//     }
-//     recalculateProduction();
-
-//     var totalProductionClass = ".";
-//     totalProductionClass = totalProductionClass.concat(robot.type).concat("-total-production");
-//     $(totalProductionClass).html(robot.quantity * robot.production * cellphoneSellPrice);
-
-//     document.getElementById(upgrade.type.concat("-upgrade-cost")).innerHTML = upgrade.cost;    
-
-//     document.getElementById("money").innerHTML = money;
-// }
+window.setInterval(function(){
+    var item = news[Math.floor(Math.random()*news.length)];
+    document.getElementById('news').innerHTML = item;
+}, 15000);
 
 
 
@@ -346,58 +221,4 @@ $(document).ready(function(){
 //         quantityClass = quantityClass.concat(robot.type).concat("-quantity");
 //         $(quantityClass).html(robot.quantity);
 //     }
-
-
-// $( document ).ready(function() {
-//     $("#mit-clickeable").on("click",function(){
-//     buyRobot("mit");
-//     });
-
-//     $("#facu-clickeable").on("click",function(){
-//     buyRobot("facu");
-//     });
-
-//     $("#locha-clickeable").on("click",function(){
-//     buyRobot("locha");
-//     });
-
-//     $("#buga-clickeable").on("click",function(){
-//     buyRobot("buga");
-//     });
-
-//     $("#tati-clickeable").on("click",function(){
-//     buyRobot("tati");
-//     });
-
-//     $("#diaz-clickeable").on("click",function(){
-//     buyRobot("diaz");
-//     });
-
-//     $("#mit-upgrade").on("click",function(){
-//     upgradeRobot("mit");
-//     });
-
-//     $("#facu-upgrade").on("click",function(){
-//     upgradeRobot("facu");
-//     });
-
-//     $("#locha-upgrade").on("click",function(){
-//     upgradeRobot("locha");
-//     });
-
-//     $("#buga-upgrade").on("click",function(){
-//     upgradeRobot("buga");
-//     });
-
-//     $("#tati-upgrade").on("click",function(){
-//     upgradeRobot("tati");
-//     });
-
-//     $("#diaz-upgrade").on("click",function(){
-//     upgradeRobot("diaz");
-//     });
-
-//     updateContentInfo();
-
-// });
 

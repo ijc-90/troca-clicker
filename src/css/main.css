@@ -94,10 +94,10 @@ min-height: calc(100vh - 200px);
 .click-title{
 	width: 100%;
 	width: 100%;
-	padding: 15px;
+	padding: 8px;
 	color: #ffffff;
 	text-transform: uppercase;
-	font-size: 45px;
+	font-size: 35px;
 	border-bottom: 1px solid #ff8800;
 	font-family: 'Chewy', cursive;
 }
