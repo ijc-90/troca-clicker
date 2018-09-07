@@ -8,4 +8,8 @@ class Flow {
             return carry + totalRobotCapacity;
         }, 0);
     }
+
+    getMoneyCapacity(money, operationPrice) {
+		return Math.floor(money / operationPrice);	
+	}
 }
