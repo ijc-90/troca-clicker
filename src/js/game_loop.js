@@ -4,6 +4,7 @@ class GameLoop {
 		this.viewIntegrator = new ViewIntegrator();
 
 		this.context = {
+			ticksPerSecond: 1,
 			money : 500,
 			cellphoneBuyPrice : 50,
 			cellphoneRepairPrice : 40,
@@ -66,7 +67,8 @@ class GameLoop {
 		this.events = [];
 	}
 
-	tick() {
+	tick(ticksPerSecond) {
+		this.context.ticksPerSecond = ticksPerSecond;
 		if (this.context.gameOver){
 			return;
 		}
