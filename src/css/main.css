@@ -112,7 +112,20 @@ min-height: calc(100vh - 200px);
 	display: inline-block;
 
 	vertical-align: top;
+	padding-top: 15px;
 	
+}
+.main-balance-display{
+	background: #808184;
+	
+	margin-top: 0px;
+	padding-top: 0px;
+	display: ;
+}
+
+.main-balance-display .stats-balance-dashboard{
+	width: 50%;
+	display: inline-block;
 }
 
 /*DISPLAY*/
@@ -471,6 +484,8 @@ padding-bottom: 70px;
 
 .stats-display .flow-image-container img  {
 	height: 100px;
+	padding-right: 0px;
+	margin-right: 0px;
 }
 
 .stats-display .inline-dinamic-number {
@@ -478,7 +493,7 @@ padding-bottom: 70px;
 }
 
 .stats-display .stats-section {
-	margin-top: 15px;
+	
 }
 
 .stats-display .balance-number {
@@ -493,6 +508,7 @@ padding-bottom: 70px;
 .stats-display .money-container{
 	padding-top: 5px;
 	padding-bottom: 5;
+	display: inline-block;
 }
 
 .stats-display .main-balance {
