@@ -56,9 +56,9 @@ class GameLoop {
 		};
 		
 		this.pipeline = [
+			new SaleFlow(),
 			new RepairFlow(),
 			new BuyFlow(),
-			new SaleFlow(),
 			new HiringFlow(),
 			new UpgradeFlow(),
 			new SalaryFlow(),

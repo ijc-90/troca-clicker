@@ -41,12 +41,12 @@ class ViewIntegrator {
           "js-phone-buy-price": newContext.cellphoneBuyPrice,
           "js-repair-balance": newContext.moneySpentRepairingThisCicle * newContext.ticksPerSecond, //Cuanto gasté en reparar telefonos este ciclo (celulares reparados * precio de reparo)
           "js-amount-phones-repaired": newContext.amountOfPhonesRepairedThisCicle * newContext.ticksPerSecond, //cantidad de cells reparados
-          "js-amount-phones-awaiting-repair": newContext.stockToRepair, //stock de "en reparo"
+          "js-amount-phones-awaiting-repair": newContext.toRepairBacklog, //stock de "en reparo"
           "js-phone-repair-capability": repairRobotsProductivity * newContext.ticksPerSecond, //Capacidad de todos los robots de reparo (cantidad * productividad)
           "js-phone-repair-price": newContext.cellphoneRepairPrice,
           "js-sale-balance": newContext.moneyEarnedSellingThisCicle * newContext.ticksPerSecond, // cantidad de celulares vendidos * precio de venta
           "js-amount-phones-sold": newContext.amountOfPhonesSoldThisCicle * newContext.ticksPerSecond, // cantidad de vendidos
-          "js-amount-phones-awaiting-sale": newContext.stockToSale, //stock de venta
+          "js-amount-phones-awaiting-sale": newContext.toSaleBacklog, //stock de venta
           "js-amount-sell-price": newContext.cellphoneSalePrice,
           "js-phone-sale-capability": saleRobotsProductivity * newContext.ticksPerSecond,
           
