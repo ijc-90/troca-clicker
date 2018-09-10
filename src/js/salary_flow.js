@@ -8,6 +8,7 @@ class SalaryFlow extends Flow {
     work(context) {
         this.iterationIndex++;
         context.salariesPaidThisTick = false;
+        context.salariesTimeForPayment = context.iterationsToPaySalary - this.iterationIndex;
         if (this.iterationIndex >= context.iterationsToPaySalary){
             context = this.tryToPaySalaries(context);
         }

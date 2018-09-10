@@ -117,6 +117,7 @@ class ViewIntegrator {
           "js-salaries-amount": totalSalaries,
           "js-you-lose": newContext.gameOver,
           "js-you-win": newContext.gameWon,
+          "js-salaries-time-for-payment": newContext.salariesTimeForPayment,
         };
     }
 }

@@ -46,45 +46,41 @@
     <!--SELL-->
     <div class="click-sell">
 
-        <div class="stats-display click-display col-sm-4 col-xs-12">
-            <div class="row stats-balance-dashboard">
-                <div class="col balance-container">
-                    <label>Balance</label>
-                    <div class="balance-number"><span>$</span><span class="dinamic-number js-total-balance">0</span><span>/s</span></div>
-                </div>
+        <div class="stats-display click-display col-sm-3 col-xs-12">
+            <div class="row stats-balance-dashboard stats-section">
                 <div class="col money-container">
-                    <label>Tu dinero</label>
-                    <div class="big-number"><span>$</span><span class="dinamic-number js-money">0</span></div>
+                    <div class="main-balance"><span>$</span><span class="dinamic-number js-money">0</span></div>
                 </div>
+            </div>
+            <div class="row stats-balance-dashboard stats-section">
                 <div class="col money-container">
-                    <label>Sueldos a pagar</label>
-                    <div class="big-number"><span>$</span><span class="dinamic-number js-salaries-amount">0</span></div>
+                    <div class="big-number"><span>$</span><span class="dinamic-number js-salaries-amount">0</span><span class="aclaration"> (a pagar en <span class="dinamic-number js-salaries-time-for-payment">0</span> segundos)</span></div>
                 </div>
             </div>
             <hr/>
             <div class="row buys-container stats-section">
                 <div class="col flow-graph">
-                    <div class="balance-number negative-number"><span>-</span><span>$</span><span class="dinamic-number js-buys-balance">0</span><span>/s</span></div>
+                    <!-- <div class="balance-number negative-number"><span>-</span><span>$</span><span class="dinamic-number js-buys-balance">0</span><span>/s</span></div> -->
                     <div class="flow-image-container"><img src="images/flow-images-01.png"/></div>
                 </div>
-                <div class="col operation-flow">
+                <div class="col capacity-flow">
                     <div class="title-and-label">
-                        <div class="flow-laber"><span>Comprando</span></div>
-                        <div class="flow-number"><span class="dinamic-number js-amount-phones-bought"></span><span>/s</span></div>
+                        <div class="small-notice"><span>Capacidad de compra</span></div>
+                        <div><span class="flow-number dinamic-number js-phone-buy-capability"></span><span class="small-notice"> (por segundo)</span></div>
+                    </div>
+                </div>
+                <div class="title-and-label">
+                        <div class="small-notice"><span>Pagas $<span class="dinamic-number inline-dinamic-number js-phone-buy-price"></span> por telefono. y el <span class="dinamic-number inline-dinamic-number js-repair-chance"></span>% deberán ser reparados</span></div>
+                    </div>
+                <!-- <div class="col operation-flow">
+                    <div class="title-and-label">
+                        <div class="flow-label"><span>Comprando</span></div>
+                        <div class="flow-number"><span class="dinamic-number js-amount-phones-bought"></span><span> por segundo</span></div>
                     </div>
                     <div class="title-and-label">
                         <div class="small-notice"><span><span class="dinamic-number inline-dinamic-number js-repair-chance"></span>% chance de que deba ser reparado.</span></div>
                     </div>
-                </div>
-                <div class="col capacity-flow">
-                    <div class="title-and-label">
-                        <div class="balance-number"><span>Cap. compra</span></div>
-                        <div class="flow-number"><span class="dinamic-number js-phone-buy-capability"></span><span>/s</span></div>
-                    </div>
-                    <div class="title-and-label">
-                        <div class="small-notice"><span>Pagas $<span class="dinamic-number inline-dinamic-number js-phone-buy-price"></span> por telefono.</span></div>
-                    </div>
-                </div>
+                </div> -->
             </div>
             <hr/>
             <div class="row repair-container stats-section">
@@ -140,7 +136,7 @@
             </div>
 
         </div>
-        <div class="store-container col-sm-8 col-xs-12 no-padding">
+        <div class="store-container col-sm-9 col-xs-12 no-padding">
             <div class="click-store col-sm-4 col-xs-12">
 
 					<span class="click-store-title">Comprar</span>
