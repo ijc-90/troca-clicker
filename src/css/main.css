@@ -1,7 +1,7 @@
 body{
 	margin:0;
 	padding: 0;
-	font-family: 'Chewy', cursive;
+	font-family: 'Arial', cursive;
 	background: #404040;
 	background: url('../images/footer_lodyas.png');
 }
@@ -58,7 +58,6 @@ font-family: 'Open Sans', sans-serif;
 	vertical-align: middle;
 	padding: 15px 40px;
 	font-size: 18px;
-	font-family: 'Chewy', cursive;
 	position: absolute;
 	left: 0;
 	bottom: 0;
@@ -105,7 +104,7 @@ min-height: calc(100vh - 200px);
 	text-transform: uppercase;
 	font-size: 35px;
 	border-bottom: 1px solid #ff8800;
-	font-family: 'Chewy', cursive;
+	
 }
 
 .click-display, .click-store{
@@ -113,7 +112,20 @@ min-height: calc(100vh - 200px);
 	display: inline-block;
 
 	vertical-align: top;
+	padding-top: 15px;
 	
+}
+.main-balance-display{
+	background: #808184;
+	
+	margin-top: 0px;
+	padding-top: 0px;
+	display: ;
+}
+
+.main-balance-display .stats-balance-dashboard{
+	width: 50%;
+	display: inline-block;
 }
 
 /*DISPLAY*/
@@ -186,7 +198,7 @@ padding-bottom: 70px;
 	font-size: 32px;
 	padding: 10px;
 	color: #fff;
-	font-family: 'Chewy', cursive;	
+	
 }
 
 .click-upgrades-container, .click-robots-container{
@@ -304,12 +316,12 @@ padding-bottom: 70px;
 
 .click-robot-name{
 	font-size: 14px;
-	font-family: 'Chewy', cursive;
+	
 }
 .click-robot-value{
 	display: block;
 	font-size: 12px;
-	font-family: 'Chewy', cursive;
+	
 }
 .click-robot-bought{
 	display: inline-block;
@@ -318,7 +330,7 @@ padding-bottom: 70px;
 	font-size: 22px;
 	width: 40px;
     border-left: 1px solid lightgray;
-	font-family: 'Chewy', cursive;
+	
 	color: #ff8800;
 }
 
@@ -461,7 +473,7 @@ padding-bottom: 70px;
 }
 
 .stats-display .flow-number  {
-	font-size: 26px;
+	font-size: 24px;
 	color: #ff8800;
 }
 
@@ -472,6 +484,8 @@ padding-bottom: 70px;
 
 .stats-display .flow-image-container img  {
 	height: 100px;
+	padding-right: 0px;
+	margin-right: 0px;
 }
 
 .stats-display .inline-dinamic-number {
@@ -479,7 +493,7 @@ padding-bottom: 70px;
 }
 
 .stats-display .stats-section {
-	margin-top: 15px;
+	
 }
 
 .stats-display .balance-number {
@@ -488,7 +502,25 @@ padding-bottom: 70px;
 
 .stats-display .big-number {
 	font-size: 25px;
+	color: #404040;
+}
+
+.stats-display .money-container{
+	padding-top: 5px;
+	padding-bottom: 5;
+	display: inline-block;
+}
+
+.stats-display .main-balance {
+	font-size: 35px;
 	color: #ff8800;
+	font-weight: bold;
+}
+
+
+.stats-display .aclaration {
+	font-size: 20px;
+	color: #404040;
 }
 
 .stats-display .negative-number {
