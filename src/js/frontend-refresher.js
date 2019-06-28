@@ -67,10 +67,21 @@ function kFormatter(num) {
     return num > 999 ? (num/1000).toFixed(1) + 'k' : num
 }
 
+function kFormatterInverse(num) {
+    if (num.indexOf('k') !== -1) {
+        return Number(num.replace('k', '')) * 1000;
+    }
+    
+    return Number(num);
+}
+
 function updateNumbers(json) {
     Object.keys(json).forEach(function (keyName) {
         var value = json[keyName];
         var elements = $("."+keyName);
+
+        renderFloatingNotify(value, elements);
+        
         if (!isNaN(value) && elements.length !== 0) {
             elements.text(kFormatter(value));
         } else if (typeof(value) !== "boolean" && keyName !== "js-salaries-amount") {
@@ -80,6 +91,21 @@ function updateNumbers(json) {
             
         }
     });
+}
+
+function renderFloatingNotify(value, $elements) {
+    const lastValue = kFormatterInverse($elements.first().text());
+    if (typeof value === 'number' || typeof lastValue === 'number') {
+        if (lastValue !== value) {
+            const diff = value - lastValue;
+            if (diff !== 0) {
+                $elements.each(function() {
+                    floatingNotifiers.elementText($(this), diff);
+                })
+            }
+        }
+    }
+    
 }
 
 var robots = ['buyer-one', 'buyer-two', 'buyer-three',

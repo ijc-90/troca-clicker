@@ -103,8 +103,8 @@ console.log("Sugerencias, issues y PRs a https://github.com/ijc-90/troca-clicker
 
 
 window.setInterval(function(){
-   updateFrontend(gameLoop.tick(2));
-}, 500);
+   updateFrontend(gameLoop.tick(4));
+}, 250);
 
 function sellClickerClick(){
     if ($(this).hasClass("disabled")) {

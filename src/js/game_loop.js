@@ -84,14 +84,17 @@ class GameLoop {
     }
 
     buyClick() {
+        floatingNotifiers.mousePhone();
         this.events.push(new Event(EVENTS.BUY_CLICK));
     }
 
     repairClick() {
+        floatingNotifiers.mousePhone();
         this.events.push(EVENTS.REPAIR_CLICK);
     }
 
     saleClick() {
+        floatingNotifiers.mousePhone();
         this.events.push(new Event(EVENTS.SALE_CLICK));
     }
 
@@ -99,6 +102,7 @@ class GameLoop {
         if ($("#".robotName).hasClass("disabled")) {
             return;
         }
+        floatingNotifiers.mouseHiring();
         var event = new Event(EVENTS.HIRING_CLICK);
         event.robotName = robotName;
         this.events.push(event);
