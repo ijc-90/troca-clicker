@@ -42,7 +42,7 @@ class GameLoop {
             iterationsToPaySalary: 60,
             gameOver: false,
             gameWon: false,
-            probabilityOfDefectiveBuy : 0.7,
+            probabilityOfDefectiveBuy : 1,
 
             moneySpentOnBuyingPhonesThisCicle: 0,
             amountOfPhonesBoughtThisCicle: 0,
