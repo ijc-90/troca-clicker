@@ -201,6 +201,29 @@ function updateAvailabilityOfBuy(json) {
     }
 }
 
+function showOrHideFlows(json){
+    var buyFlowSelector = ".js-buy-flow-container";
+    if (json["showBuyFlow"]) {
+        $(buyFlowSelector).css({ display: "inline-block" });
+    }else{
+        $(buyFlowSelector).css({ display: "none" });
+    }
+
+    var repairFlowSelector = ".js-repair-flow-container";
+    if (json["showRepairFlow"]) {
+        $(repairFlowSelector).css({ display: "inline-block" });
+    }else{
+        $(repairFlowSelector).css({ display: "none" });
+    }
+
+    var saleFlowSelector = ".js-sale-flow-container";
+    if (json["showSaleFlow"]) {
+        $(saleFlowSelector).css({ display: "inline-block" });
+    }else{
+        $(saleFlowSelector).css({ display: "none" });
+    }
+}
+
 function notifyIfLost(json) {
     if (json["js-you-lose"]) {
         alert("PERDISTE!")
@@ -238,6 +261,7 @@ function updateFrontend(json) {
     updateAvailabilityOfBuy(json);
     updateAvailabilityOfSell(json);
     updateAvailabilityOfRepair(json);
+    showOrHideFlows(json);
 }
 
 
