@@ -2,8 +2,8 @@ body{
 	margin:0;
 	padding: 0;
 	font-family: 'Arial', cursive;
-	background: #404040;
-	background: url('../images/footer_lodyas.png');
+	background-image: linear-gradient(to top, #ebf9f9, #ebf9f9);
+	font-family: 'Press Start 2P', monospace;
 }
 html, body{
   height:100%;
@@ -70,14 +70,14 @@ font-family: 'Open Sans', sans-serif;
 }
 .click-message{
 	width: 100%;
-	color: #fff;
+	color: white;
 	text-align: center;
-	height: 80px;
+	height: 70px;
 	display: inline-block;
 	background: #ff8800;
 	vertical-align: middle;
-	padding: 15px 40px;
-	font-size: 18px;
+	line-height: 70px;
+	font-size: 10px;
 }
 .store-container {
 	position: relative;
@@ -133,16 +133,19 @@ min-height: calc(100vh - 200px);
 	
 }
 .main-balance-display{
-	background: #808184;
+	background: #3684c6;
 	
 	margin-top: 0px;
 	padding-top: 0px;
-	display: ;
 }
 
 .main-balance-display .stats-balance-dashboard{
 	width: 50%;
 	display: inline-block;
+}
+
+.main-balance-display label {
+
 }
 
 /*DISPLAY*/
@@ -208,10 +211,12 @@ padding-bottom: 70px;
 
 .click-store-title{
 	display: block;
-	width: 100%;
-	font-size: 32px;
-	padding: 10px;
-	color: #fff;
+    width: 100%;
+    font-size: 22px;
+    padding: 10px;
+    color: #ffd56b;
+    text-align: center;
+    text-shadow: 1px 1px 0 #e8696b;
 	
 }
 
@@ -492,7 +497,7 @@ padding-bottom: 70px;
 }
 
 .small-notice  {
-	color: #ffffff;
+	color: black;
 	 font-size: 14px;
 	 margin-top: 10px;
  }
