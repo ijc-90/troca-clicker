@@ -52,16 +52,16 @@ var contentInfo = [
     {
         type: "seller_one", 
         name: "E-Commerce", 
-        imgPath: "images/fantino.jpg",
-        upgImgPath: "images/fantino.jpg",
+        imgPath: "images/Venta_e-commerce.png",
+        upgImgPath: "images/Venta_responsive.png",
         pluralName: "E-Commerces",
         upgTitle: "Responsiveness"
     },
     {
         type: "seller_two", 
         name: "Tiendas física", 
-        imgPath: "images/caruso.jpeg",
-        upgImgPath: "images/caruso.jpeg",
+        imgPath: "images/Venta__marketplace.png",
+        upgImgPath: "images/Venta__24h.png",
         pluralName: "Tiendas físicas",
         upgTitle: "Abrir las 24 horas"
     },
