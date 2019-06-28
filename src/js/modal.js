@@ -20,12 +20,12 @@ class Modal {
         const $container = this.$el.find('.modal-container');
         TweenMax.set($container, { scale: 1.25 });
         this.$el.show();
-        TweenMax.to($container, 1, { scale: 1, ease:Elastic.easeOut })
+        TweenMax.to($container, 0.5, { scale: 1, ease:Expo.easeOut })
     }
 
     close() {
         const $container = this.$el.find('.modal-container');
-        TweenMax.to($container, 1, { scale: 0, ease:Elastic.easeIn, onComplete: () => {
+        TweenMax.to($container, 0.5, { scale: 0, ease:Expo.easeIn, onComplete: () => {
             this.$el.hide();
             this.gameloop.resume();
             if (this.onClose) this.onClose()

@@ -78,6 +78,11 @@ font-family: 'Open Sans', sans-serif;
 	vertical-align: middle;
 	line-height: 70px;
 	font-size: 10px;
+	position: fixed; 
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	display: none;
 }
 .store-container {
 	position: relative;
@@ -133,11 +138,19 @@ min-height: calc(100vh - 200px);
 	
 }
 .main-balance-display{
-	background: #3684c6;
+	border-bottom: 3px solid #3684c6;
+	background: white;
 	
 	margin-top: 0px;
 	padding-top: 0px;
 }
+
+.money-container * {
+	font-size: 13px;
+	text-transform: uppercase;
+}
+
+
 
 .main-balance-display .stats-balance-dashboard{
 	width: 50%;
@@ -498,9 +511,9 @@ padding-bottom: 70px;
 	color: #ff8800;
 }
 
-.small-notice  {
+.small-notice {
 	color: black;
-	 font-size: 14px;
+	 font-size: 10px;
 	 margin-top: 10px;
  }
 
@@ -523,6 +536,20 @@ padding-bottom: 70px;
 	
 }
 
+.logo{
+	position: fixed;
+    padding-top: 15px;
+    padding-left: 10px;
+    color: #ff8800;
+	z-index: 100;
+	font-size: 30px;
+	background: white;
+}
+
+.logo span {
+	color: #3684c6;
+}
+
 .balance-number {
 	font-size: 18px;
 }
@@ -532,10 +559,24 @@ padding-bottom: 70px;
 	color: #404040;
 }
 
+.st-bal{
+	border: 3px solid #3684c6;
+    width: 240px !important;
+    height: 50px;
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 280px;
+}
+
+.st-bal .money-container{
+	margin-top: -15px;
+}
 .money-container{
 	padding-top: 5px;
 	padding-bottom: 5;
 	display: inline-block;
+	
 }
 
 .main-balance {
@@ -546,8 +587,6 @@ padding-bottom: 70px;
 
 
 .aclaration {
-	font-size: 20px;
-	color: #404040;
 }
 
 .negative-number {
