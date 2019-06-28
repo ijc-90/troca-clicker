@@ -32,8 +32,8 @@ class FlatingNotify {
         const initPosition = this.getInitPosition();
         const endPosition = this.getEndPosition(initPosition);
 
-        TweenMax.set(`#${this.idName}`, initPosition);
-        TweenMax.to(`#${this.idName}`, .75,  { ...endPosition, opacity: 0, onComplete:() => {
+        TweenMax.set(`#${this.idName}`, { ...initPosition });
+        TweenMax.to(`#${this.idName}`, 1.25,  { ...endPosition, opacity: 0, onComplete:() => {
             $(`#${this.idName}`).remove()
             this.onComplete()
         } });
@@ -64,14 +64,15 @@ class FlatingNotify {
         const randomPositive = Math.random() < 0.5 ? -1 : 1
         return {
             x: initPosition.x + (randomPositive * (Math.random() + 5)),
-            y: initPosition.y - 25,
+            y: initPosition.y - 55,
         }
     }
 
     getElementPosition() {
         return {
-            x: this.$el.offset().left,
-            y: this.$el.offset().top - 5,
+            x: this.$el.offset().left + (this.$el.width() / 2),
+            y: this.$el.offset().top,
+            z: Math.random() * 100
         }
     }
 }

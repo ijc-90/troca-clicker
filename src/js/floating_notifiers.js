@@ -20,6 +20,12 @@ class FloatingNotifier {
         })
     }
 
+    elementTextRed($el, text) {
+        let flatingNotify = new FlatingNotify($el, `<span style='color: red'>${text}</span>`, () => {
+            flatingNotify = null;
+        })
+    }
+
     mainBalance(text) {
         this.elementText(this.$mainBalanceElement, text)
     }

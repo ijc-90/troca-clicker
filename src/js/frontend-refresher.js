@@ -63,6 +63,15 @@ var sampleJson = {
     "js-salaries-time-for-payment": 0
 };
 
+var notifiersWhiteList = [
+    "js-money",
+    "js-salaries-amount",
+    "js-amount-phones-awaiting-repair",
+    "js-amount-phones-awaiting-sale",
+    "js-phone-buy-capability",
+    "js-phone-repair-capability",
+];
+
 function kFormatter(num) {
     return num > 999 ? (num/1000).toFixed(1) + 'k' : num
 }
@@ -80,7 +89,10 @@ function updateNumbers(json) {
         var value = json[keyName];
         var elements = $("."+keyName);
 
-        renderFloatingNotify(value, elements);
+        if (notifiersWhiteList.indexOf(keyName) !== -1) {
+            renderFloatingNotify(value, elements);
+        }
+        
         
         if (!isNaN(value) && elements.length !== 0) {
             elements.text(kFormatter(value));
@@ -100,12 +112,16 @@ function renderFloatingNotify(value, $elements) {
             const diff = value - lastValue;
             if (diff !== 0) {
                 $elements.each(function() {
-                    floatingNotifiers.elementText($(this), diff);
+                    if (diff < 0) {
+                        floatingNotifiers.elementTextRed($(this), `${diff}`);
+                    } else {
+                        floatingNotifiers.elementText($(this), `${diff}`);
+                    }
+                    
                 })
             }
         }
-    }
-    
+    }   
 }
 
 var robots = ['buyer-one', 'buyer-two', 'buyer-three',
