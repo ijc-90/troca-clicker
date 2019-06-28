@@ -1,7 +1,7 @@
 class GameLoop {
 
     constructor(){
-        this.pause = false;
+        this.paused = false;
         this.viewIntegrator = new ViewIntegrator();
 
         this.context = {
@@ -56,6 +56,7 @@ class GameLoop {
             showBuyFlow: false,
             showRepairFlow: false,
             showSaleFlow: false,
+            showRobots: false,
         };
         
         this.pipeline = [
@@ -65,7 +66,7 @@ class GameLoop {
             new HiringFlow(),
             new UpgradeFlow(),
             new SalaryFlow(),
-            new TutorialFlow(),
+            new TutorialFlow(this),
         ];
 
         this.events = [];
@@ -93,11 +94,11 @@ class GameLoop {
     }
 
     pause(){
-        this.pause = true;
+        this.paused = true;
     }
 
     resume(){
-        this.pause = false;
+        this.paused = false;
     }
 
     buyClick() {

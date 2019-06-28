@@ -1,5 +1,7 @@
 class Modal {
     $el = null;
+    gameloop;
+    onClose = null;
 
     constructor() {
         $(document).ready(() => {
@@ -9,7 +11,10 @@ class Modal {
         
     }
 
-    show(title, text) {
+    show(title, text, gameloop, onClose) {
+        this.gameloop = gameloop;
+        this.gameloop.pause();
+        this.onClose = onClose;
         this.$el.find('.modal-title').html(title);
         this.$el.find('.modal-text').html(text);
         const $container = this.$el.find('.modal-container');
@@ -22,6 +27,8 @@ class Modal {
         const $container = this.$el.find('.modal-container');
         TweenMax.to($container, 1, { scale: 0, ease:Elastic.easeIn, onComplete: () => {
             this.$el.hide();
+            this.gameloop.resume();
+            if (this.onClose) this.onClose()
         }});
     }
 }
