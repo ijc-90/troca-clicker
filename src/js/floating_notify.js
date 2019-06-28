@@ -2,7 +2,7 @@ class FlatingNotify {
     idName = `_${Math.random().toString(36).substr(2, 9)}`;
     $el = null;
     text = '';
-    $window = $('body')
+    $container = $('.click-container')
     onComplete = () => {}
     type = 'mouse'
     TYPE_MOUSE = 'mouse'
@@ -27,7 +27,7 @@ class FlatingNotify {
             this.onComplete = onComplete;
         }
 
-        this.$window.append(this.getTemplate(this.text));
+        this.$container.append(this.getTemplate(this.text));
 
         const initPosition = this.getInitPosition();
         const endPosition = this.getEndPosition(initPosition);
