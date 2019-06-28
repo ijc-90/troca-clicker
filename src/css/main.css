@@ -2,8 +2,8 @@ body{
 	margin:0;
 	padding: 0;
 	font-family: 'Arial', cursive;
-	background: #404040;
-	background: url('../images/footer_lodyas.png');
+	background-image: linear-gradient(to top, #ebf9f9, #ebf9f9);
+	font-family: 'Press Start 2P', monospace;
 }
 html, body{
   height:100%;
@@ -70,14 +70,14 @@ font-family: 'Open Sans', sans-serif;
 }
 .click-message{
 	width: 100%;
-	color: #fff;
+	color: white;
 	text-align: center;
-	height: 80px;
+	height: 70px;
 	display: inline-block;
 	background: #ff8800;
 	vertical-align: middle;
-	padding: 15px 40px;
-	font-size: 18px;
+	line-height: 70px;
+	font-size: 10px;
 }
 .store-container {
 	position: relative;
@@ -139,16 +139,19 @@ min-height: calc(100vh - 200px);
 	
 }
 .main-balance-display{
-	background: #808184;
+	background: #3684c6;
 	
 	margin-top: 0px;
 	padding-top: 0px;
-	display: ;
 }
 
 .main-balance-display .stats-balance-dashboard{
 	width: 50%;
 	display: inline-block;
+}
+
+.main-balance-display label {
+
 }
 
 /*DISPLAY*/
@@ -214,10 +217,12 @@ padding-bottom: 70px;
 
 .click-store-title{
 	display: block;
-	width: 100%;
-	font-size: 32px;
-	padding: 10px;
-	color: #fff;
+    width: 100%;
+    font-size: 22px;
+    padding: 10px;
+    color: #ffd56b;
+    text-align: center;
+    text-shadow: 1px 1px 0 #e8696b;
 	
 }
 
@@ -297,7 +302,10 @@ padding-bottom: 70px;
 .click-robot-container{
 	background: white;
 	width: 74%;
-    border-radius: 5px;
+	border-radius: 5px;
+	border: 3px solid #3684c6;
+	box-sizing: border-box;
+
 }
 .click-robot{
 	cursor: pointer;
@@ -325,12 +333,16 @@ padding-bottom: 70px;
     border-bottom-left-radius: 5px;
 }
 
+.workers-and-improvements-container{
+	max-width: 1400px;
+    margin: auto;
+}
+
 .click-robot-text{
 	display: inline-block;
 	vertical-align: middle;
 	padding: 0;
-    padding-left: 5px;
-	width: 80px;
+	width: 220px;
 	color: #ff8800;
 }
 
@@ -345,13 +357,8 @@ padding-bottom: 70px;
 }
 .click-robot-bought{
 	display: inline-block;
-	vertical-align: middle;
-	text-align: center;
-	font-size: 22px;
-	width: 40px;
-    border-left: 1px solid lightgray;
-	
-	color: #ff8800;
+	font-size: 14px;
+	color: #385f74;
 }
 
 .click-robot-tooltip{
@@ -361,8 +368,8 @@ padding-bottom: 70px;
 	background: #385f74;
 	min-height: 120px;
 	padding:10px;
-	width: 500px;
-	left: -505px;
+	width: 400px;
+	left: -300px;
 	top: -100%;
 
 }
@@ -384,9 +391,9 @@ padding-bottom: 70px;
 }
 .click-robot-tooltip-text{
 	display: inline-block;
-	width: calc(100% - 140px);
+	width: calc(100% - 160px);
 	color: #fff;
-	font-size: 18px;
+	font-size: 14px;
 	vertical-align: top;
 }
 .click-robot-tooltip-title, .click-robot-tooltip-value, .click-robot-tooltip-description, .click-robot-tooltip-info{
@@ -395,20 +402,20 @@ padding-bottom: 70px;
 }
 
 .click-robot-tooltip-title{
-	font-size: 22px;
+	font-size: 14px;
 }
 
 .click-robot-tooltip-value{
-	font-size: 20px;
+	font-size: 12px;
 	color: #ff8800;
 
 }
 .click-robot-tooltip-description{
-	font-size: 14px;
+	font-size: 10px;
 		margin-bottom: 20px;
 }
 .click-robot-tooltip-info{
-	font-size: 16px;
+	font-size: 10px;
 
 }
 .click-robot-tooltip-info span{
@@ -498,7 +505,7 @@ padding-bottom: 70px;
 }
 
 .small-notice  {
-	color: #ffffff;
+	color: black;
 	 font-size: 14px;
 	 margin-top: 10px;
  }
@@ -632,14 +639,14 @@ padding-bottom: 70px;
 
 #modal .modal-container{
 	position: fixed;
-	top: 50%;
-	left: 50%;
-	margin-left: -200px;
-	margin-top: -150px;
-	background: #ff8800;
-	width: 400px;
-	height: 300px;
-	text-align: center;
+    top: 50%;
+    left: 50%;
+    margin-left: -340px;
+    margin-top: -209px;
+    background: #ff8800;
+    width: 720px;
+    height: 420px;
+    text-align: center;
 }
 
 #modal .modal-container .close-modal {
@@ -650,19 +657,29 @@ padding-bottom: 70px;
 	right: 10px;
 	top: 5px;
 }
+.modal-text{
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
 #modal .modal-container .modal-title {
 	margin-top: 50px;
 	margin-bottom: 20px;
 	font-weight: bold;
+	color: white;
 }
 #modal .modal-container .modal-button {
 	cursor: pointer;
-	background: black;
-	display: inline-block;
-	color: white;
-	width: 100px;
-	position: absolute;
-	bottom: 20px;
-	left: 50%;
-	margin-left: -50px;
+    background: black;
+    display: inline-block;
+    color: white;
+    width: 140px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    line-height: 50px;
+    font-size: 14px;
+    height: 50px;
+	margin-left: -66px;
+	text-transform: uppercase;
 }

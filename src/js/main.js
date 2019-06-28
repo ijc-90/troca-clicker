@@ -3,75 +3,75 @@
 var contentInfo = [
     {
         type: "buyer_one", 
-        name: "Caniggia", 
+        name: "E-Purchase", 
         imgPath: "images/caniggia.jpeg",
         upgImgPath: "images/caniggia.jpeg",
-        pluralName: "Caniggias",
-        upgTitle: "Siempre al TOP"
+        pluralName: "E-Purchases",
+        upgTitle: "Responsiveness"
     },
     {
         type: "buyer_two", 
-        name: "Fort", 
+        name: "Comprador en bici", 
         imgPath: "images/fort.jpg",
         upgImgPath: "images/fort.jpg",
-        pluralName: "Forts",
-        upgTitle: "MAIAMEEE!"
+        pluralName: "Comprador en bici",
+        upgTitle: "Comprar moto para los recolectores"
     },
     {
         type: "buyer_three", 
-        name: "Mayweather", 
+        name: "Tienda física de compra", 
         imgPath: "images/mayweather.jpeg",
         upgImgPath: "images/mayweather.jpeg",
-        pluralName: "Mayweathers",
-        upgTitle: "Justin Time"
+        pluralName: "Tienda física de compra",
+        upgTitle: "Ofrecer plan canje"
     },
     {
         type: "repairer_one", 
-        name: "Fowler", 
+        name: "Reparador", 
         imgPath: "images/fowler.jpeg",
         upgImgPath: "images/fowler.jpeg",
-        pluralName: "Fowlers",
-        upgTitle: "Microservice Architecture"
+        pluralName: "Reparadores",
+        upgTitle: "Kit de herramientas"
     },
     {
         type: "repairer_two", 
-        name: "Favaloro", 
+        name: "Robot automatizado", 
         imgPath: "images/favaloro.jpg",
         upgImgPath: "images/favaloro.jpg",
-        pluralName: "Favaloros",
-        upgTitle: "Favaloro"
+        pluralName: "Robots automatizados",
+        upgTitle: "Inteligencia artificial mejorada"
     },
     {
         type: "repairer_three", 
-        name: "Dr House", 
+        name: "Planta totalmente automatizada", 
         imgPath: "images/house.jpg",
         upgImgPath: "images/house.jpg",
-        pluralName: "Dr Houses",
-        upgTitle: "Vicodin!"
+        pluralName: "Plantas totalmente automatizadas",
+        upgTitle: "Implementación de paneles solares"
     },
     {
         type: "seller_one", 
-        name: "Fantino", 
+        name: "E-Commerce", 
         imgPath: "images/fantino.jpg",
         upgImgPath: "images/fantino.jpg",
-        pluralName: "Fantinos",
-        upgTitle: "PARA, PARA, PARA..."
+        pluralName: "E-Commerces",
+        upgTitle: "Responsiveness"
     },
     {
         type: "seller_two", 
-        name: "Caruso", 
+        name: "Tiendas física", 
         imgPath: "images/caruso.jpeg",
         upgImgPath: "images/caruso.jpeg",
-        pluralName: "Carusos",
-        upgTitle: "Smoke Power"
+        pluralName: "Tiendas físicas",
+        upgTitle: "Abrir las 24 horas"
     },
     {
         type: "seller_three", 
-        name: "S. Jobs", 
+        name: "Integración con Marketplace", 
         imgPath: "images/jobs.jpg",
         upgImgPath: "images/jobs.jpg",
-        pluralName: "Steves",
-        upgTitle: "Click to release a new iPhone"
+        pluralName: "Integración con Marketplaces",
+        upgTitle: "Ofrecer cuotas"
     },
 ];
 
@@ -81,8 +81,8 @@ function updateContentInfo () {
         $('#' + info.type + ' .click-robot-img img').attr("src", info.imgPath);
         $('#' + info.type + ' .click-robot-tooltip-img img').attr("src", info.imgPath);
         $('#' + info.type + '_upgrade img').attr("src", info.upgImgPath);
-        $('#' + info.type + ' .click-robot-tooltip-description').text("Añade un " + info.name + " a tu nómina de empleados!");
-        $('#' + info.type + ' .click-robot-tooltip-title').text("Contratar un " + info.name);
+        $('#' + info.type + ' .click-robot-tooltip-description').text("Añade un " + info.name + " a trocafone!");
+        $('#' + info.type + ' .click-robot-tooltip-title').text("Sumar un " + info.name);
         $('#' + info.type + ' .click-robot-tooltip-plural').text(info.pluralName);
         $('#' + info.type + '_upgrade .click-upgrade-tooltip-title').text(info.upgTitle);
         $('#' + info.type).on("click",function(){
@@ -186,10 +186,9 @@ $(document).ready( () => {
     TweenMax.set($(".click-container"), { scale: 1.25 });
     TweenMax.to($(".click-container"), 1, { scale: 1, delay: 1.2, opacity: 1, ease:Expo.easeOut });
     setTimeout(() => $(".lds-ripple").remove(), 1500);
-    setTimeout(() => {
-        modal.show('este es el titulo', 'este es el texto');
-    }, 3000);
-    
+    modal.show('Bienvenido a troca clickers', 'Vamos a ir conociendo el maravilloso mundo de troca, y su funcionamiento.', gameLoop, () =>{
+        modal.show('Primeros Pasos', 'Trocafone compra, reprocesa y vende celulares. Para arrancar te dejamos $100, comprá 10 celulares clickeando', gameLoop);    
+    });
     
 })
 
