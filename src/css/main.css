@@ -633,14 +633,14 @@ padding-bottom: 70px;
 
 #modal .modal-container{
 	position: fixed;
-	top: 50%;
-	left: 50%;
-	margin-left: -200px;
-	margin-top: -150px;
-	background: #ff8800;
-	width: 400px;
-	height: 300px;
-	text-align: center;
+    top: 50%;
+    left: 50%;
+    margin-left: -340px;
+    margin-top: -209px;
+    background: #ff8800;
+    width: 720px;
+    height: 420px;
+    text-align: center;
 }
 
 #modal .modal-container .close-modal {
@@ -651,10 +651,16 @@ padding-bottom: 70px;
 	right: 10px;
 	top: 5px;
 }
+.modal-text{
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
 #modal .modal-container .modal-title {
 	margin-top: 50px;
 	margin-bottom: 20px;
 	font-weight: bold;
+	color: black;
 }
 #modal .modal-container .modal-button {
 	cursor: pointer;
@@ -668,5 +674,6 @@ padding-bottom: 70px;
     line-height: 50px;
     font-size: 14px;
     height: 50px;
-    margin-left: -66px;
+	margin-left: -66px;
+	text-transform: uppercase;
 }
