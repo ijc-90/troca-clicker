@@ -84,6 +84,23 @@ function kFormatterInverse(num) {
     return Number(num);
 }
 
+function updateArrows(json) {
+    var bought = json['js-amount-phones-bought'];
+    var repaired = json['js-amount-phones-repaired'];
+    var sold = json['js-amount-phones-sold'];
+
+    console.log(bought, repaired, sold)
+    if (bought > 0) {
+        renderFloatingNotify(bought, $('.arrow-bought'));
+    }
+    if (repaired > 0) {
+        renderFloatingNotify(repaired, $('.arrow-repaired'));
+    }
+    if (sold > 0) {
+        renderFloatingNotify(sold, $('.arrow-sold'));
+    }
+}
+
 function updateNumbers(json) {
     Object.keys(json).forEach(function (keyName) {
         var value = json[keyName];
@@ -92,7 +109,6 @@ function updateNumbers(json) {
         if (notifiersWhiteList.indexOf(keyName) !== -1) {
             renderFloatingNotify(value, elements);
         }
-        
         
         if (!isNaN(value) && elements.length !== 0) {
             elements.text(kFormatter(value));
@@ -254,6 +270,7 @@ function notifyPaidSalaries(json) {
 
 function updateFrontend(json) {
     updateNumbers(json);
+    updateArrows(json);
     updateVisibilityOfUpgrades(json);
     notifyIfLost(json);
     notifyPaidSalaries(json);
