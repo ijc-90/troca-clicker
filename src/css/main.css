@@ -112,6 +112,12 @@ min-height: calc(100vh - 200px);
 	
 }
 
+
+.stock-movement-arrow {
+	position: absolute;
+	left: -10%;
+}
+
 .click-display, .click-store{
 	width: 33%;
 	display: inline-block;
