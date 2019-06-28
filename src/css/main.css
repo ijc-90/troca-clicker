@@ -336,7 +336,6 @@ padding-bottom: 70px;
 	display: inline-block;
 	vertical-align: middle;
 	padding: 0;
-    padding-left: 5px;
 	width: 220px;
 	color: #ff8800;
 }
@@ -352,13 +351,8 @@ padding-bottom: 70px;
 }
 .click-robot-bought{
 	display: inline-block;
-	vertical-align: middle;
-	text-align: center;
-	font-size: 22px;
-	width: 40px;
-    border-left: 1px solid lightgray;
-	
-	color: #ff8800;
+	font-size: 14px;
+	color: #385f74;
 }
 
 .click-robot-tooltip{
@@ -664,12 +658,15 @@ padding-bottom: 70px;
 }
 #modal .modal-container .modal-button {
 	cursor: pointer;
-	background: black;
-	display: inline-block;
-	color: white;
-	width: 100px;
-	position: absolute;
-	bottom: 20px;
-	left: 50%;
-	margin-left: -50px;
+    background: black;
+    display: inline-block;
+    color: white;
+    width: 140px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    line-height: 50px;
+    font-size: 14px;
+    height: 50px;
+    margin-left: -66px;
 }
