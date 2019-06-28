@@ -186,10 +186,9 @@ $(document).ready( () => {
     TweenMax.set($(".click-container"), { scale: 1.25 });
     TweenMax.to($(".click-container"), 1, { scale: 1, delay: 1.2, opacity: 1, ease:Expo.easeOut });
     setTimeout(() => $(".lds-ripple").remove(), 1500);
-    setTimeout(() => {
-        modal.show('este es el titulo', 'este es el texto');
-    }, 3000);
-    
+    modal.show('Bienvenido a troca clickers', 'Vamos a ir conociendo el maravilloso mundo de troca, y su funcionamiento.', gameLoop, () =>{
+        modal.show('Primeros Pasos', 'Trocafone compra, reprocesa y vende celulares. Para arrancar te dejamos $100, comprá 10 celulares clickeando', gameLoop);    
+    });
     
 })
 
