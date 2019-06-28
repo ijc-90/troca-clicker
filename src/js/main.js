@@ -12,8 +12,8 @@ var contentInfo = [
     {
         type: "buyer_two", 
         name: "Comprador en bici", 
-        imgPath: "images/fort.jpg",
-        upgImgPath: "images/fort.jpg",
+        imgPath: "images/Compra__Comprador_en_bici.png",
+        upgImgPath: "images/Compra__Comprador_en_moto.png",
         pluralName: "Comprador en bici",
         upgTitle: "Comprar moto para los recolectores"
     },
@@ -36,17 +36,17 @@ var contentInfo = [
     {
         type: "repairer_two", 
         name: "Brazo robótico", 
-        imgPath: "images/favaloro.jpg",
-        upgImgPath: "images/favaloro.jpg",
+        imgPath: "images/Reparar_Robot.png",
+        upgImgPath: "images/Reparar_AI.png",
         pluralName: "Brazos robóticos",
         upgTitle: "Inteligencia artificial mejorada"
     },
     {
         type: "repairer_three", 
         name: "Planta automatizada", 
-        imgPath: "images/house.jpg",
-        upgImgPath: "images/house.jpg",
-        pluralName: "Plantas automatizadas",
+        imgPath: "images/Reparar_Planta_automatizada.png",
+        upgImgPath: "images/Reparar__Paneles_solares.png",
+        pluralName: "Plantas a  utomatizadas",
         upgTitle: "Implementación de paneles solares"
     },
     {
