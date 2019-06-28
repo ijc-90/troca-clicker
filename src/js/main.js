@@ -186,6 +186,10 @@ $(document).ready( () => {
     TweenMax.set($(".click-container"), { scale: 1.25 });
     TweenMax.to($(".click-container"), 1, { scale: 1, delay: 1.2, opacity: 1, ease:Expo.easeOut });
     setTimeout(() => $(".lds-ripple").remove(), 1500);
+    setTimeout(() => {
+        modal.show('este es el titulo', 'este es el texto');
+    }, 3000);
+    
     
 })
 
