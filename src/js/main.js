@@ -35,18 +35,18 @@ var contentInfo = [
     },
     {
         type: "repairer_two", 
-        name: "Robot automatizado", 
+        name: "Brazo robótico", 
         imgPath: "images/favaloro.jpg",
         upgImgPath: "images/favaloro.jpg",
-        pluralName: "Robots automatizados",
+        pluralName: "Brazos robóticos",
         upgTitle: "Inteligencia artificial mejorada"
     },
     {
         type: "repairer_three", 
-        name: "Planta totalmente automatizada", 
+        name: "Planta automatizada", 
         imgPath: "images/house.jpg",
         upgImgPath: "images/house.jpg",
-        pluralName: "Plantas totalmente automatizadas",
+        pluralName: "Plantas automatizadas",
         upgTitle: "Implementación de paneles solares"
     },
     {
