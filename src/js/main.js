@@ -182,6 +182,13 @@ window.setInterval(function(){
     document.getElementById('news').innerHTML = item;
 }, 15000);
 
+$(document).ready( () => {
+    TweenMax.set($(".click-container"), { scale: 1.25 });
+    TweenMax.to($(".click-container"), 1, { scale: 1, delay: 1.2, opacity: 1, ease:Expo.easeOut });
+    setTimeout(() => $(".lds-ripple").remove(), 1500);
+    
+})
+
 
 
 // function setOpacityForBuyables(){
