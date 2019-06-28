@@ -1,5 +1,5 @@
 class FlatingNotify {
-    idName = `floating-notify-${new Date().getUTCMilliseconds()}`;
+    idName = `_${Math.random().toString(36).substr(2, 9)}`;
     $el = null;
     text = '';
     $window = $('body')
