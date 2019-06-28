@@ -85,6 +85,10 @@ function kFormatterInverse(num) {
 }
 
 function updateNumbers(json) {
+    if (json === null || json === undefined) {
+        return;
+    }
+    
     Object.keys(json).forEach(function (keyName) {
         var value = json[keyName];
         var elements = $("."+keyName);

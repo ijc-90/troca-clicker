@@ -4,8 +4,8 @@ var contentInfo = [
     {
         type: "buyer_one", 
         name: "E-Purchase", 
-        imgPath: "images/caniggia.jpeg",
-        upgImgPath: "images/caniggia.jpeg",
+        imgPath: "images/Venta_e-commerce.png",
+        upgImgPath: "images/Compra__Responsive.png",
         pluralName: "E-Purchases",
         upgTitle: "Responsiveness"
     },
@@ -21,15 +21,15 @@ var contentInfo = [
         type: "buyer_three", 
         name: "Tienda física de compra", 
         imgPath: "images/mayweather.jpeg",
-        upgImgPath: "images/mayweather.jpeg",
+        upgImgPath: "images/Compra__Plan_canje.png",
         pluralName: "Tienda física de compra",
         upgTitle: "Ofrecer plan canje"
     },
     {
         type: "repairer_one", 
         name: "Reparador", 
-        imgPath: "images/fowler.jpeg",
-        upgImgPath: "images/fowler.jpeg",
+        imgPath: "images/Reparar__Reparador.png",
+        upgImgPath: "images/Reparar__Kit_de_herramientas.png",
         pluralName: "Reparadores",
         upgTitle: "Kit de herramientas"
     },
@@ -184,10 +184,15 @@ window.setInterval(function(){
 
 $(document).ready( () => {
     TweenMax.set($(".click-container"), { scale: 1.25 });
-    TweenMax.to($(".click-container"), 1, { scale: 1, delay: 1.2, opacity: 1, ease:Expo.easeOut });
+    
     setTimeout(() => $(".lds-ripple").remove(), 1500);
     modal.show('Bienvenido a troca clickers', 'Vamos a ir conociendo el maravilloso mundo de troca, y su funcionamiento.', gameLoop, () =>{
-        modal.show('Primeros Pasos', 'Trocafone compra, reprocesa y vende celulares. Para arrancar te dejamos $100, comprá 10 celulares clickeando', gameLoop);    
+        modal.show('Primeros Pasos', 'Trocafone compra, reprocesa y vende celulares. Para arrancar te dejamos $100, comprá 10 celulares clickeando', gameLoop, () => {
+            TweenMax.set(".click-message", { y: 200 })
+            $(".click-message").show();
+            TweenMax.to($(".click-container"), 1, { scale: 1, opacity: 1, ease:Expo.easeOut });
+            TweenMax.to(".click-message", 1, { y: 0 })
+        });    
     });
     
 })
