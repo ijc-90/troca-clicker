@@ -63,14 +63,37 @@ var sampleJson = {
     "js-salaries-time-for-payment": 0
 };
 
+var notifiersWhiteList = [
+    "js-money",
+    "js-salaries-amount",
+    "js-amount-phones-awaiting-repair",
+    "js-amount-phones-awaiting-sale",
+    "js-phone-buy-capability",
+    "js-phone-repair-capability",
+];
+
 function kFormatter(num) {
     return num > 999 ? (num/1000).toFixed(1) + 'k' : num
+}
+
+function kFormatterInverse(num) {
+    if (num.indexOf('k') !== -1) {
+        return Number(num.replace('k', '')) * 1000;
+    }
+    
+    return Number(num);
 }
 
 function updateNumbers(json) {
     Object.keys(json).forEach(function (keyName) {
         var value = json[keyName];
         var elements = $("."+keyName);
+
+        if (notifiersWhiteList.indexOf(keyName) !== -1) {
+            renderFloatingNotify(value, elements);
+        }
+        
+        
         if (!isNaN(value) && elements.length !== 0) {
             elements.text(kFormatter(value));
         } else if (typeof(value) !== "boolean" && keyName !== "js-salaries-amount") {
@@ -80,6 +103,25 @@ function updateNumbers(json) {
             
         }
     });
+}
+
+function renderFloatingNotify(value, $elements) {
+    const lastValue = kFormatterInverse($elements.first().text());
+    if (typeof value === 'number' || typeof lastValue === 'number') {
+        if (lastValue !== value) {
+            const diff = value - lastValue;
+            if (diff !== 0) {
+                $elements.each(function() {
+                    if (diff < 0) {
+                        floatingNotifiers.elementTextRed($(this), `${diff}`);
+                    } else {
+                        floatingNotifiers.elementText($(this), `${diff}`);
+                    }
+                    
+                })
+            }
+        }
+    }   
 }
 
 var robots = ['buyer-one', 'buyer-two', 'buyer-three',
@@ -159,6 +201,29 @@ function updateAvailabilityOfBuy(json) {
     }
 }
 
+function showOrHideFlows(json){
+    var buyFlowSelector = ".js-buy-flow-container";
+    if (json["showBuyFlow"]) {
+        $(buyFlowSelector).css({ display: "inline-block" });
+    }else{
+        $(buyFlowSelector).css({ display: "none" });
+    }
+
+    var repairFlowSelector = ".js-repair-flow-container";
+    if (json["showRepairFlow"]) {
+        $(repairFlowSelector).css({ display: "inline-block" });
+    }else{
+        $(repairFlowSelector).css({ display: "none" });
+    }
+
+    var saleFlowSelector = ".js-sale-flow-container";
+    if (json["showSaleFlow"]) {
+        $(saleFlowSelector).css({ display: "inline-block" });
+    }else{
+        $(saleFlowSelector).css({ display: "none" });
+    }
+}
+
 function notifyIfLost(json) {
     if (json["js-you-lose"]) {
         alert("PERDISTE!")
@@ -196,6 +261,7 @@ function updateFrontend(json) {
     updateAvailabilityOfBuy(json);
     updateAvailabilityOfSell(json);
     updateAvailabilityOfRepair(json);
+    showOrHideFlows(json);
 }
 
 

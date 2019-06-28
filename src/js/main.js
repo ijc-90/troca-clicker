@@ -98,7 +98,7 @@ var gameLoop = new GameLoop();
 window.gameContext = gameLoop.context;
 
 console.log("Bienvenido al modo Hacker. Un gran poder conlleva una gran responsabilidad");
-console.log("Para modificar el juego tenés que hacer un trabajo de ingeniería inversa (o mirar la variable window.gameContext, que tiene todos los parámetros del juego ");
+console.log("Para modificar el juego tenés que hacer un trabajo de ingeniería inversa (o mirar la variable window.gameContext, que tiene todos los parámetros del juego) ");
 console.log("Sugerencias, issues y PRs a https://github.com/ijc-90/troca-clicker");
 
 
@@ -181,6 +181,17 @@ window.setInterval(function(){
     var item = news[Math.floor(Math.random()*news.length)];
     document.getElementById('news').innerHTML = item;
 }, 15000);
+
+$(document).ready( () => {
+    TweenMax.set($(".click-container"), { scale: 1.25 });
+    TweenMax.to($(".click-container"), 1, { scale: 1, delay: 1.2, opacity: 1, ease:Expo.easeOut });
+    setTimeout(() => $(".lds-ripple").remove(), 1500);
+    setTimeout(() => {
+        modal.show('este es el titulo', 'este es el texto');
+    }, 3000);
+    
+    
+})
 
 
 

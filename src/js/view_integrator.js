@@ -32,6 +32,9 @@ class ViewIntegrator {
         }, 0);
 
         return {
+          "showBuyFlow": newContext.showBuyFlow,
+          "showRepairFlow": newContext.showRepairFlow,
+          "showSaleFlow": newContext.showSaleFlow,
           "js-total-balance": newContext.money - oldContext.money,
           "js-money": newContext.money,
           "js-buys-balance": newContext.moneySpentOnBuyingPhonesThisCicle, //null cuanta plata gasté en comprar (celulares comprados * precio de compra)
