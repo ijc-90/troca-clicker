@@ -44,11 +44,11 @@ class TutorialFlow extends Flow {
     }
 
     shouldShowRepairFlow(context){
-        return context.stockToRepair > 0;
+        return context.stockToRepair >= 10;
     }
 
     shouldShowSaleFlow(context){
-        return context.stockToSale > 0;
+        return context.stockToSale >= 10;
     }
 
 
