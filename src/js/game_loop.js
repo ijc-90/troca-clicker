@@ -52,7 +52,9 @@ class GameLoop {
             amountOfPhonesSoldThisCicle: 0,
             moneyPaidInSalaries: 0,
             salariesPaidThisTick: false,
-
+            showBuyFlow: false,
+            showRepairFlow: false,
+            showSaleFlow: false,
         };
         
         this.pipeline = [
@@ -62,6 +64,7 @@ class GameLoop {
             new HiringFlow(),
             new UpgradeFlow(),
             new SalaryFlow(),
+            new TutorialFlow(),
         ];
 
         this.events = [];
