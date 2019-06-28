@@ -1,6 +1,7 @@
 class GameLoop {
 
     constructor(){
+        this.paused = false;
         this.viewIntegrator = new ViewIntegrator();
 
         this.context = {
@@ -55,6 +56,7 @@ class GameLoop {
             showBuyFlow: false,
             showRepairFlow: false,
             showSaleFlow: false,
+            showRobots: false,
         };
         
         this.pipeline = [
@@ -64,7 +66,7 @@ class GameLoop {
             new HiringFlow(),
             new UpgradeFlow(),
             new SalaryFlow(),
-            new TutorialFlow(),
+            new TutorialFlow(this),
         ];
 
         this.events = [];
@@ -74,6 +76,11 @@ class GameLoop {
         if (this.context.gameOver){
             return;
         }
+
+        if(this.paused){
+            return;
+        }
+
         var oldContext = JSON.parse(JSON.stringify(this.context));
 
         this.context.events = this.events;
@@ -84,6 +91,14 @@ class GameLoop {
         }, this.context);
 
         return this.viewIntegrator.generateViewRawData(oldContext, this.context);
+    }
+
+    pause(){
+        this.paused = true;
+    }
+
+    resume(){
+        this.paused = false;
     }
 
     buyClick() {
