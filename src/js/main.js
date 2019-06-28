@@ -20,7 +20,7 @@ var contentInfo = [
     {
         type: "buyer_three", 
         name: "Tienda física de compra", 
-        imgPath: "images/mayweather.jpeg",
+        imgPath: "images/Compra__Tienda_fisica.png",
         upgImgPath: "images/Compra__Plan_canje.png",
         pluralName: "Tienda física de compra",
         upgTitle: "Ofrecer plan canje"
@@ -36,15 +36,15 @@ var contentInfo = [
     {
         type: "repairer_two", 
         name: "Brazo robótico", 
-        imgPath: "images/Reparar_Robot.png",
-        upgImgPath: "images/Reparar_AI.png",
+        imgPath: "images/Reparar__Robot.png",
+        upgImgPath: "images/Reparar__AI.png",
         pluralName: "Brazos robóticos",
         upgTitle: "Inteligencia artificial mejorada"
     },
     {
         type: "repairer_three", 
         name: "Planta automatizada", 
-        imgPath: "images/Reparar_Planta_automatizada.png",
+        imgPath: "images/Reparar__Planta_automatizada.png",
         upgImgPath: "images/Reparar__Paneles_solares.png",
         pluralName: "Plantas a  utomatizadas",
         upgTitle: "Implementación de paneles solares"
@@ -60,7 +60,7 @@ var contentInfo = [
     {
         type: "seller_two", 
         name: "Tiendas física", 
-        imgPath: "images/Venta__marketplace.png",
+        imgPath: "images/Compra__Tienda_fisica.png",
         upgImgPath: "images/Venta__24h.png",
         pluralName: "Tiendas físicas",
         upgTitle: "Abrir las 24 horas"
@@ -68,8 +68,8 @@ var contentInfo = [
     {
         type: "seller_three", 
         name: "Integración con Marketplace", 
-        imgPath: "images/jobs.jpg",
-        upgImgPath: "images/jobs.jpg",
+        imgPath: "images/Venta__marketplace.png",
+        upgImgPath: "images/Venta__cuotas.png",
         pluralName: "Integración con Marketplaces",
         upgTitle: "Ofrecer cuotas"
     },
