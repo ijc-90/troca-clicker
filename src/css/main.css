@@ -614,3 +614,8 @@ padding-bottom: 70px;
 	}
   }
   
+.phone-rain-el{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
