@@ -222,6 +222,13 @@ function showOrHideFlows(json){
     }else{
         $(saleFlowSelector).css({ display: "none" });
     }
+
+    var robotSelect = ".js-robots";
+    if (json["showRobots"]) {
+        $(robotSelect).css({ display: "inline-block" });
+    }else{
+        $(robotSelect).css({ display: "none" });
+    }
 }
 
 function notifyIfLost(json) {
