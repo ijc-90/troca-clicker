@@ -57,6 +57,7 @@ class GameLoop {
             showRepairFlow: false,
             showSaleFlow: false,
             showRobots: false,
+            skipTutorial: false,
         };
         
         this.pipeline = [

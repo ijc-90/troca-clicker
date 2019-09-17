@@ -186,13 +186,11 @@ $(document).ready( () => {
     TweenMax.set($(".click-container"), { scale: 1.25 });
     
     setTimeout(() => $(".lds-ripple").remove(), 1500);
-    modal.show('Bienvenido a troca clickers', 'Vamos a ir conociendo el maravilloso mundo de troca, y su funcionamiento.', gameLoop, () =>{
-        modal.show('Primeros Pasos', 'Trocafone compra, reprocesa y vende celulares. Para arrancar te dejamos $100, comprá 10 celulares clickeando', gameLoop, () => {
-            TweenMax.set(".click-message", { y: 200 })
-            $(".click-message").show();
-            TweenMax.to($(".click-container"), 1, { scale: 1, opacity: 1, ease:Expo.easeOut });
-            TweenMax.to(".click-message", 1, { y: 0 })
-        });    
+    modal.show('Bienvenido a troca clickers', 'Para arrancar te dejamos $100, comprá 10 celulares ', gameLoop, () =>{
+        TweenMax.set(".click-message", { y: 200 })
+        $(".click-message").show();
+        TweenMax.to($(".click-container"), 1, { scale: 1, opacity: 1, ease:Expo.easeOut });
+        TweenMax.to(".click-message", 1, { y: 0 })
     });
     
 })
