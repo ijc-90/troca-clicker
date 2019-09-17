@@ -46,7 +46,7 @@ var contentInfo = [
         name: "Planta automatizada", 
         imgPath: "images/Reparar__Planta_automatizada.png",
         upgImgPath: "images/Reparar__Paneles_solares.png",
-        pluralName: "Plantas a  utomatizadas",
+        pluralName: "Plantas automatizadas",
         upgTitle: "Implementación de paneles solares"
     },
     {
