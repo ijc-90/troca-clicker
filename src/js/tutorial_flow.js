@@ -79,7 +79,7 @@ class TutorialFlow extends Flow {
             var titulo2 = 'Ya compramos, reparamos y vendimos!';
             var texto2 = 'Ahora queremos que crees y automatices estos procesos.';
             var titulo3 = 'Pero cuidado';
-            var texto3 = 'Cada proceso que armes va a producir por vos, pero armarlo tiene un costo, y también tenés que mantenerlos cada cierto tiempo. Tené cuidado de balancear los 3 procesos para hacerlo lo más óptimo posible';
+            var texto3 = 'Cada proceso que armes va a producir por vos, pero armarlo tiene un costo, y también tenés que mantenerlos cada cierto tiempo. Intentá balancear los 3 procesos para hacerlo lo más óptimo posible';
             
             //modal.show(titulo1, texto1, this.gameloop, () =>{
                modal.show(titulo2,texto2, this.gameloop,() =>{
