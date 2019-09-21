@@ -133,6 +133,7 @@ var robots = ['buyer-one', 'buyer-two', 'buyer-three',
     'seller-one', 'seller-two', 'seller-three',
 ];
 
+
 var actions = ["repair", "buy", "sell"];
 
 function updateVisibilityOfUpgrades(json) {
@@ -208,28 +209,28 @@ function updateAvailabilityOfBuy(json) {
 function showOrHideFlows(json){
     var buyFlowSelector = ".js-buy-flow-container";
     if (json["showBuyFlow"]) {
-        $(buyFlowSelector).css({ display: "inline-block" });
+        $(buyFlowSelector).css({ display: "block" });
     }else{
         $(buyFlowSelector).css({ display: "none" });
     }
 
     var repairFlowSelector = ".js-repair-flow-container";
     if (json["showRepairFlow"]) {
-        $(repairFlowSelector).css({ display: "inline-block" });
+        $(repairFlowSelector).css({ display: "block" });
     }else{
         $(repairFlowSelector).css({ display: "none" });
     }
 
     var saleFlowSelector = ".js-sale-flow-container";
     if (json["showSaleFlow"]) {
-        $(saleFlowSelector).css({ display: "inline-block" });
+        $(saleFlowSelector).css({ display: "block" });
     }else{
         $(saleFlowSelector).css({ display: "none" });
     }
 
     var robotSelect = ".js-robots";
     if (json["showRobots"]) {
-        $(robotSelect).css({ display: "inline-block" });
+        $(robotSelect).css({ display: "block" });
     }else{
         $(robotSelect).css({ display: "none" });
     }

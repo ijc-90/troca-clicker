@@ -62,9 +62,9 @@ font-family: 'Open Sans', sans-serif;
 .stock-number-container{
 	margin:0 auto;
 	width: 100%;
-	height: 120px;
+	display: none;
 
-	font-size: 80px;
+	font-size: 12px;
 	color: #ff8800;
 }
 .click-message{
@@ -129,31 +129,29 @@ min-height: calc(100vh - 200px);
 }
 
 .click-display, .click-store{
-	width: 33%;
+	
+	
+}
+
+.stats-display{
+	text-align: center;
+}
+.st-bal{
+    width: 50%;
 	display: inline-block;
-
-	vertical-align: top;
-	padding-top: 15px;
-	
+	background:#fb20cd;
+	height: 80px;
+    vertical-align: top;
 }
+
 .st-costos{
-	position: fixed;
-    right: 30px;
-    top: 10px;
-    width: 440px !important;
-    border: 3px solid #3684c6;
-    line-height: 8px;
-    height: 50px;
+    display: inline-block;
+    background:#00f8ff;
+	width: 50%;
+	height: 80px;
+	vertical-align: top;
 }
 
-.main-balance-display{
-	height: 76px;
-	border-bottom: 3px solid #3684c6;
-	background: white;
-	
-	margin-top: 0px;
-	padding-top: 0px;
-}
 
 .money-container * {
 	font-size: 13px;
@@ -229,7 +227,31 @@ transform: scale(1.05);
 }
 /*STORE*/
 .click-store{
-padding-bottom: 70px;
+
+	width: 100%;
+}
+
+.first-col {
+	width: 22%;
+	display: inline-block;
+	background: red;
+}
+
+.second-col {
+	width: 50%;
+	display: inline-block;
+	background: yellow;
+}
+
+.third-col {
+	width: 28%;
+	display: inline-block;
+	background:#6c8edb;
+}
+
+.first-col, .second-col, .third-col {
+	height: 20vh;
+	vertical-align: top;
 }
 
 .click-store-title{
@@ -252,13 +274,12 @@ padding-bottom: 70px;
 
 .click-upgrade{
 	padding: 12px;
-	background: #fff;
+	background: #eaf3fc;
 	width: 59px;
 	height: 59px;
 	display: inline-block;
 	cursor: pointer;
 	position: relative;
-    border-radius: 5px;
 }
 
 .click-upgrade img{
@@ -313,16 +334,32 @@ padding-bottom: 70px;
 .upgrade-robot-container{
 	display: inline-block;
 	padding: 0;
-	width: 24%;
+	width: 18%;
 	vertical-align: top;
 }
 .click-robot-container{
 	background: white;
 	width: 74%;
-	border-radius: 5px;
-	border: 3px solid #3684c6;
 	box-sizing: border-box;
 
+}
+
+.click-robot-container::after{
+	display: block;
+	content: 'COMPRAR';
+	font-size: 10px;
+	width: 94px;
+	height: 42px;
+	box-shadow: 2px 2px 0 0 #d1e8fc;
+	border: solid 2px #3684c6;
+	position: absolute;
+	right: 10px;
+	top: 7px;
+	cursor: pointer;
+}
+.click-robot-container::after:hover{
+	background: black;
+	color: white;
 }
 .click-robot{
 	cursor: pointer;
@@ -331,7 +368,13 @@ padding-bottom: 70px;
 	display: inline-block;
 }
 .row-robot{
-	margin-top: 5px;
+	margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: 15px;
+    margin-right: 15px;
+	background: #fff;
+	position: relative;
+	height: 58px;
 }
 
 .click-robot:hover .click-robot-tooltip{
@@ -339,7 +382,7 @@ padding-bottom: 70px;
 }
 
 .click-robot-img{
-	display: inline-block;
+	display: none;
 	vertical-align: middle;
 	padding: 0;
 }
@@ -364,17 +407,17 @@ padding-bottom: 70px;
 }
 
 .click-robot-name{
-	font-size: 14px;
+	font-size: 10px;
 	
 }
 .click-robot-value{
 	display: block;
-	font-size: 12px;
+	font-size: 10px;
 	
 }
 .click-robot-bought{
-	display: inline-block;
-	font-size: 14px;
+	display: none;
+	font-size: 10px;
 	color: #385f74;
 }
 
@@ -547,13 +590,10 @@ padding-bottom: 70px;
 }
 
 .logo{
-	position: fixed;
-    padding-top: 15px;
-    padding-left: 10px;
-    color: #ff8800;
-	z-index: 100;
-	font-size: 30px;
-	background: white;
+	text-align: center;
+	background: #1eebb8;
+	text-align: center;
+	height: 70px;
 }
 
 .logo span {
@@ -569,19 +609,8 @@ padding-bottom: 70px;
 	color: #404040;
 }
 
-.st-bal{
-	border: 3px solid #3684c6;
-    width: 240px !important;
-    height: 50px;
-    display: block;
-    position: absolute;
-    top: 10px;
-    right: 480px;
-}
 
-.st-bal .money-container{
-	margin-top: -15px;
-}
+
 .money-container{
 	padding-top: 5px;
 	padding-bottom: 5;
