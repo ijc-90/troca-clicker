@@ -250,7 +250,7 @@ transform: scale(1.05);
 }
 
 .first-col, .second-col, .third-col {
-	height: 20vh;
+	height: 25vh;
 	vertical-align: top;
 }
 
@@ -350,12 +350,15 @@ transform: scale(1.05);
 	font-size: 10px;
 	width: 94px;
 	height: 42px;
+	line-height: 42px;
 	box-shadow: 2px 2px 0 0 #d1e8fc;
 	border: solid 2px #3684c6;
 	position: absolute;
 	right: 10px;
 	top: 7px;
 	cursor: pointer;
+	color: #3684c6;
+	text-align: center;
 }
 .click-robot-container::after:hover{
 	background: black;
@@ -402,8 +405,9 @@ transform: scale(1.05);
 	display: inline-block;
 	vertical-align: middle;
 	padding: 0;
-	width: 220px;
+	width: 190px;
 	color: #ff8800;
+	line-height: 17px;
 }
 
 .click-robot-name{
