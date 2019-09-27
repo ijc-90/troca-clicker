@@ -14,7 +14,7 @@ var Bot = (function() {
     }
 
     function getRandomPosition() {
-        var WIDTH = 100 - (margin / 2);
+        var WIDTH = 100 - margin;
         return {
             x: (margin / 2) + (Math.random() * WIDTH),
             y: (margin / 2) + (Math.random() * WIDTH),

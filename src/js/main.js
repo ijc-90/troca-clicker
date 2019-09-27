@@ -4,7 +4,7 @@ var contentInfo = [
     {
         type: "buyer_one", 
         name: "Quiosco", 
-        imgPath: "images/Venta_e-commerce.png",
+        imgPath: "images/quioske.svg",
         upgImgPath: "images/Compra__Responsive.png",
         pluralName: "Quioscos",
         upgTitle: "Responsiveness",
@@ -13,7 +13,7 @@ var contentInfo = [
     {
         type: "buyer_two", 
         name: "Comprador en bici", 
-        imgPath: "images/Compra__Comprador_en_bici.png",
+        imgPath: "images/bike.svg",
         upgImgPath: "images/Compra__Comprador_en_moto.png",
         pluralName: "Comprador en bici",
         upgTitle: "Comprar moto para los recolectores",
@@ -22,7 +22,7 @@ var contentInfo = [
     {
         type: "buyer_three", 
         name: "Dron", 
-        imgPath: "images/Compra__Tienda_fisica.png",
+        imgPath: "images/drone.svg",
         upgImgPath: "images/Compra__Plan_canje.png",
         pluralName: "Tienda física de compra",
         upgTitle: "Ofrecer plan canje",
@@ -31,7 +31,7 @@ var contentInfo = [
     {
         type: "repairer_one", 
         name: "Reparador", 
-        imgPath: "images/Reparar__Reparador.png",
+        imgPath: "images/worker.svg",
         upgImgPath: "images/Reparar__Kit_de_herramientas.png",
         pluralName: "Reparadores",
         upgTitle: "Kit de herramientas",
@@ -40,7 +40,7 @@ var contentInfo = [
     {
         type: "repairer_two", 
         name: "Robot", 
-        imgPath: "images/Reparar__Robot.png",
+        imgPath: "images/robot.svg",
         upgImgPath: "images/Reparar__AI.png",
         pluralName: "Brazos robóticos",
         upgTitle: "Inteligencia artificial mejorada",
@@ -49,7 +49,7 @@ var contentInfo = [
     {
         type: "repairer_three", 
         name: "Planta automatizada", 
-        imgPath: "images/Reparar__Planta_automatizada.png",
+        imgPath: "images/factory.svg",
         upgImgPath: "images/Reparar__Paneles_solares.png",
         pluralName: "Plantas automatizadas",
         upgTitle: "Implementación de paneles solares",
@@ -58,7 +58,7 @@ var contentInfo = [
     {
         type: "seller_one", 
         name: "Tienda", 
-        imgPath: "images/Venta_e-commerce.png",
+        imgPath: "images/shop.svg",
         upgImgPath: "images/Venta_responsive.png",
         pluralName: "E-Commerces",
         upgTitle: "Responsiveness",
@@ -67,7 +67,7 @@ var contentInfo = [
     {
         type: "seller_two", 
         name: "e-commerce", 
-        imgPath: "images/Compra__Tienda_fisica.png",
+        imgPath: "images/ecommerce.svg",
         upgImgPath: "images/Venta__24h.png",
         pluralName: "Tiendas físicas",
         upgTitle: "Abrir las 24 horas",
@@ -76,7 +76,7 @@ var contentInfo = [
     {
         type: "seller_three", 
         name: "Black Friday", 
-        imgPath: "images/Venta__marketplace.png",
+        imgPath: "images/tag.svg",
         upgImgPath: "images/Venta__cuotas.png",
         pluralName: "Integración con Marketplaces",
         upgTitle: "Ofrecer cuotas",

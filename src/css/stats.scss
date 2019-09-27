@@ -9,15 +9,22 @@
         height: 100%;
         vertical-align: middle;
         font-size: 13px;
-        text-transform: uppercase;
+        text-transform: uppercase;     
+        label{
+            display: block;
+            margin-top: 10px;
+            color: #666;
+        }   
     }
     
     .st-bal{
         background:#fefca9;
+        
     }
     
     .st-costos{
         background:#a9d1e9;
+        
     }
 
     .money-container{
