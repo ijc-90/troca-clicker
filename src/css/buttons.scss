@@ -1,4 +1,3 @@
-
 .row-robot{
     margin: 8px 15px;
     display: block;
@@ -9,38 +8,50 @@
 .click-robot-container{
 	background: white;
     display: flex;
-}
+    border:solid 2px #3684c6;
 
-.click-robot-container::after{
-	display: block;
-	content: 'Comprar';
-    font-size: 8px;
-    border-radius: 4px;
-    display: inline-block;
-    padding:10px;
-	box-shadow: 2px 2px 0 0 #d1e8fc;
-	border: solid 2px #3684c6;
-    margin:5px;
-	cursor: pointer;
-	color: #3684c6;
-}
-.click-robot-container:hover{
 
-    
+    .click-icon{
+        width: 38px;
+        height: 38px;
+        background-color: #eaf3fc;  
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-    &::after {
-        background: black;
-        color: white;
+        .bot-image{
+            width: 25px;
+            height:25px;
+        }
     }
 }
 
+.buy-button{
+	display: block;
+	content: 'Comprar';
+    font-size: 8px;
+    display: inline-block;
+    padding:10px;
+    box-shadow: 2px 2px 0 0 #d1e8fc;
+
+	border: solid 2px #3684c6;
+    margin:5px;
+	cursor: pointer;
+    color: #3684c6;
+    
+    &:hover{
+        background:  #3684c6;
+        color: white;
+    }
+}
 
 
 .click-robot{
 	cursor: pointer;
 	position: relative;
 	padding: 0;
-	display: inline-block;
+    display: flex;
+    justify-content: space-between;
 }
 
 .click-robot:hover .click-robot-tooltip{
@@ -61,11 +72,7 @@
 
 
 .click-robot-text{
-	display: inline-block;
-	padding: 0;
-	width: 190px;
-	color: #ff8800;
-	line-height: 17px;
+
 }
 
 .click-robot-name{
@@ -144,11 +151,6 @@
 	color: #ff8800;
 }
 
-#js-repair-clicker, #js-sell-clicker{
-    .legend{
-        color:white;
-    }
-}
 .click-phone{
     display: flex;
     flex-direction: row;
