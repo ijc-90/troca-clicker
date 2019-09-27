@@ -42,6 +42,21 @@
         <script type="text/javascript" src="js/tutorial_flow.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
 
+        <script src="bower_components/howler.js/dist/howler.min.js"></script>
+        <script>
+            var sound = new Howl({
+                src: ['../sounds/troca_clicker_loop.mp3'],
+                autoplay: true,
+                loop: true,
+                volume: 0.4,
+                onend: function() {
+                    console.log('Finished!');
+                }
+            });
+
+            sound.play()
+        </script>
+
     </head>
     <body >
         <main class="main-clicker">
