@@ -1,3 +1,33 @@
 .click-container{
     height: $contentHeight;
+    .click-row{
+        width: 100%;
+        height: calc(100% / 3); 
+        display: flex;
+        flex-direction: row;
+        background: rgba(234,0,0,0.6);
+    }
+
+    .left-col, .center-col, .right-col {
+        background: rgba(0,0,189,0.7);
+        vertical-align: top;
+    }
+
+    .left-col {
+        width: $contentColLeftWidth;
+       
+    }
+
+    .center-col {
+        width: $contentColCentertWidth;
+        background: rgba(0,178,0,0.7);
+    }
+
+    .right-col {
+        width: $contentColRightWidth;
+
+    }
+
+   
+
 }
