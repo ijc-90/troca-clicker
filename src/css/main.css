@@ -73,8 +73,8 @@ header h1 {
   font-stretch: normal;
   line-height: normal;
 }
-.stats-display .js-money {
-  font-size: 30px;
+.stats-display .js-money, .stats-display .js-salaries-amount {
+  font-size: 26px;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
@@ -82,6 +82,7 @@ header h1 {
   letter-spacing: 2.8;
   background: #202020;
   color: white;
+  padding: 5px;
 }
 .stats-display .st-costos {
   background: #f76453;
@@ -94,22 +95,29 @@ header h1 {
   line-height: normal;
   vertical-align: middle;
 }
-.stats-display .js-salaries-amount {
-  font-size: 30px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: 2.8;
-  background: #202020;
-  color: white;
+.stats-display .money {
+  display: inline-block;
+  vertical-align: middle;
 }
 .stats-display .aclaration {
-  font-size: 16px;
+  font-size: 14px;
 }
 .stats-display .money-container {
   width: 100%;
   text-align: center;
+  vertical-align: middle;
+}
+.stats-display .money-container > label, .stats-display .money-container > img, .stats-display .money-container > span {
+  vertical-align: middle;
+}
+.stats-display .money-container label {
+  vertical-align: middle;
+}
+.stats-display .money-container img {
+  vertical-align: middle;
+}
+.stats-display .money-container span {
+  vertical-align: middle;
 }
 
 #modal {
