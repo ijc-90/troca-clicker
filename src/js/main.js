@@ -96,7 +96,7 @@ function updateContentInfo () {
         $('#' + info.type + '_upgrade .click-upgrade-tooltip-title').text(info.upgTitle);
         $('#' + info.type).attr('target', info.container)
         $('#' + info.type).attr('image', info.imgPath)
-
+        $('#' + info.type).prepend('<div class="bot-image" style="background-image: url(' + info.imgPath + ')"></div>')
         $('#' + info.type).on("click",function() {
             Bot.add($(this).attr('target'), $(this).attr('image'));
             hireClick(info.type);
