@@ -2,7 +2,7 @@ var contentInfo = [
     {
         type: "buyer_one",
         name: "Quiosco",
-        imgPath: "images/quioske.svg",
+        imgPath: "images/icons/comprar-tienda.svg",
         upgImgPath: "images/Compra__Responsive.png",
         pluralName: "Quioscos",
         upgTitle: "Responsiveness",
@@ -11,7 +11,7 @@ var contentInfo = [
     {
         type: "buyer_two",
         name: "Comprador en bici",
-        imgPath: "images/bike.svg",
+        imgPath: "images/icons/comprar-bici.svg",
         upgImgPath: "images/Compra__Comprador_en_moto.png",
         pluralName: "Comprador en bici",
         upgTitle: "Comprar moto para los recolectores",
@@ -20,7 +20,7 @@ var contentInfo = [
     {
         type: "buyer_three",
         name: "Dron",
-        imgPath: "images/drone.svg",
+        imgPath: "images/icons/comprar-drone.svg",
         upgImgPath: "images/Compra__Plan_canje.png",
         pluralName: "Tienda física de compra",
         upgTitle: "Ofrecer plan canje",
@@ -29,7 +29,7 @@ var contentInfo = [
     {
         type: "repairer_one",
         name: "Reparador",
-        imgPath: "images/worker.svg",
+        imgPath: "images/icons/reparar-reparador.svg",
         upgImgPath: "images/Reparar__Kit_de_herramientas.png",
         pluralName: "Reparadores",
         upgTitle: "Kit de herramientas",
@@ -38,7 +38,7 @@ var contentInfo = [
     {
         type: "repairer_two",
         name: "Robot",
-        imgPath: "images/robot.svg",
+        imgPath: "images/icons/reparar-robot.svg",
         upgImgPath: "images/Reparar__AI.png",
         pluralName: "Brazos robóticos",
         upgTitle: "Inteligencia artificial mejorada",
@@ -47,7 +47,7 @@ var contentInfo = [
     {
         type: "repairer_three",
         name: "Planta automatizada",
-        imgPath: "images/factory.svg",
+        imgPath: "images/icons/reparar-industria.svg",
         upgImgPath: "images/Reparar__Paneles_solares.png",
         pluralName: "Plantas automatizadas",
         upgTitle: "Implementación de paneles solares",
