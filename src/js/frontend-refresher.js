@@ -242,9 +242,9 @@ function showOrHideFlows(json) {
     }
 }
 
-function notifyIfLost(json) {
-    if (json["js-you-lose"]) {
-        alert("PERDISTE!");
+function notifyIfLost(json, gameLoop) {
+    if (json["js-you-lose"] && (gameLoop !== null && gameLoop !== undefined)) {
+        modal.show('PERDISTE!', 'Mejor suerte la proxima!', gameLoop, () => {});
     }
 }
 
@@ -270,14 +270,14 @@ function notifyPaidSalaries(json) {
     }
 }
 
-function updateFrontend(json) {
+function updateFrontend(json, gameLoop) {
     if (json === null || json === undefined) {
         return;
     }
 
     updateNumbers(json);
     //updateVisibilityOfUpgrades(json);
-    notifyIfLost(json);
+    notifyIfLost(json, gameLoop);
     notifyPaidSalaries(json);
     updateVisibilityOfRobots(json);
     updateAvailabilityOfBuy(json);
@@ -288,5 +288,5 @@ function updateFrontend(json) {
 
 
 setTimeout(function () {
-    updateFrontend(sampleJson);
+    updateFrontend(sampleJson, null);
 }, 1000);

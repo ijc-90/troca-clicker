@@ -18,6 +18,15 @@ class Modal {
         this.$el.find('.modal-title').html(title);
         this.$el.find('.modal-text').html(text);
         const $container = this.$el.find('.modal-container');
+
+        if (this.gameloop.context.gameOver) {
+            $container.find('.modal-chapter-loose').show();
+            $container.find('.modal-chapter').hide();
+        } else {
+            $container.find('.modal-chapter-loose').hide();
+            $container.find('.modal-chapter').show();
+        }
+
         TweenMax.set($container, { opacity: 0 });
         this.$el.show();
         TweenMax.to($container, 0.5, { opacity: 1, ease:Expo.easeOut })
