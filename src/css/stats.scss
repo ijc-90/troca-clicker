@@ -10,34 +10,62 @@
         vertical-align: middle;
         font-size: 13px;
         text-transform: uppercase;     
-        label{
-            display: block;
-            margin-top: 10px;
-            color: #666;
-        }   
+       display: flex;
+       align-items: center;
+       text-align: center;
     }
     
     .st-bal{
-        background:#fefca9;
-        
+        background:#ffd000;
+        font-size: 24px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;        
     }
     
+    .js-money, .js-salaries-amount{
+        font-size: 30px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 2.8;
+        background: #202020;
+        color:white;
+        padding:5px;
+    }
     .st-costos{
-        background:#a9d1e9;
-        
+        background:#f76453;
+        color: #ffffff; 
+        font-family: Courier;
+        font-size: 24px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        vertical-align: middle;
     }
 
+    .aclaration{
+        font-size: 16px;
+    }
     .money-container{
-        padding-top: 5px;
-        padding-bottom: 5;
-     
-        
+       width:100%;
+       text-align: center;
+       vertical-align: middle;
+
+       > label, > img, > span{
+            vertical-align: middle;
+       }
+       label {
+        vertical-align: middle;
+       }
+       img {
+        vertical-align: middle;
+       }
+       span {
+        vertical-align: middle;
+       }
     }
-    
-    .main-balance {
-        font-size: 25px;
-        color: #ff8800;
-        font-weight: bold;
-    }
-    
 }
