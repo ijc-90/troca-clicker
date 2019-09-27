@@ -23,6 +23,8 @@
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <script type="text/javascript" src="bower_components/remarkable-bootstrap-notify/bootstrap-notify.min.js"></script>
         <script type="text/javascript" src="bower_components/gsap/src/minified/TweenMax.min.js"></script>
+        <script type="text/javascript" src="bower_components/howler.js/dist/howler.min.js"></script>
+
         <script type="text/javascript" src="js/modal.js"></script>
         <script type="text/javascript" src="js/floating_notifiers.js"></script>
         <script type="text/javascript" src="js/floating_notify.js"></script>
@@ -39,23 +41,9 @@
         <script type="text/javascript" src="js/upgrade_flow.js"></script>
         <script type="text/javascript" src="js/game_loop.js"></script>
         <script type="text/javascript" src="js/tutorial_flow.js"></script>
+        <script type="text/javascript" src="js/bot.js"></script>
+        <script type="text/javascript" src="js/sound.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
-
-        <script src="bower_components/howler.js/dist/howler.min.js"></script>
-        <script>
-            var sound = new Howl({
-                src: ['../sounds/troca_clicker_loop.mp3'],
-                autoplay: true,
-                loop: true,
-                volume: 0.4,
-                onend: function() {
-                    console.log('Finished!');
-                }
-            });
-
-            sound.play()
-        </script>
-
     </head>
     <body>
         <main class="main-clicker">
@@ -73,7 +61,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="center-col">
+                    <div class="center-col bot-buy-container">
                         <div class="title-and-label">
                                 <div>
                                     <div class="small-notice">
@@ -262,7 +250,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class='center-col'>  
+                    <div class='center-col bot-repair-container'>  
                         <div class="title-and-label">
                             <div class="small-notice">
                                 <span>Capacidad de reparo automático: </span>
@@ -433,7 +421,7 @@
                             </div>
                     
                     </div>
-                    <div class='center-col'>
+                    <div class='center-col bot-sell-container'>
                             <div class="title-and-label">
                                     <div>
                                         <div class="small-notice">

@@ -119,6 +119,13 @@ header {
   text-transform: uppercase;
 }
 
+.bot-sprite {
+  background: red;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}
+
 .click-container {
   height: calc(100vh - (40px + 60px) );
 }
