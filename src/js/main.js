@@ -3,10 +3,10 @@
 var contentInfo = [
     {
         type: "buyer_one", 
-        name: "E-Purchase", 
+        name: "Quiosco", 
         imgPath: "images/Venta_e-commerce.png",
         upgImgPath: "images/Compra__Responsive.png",
-        pluralName: "E-Purchases",
+        pluralName: "Quioscos",
         upgTitle: "Responsiveness",
         container: ".bot-buy-container"
     },
@@ -21,7 +21,7 @@ var contentInfo = [
     },
     {
         type: "buyer_three", 
-        name: "Tienda física de compra", 
+        name: "Dron", 
         imgPath: "images/Compra__Tienda_fisica.png",
         upgImgPath: "images/Compra__Plan_canje.png",
         pluralName: "Tienda física de compra",
@@ -39,7 +39,7 @@ var contentInfo = [
     },
     {
         type: "repairer_two", 
-        name: "Brazo robótico", 
+        name: "Robot", 
         imgPath: "images/Reparar__Robot.png",
         upgImgPath: "images/Reparar__AI.png",
         pluralName: "Brazos robóticos",
@@ -57,7 +57,7 @@ var contentInfo = [
     },
     {
         type: "seller_one", 
-        name: "E-Commerce", 
+        name: "Tienda", 
         imgPath: "images/Venta_e-commerce.png",
         upgImgPath: "images/Venta_responsive.png",
         pluralName: "E-Commerces",
@@ -66,7 +66,7 @@ var contentInfo = [
     },
     {
         type: "seller_two", 
-        name: "Tiendas física", 
+        name: "e-commerce", 
         imgPath: "images/Compra__Tienda_fisica.png",
         upgImgPath: "images/Venta__24h.png",
         pluralName: "Tiendas físicas",
@@ -75,7 +75,7 @@ var contentInfo = [
     },
     {
         type: "seller_three", 
-        name: "Integración con Marketplace", 
+        name: "Black Friday", 
         imgPath: "images/Venta__marketplace.png",
         upgImgPath: "images/Venta__cuotas.png",
         pluralName: "Integración con Marketplaces",
