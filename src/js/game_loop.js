@@ -7,9 +7,9 @@ class GameLoop {
 
         this.context = {
             ticksPerSecond: 2,
-            money : 500,
+            money : 150,
             cellphoneBuyPrice : 10,
-            cellphoneRepairPrice : 0,
+            cellphoneRepairPrice : 2,
             cellphoneSalePrice : 15,
             geometricCostScale : 1.3,
             robots : {

@@ -136,6 +136,12 @@ header h1 {
   position: absolute;
 }
 
+#modal .modal-container .modal-button:hover {
+  box-shadow: none;
+  bottom: -22px;
+  right: 168px;
+}
+
 .modal-chapter {
   position: absolute;
   right: -50px;
@@ -412,6 +418,14 @@ header h1 {
   -webkit-box-shadow: 5px 5px 0px -2px #ca741c;
   -moz-box-shadow: 5px 5px 0px -2px #ca741c;
   box-shadow: 5x 5px 0px -2px #ca741c;
+}
+.click-phone a .circle:hover {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  position: relative;
+  top: 5px;
+  left: 5px;
 }
 .click-phone .click-counter {
   display: inline-block;
