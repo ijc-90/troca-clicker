@@ -129,6 +129,12 @@ header {
   text-transform: uppercase;
 }
 
+.bot-sprite {
+  background: red;
+  width: 20px;
+  height: 20px;
+}
+
 .main-clicker {
   background: url("../images/pixel-city-night.png");
   background-size: cover;

@@ -22,36 +22,118 @@ html, body {
   content: " ";
 }
 
-/*
-#ff8800 naranja troca
-#f06f31  naranja oscuro
-
-#385f74  azul
-#607d8a  azul mas claro
-#404040 negro
-
-#808184   gris
-
-
-font-family: 'Chewy', cursive;
-font-family: 'Open Sans', sans-serif;
-*/
-/*GENERAL*/
 .click-container {
-  margin: 0 auto;
-  width: 100%;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  /* Netscape */
-  -moz-opacity: 0;
-  /* Safari 1.x */
-  -khtml-opacity: 0;
-  /* Good browsers */
-  opacity: 0;
-  background-repeat: repeat;
-  display: block;
-  min-height: calc(100vh -40px);
+  height: calc(100vh - (60px + 90px) );
+}
+
+header {
+  height: 60px;
+}
+
+.logo {
   text-align: center;
+  background: #1eebb8;
+  text-align: center;
+  height: 70px;
+}
+
+.logo span {
+  color: #3684c6;
+}
+
+.stats-display {
+  height: 90px;
+}
+.stats-display .stats-section {
+  width: 50%;
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+.stats-display .st-bal {
+  background: #fb20cd;
+}
+.stats-display .st-costos {
+  background: #00f8ff;
+}
+.stats-display .money-container {
+  padding-top: 5px;
+  padding-bottom: 5;
+  display: inline-block;
+}
+.stats-display .main-balance {
+  font-size: 35px;
+  color: #ff8800;
+  font-weight: bold;
+}
+
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+}
+
+#modal .modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -340px;
+  margin-top: -209px;
+  background: #ff8800;
+  width: 720px;
+  height: 420px;
+  text-align: center;
+}
+
+#modal .modal-container .close-modal {
+  cursor: pointer;
+  position: absolute;
+  font-size: 13px;
+  color: white;
+  right: 10px;
+  top: 5px;
+}
+
+.modal-text {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#modal .modal-container .modal-title {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+#modal .modal-container .modal-button {
+  cursor: pointer;
+  background: black;
+  display: inline-block;
+  color: white;
+  width: 140px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  line-height: 50px;
+  font-size: 14px;
+  height: 50px;
+  margin-left: -66px;
+  text-transform: uppercase;
+}
+
+.main-clicker {
+  background: url("../images/pixel-city-night.png");
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
 }
 
 .stock-number-container {
@@ -125,32 +207,6 @@ font-family: 'Open Sans', sans-serif;
   font-size: 35px;
   border-bottom: 1px solid #ff8800;
 }
-
-.stats-display {
-  text-align: center;
-}
-
-.st-bal {
-  width: 50%;
-  display: inline-block;
-  background: #fb20cd;
-  height: 80px;
-  vertical-align: top;
-}
-
-.st-costos {
-  display: inline-block;
-  background: #00f8ff;
-  width: 50%;
-  height: 80px;
-  vertical-align: top;
-}
-
-.money-container * {
-  font-size: 13px;
-  text-transform: uppercase;
-}
-
 
 /*DISPLAY*/
 .click-display {
@@ -556,10 +612,6 @@ font-family: 'Open Sans', sans-serif;
   left: 0;
 }
 
-.footer span {
-  color: #ff8800;
-}
-
 .inline-block {
   display: inline-block;
 }
@@ -594,17 +646,6 @@ font-family: 'Open Sans', sans-serif;
   font-size: 25px;
 }
 
-.logo {
-  text-align: center;
-  background: #1eebb8;
-  text-align: center;
-  height: 70px;
-}
-
-.logo span {
-  color: #3684c6;
-}
-
 .balance-number {
   font-size: 18px;
 }
@@ -612,18 +653,6 @@ font-family: 'Open Sans', sans-serif;
 .big-number {
   font-size: 25px;
   color: #404040;
-}
-
-.money-container {
-  padding-top: 5px;
-  padding-bottom: 5;
-  display: inline-block;
-}
-
-.main-balance {
-  font-size: 35px;
-  color: #ff8800;
-  font-weight: bold;
 }
 
 .negative-number {
@@ -696,65 +725,6 @@ font-family: 'Open Sans', sans-serif;
     height: 58px;
     opacity: 0;
   }
-}
-#modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: none;
-}
-
-#modal .modal-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-left: -340px;
-  margin-top: -209px;
-  background: #ff8800;
-  width: 720px;
-  height: 420px;
-  text-align: center;
-}
-
-#modal .modal-container .close-modal {
-  cursor: pointer;
-  position: absolute;
-  font-size: 13px;
-  color: white;
-  right: 10px;
-  top: 5px;
-}
-
-.modal-text {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#modal .modal-container .modal-title {
-  margin-top: 50px;
-  margin-bottom: 20px;
-  font-weight: bold;
-  color: white;
-}
-
-#modal .modal-container .modal-button {
-  cursor: pointer;
-  background: black;
-  display: inline-block;
-  color: white;
-  width: 140px;
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  line-height: 50px;
-  font-size: 14px;
-  height: 50px;
-  margin-left: -66px;
-  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=main.css.map */
