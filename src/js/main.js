@@ -111,6 +111,8 @@ function updateContentInfo () {
 
 
 var gameLoop = new GameLoop();
+gameLoop.clickerSound.startGame();
+
 window.gameContext = gameLoop.context;
 
 console.log("Bienvenido al modo Hacker. Un gran poder conlleva una gran responsabilidad");
@@ -126,6 +128,8 @@ function sellClickerClick(){
     if ($(this).hasClass("disabled")) {
         return;
     }
+
+    gameLoop.clickerSound.playClick();
     gameLoop.saleClick();
 }
 
@@ -134,6 +138,7 @@ function buyClickerClick(){
         return;
     }
 
+    gameLoop.clickerSound.playClick();
     gameLoop.buyClick();
 }
 
@@ -142,14 +147,17 @@ function repairClickerClick(){
         return;
     }
 
+    gameLoop.clickerSound.playClick();
     gameLoop.repairClick();
 }
 
 function hireClick(name){
+    gameLoop.clickerSound.playClick();
     gameLoop.hiringClick(name);
 }
 
 function upgradeClick(name){
+    gameLoop.clickerSound.playClick();
     gameLoop.upgradeClick("upgrade_" + name);
 }
 
@@ -192,17 +200,16 @@ var news = [
 ];
 
 
+$(document).ready(() => {
 
-$(document).ready( () => {
-    
-    modal.show('Bienvenido a troca clickers', 'Para arrancar te dejamos $100, comprá 10 celulares ', gameLoop, () =>{
+    modal.show('Bienvenido a troca clickers', 'Para arrancar te dejamos $100, comprá 10 celulares ', gameLoop, clickerSound, () => {
         //TweenMax.set(".click-message", { y: 200 })
         //$(".click-message").show();
         //TweenMax.to($(".click-container"), 1, { scale: 1, opacity: 1, ease:Expo.easeOut });
         //TweenMax.to(".click-message", 1, { y: 0 })
     });
-    
-})
+
+});
 
 
 
