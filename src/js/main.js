@@ -133,6 +133,7 @@ window.setInterval(function () {
 
 function sellClickerClick(){
     if ($(this).hasClass("disabled")) {
+        gameLoop.clickerSound.playError();
         return;
     }
 
@@ -142,6 +143,7 @@ function sellClickerClick(){
 
 function buyClickerClick(){
     if ($(this).hasClass("disabled")) {
+        gameLoop.clickerSound.playError();
         return;
     }
 
@@ -151,6 +153,7 @@ function buyClickerClick(){
 
 function repairClickerClick(){
     if ($(this).hasClass("disabled")) {
+        gameLoop.clickerSound.playError();
         return;
     }
 
