@@ -1,6 +1,6 @@
 var Bot = (function() {
 
-    var containers = {}, margin = 10;
+    var containers = {}, margin = 30;
 
     function addBotSprite(containerClass, name) {
         var $container;

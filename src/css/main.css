@@ -109,18 +109,19 @@ header {
 
 #modal .modal-container .modal-button {
   cursor: pointer;
-  background: black;
-  display: inline-block;
-  color: white;
-  width: 140px;
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
+  width: 151px;
+  height: 51px;
+  border-radius: 3px;
+  box-shadow: 3px 3px 0 0 #4d649b;
+  background-color: #7ca7f2;
+  bottom: -20px;
+  right: 170px;
   line-height: 50px;
   font-size: 14px;
   height: 50px;
   margin-left: -66px;
   text-transform: uppercase;
+  position: absolute;
 }
 
 .modal-chapter {

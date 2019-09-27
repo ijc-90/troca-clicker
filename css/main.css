@@ -98,30 +98,30 @@ header {
   margin-right: auto;
   text-align: left;
   font-family: "Courier New", Courier, monospace;
-  font-size: 22px;
 }
 
 #modal .modal-container .modal-title {
   margin-top: 50px;
   margin-bottom: 20px;
   font-weight: bold;
-  text-align: left;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+  color: black;
 }
 
 #modal .modal-container .modal-button {
   cursor: pointer;
-  background: black;
-  display: inline-block;
-  color: white;
-  width: 140px;
+  width: 151px;
+  height: 51px;
+  border-radius: 3px;
+  box-shadow: 3px 3px 0 0 #4d649b;
+  background-color: #7ca7f2;
+  bottom: -20px;
+  right: 170px;
   line-height: 50px;
   font-size: 14px;
   height: 50px;
   margin-left: -66px;
   text-transform: uppercase;
+  position: absolute;
 }
 
 .modal-chapter {
