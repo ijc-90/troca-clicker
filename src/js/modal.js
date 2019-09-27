@@ -18,9 +18,9 @@ class Modal {
         this.$el.find('.modal-title').html(title);
         this.$el.find('.modal-text').html(text);
         const $container = this.$el.find('.modal-container');
-        TweenMax.set($container, { scale: 1.25 });
+        TweenMax.set($container, { opacity: 0 });
         this.$el.show();
-        TweenMax.to($container, 0.5, { scale: 1, ease:Expo.easeOut })
+        TweenMax.to($container, 0.5, { opacity: 1, ease:Expo.easeOut })
         /* var text = $('.modal-text').text()
         var typed = new Typed('.modal-text', {
             strings: [text],
@@ -31,7 +31,7 @@ class Modal {
 
     close() {
         const $container = this.$el.find('.modal-container');
-        TweenMax.to($container, 0.5, { scale: 0, ease:Expo.easeIn, onComplete: () => {
+        TweenMax.to($container, 0.5, { opacity: 0, ease:Expo.easeIn, onComplete: () => {
             this.$el.hide();
             this.gameloop.resume();
             if (this.onClose) this.onClose()
