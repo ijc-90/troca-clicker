@@ -1,655 +1,617 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Troca Clicker</title>
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <title>Troca Clicker</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
 
-        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
-
-
-        <!-- Bootstrap start -->
-       
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-        <!-- Bootstrap end -->
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
 
 
-        <link rel="stylesheet" type="text/css" href="css/main.css">
-        <script type="text/javascript" src="bower_components/remarkable-bootstrap-notify/bootstrap-notify.min.js"></script>
-        <script type="text/javascript" src="bower_components/gsap/src/minified/TweenMax.min.js"></script>
-        <script type="text/javascript" src="bower_components/howler.js/dist/howler.min.js"></script>
+    <!-- Bootstrap start -->
 
-        <script type="text/javascript" src="js/modal.js"></script>
-        <script type="text/javascript" src="js/floating_notifiers.js"></script>
-        <script type="text/javascript" src="js/floating_notify.js"></script>
-        <script type="text/javascript" src="js/frontend-refresher.js"></script>
-        <script type="text/javascript" src="js/view_integrator.js"></script>
-        <script type="text/javascript" src="js/events.js"></script>
-        <script type="text/javascript" src="js/flow.js"></script>
-        <script type="text/javascript" src="js/hiring_flow.js"></script>
-        <script type="text/javascript" src="js/event.js"></script>
-        <script type="text/javascript" src="js/buy_flow.js"></script>
-        <script type="text/javascript" src="js/repair_flow.js"></script>
-        <script type="text/javascript" src="js/sale_flow.js"></script>
-        <script type="text/javascript" src="js/salary_flow.js"></script>
-        <script type="text/javascript" src="js/upgrade_flow.js"></script>
-        <script type="text/javascript" src="js/game_loop.js"></script>
-        <script type="text/javascript" src="js/tutorial_flow.js"></script>
-        <script type="text/javascript" src="js/sound.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
-    </head>
-    <body >
-        <main class="main-clicker">
-            <header>
-                    <h1 class="logo">TROCA<span>CLICKER</span></dh1iv>
-            </header>
-            <div class="click-container">   
-                
-                <div class="click-row js-buy-flow-container">
-                    <div class="left-col">
-                        <div class="click-phone" id="js-buy-clicker">
-                            <a onClick="buyClickerClick()">
-                                <img src="images/flow-images-01.png">
-                                <span>Comprar $  </span><span class="dinamic-number inline-dinamic-number js-phone-buy-price"></span></span>
-                            </a>
-                        </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap end -->
+
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script type="text/javascript" src="bower_components/remarkable-bootstrap-notify/bootstrap-notify.min.js"></script>
+    <script type="text/javascript" src="bower_components/gsap/src/minified/TweenMax.min.js"></script>
+    <script type="text/javascript" src="bower_components/howler.js/dist/howler.min.js"></script>
+
+    <script type="text/javascript" src="js/modal.js"></script>
+    <script type="text/javascript" src="js/floating_notifiers.js"></script>
+    <script type="text/javascript" src="js/floating_notify.js"></script>
+    <script type="text/javascript" src="js/frontend-refresher.js"></script>
+    <script type="text/javascript" src="js/view_integrator.js"></script>
+    <script type="text/javascript" src="js/events.js"></script>
+    <script type="text/javascript" src="js/flow.js"></script>
+    <script type="text/javascript" src="js/hiring_flow.js"></script>
+    <script type="text/javascript" src="js/event.js"></script>
+    <script type="text/javascript" src="js/buy_flow.js"></script>
+    <script type="text/javascript" src="js/repair_flow.js"></script>
+    <script type="text/javascript" src="js/sale_flow.js"></script>
+    <script type="text/javascript" src="js/salary_flow.js"></script>
+    <script type="text/javascript" src="js/upgrade_flow.js"></script>
+    <script type="text/javascript" src="js/game_loop.js"></script>
+    <script type="text/javascript" src="js/tutorial_flow.js"></script>
+    <script type="text/javascript" src="js/bot.js"></script>
+    <script type="text/javascript" src="js/sound.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+
+<body>
+    <main class="main-clicker">
+        <header>
+            <h1 class="logo">TROCA<span>CLICKER</span></dh1iv>
+        </header>
+        <div class="click-container">
+            <div class="click-row js-buy-flow-container">
+                <div class="left-col">
+                    <div class="click-phone" id="js-buy-clicker">
+                        <a onClick="buyClickerClick()">
+                            <img src="images/flow-images-01.png">
+                            <span>Comprar $ </span>
+                            <span class="dinamic-number inline-dinamic-number js-phone-buy-price"></span>
+                        </a>
                     </div>
-                    <div class="center-col">
-                        <div class="title-and-label">
-                                <div>
-                                    <div class="small-notice">
-                                        <span>Comprando automáticamente: </span>
-                                        <span class="dinamic-number inline-dinamic-number js-phone-buy-capability"></span>
-                                        <span class="small-notice">/s</span></div>
-                                    </div>
-                                    
-                        </div>
-                    </div>
-                    <div class="right-col">
-                        <div class="stock-number-container clearfix">
-                        </div>
-                        <div class=" workers-and-improvements-container">
-                                <div class="js-robots">
-                                    <div class="click-robots-container clearfix">
-                                        
-                                        
-                                        <div class="row-robot">
-                                                <div class="upgrade-robot-container no-padding inline-block">
-                                                        <a class="click-upgrade" id="buyer_one_upgrade">
-                                                            <img src="images/locha-icon.jpg">
-                                                            <div class="click-upgrade-tooltip">
-                                                                <span class="click-upgrade-tooltip-title"></span>
-                                                                <span class="click-upgrade-tooltip-value">$<span
-                                                                        class="js-buyer-one-upg-price"></span></span>
-                                                                <span class="click-upgrade-tooltip-funtion">Mejora <span
-                                                                        class="js-buyer-one-upg-multiplier"></span> veces la
-                                                                    productividad del proceso</span>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                            <div class="click-robot-container no-padding inline-block">
-                                                <div class="click-robot" id="buyer_one">
-                                                    <div class="click-robot-img">
-                                                        <img src="">
-                                                    </div>  
-                                                    <div class="click-robot-text">
-                                                        <span class="click-robot-name"></span>
-                                                        
-                                                        <span class="click-robot-value">$<span
-                                                                class="js-buyer-one-price"></span></span>
-                                                    </div>
-        
-                                                    <div class="click-robot-bought">
-                                                        <span class="js-buyer-one-bought">0</span>
-                                                    </div>
-                                                    
-        
-                                                    <div class="click-robot-tooltip">
-                                                        <div class="click-robot-tooltip-img">
-                                                            <img>
-                                                        </div>
-                                                        <div class="click-robot-tooltip-text">
-                                                            <span class="click-robot-tooltip-title"></span>
-                                                            <span class="click-robot-tooltip-value">$<span
-                                                                    class="js-buyer-one-price"></span></span>
-                                                            <span class="click-robot-tooltip-description"></span>
-                                                            <span class="click-robot-tooltip-info">Tenes <span
-                                                                    class="js-buyer-one-bought">0</span> <span
-                                                                    class="click-robot-tooltip-plural"></span> comprando <span
-                                                                    class="js-buyer-one-total-capacity">0</span> telefonos por
-                                                                segundo</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-        
-                                        </div>
-                                        <div class="row-robot">
-                                            
-                                            <div class="upgrade-robot-container no-padding inline-block">
-                                                <a class="click-upgrade" id="buyer_two_upgrade">
-                                                    <img src="images/locha-icon.jpg">
-                                                    <div class="click-upgrade-tooltip">
-                                                        <span class="click-upgrade-tooltip-title"></span>
-                                                        <span class="click-upgrade-tooltip-value">$<span
-                                                                class="js-buyer-two-upg-price"></span></span>
-                                                        <span class="click-upgrade-tooltip-funtion">Mejora <span
-                                                                class="js-buyer-two-upg-multiplier"></span> veces la
-                                                            productividad del proceso</span>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="click-robot-container no-padding inline-block">
-                                                    <div class="click-robot" id="buyer_two">
-                                                        <div class="click-robot-img">
-                                                            <img>
-                                                        </div>
-                                                        <div class="click-robot-text">
-                                                            <span class="click-robot-name"></span>
-                                                            <span class="click-robot-value">$<span
-                                                                    class="js-buyer-two-price"></span></span>
-                                                        </div>
-            
-                                                        <div class="click-robot-bought">
-                                                            <span class="js-buyer-two-bought">0</span>
-                                                        </div>
-                                                        
-            
-                                                        <div class="click-robot-tooltip">
-                                                            <div class="click-robot-tooltip-img">
-                                                                <img>
-                                                            </div>
-                                                            <div class="click-robot-tooltip-text">
-                                                                <span class="click-robot-tooltip-title"></span>
-                                                                <span class="click-robot-tooltip-value">$<span
-                                                                        class="js-buyer-two-price"></span></span>
-                                                                <span class="click-robot-tooltip-description"></span>
-                                                                <span class="click-robot-tooltip-info">Tenes <span
-                                                                        class="js-buyer-two-bought">0</span> <span
-                                                                        class="click-robot-tooltip-plural"></span> comprando <span
-                                                                        class="js-buyer-two-total-capacity">0</span> telefonos por
-                                                                    segundo</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>  
-        
-                                        </div>
-                                        <div class="row-robot">
-                                                <div class="upgrade-robot-container no-padding inline-block">
-                                                        <a class="click-upgrade" id="buyer_three_upgrade">
-                                                            <img src="images/locha-icon.jpg">
-                                                            <div class="click-upgrade-tooltip">
-                                                                <span class="click-upgrade-tooltip-title"></span>
-                                                                <span class="click-upgrade-tooltip-value">$<span
-                                                                        class="js-buyer-three-upg-price"></span></span>
-                                                                <span class="click-upgrade-tooltip-funtion">Mejora <span
-                                                                        class="js-buyer-three-upg-multiplier"></span> veces la
-                                                                    productividad del proceso</span>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-        
-                                            <div class="click-robot-container no-padding inline-block">
-                                                <div class="click-robot" id="buyer_three">
-                                                    <div class="click-robot-img">
-                                                        <img>
-                                                    </div>
-                                                    <div class="click-robot-text">
-                                                        <span class="click-robot-name"></span>
-                                                        <span class="click-robot-value">$<span
-                                                                class="js-buyer-three-price"></span></span>
-                                                    </div>
-                                                    <div class="click-robot-bought">
-                                                        <span class="js-buyer-three-bought">0</span>
-                                                    </div>
-        
-                                                    <div class="click-robot-tooltip">
-                                                        <div class="click-robot-tooltip-img">
-                                                            <img>
-                                                        </div>
-                                                        <div class="click-robot-tooltip-text">
-                                                            <span class="click-robot-tooltip-title"></span>
-                                                            <span class="click-robot-tooltip-value">$<span
-                                                                    class="js-buyer-three-price"></span></span>
-                                                            <span class="click-robot-tooltip-description"></span>
-                                                            <span class="click-robot-tooltip-info">Tenes <span
-                                                                    class="js-buyer-three-bought">0</span> <span
-                                                                    class="click-robot-tooltip-plural"></span> comprando <span
-                                                                    class="js-buyer-three-total-capacity">0</span> telefonos por
-                                                                segundo</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                        </div>
-        
-                                    </div>
-        
-        
-                                </div>
-                    
-                            </div>
-                    </div>
-                </div>     
-            
-        
-                <div class="click-row js-repair-flow-container">
-                    <div class='left-col'>
-                        <div class="click-phone" id="js-repair-clicker">
-                            <a onClick="repairClickerClick()">
-                                <img src="images/flow-images-02.png"/>
-                                <span>Reparar uno</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class='center-col'>  
-                        <div class="title-and-label">
+                </div>
+                <div class="center-col bot-buy-container">
+                    <div class="title-and-label">
+                        <div>
                             <div class="small-notice">
-                                <span>Capacidad de reparo automático: </span>
-                                <span class="dinamic-number inline-dinamic-number js-phone-repair-capability"></span>
+                                <span>Comprando automáticamente: </span>
+                                <span class="dinamic-number inline-dinamic-number js-phone-buy-capability"></span>
                                 <span class="small-notice">/s</span>
                             </div>
                         </div>
                     </div>
-                    <div class='right-col'>  
-                        <div class="stock-number-container clearfix">
-                                <span class="dinamic-number stock-number js-amount-phones-awaiting-repair"></span>
-                        </div>
-                        <div class="js-robots">
-                            <div class="click-robots-container clearfix">
-                                <div class="row-robot">
-                                    <div class="upgrade-robot-container no-padding inline-block">
-                                        <a class="click-upgrade" id="repairer_one_upgrade">
-                                            <img src="images/locha-icon.jpg">
-                                            <div class="click-upgrade-tooltip">
-                                                <span class="click-upgrade-tooltip-title"></span>
-                                                <span class="click-upgrade-tooltip-value">$<span
-                                                        class="js-repairer-one-upg-price"></span></span>
-                                                <span class="click-upgrade-tooltip-funtion">Mejora <span
-                                                        class="js-repairer-one-upg-multiplier"></span> veces la
-                                                    productividad del proceso</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="click-robot-container no-padding inline-block">
-                                        <div class="click-robot" id="repairer_one">
-                                            <div class="click-robot-img">
-                                                <img>
-                                            </div>
-                                            <div class="click-robot-text">
-                                                <span class="click-robot-name"></span>
-                                                <span class="click-robot-value">
-                                                    $
-                                                    <span class="js-repairer-one-price"></span>
-                                                </span>
-                                            </div>
-                                            <div class="click-robot-bought">
-                                                <span class="js-repairer-one-bought">0</span>
-                                            </div>
-                                            <div class="click-robot-tooltip">
-                                                <div class="click-robot-tooltip-img">
-                                                    <img>
-                                                </div>
-                                                <div class="click-robot-tooltip-text">
-                                                    <span class="click-robot-tooltip-title"></span>
-                                                    <span class="click-robot-tooltip-value">$<span
-                                                            class="js-repairer-one-price"></span></span>
-                                                    <span class="click-robot-tooltip-description"></span>
-                                                    <span class="click-robot-tooltip-info">Tenes <span
-                                                            class="js-repairer-one-bought">0</span> <span
-                                                            class="click-robot-tooltip-plural"></span> reparando <span
-                                                            class="js-repairer-one-total-capacity">0</span> telefonos
-                                                        por segundo</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row-robot">
-                                    <div class="upgrade-robot-container no-padding inline-block">
-                                        <a class="click-upgrade" id="repairer_two_upgrade">
-                                            <img src="images/locha-icon.jpg">
-                                            <div class="click-upgrade-tooltip">
-                                                <span class="click-upgrade-tooltip-title"></span>
-                                                <span class="click-upgrade-tooltip-value">$<span
-                                                        class="js-repairer-two-upg-price"></span></span>
-                                                <span class="click-upgrade-tooltip-funtion">Mejora <span
-                                                        class="js-repairer-two-upg-multiplier"></span> veces la
-                                                    productividad del proceso</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="click-robot-container no-padding inline-block">
-                                        <div class="click-robot" id="repairer_two">
-                                            <div class="click-robot-img">
-                                                <img>
-                                            </div>
-                                            <div class="click-robot-text">
-                                                <span class="click-robot-name"></span>
-                                                <span class="click-robot-value">$<span
-                                                        class="js-repairer-two-price"></span></span>
-                                            </div>
-                                            <div class="click-robot-bought">
-                                                <span class="js-repairer-two-bought">0</span>
-                                            </div>
-
-                                            <div class="click-robot-tooltip">
-                                                <div class="click-robot-tooltip-img">
-                                                    <img>
-                                                </div>
-                                                <div class="click-robot-tooltip-text">
-                                                    <span class="click-robot-tooltip-title"></span>
-                                                    <span class="click-robot-tooltip-value">$<span
-                                                            class="js-repairer-two-price"></span></span>
-                                                    <span class="click-robot-tooltip-description"></span>
-                                                    <span class="click-robot-tooltip-info">Tenes <span
-                                                            class="js-repairer-two-bought">0</span> <span
-                                                            class="click-robot-tooltip-plural"></span> reparando <span
-                                                            class="js-repairer-two-total-capacity">0</span> telefonos
-                                                        por segundo</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row-robot">
-                                    <div class="upgrade-robot-container no-padding inline-block">
-                                        <a class="click-upgrade" id="repairer_three_upgrade">
-                                            <img src="images/locha-icon.jpg">
-                                            <div class="click-upgrade-tooltip">
-                                                <span class="click-upgrade-tooltip-title"></span>
-                                                <span class="click-upgrade-tooltip-value">$<span
-                                                        class="js-repairer-three-upg-price"></span></span>
-                                                <span class="click-upgrade-tooltip-funtion">Mejora <span
-                                                        class="js-repairer-three-upg-multiplier"></span> veces la
-                                                    productividad del proceso</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="click-robot-container no-padding inline-block">
-                                        <div class="click-robot" id="repairer_three">
-                                            <div class="click-robot-img">
-                                                <img>
-                                            </div>
-                                            <div class="click-robot-text">
-                                                <span class="click-robot-name"></span>
-                                                <span class="click-robot-value">$<span
-                                                        class="js-repairer-three-price"></span></span>
-                                            </div>
-                                            <div class="click-robot-bought">
-                                                <span class="js-repairer-three-bought">0</span>
-                                            </div>
-
-                                            <div class="click-robot-tooltip">
-                                                <div class="click-robot-tooltip-img">
-                                                    <img>
-                                                </div>
-                                                <div class="click-robot-tooltip-text">
-                                                    <span class="click-robot-tooltip-title"></span>
-                                                    <span class="click-robot-tooltip-value">$<span
-                                                            class="js-repairer-three-price"></span></span>
-                                                    <span class="click-robot-tooltip-description"></span>
-                                                    <span class="click-robot-tooltip-info">Tenes <span
-                                                            class="js-repairer-three-bought">0</span> <span
-                                                            class="click-robot-tooltip-plural"></span> reparando <span
-                                                            class="js-repairer-three-total-capacity">0</span> telefonos
-                                                        por segundo</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            
-        
-                <div class="click-row js-sale-flow-container">
-                    <div class='left-col'>
-                        <div class="click-phone" id="js-sell-clicker">
-                                <a onClick="sellClickerClick()">
-                                    <img src="images/flow-images-03.png">
-                                    <span>Vender uno por $  </span><span class="dinamic-number inline-dinamic-number js-amount-sell-price"></span></span>
+                <div class="right-col">
+                    <div class="stock-number-container clearfix">
+                    </div>
+                    <div class="js-robots">
+                        <div class="row-robot">
+                            <div class="upgrade-robot-container no-padding inline-block">
+                                <a class="click-upgrade" id="buyer_one_upgrade">
+                                    <img src="images/locha-icon.jpg">
+                                    <div class="click-upgrade-tooltip">
+                                        <span class="click-upgrade-tooltip-title"></span>
+                                        <span class="click-upgrade-tooltip-value">$<span
+                                                class="js-buyer-one-upg-price"></span></span>
+                                        <span class="click-upgrade-tooltip-funtion">Mejora <span
+                                                class="js-buyer-one-upg-multiplier"></span> veces la
+                                            productividad del proceso</span>
+                                    </div>
                                 </a>
                             </div>
-                    
-                    </div>
-                    <div class='center-col'>
-                            <div class="title-and-label">
-                                    <div>
-                                        <div class="small-notice">
-                                            <span>Capacidad de venta automática: </span>
-                                            <span class="dinamic-number inline-dinamic-number js-phone-sale-capability"></span>
-                                            <span class="small-notice">/s</span></div>
+                            <div class="click-robot-container no-padding inline-block">
+                                <div class="click-robot" id="buyer_one">
+                                    <div class="click-robot-img">
+                                        <img src="">
+                                    </div>
+                                    <div class="click-robot-text">
+                                        <span class="click-robot-name"></span>
+                                        <span class="click-robot-value">$<span class="js-buyer-one-price"></span>
+                                        </span>
+                                    </div>
+                                    <div class="click-robot-bought">
+                                        <span class="js-buyer-one-bought">0</span>
+                                    </div>
+                                    <div class="click-robot-tooltip">
+                                        <div class="click-robot-tooltip-img">
+                                            <img>
                                         </div>
-                                        
-                            </div>
-                            <div class="stock-number-container clearfix">
-                                    <span class="dinamic-number stock-number js-amount-phones-awaiting-sale"></span>
-                            </div>
-                    </div>
-                    <div class='right-col'>
-                            
-
-                            <div class="js-robots">
-                                    <div class="click-robots-container clearfix">
-                                        <div class="row-robot">
-                                                <div class="upgrade-robot-container no-padding inline-block">
-                                                        <a class="click-upgrade" id="seller_one_upgrade">
-                                                            <img src="images/locha-icon.jpg">
-                                                            <div class="click-upgrade-tooltip">
-                                                                <span class="click-upgrade-tooltip-title"></span>
-                                                                <span class="click-upgrade-tooltip-value">$<span
-                                                                        class="js-seller-one-upg-price"></span></span>
-                                                                <span class="click-upgrade-tooltip-funtion">Mejora <span
-                                                                        class="js-seller-one-upg-multiplier"></span> veces la
-                                                                    productividad del proceso</span>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                            <div class="click-robot-container no-padding inline-block">
-                                                <div class="click-robot" id="seller_one">
-                                                    <div class="click-robot-img">
-                                                        <img>
-                                                    </div>
-                                                    <div class="click-robot-text">
-                                                        <span class="click-robot-name"></span>
-                                                        <span class="click-robot-value">$<span
-                                                                class="js-seller-one-price"></span></span>
-                                                    </div>
-                                                    <div class="click-robot-bought">
-                                                        <span class="js-seller-one-bought">0</span>
-                                                    </div>
-        
-                                                    <div class="click-robot-tooltip">
-                                                        <div class="click-robot-tooltip-img">
-                                                            <img>
-                                                        </div>
-                                                        <div class="click-robot-tooltip-text">
-                                                            <span class="click-robot-tooltip-title"></span>
-                                                            <span class="click-robot-tooltip-value">$<span
-                                                                    class="js-seller-one-price"></span></span>
-                                                            <span class="click-robot-tooltip-description"></span>
-                                                            <span class="click-robot-tooltip-info">Tenes <span
-                                                                    class="js-seller-one-bought">0</span> <span
-                                                                    class="click-robot-tooltip-plural"></span> vendiendo <span
-                                                                    class="js-seller-one-total-capacity">0</span> telefonos por
-                                                                segundo</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-        
+                                        <div class="click-robot-tooltip-text">
+                                            <span class="click-robot-tooltip-title"></span>
+                                            <span class="click-robot-tooltip-value">$<span
+                                                    class="js-buyer-one-price"></span></span>
+                                            <span class="click-robot-tooltip-description"></span>
+                                            <span class="click-robot-tooltip-info">Tenes <span
+                                                    class="js-buyer-one-bought">0</span> <span
+                                                    class="click-robot-tooltip-plural"></span> comprando <span
+                                                    class="js-buyer-one-total-capacity">0</span> telefonos por
+                                                segundo</span>
                                         </div>
-                                        <div class="row-robot">
-                                                <div class="upgrade-robot-container no-padding inline-block">
-                                                        <a class="click-upgrade" id="seller_two_upgrade">
-                                                            <img src="images/locha-icon.jpg">
-                                                            <div class="click-upgrade-tooltip">
-                                                                <span class="click-upgrade-tooltip-title"></span>
-                                                                <span class="click-upgrade-tooltip-value">$<span
-                                                                        class="js-seller-two-upg-price"></span></span>
-                                                                <span class="click-upgrade-tooltip-funtion">Mejora <span
-                                                                        class="js-seller-two-upg-multiplier"></span> veces la
-                                                                    productividad del proceso</span>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                            <div class="click-robot-container no-padding inline-block">
-                                                <div class="click-robot" id="seller_two">
-                                                    <div class="click-robot-img">
-                                                        <img>
-                                                    </div>
-                                                    <div class="click-robot-text">
-                                                        <span class="click-robot-name"></span>
-                                                        <span class="click-robot-value">$<span
-                                                                class="js-seller-two-price"></span></span>
-                                                    </div>
-                                                    <div class="click-robot-bought">
-                                                        <span class="js-seller-two-bought">0</span>
-                                                    </div>
-        
-                                                    <div class="click-robot-tooltip">
-                                                        <div class="click-robot-tooltip-img">
-                                                            <img>
-                                                        </div>
-                                                        <div class="click-robot-tooltip-text">
-                                                            <span class="click-robot-tooltip-title"></span>
-                                                            <span class="click-robot-tooltip-value">$<span
-                                                                    class="js-seller-two-price"></span></span>
-                                                            <span class="click-robot-tooltip-description"></span>
-                                                            <span class="click-robot-tooltip-info">Tenes <span
-                                                                    class="js-seller-two-bought">0</span> <span
-                                                                    class="click-robot-tooltip-plural"></span> vendiendo <span
-                                                                    class="js-seller-two-total-capacity">0</span> telefonos por
-                                                                segundo</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-        
-                                        </div>
-                                        <div class="row-robot">
-                                                <div class="upgrade-robot-container no-padding inline-block">
-                                                        <a class="click-upgrade" id="seller_three_upgrade">
-                                                            <img src="images/locha-icon.jpg">
-                                                            <div class="click-upgrade-tooltip">
-                                                                <span class="click-upgrade-tooltip-title"></span>
-                                                                <span class="click-upgrade-tooltip-value">$<span
-                                                                        class="js-seller-three-upg-price"></span></span>
-                                                                <span class="click-upgrade-tooltip-funtion">Mejora <span
-                                                                        class="js-seller-three-upg-multiplier"></span> veces la
-                                                                    productividad del proceso</span>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                            <div class="click-robot-container  no-padding inline-block">
-                                                <div class="click-robot" id="seller_three">
-                                                    <div class="click-robot-img">
-                                                        <img>
-                                                    </div>
-                                                    <div class="click-robot-text">
-                                                        <span class="click-robot-name"></span>
-                                                        <span class="click-robot-value">$<span
-                                                                class="js-seller-three-price"></span></span>
-                                                    </div>
-                                                    <div class="click-robot-bought">
-                                                        <span class="js-seller-three-bought">0</span>
-                                                    </div>
-        
-                                                    <div class="click-robot-tooltip">
-                                                        <div class="click-robot-tooltip-img">
-                                                            <img>
-                                                        </div>
-                                                        <div class="click-robot-tooltip-text">
-                                                            <span class="click-robot-tooltip-title"></span>
-                                                            <span class="click-robot-tooltip-value">$<span
-                                                                    class="js-seller-three-price"></span></span>
-                                                            <span class="click-robot-tooltip-description"></span>
-                                                            <span class="click-robot-tooltip-info">Tenes <span
-                                                                    class="js-seller-three-bought">0</span> <span
-                                                                    class="click-robot-tooltip-plural"></span> vendiendo <span
-                                                                    class="js-seller-three-total-capacity">0</span> telefonos
-                                                                por segundo</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-        
-                                        </div>
-        
                                     </div>
                                 </div>
-                        
-                    </div>
-                </div>
-                
-            </div>
-
-            <div class="stats-display">
-                    <div class="st-bal stats-balance-dashboard stats-section">
-                        <div class="money-container">
-                            <label>Balance</label>
-                            <span class="main-balance"><span>$</span><span class="dinamic-number js-money">0</span></span>
+                            </div>
                         </div>
-                    </div><div class="st-costos stats-balance-dashboard stats-section ">
-                        <div class="money-container">
-                            <label>Costos Fijos</label>
-                            <div class="big-number"><span>$</span><span
-                                    class="dinamic-number js-salaries-amount">0</span><span class="aclaration"> (a pagar
-                                    en <span class="dinamic-number js-salaries-time-for-payment">0</span>
-                                    segundos)</span></div>
+                        <div class="row-robot">
+                            <div class="upgrade-robot-container no-padding inline-block">
+                                <a class="click-upgrade" id="buyer_two_upgrade">
+                                    <img src="images/locha-icon.jpg">
+                                    <div class="click-upgrade-tooltip">
+                                        <span class="click-upgrade-tooltip-title"></span>
+                                        <span class="click-upgrade-tooltip-value">$<span
+                                                class="js-buyer-two-upg-price"></span></span>
+                                        <span class="click-upgrade-tooltip-funtion">Mejora <span
+                                                class="js-buyer-two-upg-multiplier"></span> veces la
+                                            productividad del proceso</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="click-robot-container no-padding inline-block">
+                                <div class="click-robot" id="buyer_two">
+                                    <div class="click-robot-img">
+                                        <img>
+                                    </div>
+                                    <div class="click-robot-text">
+                                        <span class="click-robot-name"></span>
+                                        <span class="click-robot-value">$<span class="js-buyer-two-price"></span></span>
+                                    </div>
+
+                                    <div class="click-robot-bought">
+                                        <span class="js-buyer-two-bought">0</span>
+                                    </div>
+
+
+                                    <div class="click-robot-tooltip">
+                                        <div class="click-robot-tooltip-img">
+                                            <img>
+                                        </div>
+                                        <div class="click-robot-tooltip-text">
+                                            <span class="click-robot-tooltip-title"></span>
+                                            <span class="click-robot-tooltip-value">$<span
+                                                    class="js-buyer-two-price"></span></span>
+                                            <span class="click-robot-tooltip-description"></span>
+                                            <span class="click-robot-tooltip-info">Tenes <span
+                                                    class="js-buyer-two-bought">0</span> <span
+                                                    class="click-robot-tooltip-plural"></span> comprando <span
+                                                    class="js-buyer-two-total-capacity">0</span> telefonos por
+                                                segundo</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row-robot">
+                            <div class="upgrade-robot-container no-padding inline-block">
+                                <a class="click-upgrade" id="buyer_three_upgrade">
+                                    <img src="images/locha-icon.jpg">
+                                    <div class="click-upgrade-tooltip">
+                                        <span class="click-upgrade-tooltip-title"></span>
+                                        <span class="click-upgrade-tooltip-value">$<span
+                                                class="js-buyer-three-upg-price"></span></span>
+                                        <span class="click-upgrade-tooltip-funtion">Mejora <span
+                                                class="js-buyer-three-upg-multiplier"></span> veces la
+                                            productividad del proceso</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="click-robot-container no-padding inline-block">
+                                <div class="click-robot" id="buyer_three">
+                                    <div class="click-robot-img">
+                                        <img>
+                                    </div>
+                                    <div class="click-robot-text">
+                                        <span class="click-robot-name"></span>
+                                        <span class="click-robot-value">$<span
+                                                class="js-buyer-three-price"></span></span>
+                                    </div>
+                                    <div class="click-robot-bought">
+                                        <span class="js-buyer-three-bought">0</span>
+                                    </div>
+
+                                    <div class="click-robot-tooltip">
+                                        <div class="click-robot-tooltip-img">
+                                            <img>
+                                        </div>
+                                        <div class="click-robot-tooltip-text">
+                                            <span class="click-robot-tooltip-title"></span>
+                                            <span class="click-robot-tooltip-value">$<span
+                                                    class="js-buyer-three-price"></span></span>
+                                            <span class="click-robot-tooltip-description"></span>
+                                            <span class="click-robot-tooltip-info">Tenes <span
+                                                    class="js-buyer-three-bought">0</span> <span
+                                                    class="click-robot-tooltip-plural"></span> comprando <span
+                                                    class="js-buyer-three-total-capacity">0</span> telefonos por
+                                                segundo</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                </div>
-
-
-                <a class="click-popup" style="display: none">
-
-                    <div class="click-img">
-                        <img src="images/sueldo.jpg">
-                    </div>
-                    <div class="click-info">
-                        <span class="click-challenge">¡Hay que pagar los sueldos!</span>
-                        <span class="click-succes" style="display: none">¡Gracias por pensar en tu equipo! </span>
-                        <span class="click-error" style="display: none">¡Pagaste tarde y reunció un miembro de tu staff!</span>
-                        <div class="click-segundos"><span id="remainging-time">5</span> segundos</div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="lds-ripple">
-                <div>
-
-                </div>
-                <div>
-
                 </div>
             </div>
-            <div id="modal">
-                <div class="modal-container">
-                    <div class="modal-wrapper">
-                        <div class="modal-title">{titulo aca}</div>
-                        <div class="modal-text">{texto aca}</div>
-                        <div class="modal-button">continuar</div>
+            <div class="click-row js-repair-flow-container">
+                <div class='left-col'>
+                    <div class="click-phone" id="js-repair-clicker">
+                        <a onClick="repairClickerClick()">
+                            <img src="images/flow-images-02.png" />
+                            <span>Reparar uno</span>
+                        </a>
+                    </div>
+                </div>
+                <div class='center-col bot-repair-container'>
+                    <div class="title-and-label">
+                        <div class="small-notice">
+                            <span>Capacidad de reparo automático: </span>
+                            <span class="dinamic-number inline-dinamic-number js-phone-repair-capability"></span>
+                            <span class="small-notice">/s</span>
+                        </div>
+                    </div>
+                </div>
+                <div class='right-col'>
+                    <div class="stock-number-container clearfix">
+                        <span class="dinamic-number stock-number js-amount-phones-awaiting-repair"></span>
+                    </div>
+                    <div class="js-robots">
+                        <div class="row-robot">
+                            <div class="upgrade-robot-container no-padding inline-block">
+                                <a class="click-upgrade" id="repairer_one_upgrade">
+                                    <img src="images/locha-icon.jpg">
+                                    <div class="click-upgrade-tooltip">
+                                        <span class="click-upgrade-tooltip-title"></span>
+                                        <span class="click-upgrade-tooltip-value">$<span
+                                                class="js-repairer-one-upg-price"></span></span>
+                                        <span class="click-upgrade-tooltip-funtion">Mejora <span
+                                                class="js-repairer-one-upg-multiplier"></span> veces la
+                                            productividad del proceso</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="click-robot-container no-padding inline-block">
+                                <div class="click-robot" id="repairer_one">
+                                    <div class="click-robot-img">
+                                        <img>
+                                    </div>
+                                    <div class="click-robot-text">
+                                        <span class="click-robot-name"></span>
+                                        <span class="click-robot-value">
+                                            $
+                                            <span class="js-repairer-one-price"></span>
+                                        </span>
+                                    </div>
+                                    <div class="click-robot-bought">
+                                        <span class="js-repairer-one-bought">0</span>
+                                    </div>
+                                    <div class="click-robot-tooltip">
+                                        <div class="click-robot-tooltip-img">
+                                            <img>
+                                        </div>
+                                        <div class="click-robot-tooltip-text">
+                                            <span class="click-robot-tooltip-title"></span>
+                                            <span class="click-robot-tooltip-value">$<span
+                                                    class="js-repairer-one-price"></span></span>
+                                            <span class="click-robot-tooltip-description"></span>
+                                            <span class="click-robot-tooltip-info">Tenes <span
+                                                    class="js-repairer-one-bought">0</span> <span
+                                                    class="click-robot-tooltip-plural"></span> reparando <span
+                                                    class="js-repairer-one-total-capacity">0</span> telefonos
+                                                por segundo</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-robot">
+                            <div class="upgrade-robot-container no-padding inline-block">
+                                <a class="click-upgrade" id="repairer_two_upgrade">
+                                    <img src="images/locha-icon.jpg">
+                                    <div class="click-upgrade-tooltip">
+                                        <span class="click-upgrade-tooltip-title"></span>
+                                        <span class="click-upgrade-tooltip-value">$<span
+                                                class="js-repairer-two-upg-price"></span></span>
+                                        <span class="click-upgrade-tooltip-funtion">Mejora <span
+                                                class="js-repairer-two-upg-multiplier"></span> veces la
+                                            productividad del proceso</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="click-robot-container no-padding inline-block">
+                                <div class="click-robot" id="repairer_two">
+                                    <div class="click-robot-img">
+                                        <img>
+                                    </div>
+                                    <div class="click-robot-text">
+                                        <span class="click-robot-name"></span>
+                                        <span class="click-robot-value">$<span
+                                                class="js-repairer-two-price"></span></span>
+                                    </div>
+                                    <div class="click-robot-bought">
+                                        <span class="js-repairer-two-bought">0</span>
+                                    </div>
+
+                                    <div class="click-robot-tooltip">
+                                        <div class="click-robot-tooltip-img">
+                                            <img>
+                                        </div>
+                                        <div class="click-robot-tooltip-text">
+                                            <span class="click-robot-tooltip-title"></span>
+                                            <span class="click-robot-tooltip-value">$<span
+                                                    class="js-repairer-two-price"></span></span>
+                                            <span class="click-robot-tooltip-description"></span>
+                                            <span class="click-robot-tooltip-info">Tenes <span
+                                                    class="js-repairer-two-bought">0</span> <span
+                                                    class="click-robot-tooltip-plural"></span> reparando <span
+                                                    class="js-repairer-two-total-capacity">0</span> telefonos
+                                                por segundo</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-robot">
+                            <div class="upgrade-robot-container no-padding inline-block">
+                                <a class="click-upgrade" id="repairer_three_upgrade">
+                                    <img src="images/locha-icon.jpg">
+                                    <div class="click-upgrade-tooltip">
+                                        <span class="click-upgrade-tooltip-title"></span>
+                                        <span class="click-upgrade-tooltip-value">$<span
+                                                class="js-repairer-three-upg-price"></span></span>
+                                        <span class="click-upgrade-tooltip-funtion">Mejora <span
+                                                class="js-repairer-three-upg-multiplier"></span> veces la
+                                            productividad del proceso</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="click-robot-container no-padding inline-block">
+                                <div class="click-robot" id="repairer_three">
+                                    <div class="click-robot-img">
+                                        <img>
+                                    </div>
+                                    <div class="click-robot-text">
+                                        <span class="click-robot-name"></span>
+                                        <span class="click-robot-value">$<span
+                                                class="js-repairer-three-price"></span></span>
+                                    </div>
+                                    <div class="click-robot-bought">
+                                        <span class="js-repairer-three-bought">0</span>
+                                    </div>
+
+                                    <div class="click-robot-tooltip">
+                                        <div class="click-robot-tooltip-img">
+                                            <img>
+                                        </div>
+                                        <div class="click-robot-tooltip-text">
+                                            <span class="click-robot-tooltip-title"></span>
+                                            <span class="click-robot-tooltip-value">$<span
+                                                    class="js-repairer-three-price"></span></span>
+                                            <span class="click-robot-tooltip-description"></span>
+                                            <span class="click-robot-tooltip-info">Tenes <span
+                                                    class="js-repairer-three-bought">0</span> <span
+                                                    class="click-robot-tooltip-plural"></span> reparando <span
+                                                    class="js-repairer-three-total-capacity">0</span> telefonos
+                                                por segundo</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </main>
-    </body>
+            <div class="click-row js-sale-flow-container">
+                <div class='left-col'>
+                    <div class="click-phone" id="js-sell-clicker">
+                        <a onClick="sellClickerClick()">
+                            <img src="images/flow-images-03.png">
+                            <span>Vender uno por $ </span><span
+                                class="dinamic-number inline-dinamic-number js-amount-sell-price"></span></span>
+                        </a>
+                    </div>
+
+                </div>
+                <div class='center-col bot-sell-container'>
+                    <div class="title-and-label">
+                        <div>
+                            <div class="small-notice">
+                                <span>Capacidad de venta automática: </span>
+                                <span class="dinamic-number inline-dinamic-number js-phone-sale-capability"></span>
+                                <span class="small-notice">/s</span></div>
+                        </div>
+
+                    </div>
+                    <div class="stock-number-container clearfix">
+                        <span class="dinamic-number stock-number js-amount-phones-awaiting-sale"></span>
+                    </div>
+                </div>
+                <div class='right-col'>
+                    <div class="js-robots">
+                        <div class="row-robot">
+                            <div class="upgrade-robot-container no-padding inline-block">
+                                <a class="click-upgrade" id="seller_one_upgrade">
+                                    <img src="images/locha-icon.jpg">
+                                    <div class="click-upgrade-tooltip">
+                                        <span class="click-upgrade-tooltip-title"></span>
+                                        <span class="click-upgrade-tooltip-value">$<span
+                                                class="js-seller-one-upg-price"></span></span>
+                                        <span class="click-upgrade-tooltip-funtion">Mejora <span
+                                                class="js-seller-one-upg-multiplier"></span> veces la
+                                            productividad del proceso</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="click-robot-container no-padding inline-block">
+                                <div class="click-robot" id="seller_one">
+                                    <div class="click-robot-img">
+                                        <img>
+                                    </div>
+                                    <div class="click-robot-text">
+                                        <span class="click-robot-name"></span>
+                                        <span class="click-robot-value">$<span
+                                                class="js-seller-one-price"></span></span>
+                                    </div>
+                                    <div class="click-robot-bought">
+                                        <span class="js-seller-one-bought">0</span>
+                                    </div>
+
+                                    <div class="click-robot-tooltip">
+                                        <div class="click-robot-tooltip-img">
+                                            <img>
+                                        </div>
+                                        <div class="click-robot-tooltip-text">
+                                            <span class="click-robot-tooltip-title"></span>
+                                            <span class="click-robot-tooltip-value">$<span
+                                                    class="js-seller-one-price"></span></span>
+                                            <span class="click-robot-tooltip-description"></span>
+                                            <span class="click-robot-tooltip-info">Tenes <span
+                                                    class="js-seller-one-bought">0</span> <span
+                                                    class="click-robot-tooltip-plural"></span> vendiendo <span
+                                                    class="js-seller-one-total-capacity">0</span> telefonos por
+                                                segundo</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="row-robot">
+                            <div class="upgrade-robot-container no-padding inline-block">
+                                <a class="click-upgrade" id="seller_two_upgrade">
+                                    <img src="images/locha-icon.jpg">
+                                    <div class="click-upgrade-tooltip">
+                                        <span class="click-upgrade-tooltip-title"></span>
+                                        <span class="click-upgrade-tooltip-value">$<span
+                                                class="js-seller-two-upg-price"></span></span>
+                                        <span class="click-upgrade-tooltip-funtion">Mejora <span
+                                                class="js-seller-two-upg-multiplier"></span> veces la
+                                            productividad del proceso</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="click-robot-container no-padding inline-block">
+                                <div class="click-robot" id="seller_two">
+                                    <div class="click-robot-img">
+                                        <img>
+                                    </div>
+                                    <div class="click-robot-text">
+                                        <span class="click-robot-name"></span>
+                                        <span class="click-robot-value">$<span
+                                                class="js-seller-two-price"></span></span>
+                                    </div>
+                                    <div class="click-robot-bought">
+                                        <span class="js-seller-two-bought">0</span>
+                                    </div>
+
+                                    <div class="click-robot-tooltip">
+                                        <div class="click-robot-tooltip-img">
+                                            <img>
+                                        </div>
+                                        <div class="click-robot-tooltip-text">
+                                            <span class="click-robot-tooltip-title"></span>
+                                            <span class="click-robot-tooltip-value">$<span
+                                                    class="js-seller-two-price"></span></span>
+                                            <span class="click-robot-tooltip-description"></span>
+                                            <span class="click-robot-tooltip-info">Tenes <span
+                                                    class="js-seller-two-bought">0</span> <span
+                                                    class="click-robot-tooltip-plural"></span> vendiendo <span
+                                                    class="js-seller-two-total-capacity">0</span> telefonos por
+                                                segundo</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="row-robot">
+                            <div class="upgrade-robot-container no-padding inline-block">
+                                <a class="click-upgrade" id="seller_three_upgrade">
+                                    <img src="images/locha-icon.jpg">
+                                    <div class="click-upgrade-tooltip">
+                                        <span class="click-upgrade-tooltip-title"></span>
+                                        <span class="click-upgrade-tooltip-value">$<span
+                                                class="js-seller-three-upg-price"></span></span>
+                                        <span class="click-upgrade-tooltip-funtion">Mejora <span
+                                                class="js-seller-three-upg-multiplier"></span> veces la
+                                            productividad del proceso</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="click-robot-container  no-padding inline-block">
+                                <div class="click-robot" id="seller_three">
+                                    <div class="click-robot-img">
+                                        <img>
+                                    </div>
+                                    <div class="click-robot-text">
+                                        <span class="click-robot-name"></span>
+                                        <span class="click-robot-value">$<span
+                                                class="js-seller-three-price"></span></span>
+                                    </div>
+                                    <div class="click-robot-bought">
+                                        <span class="js-seller-three-bought">0</span>
+                                    </div>
+
+                                    <div class="click-robot-tooltip">
+                                        <div class="click-robot-tooltip-img">
+                                            <img>
+                                        </div>
+                                        <div class="click-robot-tooltip-text">
+                                            <span class="click-robot-tooltip-title"></span>
+                                            <span class="click-robot-tooltip-value">$<span
+                                                    class="js-seller-three-price"></span></span>
+                                            <span class="click-robot-tooltip-description"></span>
+                                            <span class="click-robot-tooltip-info">Tenes <span
+                                                    class="js-seller-three-bought">0</span> <span
+                                                    class="click-robot-tooltip-plural"></span> vendiendo <span
+                                                    class="js-seller-three-total-capacity">0</span> telefonos
+                                                por segundo</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="stats-display">
+            <div class="st-bal stats-balance-dashboard stats-section">
+                <div class="money-container">
+                    <label>Balance</label>
+                    <span>$</span>
+                    <span class="dinamic-number js-money">0</span>
+                </div>
+            </div>
+            <div class="st-costos stats-balance-dashboard stats-section ">
+                <div class="money-container">
+                    <label>Costos Fijos</label>
+                    <div>
+                        <span>$</span>
+                        <span class="dinamic-number js-salaries-amount">0</span>
+                        <span class="aclaration"> (a pagar
+                            en <span class="dinamic-number js-salaries-time-for-payment">0</span>
+                            segundos)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="click-popup" style="display: none">
+            <div class="click-img">
+                <img src="images/sueldo.jpg">
+            </div>
+            <div class="click-info">
+                <span class="click-challenge">¡Hay que pagar los sueldos!</span>
+                <span class="click-succes" style="display: none">¡Gracias por pensar en tu equipo! </span>
+                <span class="click-error" style="display: none">¡Pagaste tarde y reunció un miembro de tu staff!</span>
+                <div class="click-segundos"><span id="remainging-time">5</span> segundos</div>
+            </div>
+        </a>
+        <div id="modal">
+            <div class="modal-container">
+                <div class="modal-wrapper">
+                    <div class="modal-title">{titulo aca}</div>
+                    <div class="modal-text">{texto aca}</div>
+                    <div class="modal-button">continuar</div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
 </html>

@@ -3,11 +3,12 @@
 var contentInfo = [
     {
         type: "buyer_one", 
-        name: "E-Purchase", 
+        name: "Quiosco", 
         imgPath: "images/Venta_e-commerce.png",
         upgImgPath: "images/Compra__Responsive.png",
-        pluralName: "E-Purchases",
-        upgTitle: "Responsiveness"
+        pluralName: "Quioscos",
+        upgTitle: "Responsiveness",
+        container: ".bot-buy-container"
     },
     {
         type: "buyer_two", 
@@ -15,15 +16,17 @@ var contentInfo = [
         imgPath: "images/Compra__Comprador_en_bici.png",
         upgImgPath: "images/Compra__Comprador_en_moto.png",
         pluralName: "Comprador en bici",
-        upgTitle: "Comprar moto para los recolectores"
+        upgTitle: "Comprar moto para los recolectores",
+        container: ".bot-buy-container"
     },
     {
         type: "buyer_three", 
-        name: "Tienda física de compra", 
+        name: "Dron", 
         imgPath: "images/Compra__Tienda_fisica.png",
         upgImgPath: "images/Compra__Plan_canje.png",
         pluralName: "Tienda física de compra",
-        upgTitle: "Ofrecer plan canje"
+        upgTitle: "Ofrecer plan canje",
+        container: ".bot-buy-container"
     },
     {
         type: "repairer_one", 
@@ -31,15 +34,17 @@ var contentInfo = [
         imgPath: "images/Reparar__Reparador.png",
         upgImgPath: "images/Reparar__Kit_de_herramientas.png",
         pluralName: "Reparadores",
-        upgTitle: "Kit de herramientas"
+        upgTitle: "Kit de herramientas",
+        container: ".bot-repair-container"
     },
     {
         type: "repairer_two", 
-        name: "Brazo robótico", 
+        name: "Robot", 
         imgPath: "images/Reparar__Robot.png",
         upgImgPath: "images/Reparar__AI.png",
         pluralName: "Brazos robóticos",
-        upgTitle: "Inteligencia artificial mejorada"
+        upgTitle: "Inteligencia artificial mejorada",
+        container: ".bot-repair-container"
     },
     {
         type: "repairer_three", 
@@ -47,31 +52,35 @@ var contentInfo = [
         imgPath: "images/Reparar__Planta_automatizada.png",
         upgImgPath: "images/Reparar__Paneles_solares.png",
         pluralName: "Plantas automatizadas",
-        upgTitle: "Implementación de paneles solares"
+        upgTitle: "Implementación de paneles solares",
+        container: ".bot-repair-container"
     },
     {
         type: "seller_one", 
-        name: "E-Commerce", 
+        name: "Tienda", 
         imgPath: "images/Venta_e-commerce.png",
         upgImgPath: "images/Venta_responsive.png",
         pluralName: "E-Commerces",
-        upgTitle: "Responsiveness"
+        upgTitle: "Responsiveness",
+        container: ".bot-sell-container"
     },
     {
         type: "seller_two", 
-        name: "Tiendas física", 
+        name: "e-commerce", 
         imgPath: "images/Compra__Tienda_fisica.png",
         upgImgPath: "images/Venta__24h.png",
         pluralName: "Tiendas físicas",
-        upgTitle: "Abrir las 24 horas"
+        upgTitle: "Abrir las 24 horas",
+        container: ".bot-sell-container"
     },
     {
         type: "seller_three", 
-        name: "Integración con Marketplace", 
+        name: "Black Friday", 
         imgPath: "images/Venta__marketplace.png",
         upgImgPath: "images/Venta__cuotas.png",
         pluralName: "Integración con Marketplaces",
-        upgTitle: "Ofrecer cuotas"
+        upgTitle: "Ofrecer cuotas",
+        container: ".bot-sell-container"
     },
 ];
 
@@ -85,14 +94,21 @@ function updateContentInfo () {
         $('#' + info.type + ' .click-robot-tooltip-title').text("Sumar un " + info.name);
         $('#' + info.type + ' .click-robot-tooltip-plural').text(info.pluralName);
         $('#' + info.type + '_upgrade .click-upgrade-tooltip-title').text(info.upgTitle);
-        $('#' + info.type).on("click",function(){
+        $('#' + info.type).attr('target', info.container)
+        $('#' + info.type).attr('name', info.type)
+
+        $('#' + info.type).on("click",function() {
+            Bot.add($(this).attr('target'), $(this).attr('name'));
             hireClick(info.type);
         });
+        
         $('#' + info.type + '_upgrade').on("click",function(){
             upgradeClick(info.type);
         });
     });
 }
+
+
 
 var gameLoop = new GameLoop();
 window.gameContext = gameLoop.context;
@@ -183,14 +199,12 @@ window.setInterval(function(){
 }, 15000);
 
 $(document).ready( () => {
-    TweenMax.set($(".click-container"), { scale: 1.25 });
     
-    setTimeout(() => $(".lds-ripple").remove(), 1500);
     modal.show('Bienvenido a troca clickers', 'Para arrancar te dejamos $100, comprá 10 celulares ', gameLoop, () =>{
-        TweenMax.set(".click-message", { y: 200 })
-        $(".click-message").show();
-        TweenMax.to($(".click-container"), 1, { scale: 1, opacity: 1, ease:Expo.easeOut });
-        TweenMax.to(".click-message", 1, { y: 0 })
+        //TweenMax.set(".click-message", { y: 200 })
+        //$(".click-message").show();
+        //TweenMax.to($(".click-container"), 1, { scale: 1, opacity: 1, ease:Expo.easeOut });
+        //TweenMax.to(".click-message", 1, { y: 0 })
     });
     
 })
