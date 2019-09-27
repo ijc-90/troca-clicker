@@ -134,8 +134,20 @@ header {
   height: calc(100% / 3);
   flex-direction: row;
   display: flex;
+  border-bottom: solid #fff 8px;
+}
+.click-container .click-row:first-child {
+  border-top: solid #fff 8px;
+}
+.click-container .click-row.buy {
+  background: url("../images/background-repair.svg") center center;
+  background-size: cover;
 }
 .click-container .click-row.repair {
+  background: url("../images/background-repair.svg") center center;
+  background-size: cover;
+}
+.click-container .click-row.sell {
   background: url("../images/background-repair.svg") center center;
   background-size: cover;
 }
@@ -144,18 +156,21 @@ header {
 }
 .click-container .left-col {
   width: 25%;
+  border-right: solid #fff 8px;
 }
 .click-container .center-col {
   width: 50%;
 }
 .click-container .right-col {
   width: 25%;
+  border-left: solid #fff 8px;
 }
 
 .main-clicker {
   height: 100vh;
   width: 100%;
   position: relative;
+  background: #333;
 }
 
 .stock-number-container {
