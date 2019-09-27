@@ -136,6 +136,12 @@ header h1 {
   position: absolute;
 }
 
+#modal .modal-container .modal-button:hover {
+  box-shadow: none;
+  bottom: -22px;
+  right: 168px;
+}
+
 .modal-chapter {
   position: absolute;
   right: -50px;

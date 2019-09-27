@@ -209,7 +209,7 @@ var news = [
 
 $(document).ready(() => {
 
-    modal.show('Bienvenido a troca clickers', 'Para arrancar te dejamos $100, comprá 10 celulares ', gameLoop, () => {
+    modal.show('Bienvenido a troca clickers', 'Para arrancar te dejamos $' + gameLoop.context.money + ', comprá ' + (gameLoop.context.money / gameLoop.context.cellphoneBuyPrice) + ' celulares ', gameLoop, () => {
         //TweenMax.set(".click-message", { y: 200 })
         //$(".click-message").show();
         //TweenMax.to($(".click-container"), 1, { scale: 1, opacity: 1, ease:Expo.easeOut });
