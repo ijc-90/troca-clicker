@@ -234,7 +234,7 @@ function showOrHideFlows(json) {
     }
 
     var robotSelect = ".js-robots";
-    $(robotSelect).css({ display: "block" });
+    $(robotSelect).css({ display: "flex" });
     if (json["showRobots"]) {
         //$(robotSelect).css({ display: "block" });
     } else {
