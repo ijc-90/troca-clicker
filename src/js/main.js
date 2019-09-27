@@ -159,12 +159,12 @@ function repairClickerClick() {
 }
 
 function hireClick(name) {
-    gameLoop.clickerSound.playClick();
+    gameLoop.clickerSound.playMagicClick();
     gameLoop.hiringClick(name);
 }
 
 function upgradeClick(name) {
-    gameLoop.clickerSound.playClick();
+    gameLoop.clickerSound.playMagicClick();
     gameLoop.upgradeClick("upgrade_" + name);
 }
 
