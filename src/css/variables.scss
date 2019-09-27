@@ -7,8 +7,8 @@ $colorDark: #404040 ;
 $colorGray-2: #808184;
 
 
-$headerHeight: 40px;
-$statsHeight: 60px;
+$headerHeight: 70px;
+$statsHeight: 80px;
 $contentHeight: calc(100vh - (#{$headerHeight} + #{$statsHeight}) );
 
 $contentColLeftWidth: 25%;
