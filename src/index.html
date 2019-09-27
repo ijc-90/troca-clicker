@@ -7,10 +7,10 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
 
-    
+
 
     <!-- Bootstrap start -->
-    
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -49,7 +49,7 @@
 <body>
     <main class="main-clicker">
         <header>
-            <h1 class="logo"><img src="images/troca-clicker.png"/></dh1iv>
+            <h1 class="logo"><img src="images/troca-clicker.png" /></dh1iv>
         </header>
         <div class="click-container">
             <div class="click-row buy js-buy-flow-container">
@@ -228,12 +228,18 @@
             </div>
             <div class="click-row repair js-repair-flow-container">
                 <div class='left-col'>
+
                     <div class="click-phone" id="js-repair-clicker">
                         <a onClick="repairClickerClick()">
-                            <img src="images/flow-images-02.png" />
-                            <span>Reparar uno</span>
+                            <div class="circle">
+
+                            </div>
                         </a>
+                        <div class="click-counter">
+                            <span class="legend">Reparar uno</span>
+                        </div>
                     </div>
+
                 </div>
                 <div class='center-col bot-repair-container'>
                     <div class="title-and-label">
@@ -398,12 +404,16 @@
                 <div class='left-col'>
                     <div class="click-phone" id="js-sell-clicker">
                         <a onClick="sellClickerClick()">
-                            <img src="images/flow-images-03.png">
-                            <span>Vender uno por $ </span><span
-                                class="dinamic-number inline-dinamic-number js-amount-sell-price"></span></span>
+                            <div class="circle">
+                                <span>$</span>
+                                <span class="js-amount-sell-price"></span>
+                            </div>
                         </a>
-                    </div>
+                        <div class="click-counter">
 
+                            <span class="legend">Vender Telefonos</span>
+                        </div>
+                    </div>
                 </div>
                 <div class='center-col bot-sell-container'>
                     <div class="title-and-label">
@@ -606,11 +616,11 @@
         </a>
         <div id="modal">
             <div class="modal-container">
-                    <div class="modal-button">continuar</div>
+                <div class="modal-button">continuar</div>
                 <div class="modal-wrapper">
                     <div class="modal-title">{titulo aca}</div>
                     <div class="modal-text">{texto aca}</div>
-                    
+
                 </div>
                 <div class="modal-chapter">
                     <svg xmlns="http://www.w3.org/2000/svg" width="173" height="292" viewBox="0 0 173 292">

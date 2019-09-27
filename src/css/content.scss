@@ -34,6 +34,10 @@ $borderColor: #fff;
     .left-col {
         width: $contentColLeftWidth;
         border-right: solid $borderColor $borderWidth;
+        display: flex;
+        flex-direction: row;
+        align-items:center;
+        padding:10px;
     }
 
     .center-col {
