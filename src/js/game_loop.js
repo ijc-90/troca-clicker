@@ -3,8 +3,9 @@ class GameLoop {
     constructor(){
         this.paused = false;
         this.viewIntegrator = new ViewIntegrator();
-        this.sound = new ClickerSound();
+        this.clickerSound = new ClickerSound();
 
+        this.clickerSound.playLoop();
         this.context = {
             ticksPerSecond: 2,
             money : 100,
@@ -104,16 +105,19 @@ class GameLoop {
     }
 
     buyClick() {
+        this.clickerSound.playClick();
         floatingNotifiers.mousePhone();
         this.events.push(new Event(EVENTS.BUY_CLICK));
     }
 
     repairClick() {
+        this.clickerSound.playClick();
         floatingNotifiers.mousePhone();
         this.events.push(EVENTS.REPAIR_CLICK);
     }
 
     saleClick() {
+        this.clickerSound.playClick();
         floatingNotifiers.mousePhone();
         this.events.push(new Event(EVENTS.SALE_CLICK));
     }
@@ -122,6 +126,7 @@ class GameLoop {
         if ($("#".robotName).hasClass("disabled")) {
             return;
         }
+        this.clickerSound.playClick();
         floatingNotifiers.mouseHiring();
         var event = new Event(EVENTS.HIRING_CLICK);
         event.robotName = robotName;
@@ -132,6 +137,7 @@ class GameLoop {
         if ($("#".robotName).hasClass("disabled")) {
             return;
         }
+        this.clickerSound.playClick();
         var event = new Event(EVENTS.UPGRADE_CLICK);
         event.upgradeName = upgradeName;
         this.events.push(event);
