@@ -28,6 +28,7 @@ class SalaryFlow extends Flow {
         context.moneyPaidInSalaries = totalSalaries;
         context.salariesPaidThisTick = true;
         context.gameOver = (context.money < 0);
+        context.shouldPlayGameOverSound = context.gameOver;
         return context;
     }
 }

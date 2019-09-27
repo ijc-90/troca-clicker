@@ -43,6 +43,7 @@ class GameLoop {
             events: [],
             iterationsToPaySalary: 90,
             gameOver: false,
+            shouldPlayGameOverSound: false,
             gameWon: false,
             probabilityOfDefectiveBuy : 1,
 

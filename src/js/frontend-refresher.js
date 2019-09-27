@@ -60,7 +60,8 @@ var sampleJson = {
     "js-seller-three-upg-price": 0,
     "js-seller-three-upg-multiplier": 0,
     "js-seller-three-total-capacity": 0,
-    "js-salaries-time-for-payment": 0
+    "js-salaries-time-for-payment": 0,
+    "js-you-lose": 0
 };
 
 var notifiersWhiteList = [
@@ -242,7 +243,7 @@ function showOrHideFlows(json) {
 
 function notifyIfLost(json) {
     if (json["js-you-lose"]) {
-        alert("PERDISTE!")
+        alert("PERDISTE!");
     }
 }
 
@@ -269,6 +270,10 @@ function notifyPaidSalaries(json) {
 }
 
 function updateFrontend(json) {
+    if (json === null || json === undefined) {
+        return;
+    }
+
     updateNumbers(json);
     //updateVisibilityOfUpgrades(json);
     notifyIfLost(json);
