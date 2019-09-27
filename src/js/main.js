@@ -1,5 +1,3 @@
-
-
 var contentInfo = [
     {
         type: "buyer_one", 
@@ -124,7 +122,6 @@ window.setInterval(function () {
     
     // Esto es bien villero .... pero yafu
     if (gameLoop.context.shouldPlayGameOverSound) {
-        console.log('Deberia tirar game over');
         gameLoop.clickerSound.gameOver();
         gameLoop.context.shouldPlayGameOverSound = false;
     }
