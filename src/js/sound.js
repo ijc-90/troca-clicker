@@ -4,6 +4,7 @@ class ClickerSound {
 
     loopSound = null;
     clickSound = null;
+    magicClickSound = null;
     errorSound = null;
     gameOverSound = null;
 
@@ -17,6 +18,11 @@ class ClickerSound {
 
         this.clickSound = new Howl({
             src: [this.SOUND_PATH + '/troca_clicker_click.wav'],
+            volume: this.VOLUME
+        });
+
+        this.magicClickSound = new Howl({
+            src: [this.SOUND_PATH + '/troca_clicker_magic_click.ogg'],
             volume: this.VOLUME
         });
 
@@ -54,6 +60,10 @@ class ClickerSound {
 
     playClick() {
         this.clickSound.play();
+    }
+
+    playMagicClick() {
+        this.magicClickSound.play();
     }
 
     playError() {
