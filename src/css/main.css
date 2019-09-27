@@ -188,6 +188,10 @@ header h1 {
 .click-container .left-col {
   width: 25%;
   border-right: solid #fff 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
 }
 .click-container .center-col {
   width: 50%;
@@ -341,10 +345,23 @@ header h1 {
   color: #ff8800;
 }
 
+#js-repair-clicker .legend, #js-sell-clicker .legend {
+  color: white;
+}
+
+.click-phone {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+}
 .click-phone a {
   width: 80px;
   height: 80px;
   display: inline-block;
+  margin-right: 15px;
+  cursor: pointer;
 }
 .click-phone a .circle {
   border-radius: 50%;
@@ -359,6 +376,15 @@ header h1 {
   -webkit-box-shadow: 10px 11px 0px -2px #ca741c;
   -moz-box-shadow: 10px 11px 0px -2px #ca741c;
   box-shadow: 10px 11px 0px -2px #ca741c;
+  -webkit-box-shadow: 5px 5px 0px -2px #ca741c;
+  -moz-box-shadow: 5px 5px 0px -2px #ca741c;
+  box-shadow: 5x 5px 0px -2px #ca741c;
+}
+.click-phone .click-counter {
+  display: inline-block;
+  width: calc(100% - 115px);
+  vertical-align: middle;
+  text-align: left;
 }
 .click-phone .click-counter .numbers {
   font-size: 21px;
@@ -369,14 +395,19 @@ header h1 {
   letter-spacing: normal;
   text-align: center;
   color: #ffffff;
+  display: inline-block;
+  text-align: left;
+  background: #333;
+  padding: 5px;
 }
 .click-phone .click-counter .legend {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
-  letter-spacing: norma;
+  letter-spacing: normal;
+  display: block;
 }
 
 .main-clicker {
