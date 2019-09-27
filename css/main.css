@@ -22,7 +22,7 @@ html, body {
 }
 
 header {
-  height: 40px;
+  height: 70px;
   background: red;
 }
 
@@ -32,7 +32,7 @@ header {
 }
 
 .stats-display {
-  height: 60px;
+  height: 80px;
   display: flex;
   flex-direction: row;
 }
@@ -65,7 +65,7 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.9);
   display: none;
 }
 
@@ -75,10 +75,12 @@ header {
   left: 50%;
   margin-left: -340px;
   margin-top: -209px;
-  background: #ff8800;
+  background: white;
   width: 720px;
   height: 420px;
   text-align: center;
+  border-radius: 80px;
+  border: solid 6px #000000;
 }
 
 #modal .modal-container .close-modal {
@@ -94,13 +96,19 @@ header {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  text-align: left;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 22px;
 }
 
 #modal .modal-container .modal-title {
   margin-top: 50px;
   margin-bottom: 20px;
   font-weight: bold;
-  color: white;
+  text-align: left;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #modal .modal-container .modal-button {
@@ -109,9 +117,6 @@ header {
   display: inline-block;
   color: white;
   width: 140px;
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
   line-height: 50px;
   font-size: 14px;
   height: 50px;
@@ -119,44 +124,217 @@ header {
   text-transform: uppercase;
 }
 
-.bot-sprite {
-  background: red;
-  width: 20px;
-  height: 20px;
+.modal-chapter {
   position: absolute;
+  right: -50px;
+  bottom: -60px;
+}
+
+.bot-sprite {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-size: cover;
+  border: 3px solid black;
 }
 
 .click-container {
-  height: calc(100vh - (40px + 60px) );
+  height: calc(100vh - (70px + 80px) );
 }
 .click-container .click-row {
   width: 100%;
   height: calc(100% / 3);
   flex-direction: row;
-  background: rgba(234, 0, 0, 0.6);
   display: flex;
+  border-bottom: solid #fff 8px;
+}
+.click-container .click-row:first-child {
+  border-top: solid #fff 8px;
+}
+.click-container .click-row.buy {
+  background: url("../images/background-repair.svg") center center;
+  background-size: cover;
+}
+.click-container .click-row.repair {
+  background: url("../images/background-repair.svg") center center;
+  background-size: cover;
+}
+.click-container .click-row.sell {
+  background: url("../images/background-repair.svg") center center;
+  background-size: cover;
 }
 .click-container .left-col, .click-container .center-col, .click-container .right-col {
   vertical-align: top;
 }
 .click-container .left-col {
   width: 25%;
-  background: rgba(0, 0, 189, 0.7);
+  border-right: solid #fff 8px;
 }
 .click-container .center-col {
   width: 50%;
-  background: rgba(233, 200, 14, 0.7);
+  position: relative;
 }
 .click-container .right-col {
   width: 25%;
+  border-left: solid #fff 8px;
+}
+
+.click-robot-container::after {
+  display: block;
+  content: "COMPRAR";
+  font-size: 10px;
+  width: 94px;
+  height: 42px;
+  line-height: 42px;
+  box-shadow: 2px 2px 0 0 #d1e8fc;
+  border: solid 2px #3684c6;
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  cursor: pointer;
+  color: #3684c6;
+  text-align: center;
+}
+
+.click-robot-container::after:hover {
+  background: black;
+  color: white;
+}
+
+.click-robot-container {
+  background: white;
+  width: 74%;
+  box-sizing: border-box;
+}
+
+.click-robot {
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+  display: inline-block;
+}
+
+.row-robot {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 15px;
+  margin-right: 15px;
+  background: #fff;
+  position: relative;
+  height: 58px;
+}
+
+.click-robot:hover .click-robot-tooltip {
+  display: block;
+}
+
+.click-robot-img {
+  display: none;
+  vertical-align: middle;
+  padding: 0;
+}
+
+.click-robot-img img {
+  width: 56px;
+  height: 59px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.click-robot-text {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0;
+  width: 190px;
+  color: #ff8800;
+  line-height: 17px;
+}
+
+.click-robot-name {
+  font-size: 10px;
+}
+
+.click-robot-value {
+  display: block;
+  font-size: 10px;
+}
+
+.click-robot-bought {
+  display: none;
+  font-size: 10px;
+  color: #385f74;
+}
+
+.click-robot-tooltip {
+  position: absolute;
+  display: none;
+  z-index: 3;
+  background: #385f74;
+  min-height: 120px;
+  padding: 10px;
+  width: 400px;
+  left: -400px;
+  top: -100%;
+}
+
+.click-robot-tooltip:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 7.5px 0 7.5px 10px;
+  border-color: transparent transparent transparent #385f74;
+  position: absolute;
+  top: calc(45% - 7px);
+  right: -10px;
+}
+
+.click-robot-tooltip-img {
+  display: inline-block;
+  width: 120px;
+  margin-right: 10px;
+}
+
+.click-robot-tooltip-text {
+  display: inline-block;
+  width: calc(100% - 160px);
+  color: #fff;
+  font-size: 14px;
+  vertical-align: top;
+}
+
+.click-robot-tooltip-title, .click-robot-tooltip-value, .click-robot-tooltip-description, .click-robot-tooltip-info {
+  display: block;
+  vertical-align: top;
+}
+
+.click-robot-tooltip-title {
+  font-size: 14px;
+}
+
+.click-robot-tooltip-value {
+  font-size: 12px;
+  color: #ff8800;
+}
+
+.click-robot-tooltip-description {
+  font-size: 10px;
+  margin-bottom: 20px;
+}
+
+.click-robot-tooltip-info {
+  font-size: 10px;
+}
+
+.click-robot-tooltip-info span {
+  color: #ff8800;
 }
 
 .main-clicker {
-  background: url("../images/pixel-city-night.png");
-  background-size: cover;
   height: 100vh;
   width: 100%;
   position: relative;
+  background: #333;
 }
 
 .stock-number-container {
@@ -339,175 +517,6 @@ header {
   vertical-align: top;
 }
 
-.click-robot-container {
-  background: white;
-  width: 74%;
-  box-sizing: border-box;
-}
-
-.click-robot-container::after {
-  display: block;
-  content: "COMPRAR";
-  font-size: 10px;
-  width: 94px;
-  height: 42px;
-  line-height: 42px;
-  box-shadow: 2px 2px 0 0 #d1e8fc;
-  border: solid 2px #3684c6;
-  position: absolute;
-  right: 10px;
-  top: 7px;
-  cursor: pointer;
-  color: #3684c6;
-  text-align: center;
-}
-
-.click-robot-container::after:hover {
-  background: black;
-  color: white;
-}
-
-.click-robot {
-  cursor: pointer;
-  position: relative;
-  padding: 0;
-  display: inline-block;
-}
-
-.row-robot {
-  margin-top: 8px;
-  margin-bottom: 8px;
-  margin-left: 15px;
-  margin-right: 15px;
-  background: #fff;
-  position: relative;
-  height: 58px;
-}
-
-.click-robot:hover .click-robot-tooltip {
-  display: block;
-}
-
-.click-robot-img {
-  display: none;
-  vertical-align: middle;
-  padding: 0;
-}
-
-.click-robot-img img {
-  width: 56px;
-  height: 59px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-
-.workers-and-improvements-container {
-  max-width: 1400px;
-  margin: auto;
-}
-
-.click-robot-text {
-  display: inline-block;
-  vertical-align: middle;
-  padding: 0;
-  width: 190px;
-  color: #ff8800;
-  line-height: 17px;
-}
-
-.click-robot-name {
-  font-size: 10px;
-}
-
-.click-robot-value {
-  display: block;
-  font-size: 10px;
-}
-
-.click-robot-bought {
-  display: none;
-  font-size: 10px;
-  color: #385f74;
-}
-
-.click-robot-tooltip {
-  position: absolute;
-  display: none;
-  z-index: 3;
-  background: #385f74;
-  min-height: 120px;
-  padding: 10px;
-  width: 400px;
-  left: -300px;
-  top: -100%;
-}
-
-.click-robot-tooltip:before {
-  content: "";
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 7.5px 0 7.5px 10px;
-  border-color: transparent transparent transparent #385f74;
-  position: absolute;
-  top: calc(45% - 7px);
-  right: -10px;
-}
-
-.click-robot-tooltip-img {
-  display: inline-block;
-  width: 120px;
-  margin-right: 10px;
-}
-
-.click-robot-tooltip-text {
-  display: inline-block;
-  width: calc(100% - 160px);
-  color: #fff;
-  font-size: 14px;
-  vertical-align: top;
-}
-
-.click-robot-tooltip-title, .click-robot-tooltip-value, .click-robot-tooltip-description, .click-robot-tooltip-info {
-  display: block;
-  vertical-align: top;
-}
-
-.click-robot-tooltip-title {
-  font-size: 14px;
-}
-
-.click-robot-tooltip-value {
-  font-size: 12px;
-  color: #ff8800;
-}
-
-.click-robot-tooltip-description {
-  font-size: 10px;
-  margin-bottom: 20px;
-}
-
-.click-robot-tooltip-info {
-  font-size: 10px;
-}
-
-.click-robot-tooltip-info span {
-  color: #ff8800;
-}
-
-.footer {
-  padding: 10px;
-  background: #fff;
-  font-size: 16px;
-  width: 100%;
-  text-align: center;
-  color: #607d8a;
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
-  display: block;
-}
-
 .click-popup {
   position: absolute;
   width: 300px;
@@ -582,6 +591,7 @@ header {
   color: black;
   font-size: 10px;
   margin-top: 10px;
+  display: none;
 }
 
 .flow-image-container img {

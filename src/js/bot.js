@@ -23,7 +23,7 @@ var Bot = (function() {
 
     function getContent(name) {
         var randomPosition = getRandomPosition();
-        return '<div class="bot-sprite ' + name + '" style="top:' + randomPosition.y + '%;left:' + randomPosition.x + '%;"> \
+        return '<div class="bot-sprite ' + name + '" style="background-image: url(' + name + ');top:' + randomPosition.y + '%;left:' + randomPosition.x + '%;"> \
                         \
                 </div>\
         ';

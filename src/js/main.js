@@ -95,10 +95,10 @@ function updateContentInfo () {
         $('#' + info.type + ' .click-robot-tooltip-plural').text(info.pluralName);
         $('#' + info.type + '_upgrade .click-upgrade-tooltip-title').text(info.upgTitle);
         $('#' + info.type).attr('target', info.container)
-        $('#' + info.type).attr('name', info.type)
+        $('#' + info.type).attr('image', info.imgPath)
 
         $('#' + info.type).on("click",function() {
-            Bot.add($(this).attr('target'), $(this).attr('name'));
+            Bot.add($(this).attr('target'), $(this).attr('image'));
             hireClick(info.type);
         });
         
@@ -192,11 +192,6 @@ var news = [
 ];
 
 
-
-window.setInterval(function(){
-    var item = news[Math.floor(Math.random()*news.length)];
-    document.getElementById('news').innerHTML = item;
-}, 15000);
 
 $(document).ready( () => {
     
