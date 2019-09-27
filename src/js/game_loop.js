@@ -3,6 +3,7 @@ class GameLoop {
     constructor(){
         this.paused = false;
         this.viewIntegrator = new ViewIntegrator();
+        this.sound = new ClickerSound();
 
         this.context = {
             ticksPerSecond: 2,
