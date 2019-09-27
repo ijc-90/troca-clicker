@@ -1,0 +1,33 @@
+.stats-display{
+    height: $statsHeight;
+    .stats-section{
+        width: 50%;
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        font-size: 13px;
+        text-transform: uppercase;
+    }
+    
+    .st-bal{
+        background:#fb20cd;
+    }
+    
+    .st-costos{
+        background:#00f8ff;
+    }
+
+    .money-container{
+        padding-top: 5px;
+        padding-bottom: 5;
+        display: inline-block;
+        
+    }
+    
+    .main-balance {
+        font-size: 35px;
+        color: #ff8800;
+        font-weight: bold;
+    }
+    
+}
