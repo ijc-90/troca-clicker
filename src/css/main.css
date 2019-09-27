@@ -21,6 +21,18 @@ html, body {
   content: " ";
 }
 
+* {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  /*
+    Introduced in IE 10.
+    See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+  */
+  -ms-user-select: none;
+  user-select: none;
+}
+
 header {
   height: 70px;
   background: black;
@@ -148,21 +160,31 @@ header h1 {
   bottom: -60px;
 }
 
+.modal-chapter-loose {
+  position: absolute;
+  right: 150px;
+  bottom: 33px;
+}
+
 .bot-sprite {
   width: 50px;
   height: 50px;
   position: absolute;
-  background-size: cover;
-  border: 3px solid black;
+  background-size: contain;
+  border: 3px solid #666;
+  background-color: white;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 10px;
+  animation: blinker 1s linear infinite;
 }
 
-.bot-image {
-  width: 40px;
-  height: 40px;
-  background-size: cover;
-  display: inline-block;
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }
-
 .click-container {
   height: calc(100vh - (70px + 70px) );
 }
