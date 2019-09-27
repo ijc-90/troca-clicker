@@ -21,6 +21,12 @@ class Modal {
         TweenMax.set($container, { scale: 1.25 });
         this.$el.show();
         TweenMax.to($container, 0.5, { scale: 1, ease:Expo.easeOut })
+        /* var text = $('.modal-text').text()
+        var typed = new Typed('.modal-text', {
+            strings: [text],
+            typeSpeed: 10000
+          });
+           */
     }
 
     close() {

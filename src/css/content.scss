@@ -1,3 +1,6 @@
+$borderWidth: 8px;
+$borderColor: #fff;
+
 .click-container{
     height: $contentHeight;
     .click-row{
@@ -5,12 +8,23 @@
         height: calc(100% / 3); 
         flex-direction: row;
         display: flex;
-        
+        border-bottom: solid $borderColor $borderWidth;
+
+        &:first-child{
+            border-top: solid $borderColor $borderWidth;
+        }
+        &.buy {
+            background: url('../images/background-repair.svg') center center;
+            background-size: cover;
+        }
         &.repair {
             background: url('../images/background-repair.svg') center center;
             background-size: cover;
         }
-       
+        &.sell {
+            background: url('../images/background-repair.svg') center center;
+            background-size: cover;
+        }
     }
 
     .left-col, .center-col, .right-col {
@@ -19,6 +33,7 @@
 
     .left-col {
         width: $contentColLeftWidth;
+        border-right: solid $borderColor $borderWidth;
     }
 
     .center-col {
@@ -27,7 +42,8 @@
     }
 
     .right-col {
-        width: $contentColRightWidth
+        width: $contentColRightWidth;
+        border-left: solid $borderColor $borderWidth;
     }
 
 }
