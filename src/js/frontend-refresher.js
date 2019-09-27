@@ -270,7 +270,7 @@ function notifyPaidSalaries(json) {
 
 function updateFrontend(json) {
     updateNumbers(json);
-    updateVisibilityOfUpgrades(json);
+    //updateVisibilityOfUpgrades(json);
     notifyIfLost(json);
     notifyPaidSalaries(json);
     updateVisibilityOfRobots(json);

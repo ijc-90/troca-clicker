@@ -147,6 +147,7 @@ header {
 }
 .click-container .center-col {
   width: 50%;
+  position: relative;
 }
 .click-container .right-col {
   width: 25%;
@@ -581,6 +582,7 @@ header {
   color: black;
   font-size: 10px;
   margin-top: 10px;
+  display: none;
 }
 
 .flow-image-container img {

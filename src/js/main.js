@@ -193,11 +193,6 @@ var news = [
 
 
 
-window.setInterval(function(){
-    var item = news[Math.floor(Math.random()*news.length)];
-    document.getElementById('news').innerHTML = item;
-}, 15000);
-
 $(document).ready( () => {
     
     modal.show('Bienvenido a troca clickers', 'Para arrancar te dejamos $100, comprá 10 celulares ', gameLoop, () =>{
