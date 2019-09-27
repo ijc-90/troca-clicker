@@ -217,6 +217,11 @@ header h1 {
   animation: blinker 1s linear infinite;
 }
 
+.bot-image {
+  background-size: cover;
+  background-position: center;
+}
+
 @keyframes blinker {
   50% {
     opacity: 0;

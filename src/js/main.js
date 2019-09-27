@@ -56,7 +56,7 @@ var contentInfo = [
     {
         type: "seller_one",
         name: "Tienda",
-        imgPath: "images/shop.svg",
+        imgPath: "images/icons/vender-blackfriday.svg",
         upgImgPath: "images/Venta_responsive.png",
         pluralName: "E-Commerces",
         upgTitle: "Responsiveness",
@@ -65,7 +65,7 @@ var contentInfo = [
     {
         type: "seller_two",
         name: "e-commerce",
-        imgPath: "images/ecommerce.svg",
+        imgPath: "images/icons/vender-ecommerce.svg",
         upgImgPath: "images/Venta__24h.png",
         pluralName: "Tiendas físicas",
         upgTitle: "Abrir las 24 horas",
@@ -74,7 +74,7 @@ var contentInfo = [
     {
         type: "seller_three",
         name: "Black Friday",
-        imgPath: "images/tag.svg",
+        imgPath: "images/icons/vender-tienda.svg",
         upgImgPath: "images/Venta__cuotas.png",
         pluralName: "Integración con Marketplaces",
         upgTitle: "Ofrecer cuotas",
