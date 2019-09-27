@@ -1,6 +1,6 @@
 var Bot = (function() {
 
-    var containers = {}, margin = 10;
+    var containers = {}, margin = 30;
 
     function addBotSprite(containerClass, name) {
         var $container;
@@ -23,7 +23,7 @@ var Bot = (function() {
 
     function getContent(name) {
         var randomPosition = getRandomPosition();
-        return '<div class="bot-sprite ' + name + '" style="top:' + randomPosition.y + '%;left:' + randomPosition.x + '%;"> \
+        return '<div class="bot-sprite ' + name + '" style="background-image: url(' + name + ');top:' + randomPosition.y + '%;left:' + randomPosition.x + '%;"> \
                         \
                 </div>\
         ';
