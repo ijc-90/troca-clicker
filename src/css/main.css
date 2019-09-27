@@ -98,17 +98,13 @@ header {
   margin-right: auto;
   text-align: left;
   font-family: "Courier New", Courier, monospace;
-  font-size: 22px;
 }
 
 #modal .modal-container .modal-title {
   margin-top: 50px;
   margin-bottom: 20px;
   font-weight: bold;
-  text-align: left;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+  color: black;
 }
 
 #modal .modal-container .modal-button {
@@ -117,6 +113,9 @@ header {
   display: inline-block;
   color: white;
   width: 140px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
   line-height: 50px;
   font-size: 14px;
   height: 50px;
@@ -131,10 +130,11 @@ header {
 }
 
 .bot-sprite {
-  background: red;
-  width: 20px;
-  height: 20px;
+  width: 50px;
+  height: 50px;
   position: absolute;
+  background-size: cover;
+  border: 3px solid black;
 }
 
 .click-container {
