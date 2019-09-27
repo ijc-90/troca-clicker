@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
     <head>
         <meta charset="UTF-8">
         <title>Troca Clicker</title>
@@ -58,19 +57,19 @@
         </script>
 
     </head>
-    <body >
+    <body>
         <main class="main-clicker">
             <header>
                     <h1 class="logo">TROCA<span>CLICKER</span></dh1iv>
             </header>
             <div class="click-container">   
-                
                 <div class="click-row js-buy-flow-container">
                     <div class="left-col">
                         <div class="click-phone" id="js-buy-clicker">
                             <a onClick="buyClickerClick()">
                                 <img src="images/flow-images-01.png">
-                                <span>Comprar $  </span><span class="dinamic-number inline-dinamic-number js-phone-buy-price"></span></span>
+                                <span>Comprar $  </span>
+                                <span class="dinamic-number inline-dinamic-number js-phone-buy-price"></span>
                             </a>
                         </div>
                     </div>
@@ -254,8 +253,6 @@
                             </div>
                     </div>
                 </div>     
-            
-        
                 <div class="click-row js-repair-flow-container">
                     <div class='left-col'>
                         <div class="click-phone" id="js-repair-clicker">
@@ -426,8 +423,6 @@
                         </div>
                     </div>
                 </div>
-            
-        
                 <div class="click-row js-sale-flow-container">
                     <div class='left-col'>
                         <div class="click-phone" id="js-sell-clicker">
@@ -610,42 +605,39 @@
                         
                     </div>
                 </div>
-                
             </div>
-
             <div class="stats-display">
-                    <div class="st-bal stats-balance-dashboard stats-section">
-                        <div class="money-container">
-                            <label>Balance</label>
-                            <span class="main-balance"><span>$</span><span class="dinamic-number js-money">0</span></span>
-                        </div>
-                    </div><div class="st-costos stats-balance-dashboard stats-section ">
-                        <div class="money-container">
-                            <label>Costos Fijos</label>
-                            <div class="big-number"><span>$</span><span
-                                    class="dinamic-number js-salaries-amount">0</span><span class="aclaration"> (a pagar
-                                    en <span class="dinamic-number js-salaries-time-for-payment">0</span>
-                                    segundos)</span></div>
-                        </div>
+                <div class="st-bal stats-balance-dashboard stats-section">
+                    <div class="money-container">
+                        <label>Balance</label>
+                        <span>$</span>
+                        <span class="dinamic-number js-money">0</span>
                     </div>
-
                 </div>
-
-
-                <a class="click-popup" style="display: none">
-
-                    <div class="click-img">
-                        <img src="images/sueldo.jpg">
+                <div class="st-costos stats-balance-dashboard stats-section ">
+                    <div class="money-container">
+                        <label>Costos Fijos</label>
+                        <div>
+                            <span>$</span>
+                            <span class="dinamic-number js-salaries-amount">0</span>
+                            <span class="aclaration"> (a pagar
+                                en <span class="dinamic-number js-salaries-time-for-payment">0</span>
+                                segundos)</span>
+                        </div>
                     </div>
-                    <div class="click-info">
-                        <span class="click-challenge">¡Hay que pagar los sueldos!</span>
-                        <span class="click-succes" style="display: none">¡Gracias por pensar en tu equipo! </span>
-                        <span class="click-error" style="display: none">¡Pagaste tarde y reunció un miembro de tu staff!</span>
-                        <div class="click-segundos"><span id="remainging-time">5</span> segundos</div>
-                    </div>
-                </a>
+                </div>
             </div>
-
+            <a class="click-popup" style="display: none">
+                <div class="click-img">
+                    <img src="images/sueldo.jpg">
+                </div>
+                <div class="click-info">
+                    <span class="click-challenge">¡Hay que pagar los sueldos!</span>
+                    <span class="click-succes" style="display: none">¡Gracias por pensar en tu equipo! </span>
+                    <span class="click-error" style="display: none">¡Pagaste tarde y reunció un miembro de tu staff!</span>
+                    <div class="click-segundos"><span id="remainging-time">5</span> segundos</div>
+                </div>
+            </a>
             <div class="lds-ripple">
                 <div>
 

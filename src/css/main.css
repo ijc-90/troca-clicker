@@ -22,7 +22,7 @@ html, body {
 }
 
 header {
-  height: 60px;
+  height: 40px;
   background: red;
 }
 
@@ -32,11 +32,12 @@ header {
 }
 
 .stats-display {
-  height: 90px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
 }
 .stats-display .stats-section {
   width: 50%;
-  display: inline-block;
   height: 100%;
   vertical-align: middle;
   font-size: 13px;
@@ -51,10 +52,9 @@ header {
 .stats-display .money-container {
   padding-top: 5px;
   padding-bottom: 5;
-  display: inline-block;
 }
 .stats-display .main-balance {
-  font-size: 35px;
+  font-size: 25px;
   color: #ff8800;
   font-weight: bold;
 }
@@ -120,25 +120,25 @@ header {
 }
 
 .click-container {
-  height: calc(100vh - (60px + 90px) );
+  height: calc(100vh - (40px + 60px) );
 }
 .click-container .click-row {
   width: 100%;
   height: calc(100% / 3);
   display: flex;
   flex-direction: row;
+  background: rgba(234, 0, 0, 0.6);
 }
 .click-container .left-col, .click-container .center-col, .click-container .right-col {
-  background: rgba(0, 0, 0, 0.2);
   vertical-align: top;
 }
 .click-container .left-col {
   width: 25%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 189, 0.7);
 }
 .click-container .center-col {
   width: 50%;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(233, 200, 14, 0.7);
 }
 .click-container .right-col {
   width: 25%;
@@ -589,15 +589,6 @@ header {
 .click-phone .inline-dinamic-number {
   color: white;
   font-size: 25px;
-}
-
-.balance-number {
-  font-size: 18px;
-}
-
-.big-number {
-  font-size: 25px;
-  color: #404040;
 }
 
 .negative-number {
