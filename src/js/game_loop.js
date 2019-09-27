@@ -9,7 +9,7 @@ class GameLoop {
             ticksPerSecond: 2,
             money : 500,
             cellphoneBuyPrice : 10,
-            cellphoneRepairPrice : 0,
+            cellphoneRepairPrice : 2,
             cellphoneSalePrice : 15,
             geometricCostScale : 1.3,
             robots : {

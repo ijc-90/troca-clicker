@@ -178,6 +178,14 @@
             -moz-box-shadow: 5px 5px 0px -2px rgba(202,116,28,1);
             box-shadow: 5x 5px 0px -2px rgba(202,116,28,1);
         }
+        .circle:hover{
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            position: relative;
+            top: 5px;
+            left: 5px;
+        }
 
     }
     .click-counter{

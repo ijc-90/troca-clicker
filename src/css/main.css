@@ -219,6 +219,9 @@ header h1 {
   width: 38px;
   height: 38px;
   background-color: #eaf3fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .click-robot-container .click-icon .bot-image {
   width: 25px;
@@ -246,7 +249,8 @@ header h1 {
   cursor: pointer;
   position: relative;
   padding: 0;
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
 }
 
 .click-robot:hover .click-robot-tooltip {
@@ -264,14 +268,6 @@ header h1 {
   height: 59px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-}
-
-.click-robot-text {
-  display: inline-block;
-  padding: 0;
-  width: 190px;
-  color: #ff8800;
-  line-height: 17px;
 }
 
 .click-robot-name {
@@ -381,6 +377,14 @@ header h1 {
   -webkit-box-shadow: 5px 5px 0px -2px #ca741c;
   -moz-box-shadow: 5px 5px 0px -2px #ca741c;
   box-shadow: 5x 5px 0px -2px #ca741c;
+}
+.click-phone a .circle:hover {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  position: relative;
+  top: 5px;
+  left: 5px;
 }
 .click-phone .click-counter {
   display: inline-block;
