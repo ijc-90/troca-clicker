@@ -1,16 +1,13 @@
 header {
-    height: $headerHeight;
+	height: $headerHeight;
+	background: red;
 }
 
 
 
 .logo{
+	
 	text-align: center;
-	background: #1eebb8;
-	text-align: center;
-	height: 70px;
+	margin: 0;
 }
 
-.logo span {
-	color: #3684c6;
-}

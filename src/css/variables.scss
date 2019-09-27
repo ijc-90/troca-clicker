@@ -11,3 +11,6 @@ $headerHeight: 60px;
 $statsHeight: 90px;
 $contentHeight: calc(100vh - (#{$headerHeight} + #{$statsHeight}) );
 
+$contentColLeftWidth: 25%;
+$contentColCentertWidth: 50%;
+$contentColRightWidth: 25%;

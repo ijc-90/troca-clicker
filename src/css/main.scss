@@ -1,9 +1,9 @@
 @import "variables";
 @import "base";
-@import "content";
 @import "header";
 @import "stats";
 @import "modal";
+@import "content";
 
 .main-clicker{
     background: url("../images/pixel-city-night.png");
@@ -41,9 +41,7 @@
 	width: 100%;
 	display: none;
 }
-.store-container {
-	position: relative;
-}
+
 .click-message-news{
 	max-width: calc(100% - 130px);
 }
@@ -62,18 +60,7 @@
 	vertical-align: middle;
 	display: inline-block;
 }
-.click-sell, .click-buy{
- 	text-align: center;
- 	width: 100%;
-min-height: calc(100vh - 200px);
-	display: -ms-flex;
-	display: -webkit-flex;
-	display: flex;
-}
 
-.click-buy{
-	border-right: 1px solid #fff;
-}
 
 .click-title{
 	width: 100%;
@@ -88,30 +75,6 @@ min-height: calc(100vh - 200px);
 
 
 
-
-/*DISPLAY*/
-.click-display{
-	background: #808184;
-	background: url('../images/white_carbonfiber.png');
-	padding-top: 10px;
-}
-.click-stock{
-	width: 100%;
-	padding: 10px 10px 10px 25px;
-	color: #fff;
-	font-size: 32px;
-
-}
-.click-stock span{
-	vertical-align: middle;	
-}
-.click-money{
-	width: 100%;
-	padding: 10px 25px 10px 10px;
-	color: #fff;
-	font-size: 32px;
-
-}
 .click-production{
 	width: 100%;
 	padding: 10px 25px 10px 10px;
@@ -143,34 +106,6 @@ transform: scale(1.05);
 }
 .click-phone a img{
 	width: 35px;
-}
-/*STORE*/
-.click-store{
-
-	width: 100%;
-}
-
-.first-col {
-	width: 22%;
-	display: inline-block;
-	background: red;
-}
-
-.second-col {
-	width: 50%;
-	display: inline-block;
-	background: yellow;
-}
-
-.third-col {
-	width: 28%;
-	display: inline-block;
-	background:#6c8edb;
-}
-
-.first-col, .second-col, .third-col {
-	height: 25vh;
-	vertical-align: top;
 }
 
 .click-store-title{
