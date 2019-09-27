@@ -1,0 +1,150 @@
+
+
+
+
+
+.click-robot-container::after{
+	display: block;
+	content: 'COMPRAR';
+	font-size: 10px;
+	width: 94px;
+	height: 42px;
+	line-height: 42px;
+	box-shadow: 2px 2px 0 0 #d1e8fc;
+	border: solid 2px #3684c6;
+	position: absolute;
+	right: 10px;
+	top: 7px;
+	cursor: pointer;
+	color: #3684c6;
+	text-align: center;
+}
+.click-robot-container::after:hover{
+	background: black;
+	color: white;
+}
+
+.click-robot-container{
+	background: white;
+	width: 74%;
+	box-sizing: border-box;
+
+}
+
+.click-robot{
+	cursor: pointer;
+	position: relative;
+	padding: 0;
+	display: inline-block;
+}
+.row-robot{
+	margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: 15px;
+    margin-right: 15px;
+	background: #fff;
+	position: relative;
+	height: 58px;
+}
+
+.click-robot:hover .click-robot-tooltip{
+	display: block;
+}
+
+.click-robot-img{
+	display: none;
+	vertical-align: middle;
+	padding: 0;
+}
+.click-robot-img img{
+    width: 56px;
+    height: 59px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+
+.click-robot-text{
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0;
+	width: 190px;
+	color: #ff8800;
+	line-height: 17px;
+}
+
+.click-robot-name{
+	font-size: 10px;
+	
+}
+.click-robot-value{
+	display: block;
+	font-size: 10px;
+	
+}
+.click-robot-bought{
+	display: none;
+	font-size: 10px;
+	color: #385f74;
+}
+
+.click-robot-tooltip{
+	position: absolute;
+	display: none;
+	z-index: 3;
+	background: #385f74;
+	min-height: 120px;
+	padding:10px;
+	width: 400px;
+	left: -400px;
+	top: -100%;
+
+}
+.click-robot-tooltip:before{
+	content: '';
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 7.5px 0 7.5px 10px;
+	border-color: transparent transparent transparent #385f74;
+	position: absolute;
+	top: calc(45% - 7px);
+	right: -10px;
+}
+.click-robot-tooltip-img{
+	display: inline-block;
+	width: 120px;
+	margin-right: 10px;
+}
+.click-robot-tooltip-text{
+	display: inline-block;
+	width: calc(100% - 160px);
+	color: #fff;
+	font-size: 14px;
+	vertical-align: top;
+}
+.click-robot-tooltip-title, .click-robot-tooltip-value, .click-robot-tooltip-description, .click-robot-tooltip-info{
+	display: block;
+	vertical-align: top;
+}
+
+.click-robot-tooltip-title{
+	font-size: 14px;
+}
+
+.click-robot-tooltip-value{
+	font-size: 12px;
+	color: #ff8800;
+
+}
+.click-robot-tooltip-description{
+	font-size: 10px;
+		margin-bottom: 20px;
+}
+.click-robot-tooltip-info{
+	font-size: 10px;
+
+}
+.click-robot-tooltip-info span{
+	color: #ff8800;
+}
