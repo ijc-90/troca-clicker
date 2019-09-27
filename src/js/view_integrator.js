@@ -54,7 +54,7 @@ class ViewIntegrator {
           "js-amount-phones-awaiting-sale": newContext.toSaleBacklog, //stock de venta
           "js-amount-sell-price": newContext.cellphoneSalePrice,
           "js-phone-sale-capability": saleRobotsProductivity * newContext.ticksPerSecond,
-          
+          "js-phones-to-sale": newContext.stockToSale,
           "js-buyer-one-price": newContext.robots["buyer_one"].baseCost, //precio de contrataor robot
           "js-buyer-one-bought": newContext.robots["buyer_one"].quantity, // cuantos robots tengo
           "js-buyer-one-upg-price": newContext.upgrades["upgrade_buyer_one"].price, //precio de upgrade

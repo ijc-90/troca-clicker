@@ -1,9 +1,7 @@
-
-
 var contentInfo = [
     {
-        type: "buyer_one", 
-        name: "Quiosco", 
+        type: "buyer_one",
+        name: "Quiosco",
         imgPath: "images/quioske.svg",
         upgImgPath: "images/Compra__Responsive.png",
         pluralName: "Quioscos",
@@ -11,8 +9,8 @@ var contentInfo = [
         container: ".bot-buy-container"
     },
     {
-        type: "buyer_two", 
-        name: "Comprador en bici", 
+        type: "buyer_two",
+        name: "Comprador en bici",
         imgPath: "images/bike.svg",
         upgImgPath: "images/Compra__Comprador_en_moto.png",
         pluralName: "Comprador en bici",
@@ -20,8 +18,8 @@ var contentInfo = [
         container: ".bot-buy-container"
     },
     {
-        type: "buyer_three", 
-        name: "Dron", 
+        type: "buyer_three",
+        name: "Dron",
         imgPath: "images/drone.svg",
         upgImgPath: "images/Compra__Plan_canje.png",
         pluralName: "Tienda física de compra",
@@ -29,8 +27,8 @@ var contentInfo = [
         container: ".bot-buy-container"
     },
     {
-        type: "repairer_one", 
-        name: "Reparador", 
+        type: "repairer_one",
+        name: "Reparador",
         imgPath: "images/worker.svg",
         upgImgPath: "images/Reparar__Kit_de_herramientas.png",
         pluralName: "Reparadores",
@@ -38,8 +36,8 @@ var contentInfo = [
         container: ".bot-repair-container"
     },
     {
-        type: "repairer_two", 
-        name: "Robot", 
+        type: "repairer_two",
+        name: "Robot",
         imgPath: "images/robot.svg",
         upgImgPath: "images/Reparar__AI.png",
         pluralName: "Brazos robóticos",
@@ -47,8 +45,8 @@ var contentInfo = [
         container: ".bot-repair-container"
     },
     {
-        type: "repairer_three", 
-        name: "Planta automatizada", 
+        type: "repairer_three",
+        name: "Planta automatizada",
         imgPath: "images/factory.svg",
         upgImgPath: "images/Reparar__Paneles_solares.png",
         pluralName: "Plantas automatizadas",
@@ -56,8 +54,8 @@ var contentInfo = [
         container: ".bot-repair-container"
     },
     {
-        type: "seller_one", 
-        name: "Tienda", 
+        type: "seller_one",
+        name: "Tienda",
         imgPath: "images/shop.svg",
         upgImgPath: "images/Venta_responsive.png",
         pluralName: "E-Commerces",
@@ -65,8 +63,8 @@ var contentInfo = [
         container: ".bot-sell-container"
     },
     {
-        type: "seller_two", 
-        name: "e-commerce", 
+        type: "seller_two",
+        name: "e-commerce",
         imgPath: "images/ecommerce.svg",
         upgImgPath: "images/Venta__24h.png",
         pluralName: "Tiendas físicas",
@@ -74,8 +72,8 @@ var contentInfo = [
         container: ".bot-sell-container"
     },
     {
-        type: "seller_three", 
-        name: "Black Friday", 
+        type: "seller_three",
+        name: "Black Friday",
         imgPath: "images/tag.svg",
         upgImgPath: "images/Venta__cuotas.png",
         pluralName: "Integración con Marketplaces",
@@ -84,8 +82,8 @@ var contentInfo = [
     },
 ];
 
-function updateContentInfo () {    
-    contentInfo.forEach(function(info){
+function updateContentInfo() {
+    contentInfo.forEach(function (info) {
         $('#' + info.type + ' .click-robot-name').text(info.name);
         $('#' + info.type + ' .click-robot-img img').attr("src", info.imgPath);
         $('#' + info.type + ' .click-robot-tooltip-img img').attr("src", info.imgPath);
@@ -96,13 +94,13 @@ function updateContentInfo () {
         $('#' + info.type + '_upgrade .click-upgrade-tooltip-title').text(info.upgTitle);
         $('#' + info.type).attr('target', info.container)
         $('#' + info.type).attr('image', info.imgPath)
-        $('#' + info.type).prepend('<div class="bot-image" style="background-image: url(' + info.imgPath + ')"></div>')
-        $('#' + info.type).on("click",function() {
+        $('#' + info.type).prepend('<div class="click-icon"><div class="bot-image" style="background-image: url(' + info.imgPath + ')"></div></div>')
+        $('#' + info.type).on("click", function () {
             Bot.add($(this).attr('target'), $(this).attr('image'));
             hireClick(info.type);
         });
-        
-        $('#' + info.type + '_upgrade').on("click",function(){
+
+        $('#' + info.type + '_upgrade').on("click", function () {
             upgradeClick(info.type);
         });
     });
@@ -121,17 +119,16 @@ console.log("Sugerencias, issues y PRs a https://github.com/ijc-90/troca-clicker
 
 
 window.setInterval(function () {
-    
+
     // Esto es bien villero .... pero yafu
     if (gameLoop.context.shouldPlayGameOverSound) {
-        console.log('Deberia tirar game over');
         gameLoop.clickerSound.gameOver();
         gameLoop.context.shouldPlayGameOverSound = false;
     }
     updateFrontend(gameLoop.tick(2), gameLoop);
 }, 500);
 
-function sellClickerClick(){
+function sellClickerClick() {
     if ($(this).hasClass("disabled")) {
         gameLoop.clickerSound.playError();
         return;
@@ -141,7 +138,7 @@ function sellClickerClick(){
     gameLoop.saleClick();
 }
 
-function buyClickerClick(){
+function buyClickerClick() {
     if ($(this).hasClass("disabled")) {
         gameLoop.clickerSound.playError();
         return;
@@ -151,7 +148,7 @@ function buyClickerClick(){
     gameLoop.buyClick();
 }
 
-function repairClickerClick(){
+function repairClickerClick() {
     if ($(this).hasClass("disabled")) {
         gameLoop.clickerSound.playError();
         return;
@@ -161,17 +158,17 @@ function repairClickerClick(){
     gameLoop.repairClick();
 }
 
-function hireClick(name){
+function hireClick(name) {
     gameLoop.clickerSound.playClick();
     gameLoop.hiringClick(name);
 }
 
-function upgradeClick(name){
+function upgradeClick(name) {
     gameLoop.clickerSound.playClick();
     gameLoop.upgradeClick("upgrade_" + name);
 }
 
-$(document).ready(function(){
+$(document).ready(function () {
     updateContentInfo();
 });
 
@@ -212,7 +209,7 @@ var news = [
 
 $(document).ready(() => {
 
-    modal.show('Bienvenido a troca clickers', 'Para arrancar te dejamos $100, comprá 10 celulares ', gameLoop, () => {
+    modal.show('Bienvenido a troca clickers', 'Para arrancar te dejamos $' + gameLoop.context.money + ', comprá ' + (gameLoop.context.money / gameLoop.context.cellphoneBuyPrice) + ' celulares ', gameLoop, () => {
         //TweenMax.set(".click-message", { y: 200 })
         //$(".click-message").show();
         //TweenMax.to($(".click-container"), 1, { scale: 1, opacity: 1, ease:Expo.easeOut });

@@ -244,7 +244,9 @@ function showOrHideFlows(json) {
 
 function notifyIfLost(json, gameLoop) {
     if (json["js-you-lose"] && (gameLoop !== null && gameLoop !== undefined)) {
-        modal.show('PERDISTE!', 'Mejor suerte la proxima!', gameLoop, () => {});
+        modal.show('Perdiste', 'Ups lo volviste a hacer, la próxima será.', gameLoop, () => {
+            document.location.reload();
+        });
     }
 }
 

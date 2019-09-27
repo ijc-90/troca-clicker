@@ -15,16 +15,17 @@ $borderColor: #fff;
         }
         &.buy {
             background: url('../images/background-buy.svg') center center;
-            background-size: cover;
+            background-size: contain;
         }
         &.repair {
             background: url('../images/background-repair.svg') center center;
-            background-size: cover;
+            background-size: contain;
         }
         &.sell {
-            background: url('../images/background-repair.svg') center center;
-            background-size: cover;
+            background: url('../images/background-sell.svg') center center;
+            background-size: contain;
         }
+    
     }
 
     .left-col, .center-col, .right-col {
@@ -38,16 +39,19 @@ $borderColor: #fff;
         flex-direction: row;
         align-items:center;
         padding:10px;
+        background: rgba(255,255,255,0.5);
     }
 
     .center-col {
         width: $contentColCentertWidth;
         position: relative;
+      
     }
 
     .right-col {
         width: $contentColRightWidth;
         border-left: solid $borderColor $borderWidth;
+      
     }
 
 }
