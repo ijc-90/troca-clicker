@@ -11,6 +11,11 @@
     padding: 10px;
     animation: blinker 1s linear infinite;
 }
+
+.bot-image{
+    background-size: cover;
+    background-position: center;
+}
   
   @keyframes blinker {
     50% {
