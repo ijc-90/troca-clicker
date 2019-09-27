@@ -1,6 +1,13 @@
 header {
 	height: $headerHeight;
-	background: red;
+	background: black;
+		
+	h1 {
+		color: white;
+		font-weight: normal;
+		line-height: 70px;
+		padding-top:8px;
+	}
 }
 
 

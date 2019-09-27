@@ -7,6 +7,7 @@ var sampleJson = {
     "js-phone-buy-capability": 0,
     "js-phone-buy-price": 0,
     "js-repair-balance": 0,
+    "js-amount-phones-total": 0,
     "js-amount-phones-repaired": 0,
     "js-amount-phones-awaiting-repair": 0,
     "js-phone-repair-capability": 0,

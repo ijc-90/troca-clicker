@@ -1,8 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Arial", cursive;
-  font-family: "Press Start 2P", monospace;
+  font-family: "courier", cursive;
+  background: black;
 }
 
 html, body {
@@ -23,7 +23,13 @@ html, body {
 
 header {
   height: 70px;
-  background: red;
+  background: black;
+}
+header h1 {
+  color: white;
+  font-weight: normal;
+  line-height: 70px;
+  padding-top: 8px;
 }
 
 .logo {
@@ -35,6 +41,7 @@ header {
   height: 70px;
   display: flex;
   flex-direction: row;
+  text-align: center;
 }
 .stats-display .stats-section {
   width: 50%;
@@ -44,10 +51,10 @@ header {
   text-transform: uppercase;
 }
 .stats-display .st-bal {
-  background: #fb20cd;
+  background: #fefca9;
 }
 .stats-display .st-costos {
-  background: #00f8ff;
+  background: #a9d1e9;
 }
 .stats-display .money-container {
   padding-top: 5px;
@@ -138,6 +145,13 @@ header {
   border: 3px solid black;
 }
 
+.bot-image {
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  display: inline-block;
+}
+
 .click-container {
   height: calc(100vh - (70px + 70px) );
 }
@@ -152,7 +166,7 @@ header {
   border-top: solid #fff 8px;
 }
 .click-container .click-row.buy {
-  background: url("../images/background-repair.svg") center center;
+  background: url("../images/background-buy.svg") center center;
   background-size: cover;
 }
 .click-container .click-row.repair {
@@ -323,6 +337,41 @@ header {
   color: #ff8800;
 }
 
+.click-phone a {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+}
+.click-phone a .circle {
+  border-radius: 50%;
+  background: #f4af37;
+  border: solid 10px #fed953;
+  display: flex;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #fed953;
+}
+.click-phone .click-counter .numbers {
+  font-size: 21px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+}
+.click-phone .click-counter .legend {
+  font-size: 18px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: norma;
+}
+
 .main-clicker {
   height: 100vh;
   width: 100%;
@@ -398,27 +447,6 @@ header {
   font-size: 18px;
   vertical-align: middle;
   margin-right: 10px;
-}
-
-.click-phone {
-  padding: 20px;
-}
-
-.click-phone a:active {
-  transform: scale(1.05);
-}
-
-.click-phone a {
-  cursor: pointer;
-  display: block;
-  border-radius: 10px;
-  padding: 20px;
-  background-image: linear-gradient(to bottom right, orange, #ffcd70);
-  box-shadow: grey 2px 1px;
-}
-
-.click-phone a img {
-  width: 35px;
 }
 
 .click-store-title {

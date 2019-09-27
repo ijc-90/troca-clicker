@@ -2,6 +2,7 @@
     height: $statsHeight;
     display: flex;
     flex-direction: row;
+    text-align: center;
 
     .stats-section{
         width: 50%;
@@ -12,11 +13,11 @@
     }
     
     .st-bal{
-        background:#fb20cd;
+        background:#fefca9;
     }
     
     .st-costos{
-        background:#00f8ff;
+        background:#a9d1e9;
     }
 
     .money-container{

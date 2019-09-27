@@ -24,6 +24,7 @@ class BuyFlow extends Flow {
 
 	buy(context, quantityToBuy){
 		context.money -= quantityToBuy * context.cellphoneBuyPrice;
+		context.amountOfPhonesTotal += quantityToBuy;
 
 		var incommingStockToRepair = Math.round(quantityToBuy * context.probabilityOfDefectiveBuy);
 		var incommingStockToSale = quantityToBuy - incommingStockToRepair;

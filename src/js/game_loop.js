@@ -7,10 +7,10 @@ class GameLoop {
 
         this.context = {
             ticksPerSecond: 2,
-            money : 100,
+            money : 500,
             cellphoneBuyPrice : 10,
             cellphoneRepairPrice : 0,
-            cellphoneSalePrice : 12,
+            cellphoneSalePrice : 15,
             geometricCostScale : 1.3,
             robots : {
                 "buyer_one": { name: "buyer_one", type: "buy", baseCost: 50, quantity: 0, production: 1, salary: 7 },
@@ -46,7 +46,7 @@ class GameLoop {
             shouldPlayGameOverSound: false,
             gameWon: false,
             probabilityOfDefectiveBuy : 1,
-
+            amountOfPhonesTotal: 0,
             moneySpentOnBuyingPhonesThisCicle: 0,
             amountOfPhonesBoughtThisCicle: 0,
             moneySpentRepairingThisCicle: 0,
