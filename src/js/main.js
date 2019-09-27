@@ -103,7 +103,6 @@ function updateContentInfo () {
         });
         
         $('#' + info.type + '_upgrade').on("click",function(){
-            console.log('hola')
             upgradeClick(info.type);
         });
     });
@@ -200,14 +199,12 @@ window.setInterval(function(){
 }, 15000);
 
 $(document).ready( () => {
-    TweenMax.set($(".click-container"), { scale: 1.25 });
     
-    setTimeout(() => $(".lds-ripple").remove(), 1500);
     modal.show('Bienvenido a troca clickers', 'Para arrancar te dejamos $100, comprá 10 celulares ', gameLoop, () =>{
-        TweenMax.set(".click-message", { y: 200 })
-        $(".click-message").show();
-        TweenMax.to($(".click-container"), 1, { scale: 1, opacity: 1, ease:Expo.easeOut });
-        TweenMax.to(".click-message", 1, { y: 0 })
+        //TweenMax.set(".click-message", { y: 200 })
+        //$(".click-message").show();
+        //TweenMax.to($(".click-container"), 1, { scale: 1, opacity: 1, ease:Expo.easeOut });
+        //TweenMax.to(".click-message", 1, { y: 0 })
     });
     
 })

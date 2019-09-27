@@ -34,15 +34,15 @@ class TutorialFlow extends Flow {
     }
 
     hideBuyFlow(){
-        this.buyFlowIsHidden = true;
+        //this.buyFlowIsHidden = true;
     }
 
     hideSaleFlow(){
-        this.saleFlowIsHidden = true;
+        //this.saleFlowIsHidden = true;
     }
 
     hideRepairFlow(){
-        this.repairFlowIsHidden = true;
+        //this.repairFlowIsHidden = true;
     }
 
     shouldShowBuyFlow(context){
