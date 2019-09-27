@@ -33,6 +33,7 @@ class Modal {
         const $container = this.$el.find('.modal-container');
         TweenMax.to($container, 0.5, { opacity: 0, ease:Expo.easeIn, onComplete: () => {
             this.$el.hide();
+            this.gameloop.clickerSound.playClick();
             this.gameloop.resume();
             if (this.onClose) this.onClose()
         }});

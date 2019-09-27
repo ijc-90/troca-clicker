@@ -4,4 +4,4 @@ node_modules
 .idea/
 src/css/main.css
 src/css/main.css.map
-css
+css/

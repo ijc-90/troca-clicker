@@ -4,6 +4,7 @@ class ClickerSound {
 
     loopSound = null;
     clickSound = null;
+    gameOverSound = null;
 
     constructor() {
         this.loopSound = new Howl({
@@ -17,10 +18,32 @@ class ClickerSound {
             src: [this.SOUND_PATH + '/troca_clicker_click.wav'],
             volume: this.VOLUME
         });
+
+        this.gameOverSound = new Howl({
+            src: [this.SOUND_PATH + '/troca_clicker_game_over.wav'],
+            volume: this.VOLUME
+        });
+    }
+
+    gameOver() {
+        this.stopLoop();
+        this.playGameOver();
+    }
+
+    startGame() {
+        this.playLoop();
     }
 
     playLoop() {
         this.loopSound.play();
+    }
+
+    stopLoop() {
+        this.loopSound.stop();
+    }
+
+    playGameOver() {
+        this.gameOverSound.play();
     }
 
     playClick() {
