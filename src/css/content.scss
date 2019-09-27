@@ -4,13 +4,13 @@
         width: 100%;
         height: calc(100% / 3); 
         flex-direction: row;
-
+        display: flex;
+        
         &.repair {
             background: url('../images/background-repair.svg') center center;
             background-size: cover;
         }
-
-
+       
     }
 
     .left-col, .center-col, .right-col {
