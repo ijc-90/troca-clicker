@@ -120,12 +120,20 @@ console.log("Para modificar el juego tenés que hacer un trabajo de ingeniería 
 console.log("Sugerencias, issues y PRs a https://github.com/ijc-90/troca-clicker");
 
 
-window.setInterval(function(){
-   updateFrontend(gameLoop.tick(2));
+window.setInterval(function () {
+    
+    // Esto es bien villero .... pero yafu
+    if (gameLoop.context.shouldPlayGameOverSound) {
+        console.log('Deberia tirar game over');
+        gameLoop.clickerSound.gameOver();
+        gameLoop.context.shouldPlayGameOverSound = false;
+    }
+    updateFrontend(gameLoop.tick(2));
 }, 500);
 
 function sellClickerClick(){
     if ($(this).hasClass("disabled")) {
+        gameLoop.clickerSound.playError();
         return;
     }
 
@@ -135,6 +143,7 @@ function sellClickerClick(){
 
 function buyClickerClick(){
     if ($(this).hasClass("disabled")) {
+        gameLoop.clickerSound.playError();
         return;
     }
 
@@ -144,6 +153,7 @@ function buyClickerClick(){
 
 function repairClickerClick(){
     if ($(this).hasClass("disabled")) {
+        gameLoop.clickerSound.playError();
         return;
     }
 

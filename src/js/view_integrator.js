@@ -39,7 +39,8 @@ class ViewIntegrator {
           "js-total-balance": newContext.money - oldContext.money,
           "js-money": newContext.money,
           "js-buys-balance": newContext.moneySpentOnBuyingPhonesThisCicle, //null cuanta plata gasté en comprar (celulares comprados * precio de compra)
-          "js-amount-phones-bought": newContext.amountOfPhonesBoughtThisCicle, //cuantos telefonos compre
+          "js-amount-phones-bought": newContext.amountOfPhonesBoughtThisCicle,
+          "js-amount-phones-total":  newContext.amountOfPhonesTotal,
           "js-repair-chance": newContext.probabilityOfDefectiveBuy * 100, 
           "js-phone-buy-capability": buyRobotsProductivity * newContext.ticksPerSecond, // capacidad de todos los robots de compra
           "js-phone-buy-price": newContext.cellphoneBuyPrice,

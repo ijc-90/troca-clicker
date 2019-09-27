@@ -7,6 +7,7 @@ var sampleJson = {
     "js-phone-buy-capability": 0,
     "js-phone-buy-price": 0,
     "js-repair-balance": 0,
+    "js-amount-phones-total": 0,
     "js-amount-phones-repaired": 0,
     "js-amount-phones-awaiting-repair": 0,
     "js-phone-repair-capability": 0,
@@ -60,7 +61,8 @@ var sampleJson = {
     "js-seller-three-upg-price": 0,
     "js-seller-three-upg-multiplier": 0,
     "js-seller-three-total-capacity": 0,
-    "js-salaries-time-for-payment": 0
+    "js-salaries-time-for-payment": 0,
+    "js-you-lose": 0
 };
 
 var notifiersWhiteList = [
@@ -242,7 +244,7 @@ function showOrHideFlows(json) {
 
 function notifyIfLost(json) {
     if (json["js-you-lose"]) {
-        alert("PERDISTE!")
+        alert("PERDISTE!");
     }
 }
 
@@ -269,6 +271,10 @@ function notifyPaidSalaries(json) {
 }
 
 function updateFrontend(json) {
+    if (json === null || json === undefined) {
+        return;
+    }
+
     updateNumbers(json);
     //updateVisibilityOfUpgrades(json);
     notifyIfLost(json);
