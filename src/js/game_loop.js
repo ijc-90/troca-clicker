@@ -3,13 +3,14 @@ class GameLoop {
     constructor(){
         this.paused = false;
         this.viewIntegrator = new ViewIntegrator();
+        this.clickerSound = new ClickerSound();
 
         this.context = {
             ticksPerSecond: 2,
-            money : 100,
+            money: 150,
             cellphoneBuyPrice : 10,
-            cellphoneRepairPrice : 0,
-            cellphoneSalePrice : 12,
+            cellphoneRepairPrice : 2,
+            cellphoneSalePrice : 15,
             geometricCostScale : 1.3,
             robots : {
                 "buyer_one": { name: "buyer_one", type: "buy", baseCost: 50, quantity: 0, production: 1, salary: 7 },
@@ -42,9 +43,10 @@ class GameLoop {
             events: [],
             iterationsToPaySalary: 90,
             gameOver: false,
+            shouldPlayGameOverSound: false,
             gameWon: false,
             probabilityOfDefectiveBuy : 1,
-
+            amountOfPhonesTotal: 0,
             moneySpentOnBuyingPhonesThisCicle: 0,
             amountOfPhonesBoughtThisCicle: 0,
             moneySpentRepairingThisCicle: 0,
@@ -121,6 +123,7 @@ class GameLoop {
         if ($("#".robotName).hasClass("disabled")) {
             return;
         }
+
         floatingNotifiers.mouseHiring();
         var event = new Event(EVENTS.HIRING_CLICK);
         event.robotName = robotName;
@@ -131,6 +134,7 @@ class GameLoop {
         if ($("#".robotName).hasClass("disabled")) {
             return;
         }
+
         var event = new Event(EVENTS.UPGRADE_CLICK);
         event.upgradeName = upgradeName;
         this.events.push(event);

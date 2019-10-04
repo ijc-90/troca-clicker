@@ -1,0 +1,25 @@
+{
+  "name": "troca-clicker",
+  "version": "1.0.0",
+  "description": "Troca clicker",
+  "main": "index.js",
+  "dependencies": {
+    "http-live-server": "^1.2.0",
+    "sass": "^1.22.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sass --watch src/css/main.scss src/css/main.css & live-server --open=src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ijc-90/troca-clicker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ijc-90/troca-clicker/issues"
+  },
+  "homepage": "https://github.com/ijc-90/troca-clicker#readme"
+}

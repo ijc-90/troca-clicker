@@ -1,0 +1,57 @@
+$borderWidth: 8px;
+$borderColor: #fff;
+
+.click-container{
+    height: $contentHeight;
+    .click-row{
+        width: 100%;
+        height: calc(100% / 3); 
+        flex-direction: row;
+        display: flex;
+        border-bottom: solid $borderColor $borderWidth;
+
+        &:first-child{
+            border-top: solid $borderColor $borderWidth;
+        }
+        &.buy {
+            background: url('../images/background-buy.svg') center center;
+            background-size: contain;
+        }
+        &.repair {
+            background: url('../images/background-repair.svg') center center;
+            background-size: contain;
+        }
+        &.sell {
+            background: url('../images/background-sell.svg') center center;
+            background-size: contain;
+        }
+    
+    }
+
+    .left-col, .center-col, .right-col {
+        vertical-align: top;
+    }
+
+    .left-col {
+        width: $contentColLeftWidth;
+        border-right: solid $borderColor $borderWidth;
+        display: flex;
+        flex-direction: row;
+        align-items:center;
+        padding:10px;
+        background: rgba(255,255,255,0.5);
+    }
+
+    .center-col {
+        width: $contentColCentertWidth;
+        position: relative;
+      
+    }
+
+    .right-col {
+        width: $contentColRightWidth;
+        border-left: solid $borderColor $borderWidth;
+      
+    }
+
+}

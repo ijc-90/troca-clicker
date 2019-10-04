@@ -39,7 +39,8 @@ class ViewIntegrator {
           "js-total-balance": newContext.money - oldContext.money,
           "js-money": newContext.money,
           "js-buys-balance": newContext.moneySpentOnBuyingPhonesThisCicle, //null cuanta plata gasté en comprar (celulares comprados * precio de compra)
-          "js-amount-phones-bought": newContext.amountOfPhonesBoughtThisCicle, //cuantos telefonos compre
+          "js-amount-phones-bought": newContext.amountOfPhonesBoughtThisCicle,
+          "js-amount-phones-total":  newContext.amountOfPhonesTotal,
           "js-repair-chance": newContext.probabilityOfDefectiveBuy * 100, 
           "js-phone-buy-capability": buyRobotsProductivity * newContext.ticksPerSecond, // capacidad de todos los robots de compra
           "js-phone-buy-price": newContext.cellphoneBuyPrice,
@@ -53,7 +54,7 @@ class ViewIntegrator {
           "js-amount-phones-awaiting-sale": newContext.toSaleBacklog, //stock de venta
           "js-amount-sell-price": newContext.cellphoneSalePrice,
           "js-phone-sale-capability": saleRobotsProductivity * newContext.ticksPerSecond,
-          
+          "js-phones-to-sale": newContext.stockToSale,
           "js-buyer-one-price": newContext.robots["buyer_one"].baseCost, //precio de contrataor robot
           "js-buyer-one-bought": newContext.robots["buyer_one"].quantity, // cuantos robots tengo
           "js-buyer-one-upg-price": newContext.upgrades["upgrade_buyer_one"].price, //precio de upgrade

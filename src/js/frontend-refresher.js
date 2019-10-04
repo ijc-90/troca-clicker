@@ -7,6 +7,7 @@ var sampleJson = {
     "js-phone-buy-capability": 0,
     "js-phone-buy-price": 0,
     "js-repair-balance": 0,
+    "js-amount-phones-total": 0,
     "js-amount-phones-repaired": 0,
     "js-amount-phones-awaiting-repair": 0,
     "js-phone-repair-capability": 0,
@@ -60,7 +61,8 @@ var sampleJson = {
     "js-seller-three-upg-price": 0,
     "js-seller-three-upg-multiplier": 0,
     "js-seller-three-total-capacity": 0,
-    "js-salaries-time-for-payment": 0
+    "js-salaries-time-for-payment": 0,
+    "js-you-lose": 0
 };
 
 var notifiersWhiteList = [
@@ -73,14 +75,14 @@ var notifiersWhiteList = [
 ];
 
 function kFormatter(num) {
-    return num > 999 ? (num/1000).toFixed(1) + 'k' : num
+    return num > 999 ? (num / 1000).toFixed(1) + 'k' : num
 }
 
 function kFormatterInverse(num) {
     if (num.indexOf('k') !== -1) {
         return Number(num.replace('k', '')) * 1000;
     }
-    
+
     return Number(num);
 }
 
@@ -88,23 +90,23 @@ function updateNumbers(json) {
     if (json === null || json === undefined) {
         return;
     }
-    
+
     Object.keys(json).forEach(function (keyName) {
         var value = json[keyName];
-        var elements = $("."+keyName);
+        var elements = $("." + keyName);
 
         if (notifiersWhiteList.indexOf(keyName) !== -1) {
             renderFloatingNotify(value, elements);
         }
-        
-        
+
+
         if (!isNaN(value) && elements.length !== 0) {
             elements.text(kFormatter(value));
-        } else if (typeof(value) !== "boolean" && keyName !== "js-salaries-amount") {
-        
+        } else if (typeof (value) !== "boolean" && keyName !== "js-salaries-amount") {
+
             elements.text(kFormatter(value));
-        } else if (typeof(value) != "boolean") {
-            
+        } else if (typeof (value) != "boolean") {
+
         }
     });
 }
@@ -115,17 +117,17 @@ function renderFloatingNotify(value, $elements) {
         if (lastValue !== value) {
             const diff = value - lastValue;
             if (diff !== 0) {
-                $elements.each(function() {
+                $elements.each(function () {
                     if (diff < 0) {
                         floatingNotifiers.elementTextRed($(this), `${diff}`);
-                    } else {
+                    } else {
                         floatingNotifiers.elementText($(this), `${diff}`);
                     }
-                    
+
                 })
             }
         }
-    }   
+    }
 }
 
 var robots = ['buyer-one', 'buyer-two', 'buyer-three',
@@ -133,13 +135,14 @@ var robots = ['buyer-one', 'buyer-two', 'buyer-three',
     'seller-one', 'seller-two', 'seller-three',
 ];
 
+
 var actions = ["repair", "buy", "sell"];
 
 function updateVisibilityOfUpgrades(json) {
     robots.forEach((robotName) => {
-        var propertyName = 'js-'+robotName+'-upg-bought';
-        var upgradeElementId = "#" + robotName.replace('-',"_") + "_upgrade";
-        if (!json[propertyName] && json["js-money"] >= json["js-"+ robotName +"-upg-price"]) {
+        var propertyName = 'js-' + robotName + '-upg-bought';
+        var upgradeElementId = "#" + robotName.replace('-', "_") + "_upgrade";
+        if (!json[propertyName] && json["js-money"] >= json["js-" + robotName + "-upg-price"]) {
             $(upgradeElementId)[0].style.opacity = 1;
             $(upgradeElementId).addClass("enabled");
             $(upgradeElementId).removeClass("disabled");
@@ -153,8 +156,8 @@ function updateVisibilityOfUpgrades(json) {
 
 function updateVisibilityOfRobots(json) {
     robots.forEach((robotName) => {
-        var upgradeElementId = "#" + robotName.replace('-',"_");
-        if (json["js-money"] >= json["js-"+ robotName +"-price"]) {
+        var upgradeElementId = "#" + robotName.replace('-', "_");
+        if (json["js-money"] >= json["js-" + robotName + "-price"]) {
             $(upgradeElementId)[0].style.opacity = 1;
             $(upgradeElementId).addClass("enabled");
             $(upgradeElementId).removeClass("disabled");
@@ -167,16 +170,16 @@ function updateVisibilityOfRobots(json) {
 }
 
 function updateAvailabilityOfSell(json) {
-        var upgradeElementId = "#js-sell-clicker";
-        if (json["js-amount-phones-awaiting-sale"] > 0) {
-            $(upgradeElementId)[0].style.opacity = 1;
-            $(upgradeElementId).addClass("enabled");
-            $(upgradeElementId).removeClass("disabled");
-        } else {
-            $(upgradeElementId)[0].style.opacity = 0.2;
-            $(upgradeElementId).addClass("disabled");
-            $(upgradeElementId).removeClass("enabled");
-        }
+    var upgradeElementId = "#js-sell-clicker";
+    if (json["js-amount-phones-awaiting-sale"] > 0) {
+        $(upgradeElementId)[0].style.opacity = 1;
+        $(upgradeElementId).addClass("enabled");
+        $(upgradeElementId).removeClass("disabled");
+    } else {
+        $(upgradeElementId)[0].style.opacity = 0.2;
+        $(upgradeElementId).addClass("disabled");
+        $(upgradeElementId).removeClass("enabled");
+    }
 }
 
 function updateAvailabilityOfRepair(json) {
@@ -205,49 +208,55 @@ function updateAvailabilityOfBuy(json) {
     }
 }
 
-function showOrHideFlows(json){
+function showOrHideFlows(json) {
     var buyFlowSelector = ".js-buy-flow-container";
+    $(buyFlowSelector).css({ display: "flex" });
     if (json["showBuyFlow"]) {
-        $(buyFlowSelector).css({ display: "inline-block" });
-    }else{
-        $(buyFlowSelector).css({ display: "none" });
+        //$(buyFlowSelector).css({ display: "flex" });
+    } else {
+        //$(buyFlowSelector).css({ display: "none" });
     }
 
     var repairFlowSelector = ".js-repair-flow-container";
+    $(repairFlowSelector).css({ display: "flex" });
     if (json["showRepairFlow"]) {
-        $(repairFlowSelector).css({ display: "inline-block" });
-    }else{
-        $(repairFlowSelector).css({ display: "none" });
+        //$(repairFlowSelector).css({ display: "flex" });
+    } else {
+        //$(repairFlowSelector).css({ display: "none" });
     }
 
     var saleFlowSelector = ".js-sale-flow-container";
+    $(saleFlowSelector).css({ display: "flex" });
     if (json["showSaleFlow"]) {
-        $(saleFlowSelector).css({ display: "inline-block" });
-    }else{
-        $(saleFlowSelector).css({ display: "none" });
+        //$(saleFlowSelector).css({ display: "flex" });
+    } else {
+        //$(saleFlowSelector).css({ display: "none" });
     }
 
     var robotSelect = ".js-robots";
+    $(robotSelect).css({ display: "flex" });
     if (json["showRobots"]) {
-        $(robotSelect).css({ display: "inline-block" });
-    }else{
-        $(robotSelect).css({ display: "none" });
+        //$(robotSelect).css({ display: "block" });
+    } else {
+        //$(robotSelect).css({ display: "none" });
     }
 }
 
-function notifyIfLost(json) {
-    if (json["js-you-lose"]) {
-        alert("PERDISTE!")
+function notifyIfLost(json, gameLoop) {
+    if (json["js-you-lose"] && (gameLoop !== null && gameLoop !== undefined)) {
+        modal.show('Perdiste!', 'Ups lo volviste a hacer, la próxima será.', gameLoop, () => {
+            document.location.reload();
+        });
     }
 }
 
 function notifyPaidSalaries(json) {
     if (json["js-this-loop-must-pay-salaries"]) {
-        if(json["js-you-lose"]) {
+        if (json["js-you-lose"]) {
             $.notify({
                 // options
                 message: 'Llegó fin de mes! NO PUDISTE PAGAR LOS $' + json["js-salaries-amount"] + ' de sueldos.'
-            },{
+            }, {
                 // settings
                 type: 'danger'
             });
@@ -255,7 +264,7 @@ function notifyPaidSalaries(json) {
             $.notify({
                 // options
                 message: 'Llegó fin de mes! Pagarás $' + json["js-salaries-amount"] + ' de sueldos.'
-            },{
+            }, {
                 // settings
                 type: 'success'
             });
@@ -263,10 +272,14 @@ function notifyPaidSalaries(json) {
     }
 }
 
-function updateFrontend(json) {
+function updateFrontend(json, gameLoop) {
+    if (json === null || json === undefined) {
+        return;
+    }
+
     updateNumbers(json);
-    updateVisibilityOfUpgrades(json);
-    notifyIfLost(json);
+    //updateVisibilityOfUpgrades(json);
+    notifyIfLost(json, gameLoop);
     notifyPaidSalaries(json);
     updateVisibilityOfRobots(json);
     updateAvailabilityOfBuy(json);
@@ -277,5 +290,5 @@ function updateFrontend(json) {
 
 
 setTimeout(function () {
-    updateFrontend(sampleJson);
+    updateFrontend(sampleJson, null);
 }, 1000);

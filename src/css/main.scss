@@ -1,0 +1,303 @@
+@import "variables";
+@import "base";
+@import "header";
+@import "stats";
+@import "modal";
+@import "bot";
+@import "content";
+@import "buttons";
+
+
+.main-clicker{
+    height: 100vh;
+	width: 100%;
+	position: relative;
+	background: #333;
+}
+
+
+
+
+
+
+.stock-number-container{
+	margin:0 auto;
+	width: 100%;
+	display: none;
+
+	font-size: 12px;
+	color: #ff8800;
+}
+.click-message{
+	width: 100%;
+	color: white;
+	text-align: center;
+	height: 70px;
+	display: inline-block;
+	background: #ff8800;
+	vertical-align: middle;
+	line-height: 70px;
+	font-size: 10px;
+	position: fixed; 
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	display: none;
+}
+
+.click-message-news{
+	max-width: calc(100% - 130px);
+}
+
+.click-message-icon{
+	width: 46px;
+	height: 46px; 
+	margin-right: 10px;
+}
+
+.click-message-icon.right{
+		margin-right: 0px;
+		margin-left: 10px;
+}
+.click-message span{
+	vertical-align: middle;
+	display: inline-block;
+}
+
+
+.click-title{
+	width: 100%;
+	width: 100%;
+	padding: 8px;
+	color: #ffffff;
+	text-transform: uppercase;
+	font-size: 35px;
+	border-bottom: 1px solid #ff8800;
+	
+}
+
+
+
+.click-production{
+	width: 100%;
+	padding: 10px 25px 10px 10px;
+	color: #fff;
+	display: block;
+	vertical-align: middle;
+	font-size: 22px;
+}
+.click-production span{
+	font-size: 18px;
+	vertical-align: middle; 
+	margin-right: 10px;
+}
+
+.click-store-title{
+	display: block;
+    width: 100%;
+    font-size: 22px;
+    padding: 10px;
+    color: #ffd56b;
+    text-align: center;
+    text-shadow: 1px 1px 0 #e8696b;
+	
+}
+
+.click-upgrades-container, .click-robots-container{
+	width: 100%;
+	display: inline;
+	text-align: left;
+	margin-bottom: 5px;
+}
+
+.click-upgrade{
+	padding: 12px;
+	background: #eaf3fc;
+	width: 59px;
+	height: 59px;
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+}
+
+.click-upgrade img{
+	width: 35px;
+	height: 35px;
+}
+.click-upgrade:hover .click-upgrade-tooltip{
+	display: block;
+}
+.click-upgrade-tooltip{
+	position: absolute;
+	display: none;
+	z-index: 3;
+	background: #385f74;
+	min-height: 100px;
+	padding:10px;
+	width: 300px;
+	left: -305px;
+	top: -50%;
+}
+.click-upgrade-tooltip:before{
+	content: '';
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 7.5px 0 7.5px 10px;
+	border-color: transparent transparent transparent #385f74;
+	position: absolute;
+	top: calc(45% - 7px);
+	right: -10px;
+}
+.click-upgrade-tooltip-title{
+	display: block;
+	font-size: 18px;
+	color: #fff;
+}
+
+.click-upgrade-tooltip-value{
+	color: #ff8800;
+	display: block;
+	font-size: 18px;
+
+}
+.click-upgrade-tooltip-funtion span{
+	color: #ff8800;
+}
+.click-upgrade-tooltip-funtion{
+	display: block;
+	font-size: 18px;
+	color: #fff;
+}
+.upgrade-robot-container{
+	display: inline-block;
+	padding: 0;
+	width: 18%;
+	vertical-align: top;
+}
+
+
+.click-popup{
+	position: absolute;
+	width: 300px;
+	min-height: 200px;
+	text-align: center;
+	padding:18px 15px 35px 15px;
+	background: #f23b3b;
+	top: 50%;
+	left: 37%;
+	color: #fff;
+	font-size: 18px;
+	cursor: pointer;
+	z-index: 444;
+	animation: biting .3s ease-in-out infinite alternate;
+    -webkit-animation: biting .3s ease-in-out infinite alternate;
+    vertical-align: middle;
+}
+
+
+@keyframes biting {
+     0% {
+        transform: scale(1.0);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+.click-popup > span{
+	display: block;
+	vertical-align: middle;
+	width: 100%;
+}
+.click-popup .click-info > span.click-succes, .click-popup .click-info > span.click-error{
+	display: none ;
+}
+
+.click-img{
+	width: 120px;
+	display: inline-block;
+	margin-right: 10px;
+	vertical-align: top;
+}
+.click-info{
+	display: inline-block;
+	width: calc(100% - 140px);
+	vertical-align: top;
+}
+.click-segundos{
+	display: table-cell;
+	width: 100%;
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+}
+.inline-block {
+	display: inline-block;
+}
+.no-padding{
+	padding: 0;
+}
+
+.flow-number  {
+	font-size: 24px;
+	color: #ff8800;
+}
+
+.small-notice {
+	color: black;
+	 font-size: 10px;
+	 margin-top: 10px;
+	 display: none;
+ }
+
+.flow-image-container img  {
+	height: 100px;
+	padding-right: 0px;
+	margin-right: 0px;
+}
+
+.inline-dinamic-number {
+	color: #ff8800;
+}
+
+.click-phone .inline-dinamic-number {
+	color: white;
+	font-size: 25px;
+}
+
+
+
+
+
+.negative-number {
+	color: #d04242;
+}
+
+.positive-number {
+	color: #29743d;
+}
+
+[data-notify="progressbar"] {
+	margin-bottom: 0px;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 5px;
+}
+
+.floating-notify{
+	position: absolute;
+	z-index: 10;
+	color: white;
+	top: 0;
+	left: 0;
+	text-shadow: 2px 2px #000000;
+	pointer-events: none;
+	font-size: 16px;
+}
+
+.disabled{
+	pointer-events: none;
+}

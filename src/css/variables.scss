@@ -1,0 +1,16 @@
+$colorPrimaryMiddle: #ff8800;
+$colorPrimaryDark: #f06f31;
+$colorSecondaryMiddle: #385f74;
+$colorSecondaryLight: #607d8a;
+
+$colorDark: #404040 ;
+$colorGray-2: #808184;
+
+
+$headerHeight: 70px;
+$statsHeight: 70px;
+$contentHeight: calc(100vh - (#{$headerHeight} + #{$statsHeight}) );
+
+$contentColLeftWidth: 25%;
+$contentColCentertWidth: 50%;
+$contentColRightWidth: 25%;

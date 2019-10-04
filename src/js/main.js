@@ -1,82 +1,89 @@
-
-
 var contentInfo = [
     {
-        type: "buyer_one", 
-        name: "E-Purchase", 
-        imgPath: "images/Venta_e-commerce.png",
+        type: "buyer_one",
+        name: "Quiosco",
+        imgPath: "images/icons/comprar-tienda.svg",
         upgImgPath: "images/Compra__Responsive.png",
-        pluralName: "E-Purchases",
-        upgTitle: "Responsiveness"
+        pluralName: "Quioscos",
+        upgTitle: "Responsiveness",
+        container: ".bot-buy-container"
     },
     {
-        type: "buyer_two", 
-        name: "Comprador en bici", 
-        imgPath: "images/Compra__Comprador_en_bici.png",
+        type: "buyer_two",
+        name: "Comprador en bici",
+        imgPath: "images/icons/comprar-bici.svg",
         upgImgPath: "images/Compra__Comprador_en_moto.png",
         pluralName: "Comprador en bici",
-        upgTitle: "Comprar moto para los recolectores"
+        upgTitle: "Comprar moto para los recolectores",
+        container: ".bot-buy-container"
     },
     {
-        type: "buyer_three", 
-        name: "Tienda física de compra", 
-        imgPath: "images/Compra__Tienda_fisica.png",
+        type: "buyer_three",
+        name: "Dron",
+        imgPath: "images/icons/comprar-drone.svg",
         upgImgPath: "images/Compra__Plan_canje.png",
         pluralName: "Tienda física de compra",
-        upgTitle: "Ofrecer plan canje"
+        upgTitle: "Ofrecer plan canje",
+        container: ".bot-buy-container"
     },
     {
-        type: "repairer_one", 
-        name: "Reparador", 
-        imgPath: "images/Reparar__Reparador.png",
+        type: "repairer_one",
+        name: "Reparador",
+        imgPath: "images/icons/reparar-reparador.svg",
         upgImgPath: "images/Reparar__Kit_de_herramientas.png",
         pluralName: "Reparadores",
-        upgTitle: "Kit de herramientas"
+        upgTitle: "Kit de herramientas",
+        container: ".bot-repair-container"
     },
     {
-        type: "repairer_two", 
-        name: "Brazo robótico", 
-        imgPath: "images/Reparar__Robot.png",
+        type: "repairer_two",
+        name: "Robot",
+        imgPath: "images/icons/reparar-robot.svg",
         upgImgPath: "images/Reparar__AI.png",
         pluralName: "Brazos robóticos",
-        upgTitle: "Inteligencia artificial mejorada"
+        upgTitle: "Inteligencia artificial mejorada",
+        container: ".bot-repair-container"
     },
     {
-        type: "repairer_three", 
-        name: "Planta automatizada", 
-        imgPath: "images/Reparar__Planta_automatizada.png",
+        type: "repairer_three",
+        name: "Planta automatizada",
+        imgPath: "images/icons/reparar-industria.svg",
         upgImgPath: "images/Reparar__Paneles_solares.png",
         pluralName: "Plantas automatizadas",
-        upgTitle: "Implementación de paneles solares"
+        upgTitle: "Implementación de paneles solares",
+        container: ".bot-repair-container"
     },
     {
-        type: "seller_one", 
-        name: "E-Commerce", 
-        imgPath: "images/Venta_e-commerce.png",
+        type: "seller_one",
+        name: "Tienda",
+        imgPath: "images/icons/vender-blackfriday.svg",
         upgImgPath: "images/Venta_responsive.png",
         pluralName: "E-Commerces",
-        upgTitle: "Responsiveness"
+        upgTitle: "Responsiveness",
+        container: ".bot-sell-container"
     },
     {
-        type: "seller_two", 
-        name: "Tiendas física", 
-        imgPath: "images/Compra__Tienda_fisica.png",
+        type: "seller_two",
+        name: "e-commerce",
+        imgPath: "images/icons/vender-ecommerce.svg",
         upgImgPath: "images/Venta__24h.png",
         pluralName: "Tiendas físicas",
-        upgTitle: "Abrir las 24 horas"
+        upgTitle: "Abrir las 24 horas",
+        container: ".bot-sell-container"
     },
     {
-        type: "seller_three", 
-        name: "Integración con Marketplace", 
-        imgPath: "images/Venta__marketplace.png",
+        type: "seller_three",
+        name: "Black Friday",
+        imgPath: "images/icons/vender-tienda.svg",
         upgImgPath: "images/Venta__cuotas.png",
         pluralName: "Integración con Marketplaces",
-        upgTitle: "Ofrecer cuotas"
+        upgTitle: "Ofrecer cuotas",
+        container: ".bot-sell-container"
     },
 ];
 
-function updateContentInfo () {    
-    contentInfo.forEach(function(info){
+function updateContentInfo() {
+    contentInfo.forEach(function (info) {
         $('#' + info.type + ' .click-robot-name').text(info.name);
         $('#' + info.type + ' .click-robot-img img').attr("src", info.imgPath);
         $('#' + info.type + ' .click-robot-tooltip-img img').attr("src", info.imgPath);
@@ -85,16 +92,25 @@ function updateContentInfo () {
         $('#' + info.type + ' .click-robot-tooltip-title').text("Sumar un " + info.name);
         $('#' + info.type + ' .click-robot-tooltip-plural').text(info.pluralName);
         $('#' + info.type + '_upgrade .click-upgrade-tooltip-title').text(info.upgTitle);
-        $('#' + info.type).on("click",function(){
+        $('#' + info.type).attr('target', info.container)
+        $('#' + info.type).attr('image', info.imgPath)
+        $('#' + info.type).prepend('<div class="click-icon"><div class="bot-image" style="background-image: url(' + info.imgPath + ')"></div></div>')
+        $('#' + info.type).on("click", function () {
+            Bot.add($(this).attr('target'), $(this).attr('image'));
             hireClick(info.type);
         });
-        $('#' + info.type + '_upgrade').on("click",function(){
+
+        $('#' + info.type + '_upgrade').on("click", function () {
             upgradeClick(info.type);
         });
     });
 }
 
+
+
 var gameLoop = new GameLoop();
+gameLoop.clickerSound.startGame();
+
 window.gameContext = gameLoop.context;
 
 console.log("Bienvenido al modo Hacker. Un gran poder conlleva una gran responsabilidad");
@@ -102,42 +118,57 @@ console.log("Para modificar el juego tenés que hacer un trabajo de ingeniería 
 console.log("Sugerencias, issues y PRs a https://github.com/ijc-90/troca-clicker");
 
 
-window.setInterval(function(){
-   updateFrontend(gameLoop.tick(2));
+window.setInterval(function () {
+
+    // Esto es bien villero .... pero yafu
+    if (gameLoop.context.shouldPlayGameOverSound) {
+        gameLoop.clickerSound.gameOver();
+        gameLoop.context.shouldPlayGameOverSound = false;
+    }
+    updateFrontend(gameLoop.tick(2), gameLoop);
 }, 500);
 
-function sellClickerClick(){
+function sellClickerClick() {
     if ($(this).hasClass("disabled")) {
+        gameLoop.clickerSound.playError();
         return;
     }
+
+    gameLoop.clickerSound.playClick();
     gameLoop.saleClick();
 }
 
-function buyClickerClick(){
+function buyClickerClick() {
     if ($(this).hasClass("disabled")) {
+        gameLoop.clickerSound.playError();
         return;
     }
 
+    gameLoop.clickerSound.playClick();
     gameLoop.buyClick();
 }
 
-function repairClickerClick(){
+function repairClickerClick() {
     if ($(this).hasClass("disabled")) {
+        gameLoop.clickerSound.playError();
         return;
     }
 
+    gameLoop.clickerSound.playClick();
     gameLoop.repairClick();
 }
 
-function hireClick(name){
+function hireClick(name) {
+    gameLoop.clickerSound.playMagicClick();
     gameLoop.hiringClick(name);
 }
 
-function upgradeClick(name){
+function upgradeClick(name) {
+    gameLoop.clickerSound.playMagicClick();
     gameLoop.upgradeClick("upgrade_" + name);
 }
 
-$(document).ready(function(){
+$(document).ready(function () {
     updateContentInfo();
 });
 
@@ -176,24 +207,16 @@ var news = [
 ];
 
 
+$(document).ready(() => {
 
-window.setInterval(function(){
-    var item = news[Math.floor(Math.random()*news.length)];
-    document.getElementById('news').innerHTML = item;
-}, 15000);
-
-$(document).ready( () => {
-    TweenMax.set($(".click-container"), { scale: 1.25 });
-    
-    setTimeout(() => $(".lds-ripple").remove(), 1500);
-    modal.show('Bienvenido a troca clickers', 'Para arrancar te dejamos $100, comprá 10 celulares ', gameLoop, () =>{
-        TweenMax.set(".click-message", { y: 200 })
-        $(".click-message").show();
-        TweenMax.to($(".click-container"), 1, { scale: 1, opacity: 1, ease:Expo.easeOut });
-        TweenMax.to(".click-message", 1, { y: 0 })
+    modal.show('Bienvenido a troca clickers', 'Para arrancar te dejamos $' + gameLoop.context.money + ', comprá ' + (gameLoop.context.money / gameLoop.context.cellphoneBuyPrice) + ' celulares ', gameLoop, () => {
+        //TweenMax.set(".click-message", { y: 200 })
+        //$(".click-message").show();
+        //TweenMax.to($(".click-container"), 1, { scale: 1, opacity: 1, ease:Expo.easeOut });
+        //TweenMax.to(".click-message", 1, { y: 0 })
     });
-    
-})
+
+});
 
 
 
