@@ -27,25 +27,38 @@ class TutorialFlow extends Flow {
         return context;
     };
 
-    hideEveryFlow(){
-        this.hideBuyFlow();
-        this.hideSaleFlow();
-        this.hideRepairFlow();
+    hideEveryFlow(context){
+        this.hideBuyFlow(context);
+        this.hideSaleFlow(context);
+        this.hideRepairFlow(context);
     }
 
-    hideBuyFlow(){
-        //this.buyFlowIsHidden = true;
+    hideBuyFlow(context){
+        this.buyFlowIsHidden = true;
+        if (context){
+            context.showBuyFlow = false;
+        }
     }
 
-    hideSaleFlow(){
-        //this.saleFlowIsHidden = true;
+    hideSaleFlow(context){
+        this.saleFlowIsHidden = true;
+        if (context){
+            context.showSaleFlow = false;
+        }
     }
 
-    hideRepairFlow(){
-        //this.repairFlowIsHidden = true;
+    hideRepairFlow(context){
+        this.repairFlowIsHidden = true;
+        if (context){
+            context.showRepairFlow = false;
+        }
     }
 
     shouldShowBuyFlow(context){
+        if (context.skipTutorial){
+            return true;
+        }
+
         return true;
     }
 
@@ -94,22 +107,22 @@ class TutorialFlow extends Flow {
 
 
     showRepairFlow(context){
-        if (!context.skipTutorial){
+        if (!context.skipTutorial && this.firstTimeShowingRepair){
             modal.show('Ahora a reparar!', 'Bien! Compraste 10 celulares! pero... hay que repararlos!', gameLoop);
         }
         context.showRepairFlow = true;
         this.repairFlowIsHidden = false;
+        this.firstTimeShowingRepair = false;
     }
 
     showSaleFlow(context){
-        if (!context.skipTutorial){
+        if (!context.skipTutorial && this.firstTimeShowingSale){
             modal.show('Listo, reparados...', 'Ahora a venderlos!', gameLoop, () =>{});
         }
+        this.firstTimeShowingSale = false;
         context.showSaleFlow = true;
         this.saleFlowIsHidden = false;
     }
 
-
-
-
+   
 }
