@@ -251,7 +251,7 @@ function notifyIfLost(json, gameLoop) {
 }
 
 function notifyPaidSalaries(json) {
-    if (json["js-this-loop-must-pay-salaries"]) {
+    /*if (json["js-this-loop-must-pay-salaries"]) {
         if (json["js-you-lose"]) {
             $.notify({
                 // options
@@ -269,7 +269,7 @@ function notifyPaidSalaries(json) {
                 type: 'success'
             });
         }
-    }
+    }*/
 }
 
 function updateFrontend(json, gameLoop) {
