@@ -90,9 +90,9 @@ class TutorialFlow extends Flow {
             //var titulo1 = 'Ya ganamos plata!';
             //var texto1 = 'Genial, ya pudiste vender los 10 celulares. Si te acordás, empezamos con $100 y ahora tenemos $120! Usá esos $120 para comprar reparar y vender todavía más celulares... y... algún día... Conquistaremos el mundo!';
             var titulo2 = 'Ya compramos, reparamos y vendimos!';
-            var texto2 = 'Ahora queremos que crees y automatices estos procesos.';
+            var texto2 = 'Ahora podés seguir clickeando para cada operación, o contratar para que lo hagan por vos';
             var titulo3 = 'Pero cuidado';
-            var texto3 = 'Cada proceso que armes va a producir por vos, pero armarlo tiene un costo, y también tenés que mantenerlos cada cierto tiempo. Intentá balancear los 3 procesos para hacerlo lo más óptimo posible';
+            var texto3 = 'Contratar tiene un costo inicial y cada cierto tiempo. Tené cuidado con los compradores, que si compran de más te dejan sin plata!';
             
             //modal.show(titulo1, texto1, this.gameloop, () =>{
                modal.show(titulo2,texto2, this.gameloop,() =>{
