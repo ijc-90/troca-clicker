@@ -244,7 +244,7 @@ function showOrHideFlows(json) {
 
 function notifyIfLost(json, gameLoop) {
     if (json["js-you-lose"] && (gameLoop !== null && gameLoop !== undefined)) {
-        modal.show('Perdiste!', 'Ups lo volviste a hacer, la próxima será.', gameLoop, () => {
+        modal.show('Ups, game over!', 'Llegó la hora de pagar los costos fijos, y no te alcanzó! Tuviste que presentar la quiebra.', gameLoop, () => {
             document.location.reload();
         });
     }

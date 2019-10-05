@@ -8,6 +8,8 @@ class TutorialFlow extends Flow {
         this.repairFlowIsHidden = true;
         this.robotsAreHidden = true;
         this.gameloop = gameloop;
+        this.firstTimeShowingRepair = true;
+        this.firstTimeShowingSale = true;
     }
 
     work(context) {
