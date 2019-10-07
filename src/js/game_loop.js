@@ -72,6 +72,7 @@ class GameLoop {
             new UpgradeFlow(),
             new SalaryFlow(),
             new TutorialFlow(this),
+            new GameOverFlow(this),
         ];
 
         this.events = [];
