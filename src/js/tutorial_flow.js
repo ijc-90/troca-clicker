@@ -95,10 +95,12 @@ class TutorialFlow extends Flow {
             var texto2 = 'Ahora podés contratar para que lo hagan por vos. Te recomiendo comprar una Tienda (venta), luego un reparador, y luego un quiosco (compra)';
             var titulo3 = 'Pero cuidado';
             var texto3 = 'Contratar tiene costo (inicial y recurrente). Tené cuidado con los compradores, que si compran de más te dejan sin plata!';
-            
+
             //modal.show(titulo1, texto1, this.gameloop, () =>{
                modal.show(titulo2,texto2, this.gameloop,() =>{
-                   modal.show(titulo3,texto3, this.gameloop, () => {});
+                   modal.show(titulo3,texto3, this.gameloop, () => {
+                        context.tutorialOver = true;
+                   });
                });    
            //});
         }
