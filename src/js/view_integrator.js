@@ -123,6 +123,7 @@ class ViewIntegrator {
           "js-you-lose": newContext.gameOver,
           "js-you-win": newContext.gameWon,
           "js-salaries-time-for-payment": Math.floor(newContext.salariesTimeForPayment / newContext.ticksPerSecond),
+          "js-gameover-timeout": newContext.timeToGameOver
         };
     }
 }

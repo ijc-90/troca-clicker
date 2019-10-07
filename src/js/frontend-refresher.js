@@ -63,6 +63,7 @@ var sampleJson = {
     "js-seller-three-total-capacity": 0,
     "js-salaries-time-for-payment": 0,
     "js-you-lose": 0,
+    "js-gameover-timeout": 360,
 };
 
 var notifiersWhiteList = [
@@ -86,13 +87,16 @@ function kFormatterInverse(num) {
     return Number(num);
 }
 
-var $countdown = $(".countdown");
-
 function updateGameoverTimer(json) {
-    console.log(json)
-    var minutes = Math.floor(json.timeToGameOver / 60);
-    var seconds = json.timeToGameOver % 60;
-    $countdown.text(`${minutes}:${seconds}`);
+    
+    var secondsToGameOver = json["js-gameover-timeout"];
+    
+    var minutes = Math.floor((secondsToGameOver) / 60);
+    var seconds = secondsToGameOver - (minutes * 60);
+    minutes = (minutes.length === 1) ? `0${minutes}`: minutes;
+    seconds = (seconds.length === 1) ? `0${seconds}`: seconds;
+
+    $(".countdown").html(`${minutes}:${seconds}`);
 }
 
 function updateNumbers(json) {
