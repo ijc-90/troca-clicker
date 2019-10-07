@@ -93,9 +93,9 @@ function updateGameoverTimer(json) {
     
     var minutes = Math.floor((secondsToGameOver) / 60);
     var seconds = secondsToGameOver - (minutes * 60);
-    minutes = (minutes.length === 1) ? `0${minutes}`: minutes;
-    seconds = (seconds.length === 1) ? `0${seconds}`: seconds;
-
+    minutes = (String(minutes).length === 1) ? `0${minutes}`: minutes;
+    seconds = (String(seconds).length === 1) ? `0${seconds}`: seconds;
+    
     $(".countdown").html(`${minutes}:${seconds}`);
 }
 
