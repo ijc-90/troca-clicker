@@ -62,7 +62,7 @@ var sampleJson = {
     "js-seller-three-upg-multiplier": 0,
     "js-seller-three-total-capacity": 0,
     "js-salaries-time-for-payment": 0,
-    "js-you-lose": 0
+    "js-you-lose": 0,
 };
 
 var notifiersWhiteList = [
@@ -84,6 +84,15 @@ function kFormatterInverse(num) {
     }
 
     return Number(num);
+}
+
+var $countdown = $(".countdown");
+
+function updateGameoverTimer(json) {
+    console.log(json)
+    var minutes = Math.floor(json.timeToGameOver / 60);
+    var seconds = json.timeToGameOver % 60;
+    $countdown.text(`${minutes}:${seconds}`);
 }
 
 function updateNumbers(json) {
@@ -278,6 +287,7 @@ function updateFrontend(json, gameLoop) {
     }
 
     updateNumbers(json);
+    updateGameoverTimer(json);
     //updateVisibilityOfUpgrades(json);
     notifyIfLost(json, gameLoop);
     notifyPaidSalaries(json);
