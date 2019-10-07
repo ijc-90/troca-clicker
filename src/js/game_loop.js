@@ -61,6 +61,7 @@ class GameLoop {
             showSaleFlow: false,
             showRobots: false,
             skipTutorial: false,
+            tutorialOver: false,
         };
         
         this.pipeline = [
