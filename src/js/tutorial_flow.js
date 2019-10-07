@@ -8,6 +8,8 @@ class TutorialFlow extends Flow {
         this.repairFlowIsHidden = true;
         this.robotsAreHidden = true;
         this.gameloop = gameloop;
+        this.firstTimeShowingRepair = true;
+        this.firstTimeShowingSale = true;
     }
 
     work(context) {
@@ -27,25 +29,38 @@ class TutorialFlow extends Flow {
         return context;
     };
 
-    hideEveryFlow(){
-        this.hideBuyFlow();
-        this.hideSaleFlow();
-        this.hideRepairFlow();
+    hideEveryFlow(context){
+        this.hideBuyFlow(context);
+        this.hideSaleFlow(context);
+        this.hideRepairFlow(context);
     }
 
-    hideBuyFlow(){
-        //this.buyFlowIsHidden = true;
+    hideBuyFlow(context){
+        this.buyFlowIsHidden = true;
+        if (context){
+            context.showBuyFlow = false;
+        }
     }
 
-    hideSaleFlow(){
-        //this.saleFlowIsHidden = true;
+    hideSaleFlow(context){
+        this.saleFlowIsHidden = true;
+        if (context){
+            context.showSaleFlow = false;
+        }
     }
 
-    hideRepairFlow(){
-        //this.repairFlowIsHidden = true;
+    hideRepairFlow(context){
+        this.repairFlowIsHidden = true;
+        if (context){
+            context.showRepairFlow = false;
+        }
     }
 
     shouldShowBuyFlow(context){
+        if (context.skipTutorial){
+            return true;
+        }
+
         return true;
     }
 
@@ -77,9 +92,9 @@ class TutorialFlow extends Flow {
             //var titulo1 = 'Ya ganamos plata!';
             //var texto1 = 'Genial, ya pudiste vender los 10 celulares. Si te acordás, empezamos con $100 y ahora tenemos $120! Usá esos $120 para comprar reparar y vender todavía más celulares... y... algún día... Conquistaremos el mundo!';
             var titulo2 = 'Ya compramos, reparamos y vendimos!';
-            var texto2 = 'Ahora queremos que crees y automatices estos procesos.';
+            var texto2 = 'Ahora podés contratar para que lo hagan por vos. Te recomiendo comprar una Tienda (venta), luego un reparador, y luego un quiosco (compra)';
             var titulo3 = 'Pero cuidado';
-            var texto3 = 'Cada proceso que armes va a producir por vos, pero armarlo tiene un costo, y también tenés que mantenerlos cada cierto tiempo. Intentá balancear los 3 procesos para hacerlo lo más óptimo posible';
+            var texto3 = 'Contratar tiene costo (inicial y recurrente). Tené cuidado con los compradores, que si compran de más te dejan sin plata!';
             
             //modal.show(titulo1, texto1, this.gameloop, () =>{
                modal.show(titulo2,texto2, this.gameloop,() =>{
@@ -94,22 +109,22 @@ class TutorialFlow extends Flow {
 
 
     showRepairFlow(context){
-        if (!context.skipTutorial){
+        if (!context.skipTutorial && this.firstTimeShowingRepair){
             modal.show('Ahora a reparar!', 'Bien! Compraste 10 celulares! pero... hay que repararlos!', gameLoop);
         }
         context.showRepairFlow = true;
         this.repairFlowIsHidden = false;
+        this.firstTimeShowingRepair = false;
     }
 
     showSaleFlow(context){
-        if (!context.skipTutorial){
+        if (!context.skipTutorial && this.firstTimeShowingSale){
             modal.show('Listo, reparados...', 'Ahora a venderlos!', gameLoop, () =>{});
         }
+        this.firstTimeShowingSale = false;
         context.showSaleFlow = true;
         this.saleFlowIsHidden = false;
     }
 
-
-
-
+   
 }

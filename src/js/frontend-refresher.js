@@ -212,46 +212,46 @@ function showOrHideFlows(json) {
     var buyFlowSelector = ".js-buy-flow-container";
     $(buyFlowSelector).css({ display: "flex" });
     if (json["showBuyFlow"]) {
-        //$(buyFlowSelector).css({ display: "flex" });
+        $(buyFlowSelector).css({ display: "flex" });
     } else {
-        //$(buyFlowSelector).css({ display: "none" });
+        $(buyFlowSelector).css({ display: "none" });
     }
 
     var repairFlowSelector = ".js-repair-flow-container";
     $(repairFlowSelector).css({ display: "flex" });
     if (json["showRepairFlow"]) {
-        //$(repairFlowSelector).css({ display: "flex" });
+        $(repairFlowSelector).css({ display: "flex" });
     } else {
-        //$(repairFlowSelector).css({ display: "none" });
+        $(repairFlowSelector).css({ display: "none" });
     }
 
     var saleFlowSelector = ".js-sale-flow-container";
     $(saleFlowSelector).css({ display: "flex" });
     if (json["showSaleFlow"]) {
-        //$(saleFlowSelector).css({ display: "flex" });
+        $(saleFlowSelector).css({ display: "flex" });
     } else {
-        //$(saleFlowSelector).css({ display: "none" });
+        $(saleFlowSelector).css({ display: "none" });
     }
 
     var robotSelect = ".js-robots";
     $(robotSelect).css({ display: "flex" });
     if (json["showRobots"]) {
-        //$(robotSelect).css({ display: "block" });
+        $(robotSelect).css({ display: "block" });
     } else {
-        //$(robotSelect).css({ display: "none" });
+        $(robotSelect).css({ display: "none" });
     }
 }
 
 function notifyIfLost(json, gameLoop) {
     if (json["js-you-lose"] && (gameLoop !== null && gameLoop !== undefined)) {
-        modal.show('Perdiste!', 'Ups lo volviste a hacer, la próxima será.', gameLoop, () => {
+        modal.show('Ups, game over!', 'Llegó la hora de pagar los costos fijos, y no te alcanzó! Tuviste que presentar la quiebra.', gameLoop, () => {
             document.location.reload();
         });
     }
 }
 
 function notifyPaidSalaries(json) {
-    if (json["js-this-loop-must-pay-salaries"]) {
+    /*if (json["js-this-loop-must-pay-salaries"]) {
         if (json["js-you-lose"]) {
             $.notify({
                 // options
@@ -269,7 +269,7 @@ function notifyPaidSalaries(json) {
                 type: 'success'
             });
         }
-    }
+    }*/
 }
 
 function updateFrontend(json, gameLoop) {
