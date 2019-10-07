@@ -9,7 +9,7 @@ class GameOverFlow extends Flow {
     }
 
     work(context) {
-        if (context.paused || context.tutorialOver){
+        if (context.paused || !context.tutorialOver){
             return context;
         }
 
