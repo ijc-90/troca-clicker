@@ -36,12 +36,20 @@ html, body {
 header {
   height: 70px;
   background: black;
+  justify-content: space-between;
+  display: flex;
 }
 header h1 {
   color: white;
   font-weight: normal;
   line-height: 70px;
   padding-top: 8px;
+  text-align: center;
+  padding: 10px;
+}
+header .countdown {
+  color: white;
+  padding: 10px;
 }
 
 .logo {
@@ -82,7 +90,7 @@ header h1 {
   letter-spacing: 2.8;
   background: #202020;
   color: white;
-  padding: 5px;
+  padding: 2px 5px;
 }
 .stats-display .st-costos {
   background: #f76453;

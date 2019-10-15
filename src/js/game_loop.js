@@ -12,6 +12,7 @@ class GameLoop {
             cellphoneRepairPrice : 0,
             cellphoneSalePrice : 12,
             geometricCostScale : 1.3,
+            timeToGameOver: 360,
             robots : {
                 "buyer_one": { name: "buyer_one", type: "buy", baseCost: 50, quantity: 0, production: 1, salary: 7 },
                 "buyer_two": { name: "buyer_two", type: "buy", baseCost: 200, quantity: 0, production: 4, salary: 21 },
@@ -43,16 +44,20 @@ class GameLoop {
             events: [],
             iterationsToPaySalary: 90,
             gameOver: false,
+            lost: false,
             shouldPlayGameOverSound: false,
             gameWon: false,
             probabilityOfDefectiveBuy : 1,
             amountOfPhonesTotal: 0,
             moneySpentOnBuyingPhonesThisCicle: 0,
             amountOfPhonesBoughtThisCicle: 0,
+            totalPhoneBought: 0,
             moneySpentRepairingThisCicle: 0,
             amountOfPhonesRepairedThisCicle: 0,
+            totalPhonesRepaired: 0,
             moneyEarnedSellingThisCicle: 0,
             amountOfPhonesSoldThisCicle: 0,
+            totalPhonesSold: 0,
             moneyPaidInSalaries: 0,
             salariesPaidThisTick: false,
             showBuyFlow: false,
@@ -60,6 +65,7 @@ class GameLoop {
             showSaleFlow: false,
             showRobots: false,
             skipTutorial: false,
+            tutorialOver: false,
         };
         
         this.pipeline = [
@@ -70,6 +76,7 @@ class GameLoop {
             new UpgradeFlow(),
             new SalaryFlow(),
             new TutorialFlow(this),
+            new GameOverFlow(this),
         ];
 
         this.events = [];

@@ -4,11 +4,13 @@
   "description": "Troca clicker",
   "main": "index.js",
   "dependencies": {
+    "bower": "^1.8.8",
     "http-live-server": "^1.2.0",
     "sass": "^1.22.12"
   },
   "devDependencies": {},
   "scripts": {
+    "build": "bower install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "sass --watch src/css/main.scss src/css/main.css & live-server --open=src/index.html"
   },
