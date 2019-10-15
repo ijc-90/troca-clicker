@@ -19,7 +19,7 @@ class Modal {
         this.$el.find('.modal-text').html(text);
         const $container = this.$el.find('.modal-container');
 
-        if (this.gameloop.context.gameOver) {
+        if (this.gameloop.context.gameOver && this.gameloop.context.lost) {
             $container.find('.modal-chapter-loose').show();
             $container.find('.modal-chapter').hide();
         } else {
