@@ -55,7 +55,7 @@ class GameLoop {
             amountOfPhonesSoldThisCicle: 0,
             moneyPaidInSalaries: 0,
             salariesPaidThisTick: false,
-            showBuyFlow: false,
+            showBuyFlow: true,
             showRepairFlow: false,
             showSaleFlow: false,
             showRobots: false,

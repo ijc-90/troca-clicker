@@ -211,14 +211,16 @@ function updateAvailabilityOfBuy(json) {
 function showOrHideFlows(json) {
     var buyFlowSelector = ".js-buy-flow-container";
     $(buyFlowSelector).css({ display: "flex" });
-    if (json["showBuyFlow"]) {
+   
+    /* if (json["showBuyFlow"]) {
         $(buyFlowSelector).css({ display: "flex" });
     } else {
         $(buyFlowSelector).css({ display: "none" });
-    }
+    } */
 
     var repairFlowSelector = ".js-repair-flow-container";
     $(repairFlowSelector).css({ display: "flex" });
+    
     if (json["showRepairFlow"]) {
         $(repairFlowSelector).css({ display: "flex" });
     } else {
@@ -227,6 +229,7 @@ function showOrHideFlows(json) {
 
     var saleFlowSelector = ".js-sale-flow-container";
     $(saleFlowSelector).css({ display: "flex" });
+    
     if (json["showSaleFlow"]) {
         $(saleFlowSelector).css({ display: "flex" });
     } else {

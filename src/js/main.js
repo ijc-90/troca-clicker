@@ -120,6 +120,7 @@ console.log("Sugerencias, issues y PRs a https://github.com/ijc-90/troca-clicker
 
 window.setInterval(function () {
 
+    updateFrontend(gameLoop.tick(2), gameLoop);
     // Esto es bien villero .... pero yafu
     if (gameLoop.context.shouldPlayGameOverSound) {
         gameLoop.clickerSound.gameOver();
@@ -208,8 +209,9 @@ var news = [
 
 
 $(document).ready(() => {
-
+    $("#js-buy-clicker").addClass('over-modal');
     modal.show('Bienvenido a troca clickers', 'Para arrancar te dejamos $' + gameLoop.context.money + ', comprá ' + (gameLoop.context.money / gameLoop.context.cellphoneBuyPrice) + ' celulares ', gameLoop, () => {
+        $("#js-buy-clicker").removeClass('over-modal');
         //TweenMax.set(".click-message", { y: 200 })
         //$(".click-message").show();
         //TweenMax.to($(".click-container"), 1, { scale: 1, opacity: 1, ease:Expo.easeOut });

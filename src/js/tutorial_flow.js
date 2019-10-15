@@ -57,6 +57,7 @@ class TutorialFlow extends Flow {
     }
 
     shouldShowBuyFlow(context){
+        
         if (context.skipTutorial){
             return true;
         }
@@ -65,6 +66,7 @@ class TutorialFlow extends Flow {
     }
 
     shouldShowRepairFlow(context){
+        
         return context.stockToRepair >= 10 || context.skipTutorial;
     }
 
@@ -95,10 +97,12 @@ class TutorialFlow extends Flow {
             var texto2 = 'Ahora podés contratar para que lo hagan por vos. Te recomiendo comprar una Tienda (venta), luego un reparador, y luego un quiosco (compra)';
             var titulo3 = 'Pero cuidado';
             var texto3 = 'Contratar tiene costo (inicial y recurrente). Tené cuidado con los compradores, que si compran de más te dejan sin plata!';
-            
+            $(".row-robot").addClass('over-modal over-modal-move');
             //modal.show(titulo1, texto1, this.gameloop, () =>{
                modal.show(titulo2,texto2, this.gameloop,() =>{
-                   modal.show(titulo3,texto3, this.gameloop, () => {});
+                   modal.show(titulo3,texto3, this.gameloop, () => {
+                    $(".row-robot").removeClass('over-modal over-modal-move');
+                   });
                });    
            //});
         }
@@ -110,16 +114,23 @@ class TutorialFlow extends Flow {
 
     showRepairFlow(context){
         if (!context.skipTutorial && this.firstTimeShowingRepair){
-            modal.show('Ahora a reparar!', 'Bien! Compraste 10 celulares! pero... hay que repararlos!', gameLoop);
+            $("#js-repair-clicker .circle").addClass('over-modal');
+            modal.show('Ahora a reparar!', 'Bien! Compraste 10 celulares! pero... hay que repararlos!', gameLoop, () => {
+                $("#js-repair-clicker .circle").removeClass('over-modal');
+            });
         }
         context.showRepairFlow = true;
         this.repairFlowIsHidden = false;
         this.firstTimeShowingRepair = false;
     }
+    
 
     showSaleFlow(context){
         if (!context.skipTutorial && this.firstTimeShowingSale){
-            modal.show('Listo, reparados...', 'Ahora a venderlos!', gameLoop, () =>{});
+            $("#js-sell-clicker .circle").addClass('over-modal');
+            modal.show('Listo, reparados...', 'Ahora a venderlos!', gameLoop, () => {
+                $("#js-sell-clicker .circle").removeClass('over-modal');
+            });
         }
         this.firstTimeShowingSale = false;
         context.showSaleFlow = true;
