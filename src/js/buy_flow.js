@@ -35,6 +35,7 @@ class BuyFlow extends Flow {
 
 		context.moneySpentOnBuyingPhonesThisCicle = quantityToBuy * context.cellphoneBuyPrice;
 		context.amountOfPhonesBoughtThisCicle = quantityToBuy;
+		context.totalPhoneBought += quantityToBuy;
 		
 		
 		return context;

@@ -120,7 +120,8 @@ class ViewIntegrator {
           
           "js-this-loop-must-pay-salaries": newContext.salariesPaidThisTick,
           "js-salaries-amount": totalSalaries,
-          "js-you-lose": newContext.gameOver,
+          "js-you-lose": newContext.gameOver && newContext.lost,
+          "js-time-is-up": newContext.gameOver && !newContext.lost,
           "js-you-win": newContext.gameWon,
           "js-salaries-time-for-payment": Math.floor(newContext.salariesTimeForPayment / newContext.ticksPerSecond),
           "js-gameover-timeout": newContext.timeToGameOver

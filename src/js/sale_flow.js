@@ -27,6 +27,7 @@ class SaleFlow extends Flow {
 
         context.moneyEarnedSellingThisCicle = quantityToSell * context.cellphoneSalePrice;
         context.amountOfPhonesSoldThisCicle = quantityToSell;
+        context.totalPhonesSold += quantityToSell;
         context.toSaleBacklog = context.stockToSale;
         return context;
     }

@@ -263,6 +263,18 @@ function notifyIfLost(json, gameLoop) {
     }
 }
 
+function notifyIfTimeIsUp(json, gameLoop) {
+    if (json["js-time-is-up"] && (gameLoop !== null && gameLoop !== undefined)) {
+        stats = 'Vendiste <b>' + gameLoop.context.totalPhonesSold + '</b> celulares, por un total de <b>$' + gameLoop.context.totalPhonesSold * 12 + '</b><br>' 
+        + 'Reparaste <b>' + gameLoop.context.totalPhonesRepaired + '</b> celulares, reduciendo la chatarra electrónica del mundo en <b>' + Math.round(gameLoop.context.totalPhonesRepaired * 0.2) +'kg</b>';
+        modal.show('Se acabó el tiempo!', 
+            stats
+            , gameLoop, () => {
+            document.location.reload();
+        });
+    }
+}
+
 function notifyPaidSalaries(json) {
     /*if (json["js-this-loop-must-pay-salaries"]) {
         if (json["js-you-lose"]) {
@@ -294,6 +306,7 @@ function updateFrontend(json, gameLoop) {
     updateGameoverTimer(json);
     //updateVisibilityOfUpgrades(json);
     notifyIfLost(json, gameLoop);
+    notifyIfTimeIsUp(json, gameLoop);
     notifyPaidSalaries(json);
     updateVisibilityOfRobots(json);
     updateAvailabilityOfBuy(json);
