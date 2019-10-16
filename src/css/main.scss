@@ -17,8 +17,28 @@
 
 
 
+.over-modal{
+	position: relative;
+	z-index: 99999999;
+	animation: blink-animation 0.5s steps(5, start) infinite;
+	-webkit-animation: blink-animation 0.5s steps(5, start) infinite;
+	pointer-events: none;
+}
 
+.over-modal-move{
+	transform: translateX(100px);
+}
 
+@keyframes blink-animation {
+to {
+	opacity: 0;
+}
+}
+@-webkit-keyframes blink-animation {
+to {
+	opacity: 1;
+}
+}
 
 .stock-number-container{
 	margin:0 auto;

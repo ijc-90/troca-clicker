@@ -224,14 +224,16 @@ function updateAvailabilityOfBuy(json) {
 function showOrHideFlows(json) {
     var buyFlowSelector = ".js-buy-flow-container";
     $(buyFlowSelector).css({ display: "flex" });
-    if (json["showBuyFlow"]) {
+   
+    /* if (json["showBuyFlow"]) {
         $(buyFlowSelector).css({ display: "flex" });
     } else {
         $(buyFlowSelector).css({ display: "none" });
-    }
+    } */
 
     var repairFlowSelector = ".js-repair-flow-container";
     $(repairFlowSelector).css({ display: "flex" });
+    
     if (json["showRepairFlow"]) {
         $(repairFlowSelector).css({ display: "flex" });
     } else {
@@ -240,6 +242,7 @@ function showOrHideFlows(json) {
 
     var saleFlowSelector = ".js-sale-flow-container";
     $(saleFlowSelector).css({ display: "flex" });
+    
     if (json["showSaleFlow"]) {
         $(saleFlowSelector).css({ display: "flex" });
     } else {
@@ -257,7 +260,7 @@ function showOrHideFlows(json) {
 
 function notifyIfLost(json, gameLoop) {
     if (json["js-you-lose"] && (gameLoop !== null && gameLoop !== undefined)) {
-        modal.show('Ups, game over!', 'Llegó la hora de pagar los costos fijos, y no te alcanzó! Tuviste que presentar la quiebra.', gameLoop, () => {
+        modal.show('Ups. ¡Algo salió mal!', 'Nos quedamos sin plata y el negocio así no funciona. </br></br>La próxima más atento con los gastos (Prestá atención al timer, y balanceá los procesos!)</br></br>¡Volver a emprender!', gameLoop, () => {
             document.location.reload();
         });
     }
@@ -265,9 +268,9 @@ function notifyIfLost(json, gameLoop) {
 
 function notifyIfTimeIsUp(json, gameLoop) {
     if (json["js-time-is-up"] && (gameLoop !== null && gameLoop !== undefined)) {
-        stats = 'Vendiste <b>' + gameLoop.context.totalPhonesSold + '</b> celulares, por un total de <b>$' + gameLoop.context.totalPhonesSold * 12 + '</b><br>' 
+        stats = 'Vendiste <b>' + gameLoop.context.totalPhonesSold + '</b> celulares, por un total de <b>$' + gameLoop.context.totalPhonesSold * 12 + '</b><br><br><br><br>' 
         + 'Reparaste <b>' + gameLoop.context.totalPhonesRepaired + '</b> celulares, reduciendo la chatarra electrónica del mundo en <b>' + Math.round(gameLoop.context.totalPhonesRepaired * 0.2) +'kg</b>';
-        modal.show('Se acabó el tiempo!', 
+        modal.show('¡Lo logramos! Nos convertimos en una gran empresa.!', 
             stats
             , gameLoop, () => {
             document.location.reload();

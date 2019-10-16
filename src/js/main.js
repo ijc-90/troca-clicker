@@ -120,6 +120,7 @@ console.log("Sugerencias, issues y PRs a https://github.com/ijc-90/troca-clicker
 
 window.setInterval(function () {
 
+    updateFrontend(gameLoop.tick(2), gameLoop);
     // Esto es bien villero .... pero yafu
     if (gameLoop.context.shouldPlayGameOverSound) {
         gameLoop.clickerSound.gameOver();
@@ -208,12 +209,15 @@ var news = [
 
 
 $(document).ready(() => {
-
-    modal.show('Bienvenido a troca clickers', 'Para arrancar te dejamos $' + gameLoop.context.money + ', comprá ' + (gameLoop.context.money / gameLoop.context.cellphoneBuyPrice) + ' celulares ', gameLoop, () => {
-        //TweenMax.set(".click-message", { y: 200 })
-        //$(".click-message").show();
-        //TweenMax.to($(".click-container"), 1, { scale: 1, opacity: 1, ease:Expo.easeOut });
-        //TweenMax.to(".click-message", 1, { y: 0 })
+    $("#js-buy-clicker").addClass('over-modal');
+    modal.show('Bienvenido a troca clickers', 'Este juego está basado en un negocio real. </br></br>Compramos, reacondicionamos y vendemos celulares. </br></br>¿Querés conocer un poco más cómo funciona?</br></br></br></br></br></br></br></br>Seguime.', gameLoop, () => {
+        modal.show('¡Hora de trabajar!', 'Para arrancar te dejamos $100. Usalos para comprar 10 celulares. </br></br></br></br></br></br></br></br></br></br></br></br>¡A comprar!', gameLoop, () => {
+            $("#js-buy-clicker").removeClass('over-modal');
+            //TweenMax.set(".click-message", { y: 200 })
+            //$(".click-message").show();
+            //TweenMax.to($(".click-container"), 1, { scale: 1, opacity: 1, ease:Expo.easeOut });
+            //TweenMax.to(".click-message", 1, { y: 0 })
+        });
     });
 
 });

@@ -57,6 +57,7 @@ class TutorialFlow extends Flow {
     }
 
     shouldShowBuyFlow(context){
+        
         if (context.skipTutorial){
             return true;
         }
@@ -65,6 +66,7 @@ class TutorialFlow extends Flow {
     }
 
     shouldShowRepairFlow(context){
+        
         return context.stockToRepair >= 10 || context.skipTutorial;
     }
 
@@ -91,15 +93,17 @@ class TutorialFlow extends Flow {
         if (!context.skipTutorial){
             //var titulo1 = 'Ya ganamos plata!';
             //var texto1 = 'Genial, ya pudiste vender los 10 celulares. Si te acordás, empezamos con $100 y ahora tenemos $120! Usá esos $120 para comprar reparar y vender todavía más celulares... y... algún día... Conquistaremos el mundo!';
-            var titulo2 = 'Ya compramos, reparamos y vendimos!';
-            var texto2 = 'Ahora podés contratar para que lo hagan por vos. Te recomiendo comprar una Tienda (venta), luego un reparador, y luego un quiosco (compra)';
-            var titulo3 = 'Pero cuidado';
-            var texto3 = 'Contratar tiene costo (inicial y recurrente). Tené cuidado con los compradores, que si compran de más te dejan sin plata!';
+            var titulo2 = 'Ya sos todo un empresario';
+            var texto2 = 'Ahora que sabés como funciona el negocio, puedo irme de viaje y dejar todo en tus manos…</br></br>¡Buena suerte! </br>(Y no rompas nada)</br></br></br></br></br><b></br></br>psssst:</b> yo arrancaría sumando una tienda, y quizás </br>después un reparador. </br></br>¡A romperla!';
+            var titulo3 = 'Antes de irme, un tip muy importante. ';
+            var texto3 = 'Sumar y escalar los procesos no es gratis. Tanto kioscos, reparadores y tiendas tienen costo inicial y recurrente.';
 
+            $(".row-robot").addClass('over-modal over-modal-move');
             //modal.show(titulo1, texto1, this.gameloop, () =>{
                modal.show(titulo2,texto2, this.gameloop,() =>{
                    modal.show(titulo3,texto3, this.gameloop, () => {
-                        context.tutorialOver = true;
+                    $(".row-robot").removeClass('over-modal over-modal-move');
+                    context.tutorialOver = true;
                    });
                });    
            //});
@@ -112,16 +116,23 @@ class TutorialFlow extends Flow {
 
     showRepairFlow(context){
         if (!context.skipTutorial && this.firstTimeShowingRepair){
-            modal.show('Ahora a reparar!', 'Bien! Compraste 10 celulares! pero... hay que repararlos!', gameLoop);
+            $("#js-repair-clicker .circle").addClass('over-modal');
+            modal.show('¡Bien! Tenemos 10 celulares. ', 'Ahora que tenemos estos 10 celulares</br></br></br></br></br></br></br></br></br></br></br></br>¡A reparar!', gameLoop, () => {
+                $("#js-repair-clicker .circle").removeClass('over-modal');
+            });
         }
         context.showRepairFlow = true;
         this.repairFlowIsHidden = false;
         this.firstTimeShowingRepair = false;
     }
+    
 
     showSaleFlow(context){
         if (!context.skipTutorial && this.firstTimeShowingSale){
-            modal.show('Listo, reparados...', 'Ahora a venderlos!', gameLoop, () =>{});
+            $("#js-sell-clicker .circle").addClass('over-modal');
+            modal.show('¡Excelente! Tenemos celulares reparados.', 'Estamos listos para venderlos. </br></br></br></br></br></br></br></br></br></br></br></br>¡A vender!', gameLoop, () => {
+                $("#js-sell-clicker .circle").removeClass('over-modal');
+            });
         }
         this.firstTimeShowingSale = false;
         context.showSaleFlow = true;

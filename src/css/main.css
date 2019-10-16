@@ -134,7 +134,7 @@ header .countdown {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.5);
   display: none;
 }
 
@@ -537,6 +537,28 @@ header .countdown {
   background: #333;
 }
 
+.over-modal {
+  position: relative;
+  z-index: 99999999;
+  animation: blink-animation 0.5s steps(5, start) infinite;
+  -webkit-animation: blink-animation 0.5s steps(5, start) infinite;
+  pointer-events: none;
+}
+
+.over-modal-move {
+  transform: translateX(100px);
+}
+
+@keyframes blink-animation {
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    opacity: 1;
+  }
+}
 .stock-number-container {
   margin: 0 auto;
   width: 100%;
