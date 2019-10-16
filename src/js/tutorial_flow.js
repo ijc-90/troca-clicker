@@ -57,7 +57,7 @@ class TutorialFlow extends Flow {
     }
 
     shouldShowBuyFlow(context){
-        
+
         if (context.skipTutorial){
             return true;
         }
@@ -66,7 +66,7 @@ class TutorialFlow extends Flow {
     }
 
     shouldShowRepairFlow(context){
-        
+
         return context.stockToRepair >= 10 || context.skipTutorial;
     }
 
@@ -77,7 +77,7 @@ class TutorialFlow extends Flow {
 
     showBuyFlow(context){
         context.showBuyFlow = true;
-        this.buyFlowIsHidden = false; 
+        this.buyFlowIsHidden = false;
     }
 
     shouldShowRobots(context){
@@ -94,7 +94,7 @@ class TutorialFlow extends Flow {
             //var titulo1 = 'Ya ganamos plata!';
             //var texto1 = 'Genial, ya pudiste vender los 10 celulares. Si te acordás, empezamos con $100 y ahora tenemos $120! Usá esos $120 para comprar reparar y vender todavía más celulares... y... algún día... Conquistaremos el mundo!';
             var titulo2 = 'Ya sos todo un empresario';
-            var texto2 = 'Ahora que sabés como funciona el negocio, puedo irme de viaje y dejar todo en tus manos…</br></br>¡Buena suerte! </br>(Y no rompas nada)</br></br></br></br></br><b></br></br>psssst:</b> yo arrancaría sumando una tienda, y quizás </br>después un reparador. </br></br>¡A romperla!';
+            var texto2 = 'Ahora que sabés como funciona el negocio, puedo irme de viaje por un periodo de <b>04:00 minutos</b> y dejar todo en tus manos…</br></br>¡Buena suerte! </br>(Y no rompas nada)</br></br></br></br></br><b></br></br>psssst:</b> yo arrancaría sumando una tienda, y quizás </br>después un reparador. </br></br>¡A romperla!';
             var titulo3 = 'Antes de irme, un tip muy importante. ';
             var texto3 = 'Sumar y escalar los procesos no es gratis. Tanto kioscos, reparadores y tiendas tienen costo inicial y recurrente.';
 
@@ -105,7 +105,7 @@ class TutorialFlow extends Flow {
                     $(".row-robot").removeClass('over-modal over-modal-move');
                     context.tutorialOver = true;
                    });
-               });    
+               });
            //});
         }
         context.showRobots = true;
@@ -125,7 +125,7 @@ class TutorialFlow extends Flow {
         this.repairFlowIsHidden = false;
         this.firstTimeShowingRepair = false;
     }
-    
+
 
     showSaleFlow(context){
         if (!context.skipTutorial && this.firstTimeShowingSale){
@@ -139,5 +139,5 @@ class TutorialFlow extends Flow {
         this.saleFlowIsHidden = false;
     }
 
-   
+
 }
