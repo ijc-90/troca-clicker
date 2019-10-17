@@ -209,7 +209,7 @@ var news = [
 
 $(document).ready(() => {
     $("#js-buy-clicker").addClass('over-modal');
-    modal.show('Bienvenido a troca clickers', 'Este juego está basado en un negocio real. </br></br>Compramos, reacondicionamos y vendemos celulares. </br></br>¿Querés conocer un poco más cómo funciona?</br></br></br></br></br></br></br></br>Seguime.', gameLoop, () => {
+    modal.show('Bienvenido a TrocaClicker', 'Este juego está basado en un negocio real. </br></br>Compramos, reacondicionamos y vendemos celulares. </br></br>¿Querés conocer un poco más cómo funciona?</br></br></br></br></br></br>Seguime...', gameLoop, () => {
         modal.show('¡Hora de trabajar!', 'Para arrancar te dejamos $100. Usalos para comprar 10 celulares. </br></br></br></br></br></br></br></br></br></br></br></br>¡A comprar!', gameLoop, () => {
             $("#js-buy-clicker").removeClass('over-modal');
             //TweenMax.set(".click-message", { y: 200 })
@@ -227,7 +227,7 @@ $(document).ready(() => {
 //     robots.forEach(function(robot){
 //         var htmlID = robot.type.concat("-clickeable");
 //         if (money >= robot.baseCost * Math.pow(geometricScale,robot.quantity)){
-//             document.getElementById(htmlID).style.opacity = 1;    
+//             document.getElementById(htmlID).style.opacity = 1;
 //         }else{
 //             document.getElementById(htmlID).style.opacity = 0.5;
 //         }
@@ -236,7 +236,7 @@ $(document).ready(() => {
 //     upgrades.forEach(function(upgrade){
 //         var htmlID = upgrade.type.concat("-upgrade");
 //         if (money >= upgrade.cost){
-//             document.getElementById(htmlID).style.opacity = 1;    
+//             document.getElementById(htmlID).style.opacity = 1;
 //         }else{
 //             document.getElementById(htmlID).style.opacity = 0.5;
 //         }
@@ -268,4 +268,3 @@ $(document).ready(() => {
 //         quantityClass = quantityClass.concat(robot.type).concat("-quantity");
 //         $(quantityClass).html(robot.quantity);
 //     }
-
