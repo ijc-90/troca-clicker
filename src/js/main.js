@@ -126,7 +126,6 @@ window.setInterval(function () {
         gameLoop.clickerSound.gameOver();
         gameLoop.context.shouldPlayGameOverSound = false;
     }
-    updateFrontend(gameLoop.tick(2), gameLoop);
 }, 500);
 
 function sellClickerClick() {
